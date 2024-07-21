@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct LogifyApp: App {
+    @StateObject private var userManager = UserManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RegistrationView()
+                .environmentObject(userManager)
         }
     }
 }
