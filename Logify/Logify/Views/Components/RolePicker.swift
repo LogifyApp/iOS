@@ -20,7 +20,7 @@ struct RolePicker: View {
                 Text("Employer")
                     .tag("Employer")
             }
-            .frame(width: 300)
+            .frame(width: 320)
             .pickerStyle(.segmented)
         }
         .padding()

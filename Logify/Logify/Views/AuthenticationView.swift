@@ -8,28 +8,39 @@
 import SwiftUI
 
 struct AuthenticationView: View {
+    @EnvironmentObject var userManager: UserManager
+    
     var body: some View {
-        ZStack {
-            Image("background")
-                .resizable()
-                .ignoresSafeArea()
-                .scaleEffect(1.05)
-            
-            VStack(spacing: 70) {
-                VStack(spacing: 0){
-                    Image("logo")
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                    Text("Logify")
-                        .font(.system(size: 40))
-                        .fontWeight(.semibold)
-                }
-            
-                VStack(spacing: 10) {
-                    SubmitButton(text: "Log in", action: { LoginView() }, foreground: .white, backround: .black)
-                    SubmitButton(text: "Register", action: {}, foreground: .white, backround: .black)
-                }
+        NavigationStack {
+            ZStack {
+                Image("background")
+                    .resizable()
+                    .ignoresSafeArea()
+                    .scaleEffect(1.15)
                 
+                VStack(spacing: 70) {
+                    VStack(spacing: 0){
+                        Image("logo")
+                            .resizable()
+                            .frame(width: 200, height: 200)
+                        Text("Logify")
+                            .font(.system(size: 40))
+                            .fontWeight(.semibold)
+                    }
+                    
+                    VStack(spacing: 0) {
+                        NavigationLink(destination: LoginView(), label: {
+                            NavigationText(text: "Log in", foreground: .white, backround: .black)
+                        })
+                        NavigationLink(
+                            destination: RegistrationView().environmentObject(userManager),
+                            label: {
+                                NavigationText(text: "Register", foreground: .white, backround: .black)
+                            }
+                        )
+                    }
+                    .offset(y: 80)
+                }
             }
         }
     }
@@ -37,4 +48,5 @@ struct AuthenticationView: View {
 
 #Preview {
     AuthenticationView()
+        .environmentObject(UserManager())
 }

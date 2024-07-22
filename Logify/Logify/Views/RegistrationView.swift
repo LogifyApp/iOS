@@ -17,13 +17,13 @@ struct RegistrationView: View {
                 .ignoresSafeArea()
                 .scaleEffect(1.05)
             
-            VStack(spacing: 40) {
+            VStack(spacing: 30) {
                 Image("logo")
                     .resizable()
                     .frame(width: 200, height: 200)
-                RolePicker()
-                
+    
                 VStack(spacing: 20){
+                    RolePicker()
                     RegistrationTextField(savedText: $userManager.user.name, placeholder: "Name")
                     RegistrationTextField(savedText: $userManager.user.surname, placeholder: "Surname")
                     
@@ -31,7 +31,11 @@ struct RegistrationView: View {
                     RegistrationTextField(savedText: .constant(""), placeholder: "Phone number")
                     RegistrationTextField(savedText: $userManager.user.password, placeholder: "Password")
                 }
-                SubmitButton(text: "Register", action: {}, foreground: .white, backround: .black)
+                .offset(y: -30)
+
+                Button(action: {}){
+                    NavigationText(text: "Register", foreground: .white, backround: .black)
+                }
             }
         }
     }

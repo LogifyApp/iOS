@@ -13,7 +13,7 @@ struct LogifyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RegistrationView()
+            AuthenticationView()
                 .environmentObject(userManager)
         }
     }

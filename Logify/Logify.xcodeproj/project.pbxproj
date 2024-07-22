@@ -14,8 +14,10 @@
 		2BE802452C4D3C5900F7C65C /* RegistrationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE802442C4D3C5900F7C65C /* RegistrationTextField.swift */; };
 		2BE8024B2C4D45D800F7C65C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8024A2C4D45D800F7C65C /* User.swift */; };
 		2BE8024D2C4D46FF00F7C65C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8024C2C4D46FF00F7C65C /* UserManager.swift */; };
-		2BE8024F2C4D672F00F7C65C /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8024E2C4D672F00F7C65C /* SubmitButton.swift */; };
+		2BE8024F2C4D672F00F7C65C /* NavigationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8024E2C4D672F00F7C65C /* NavigationText.swift */; };
 		2BE802512C4D6C5600F7C65C /* RolePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE802502C4D6C5600F7C65C /* RolePicker.swift */; };
+		2BE802552C4DC07900F7C65C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE802542C4DC07900F7C65C /* LoginView.swift */; };
+		2BE802572C4DC1E400F7C65C /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE802562C4DC1E400F7C65C /* AuthenticationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +29,10 @@
 		2BE802442C4D3C5900F7C65C /* RegistrationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTextField.swift; sourceTree = "<group>"; };
 		2BE8024A2C4D45D800F7C65C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2BE8024C2C4D46FF00F7C65C /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		2BE8024E2C4D672F00F7C65C /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
+		2BE8024E2C4D672F00F7C65C /* NavigationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationText.swift; sourceTree = "<group>"; };
 		2BE802502C4D6C5600F7C65C /* RolePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolePicker.swift; sourceTree = "<group>"; };
+		2BE802542C4DC07900F7C65C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2BE802562C4DC1E400F7C65C /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 			children = (
 				2BE802532C4D815C00F7C65C /* Components */,
 				2BE802422C4D38D600F7C65C /* RegistrationView.swift */,
+				2BE802542C4DC07900F7C65C /* LoginView.swift */,
+				2BE802562C4DC1E400F7C65C /* AuthenticationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -99,7 +105,7 @@
 		2BE802532C4D815C00F7C65C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2BE8024E2C4D672F00F7C65C /* SubmitButton.swift */,
+				2BE8024E2C4D672F00F7C65C /* NavigationText.swift */,
 				2BE802502C4D6C5600F7C65C /* RolePicker.swift */,
 				2BE802442C4D3C5900F7C65C /* RegistrationTextField.swift */,
 			);
@@ -178,10 +184,12 @@
 			files = (
 				2BE8024D2C4D46FF00F7C65C /* UserManager.swift in Sources */,
 				2BE802432C4D38D600F7C65C /* RegistrationView.swift in Sources */,
+				2BE802572C4DC1E400F7C65C /* AuthenticationView.swift in Sources */,
 				2BE802452C4D3C5900F7C65C /* RegistrationTextField.swift in Sources */,
-				2BE8024F2C4D672F00F7C65C /* SubmitButton.swift in Sources */,
+				2BE8024F2C4D672F00F7C65C /* NavigationText.swift in Sources */,
 				2BE8024B2C4D45D800F7C65C /* User.swift in Sources */,
 				2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */,
+				2BE802552C4DC07900F7C65C /* LoginView.swift in Sources */,
 				2BE802512C4D6C5600F7C65C /* RolePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

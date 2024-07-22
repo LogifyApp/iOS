@@ -9,7 +9,6 @@ import SwiftUI
 
 struct NavigationText: View {
     let text: String
-    let action: () -> Void
     let foreground: Color
     let backround: Color
     
@@ -26,5 +25,5 @@ struct NavigationText: View {
 }
 
 #Preview {
-    NavigationText(text: "Log in", action: {}, foreground: .white, backround: .black)
+    NavigationText(text: "Log in", foreground: .white, backround: .black)
 }
