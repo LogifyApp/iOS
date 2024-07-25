@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedItem = 0
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView(selection: $selectedItem) {
+            DriverChatView()
+                .tag(0)
+            DriverCargoView()
+                .tag(1)
+            DriverProfileView()
+                .tag(2)
         }
-        .padding()
+        .overlay(alignment: .bottom) {
+            CustomTabView(selectedItem: $selectedItem)
+        }
     }
 }
 
