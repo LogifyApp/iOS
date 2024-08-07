@@ -9,11 +9,62 @@ import SwiftUI
 
 struct DriverProfileView: View {
     var body: some View {
-        ZStack{
-            Color.background
-                .ignoresSafeArea()
-            Text("Hello, World!")
-                .foregroundStyle(.red)
+        NavigationView {
+            ZStack{
+                Color.background
+                    .ignoresSafeArea()
+                VStack {
+                    VStack {
+                        Image("user")
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            
+                        Text("Name Surname")
+                            .font(.title)
+                            .bold()
+                        
+                        Text("phone number")
+                    }
+                    
+                    Form {
+                        Section {
+                            NavigationLink("Employer") {
+                                DriverEmployerView()
+                            }
+                        }
+                        
+                        Section("Settings") {
+                            Picker("GPS", selection: .constant(1)) {
+                                Text("Default")
+                                Text("Wialon")
+                            }
+                            .pickerStyle(.navigationLink)
+                            
+                            Picker("Language", selection: .constant(1)) {
+                                Text("English")
+                                Text("Polish")
+                                Text("German")
+                            }
+                            .pickerStyle(.navigationLink)
+                            
+                            
+                            .pickerStyle(.automatic)
+                            Toggle("Notifications", isOn: .constant(true))
+                        }
+                        
+                        Section {
+                            Button("Log out", role: .destructive) {
+                                
+                            }
+                        }
+                        
+                    }
+                    .scrollContentBackground(.hidden)
+                    
+                }
+            }
+            .navigationTitle("Profile")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

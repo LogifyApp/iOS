@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DriverContentView: View {
+    @StateObject private var driverManager = DriverManager()
     @State private var selectedItem = 0
     
     var body: some View {
@@ -26,5 +27,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    DriverContentView()
 }
