@@ -14,31 +14,59 @@ struct DriverProfileView: View {
                 Color.background
                     .ignoresSafeArea()
                 VStack {
-                    VStack {
+                    /*HStack {
                         Image("user")
                             .resizable()
                             .frame(width: 100, height: 100)
-                            
-                        Text("Name Surname")
-                            .font(.title)
-                            .bold()
+                            .padding(.horizontal)
                         
-                        Text("phone number")
+                        VStack(alignment: .leading) {
+                            Text("Name Surname")
+                                .font(.title2)
+                                .bold()
+                            
+                            Text("phone number")
+                            
+                            
+                        }
                     }
-                    
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()*/
+
                     Form {
+                        Section {
+                            HStack {
+                                Image("user")
+                                    .resizable()
+                                    .frame(width: 100, height: 100)
+                                    .padding(.trailing)
+                                
+                                VStack(alignment: .leading) {
+                                    Text("Name Surname")
+                                        .font(.title3)
+                                        .bold()
+                                    Text("phone number")
+                                }
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.vertical)
+                        }
+                        
                         Section {
                             NavigationLink("Employer") {
                                 DriverEmployerView()
                             }
-                        }
-                        
-                        Section("Settings") {
-                            Picker("GPS", selection: .constant(1)) {
+                            Picker("Tracker", selection: .constant(1)) {
                                 Text("Default")
                                 Text("Wialon")
                             }
                             .pickerStyle(.navigationLink)
+                        } header: {
+                            SectionHeader(text: "Delivery")
+                        }
+                        
+                        Section {
+                            
                             
                             Picker("Language", selection: .constant(1)) {
                                 Text("English")
@@ -47,9 +75,10 @@ struct DriverProfileView: View {
                             }
                             .pickerStyle(.navigationLink)
                             
-                            
-                            .pickerStyle(.automatic)
                             Toggle("Notifications", isOn: .constant(true))
+                            Toggle("Dark mode", isOn: .constant(true))
+                        } header: {
+                            SectionHeader(text: "General")
                         }
                         
                         Section {
@@ -64,7 +93,7 @@ struct DriverProfileView: View {
                 }
             }
             .navigationTitle("Profile")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.large)
         }
     }
 }

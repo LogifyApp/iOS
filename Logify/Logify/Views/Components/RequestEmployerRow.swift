@@ -8,13 +8,13 @@
 import SwiftUI
 
 
-struct EmployerRequestRow: View {
+struct RequestEmployerRow: View {
     @State private var showButtons = false
     
     var body: some View {
         if showButtons {
             VStack {
-                RequestRow(showButtons: $showButtons)
+                UserRow(showButtons: $showButtons)
                 HStack {
                     Button(action: {}, label: {
                         ButtonLabel(
@@ -37,13 +37,13 @@ struct EmployerRequestRow: View {
                 .padding(.horizontal)
             }
         } else {
-            RequestRow(showButtons: $showButtons)
+            UserRow(showButtons: $showButtons)
         }
     }
 }
 
 
-struct RequestRow: View {
+struct UserRow: View {
     @Binding var showButtons: Bool
     
     var body: some View {
@@ -65,5 +65,5 @@ struct RequestRow: View {
 }
 
 #Preview {
-    EmployerRequestRow()
+    RequestEmployerRow()
 }
