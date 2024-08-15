@@ -14,29 +14,24 @@ struct CustomTabView: View {
     var body: some View {
         ZStack {
             Capsule()
-                .frame(height: 70)
+                .frame(height: 60)
                 .foregroundStyle(Color.systemBlue)
-            HStack(spacing: 60) {
+            HStack {
                 ForEach(0..<3) { index in
-                    ZStack {
-                        Circle()
-                            .frame(height: 50)
+                    Button(action: {
+                        selectedItem = index
+                        items = ["shippingbox", "message", "person"]
+                        items[index] = "\(items[index]).fill"
+                    }){
+                        Image(systemName: items[index])
+                            .scaleEffect(1.6)
                             .foregroundStyle(Color.white)
-                            
-                        Button(action: {
-                            selectedItem = index
-                            items = ["shippingbox", "message", "person"]
-                            items[index] = "\(items[index]).fill"
-                        }){
-                            Image(systemName: items[index])
-                                .scaleEffect(1.6)
-                                .foregroundStyle(Color.systemBlue)
-                                
-                        }
-                        .padding()
                     }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
+            .padding(.horizontal)
         }
         .padding(.horizontal)
     }
