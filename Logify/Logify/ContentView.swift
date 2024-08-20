@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedItem = 0
+    @State private var selectedItem = 0 
     
     var body: some View {
         TabView(selection: $selectedItem) {
-            DriverChatView()
-                .tag(0)
             DriverCargoView()
+                .tag(0)
+            DriverChatView()
                 .tag(1)
             DriverProfileView()
                 .tag(2)
         }
         .overlay(alignment: .bottom) {
             CustomTabView(selectedItem: $selectedItem)
-        }
+        }.ignoresSafeArea()
     }
 }
 

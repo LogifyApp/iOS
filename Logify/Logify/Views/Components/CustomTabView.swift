@@ -9,10 +9,14 @@ import SwiftUI
 
 struct CustomTabView: View {
     @Binding var selectedItem: Int
-    @State private var items = ["shippingbox", "message", "person"]
+    @State private var items = ["shippingbox.fill", "message", "person"]
     
     var body: some View {
         ZStack {
+            Rectangle()
+                .frame(height: 90)
+                .foregroundStyle(Color.background)
+                .offset(y: 45)
             Capsule()
                 .frame(height: 60)
                 .foregroundStyle(Color.systemBlue)
@@ -27,8 +31,7 @@ struct CustomTabView: View {
                             .scaleEffect(1.6)
                             .foregroundStyle(Color.white)
                     }
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .center)
+                    .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
                 }
             }
             .padding(.horizontal)
