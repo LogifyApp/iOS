@@ -13,16 +13,16 @@ struct DriverContentView: View {
     
     var body: some View {
         TabView(selection: $selectedItem) {
-            DriverChatView()
-                .tag(0)
             DriverCargoView()
+                .tag(0)
+            DriverChatView()
                 .tag(1)
             DriverProfileView()
                 .tag(2)
         }
         .overlay(alignment: .bottom) {
             CustomTabView(selectedItem: $selectedItem)
-        }
+        }.ignoresSafeArea()
     }
 }
 

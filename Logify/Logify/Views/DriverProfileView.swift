@@ -70,6 +70,7 @@ struct DriverProfileView: View {
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.large)
+            .toolbarBackground(.hidden, for: .tabBar)
         }
     }
 }
