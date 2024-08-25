@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B08DC802C77D263003F49D0 /* CargoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08DC7F2C77D263003F49D0 /* CargoDetailsView.swift */; };
+		2B74F3A02C73DD5100C8B0CD /* CargoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B74F39F2C73DD5100C8B0CD /* CargoCell.swift */; };
 		2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */; };
 		2BA0FBA72C4A8DDF00FE6368 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA62C4A8DDF00FE6368 /* ContentView.swift */; };
 		2BA0FBA92C4A8DE100FE6368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA82C4A8DE100FE6368 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B08DC7F2C77D263003F49D0 /* CargoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoDetailsView.swift; sourceTree = "<group>"; };
+		2B74F39F2C73DD5100C8B0CD /* CargoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoCell.swift; sourceTree = "<group>"; };
 		2BA0FBA12C4A8DDF00FE6368 /* Logify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogifyApp.swift; sourceTree = "<group>"; };
 		2BA0FBA62C4A8DDF00FE6368 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,8 +99,9 @@
 			children = (
 				2BAFED0D2C526EDE0041AF88 /* Components */,
 				2BAFED062C526E360041AF88 /* DriverProfileView.swift */,
-				2BAFED082C526E5E0041AF88 /* DriverCargoView.swift */,
 				2BAFED0A2C526E760041AF88 /* DriverChatView.swift */,
+				2BAFED082C526E5E0041AF88 /* DriverCargoView.swift */,
+				2B08DC7F2C77D263003F49D0 /* CargoDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				2BAFED132C52D69D0041AF88 /* CustomTabView.swift */,
+				2B74F39F2C73DD5100C8B0CD /* CargoCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -183,9 +189,11 @@
 				2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */,
 				2BAFED122C526FAB0041AF88 /* UserManager.swift in Sources */,
 				2BAFED142C52D69D0041AF88 /* CustomTabView.swift in Sources */,
+				2B08DC802C77D263003F49D0 /* CargoDetailsView.swift in Sources */,
 				2BAFED0B2C526E760041AF88 /* DriverChatView.swift in Sources */,
 				2BAFED072C526E360041AF88 /* DriverProfileView.swift in Sources */,
 				2BAFED092C526E5E0041AF88 /* DriverCargoView.swift in Sources */,
+				2B74F3A02C73DD5100C8B0CD /* CargoCell.swift in Sources */,
 				2BAFED052C526A900041AF88 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

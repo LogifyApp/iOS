@@ -9,12 +9,27 @@ import SwiftUI
 
 struct DriverCargoView: View {
     var body: some View {
-        ZStack{
-            Color.background
-                .ignoresSafeArea()
-            Text("Hello, World!")
-                .foregroundStyle(.blue)
+        NavigationView {
+            ZStack{
+                Color.background
+                    .ignoresSafeArea()
+                ScrollView {
+                    VStack(spacing: 16) {
+                        ForEach(0..<30) { number in
+                            NavigationLink(destination: CargoDetailsView()) {
+                                CargoCell()
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Cargo")
+            .toolbarTitleDisplayMode(.inline)
+            .toolbarBackground(.hidden, for: .tabBar)
+            .toolbarBackground(Color.background, for: .navigationBar)
         }
+        .searchable(text: .constant(""), placement: .navigationBarDrawer(displayMode: .always))
     }
 }
 

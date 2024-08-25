@@ -21,7 +21,7 @@ struct ContentView: View {
         }
         .overlay(alignment: .bottom) {
             CustomTabView(selectedItem: $selectedItem)
-        }.ignoresSafeArea()
+        }.ignoresSafeArea()        
     }
 }
 
