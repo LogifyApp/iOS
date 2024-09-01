@@ -12,16 +12,17 @@ struct CargoCell: View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
                 .foregroundStyle(.white)
-                .shadow(radius: 0.6)
-                //.overlay(RoundedRectangle(cornerRadius: 20).stroke(.gray, lineWidth: 1))
+                .shadow(radius: 0.5)
             VStack {
                 HStack {
                     Text("#2497357")
                     Spacer()
                     Text("Created")
-                        
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 13))
+                        .bold()
+                        .foregroundStyle(.secondary)
                 }.padding(.horizontal)
-                //Text("10.04.2024")
             }
         }
         .frame(height: 50)
