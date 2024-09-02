@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct CargoCell: View {
+    
+    let cargoId: Int
+    let cargoStatus: String
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
@@ -15,9 +19,9 @@ struct CargoCell: View {
                 .shadow(radius: 0.5)
             VStack {
                 HStack {
-                    Text("#2497357")
+                    Text("#\(cargoId)")
                     Spacer()
-                    Text("Created")
+                    Text(cargoStatus)
                     Image(systemName: "chevron.right")
                         .font(.system(size: 13))
                         .bold()
@@ -31,5 +35,5 @@ struct CargoCell: View {
 }
 
 #Preview {
-    CargoCell()
+    CargoCell(cargoId: 234, cargoStatus: "Created")
 }

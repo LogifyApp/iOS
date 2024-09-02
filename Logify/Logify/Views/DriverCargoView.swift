@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DriverCargoView: View {
+    
+    @State private var cargo = [Cargo(id: 137287897, description: "iaybdcuwybec", status: "Created", creationDate: Date.now, carId: "24987", points: [])]
+    
     var body: some View {
         NavigationView {
             ZStack{
@@ -15,9 +18,11 @@ struct DriverCargoView: View {
                     .ignoresSafeArea()
                 ScrollView {
                     VStack(spacing: 16) {
-                        ForEach(0..<30) { number in
-                            NavigationLink(destination: CargoDetailsView()) {
-                                CargoCell()
+                        ForEach(cargo, id: \.id) { cargo in
+                            NavigationLink(destination: CargoDetailsView(cargo: cargo)) {
+                                CargoCell(cargoId: cargo.id,
+                                          cargoStatus: cargo.status
+                                )
                             }
                             .buttonStyle(PlainButtonStyle())
                         }

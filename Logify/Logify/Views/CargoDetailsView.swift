@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CargoDetailsView: View {
     
-    var bcolor: Color = .blue
+    let cargo: Cargo
     
     var body: some View {
         ZStack{
@@ -18,33 +18,30 @@ struct CargoDetailsView: View {
             List {
                 // MARK: Details
                 Section {
-                    CargoDetailsCell(property: "Cargo ID", value: "028493")
-                    CargoDetailsCell(property: "Status", value: "Created")
-                    CargoDetailsCell(property: "Creation date", value: "12.12.2012")
-                    CargoDetailsCell(property: "Car ID", value: "028493")
+                    CargoDetailsCell(property: "Cargo ID", value: String(cargo.id))
+                    CargoDetailsCell(property: "Status", value: cargo.status)
+                    CargoDetailsCell(property: "Creation date", value: "\(cargo.creationDate)")
+                    CargoDetailsCell(property: "Car ID", value: cargo.carId)
                 }
                 
                 // MARK: Description
                 Section {
-                    Text("g37yfrhuji90ktivgr9-jfhbduho cemkirojhuubfjtnv emcdkoiujrhb rjntverm dkoijcfuehrb nmvkrodjicuehrbf nmkgtvf,orgidjucehnrdnj")
+                    Text(cargo.description)
                 }
 
                 // MARK: Route
                 Section {
                     VStack(spacing: 0) {
-                        CargoRouteRegularCell(
-                            name: "Mokotow street",
-                            coordinates: "23.43453545 54.23456789",
-                            isLast: false)
+                        ForEach(cargo.points.dropLast(), id: \.id) { point in
+                            CargoRouteRegularCell(
+                                name: point.label,
+                                coordinates: "\(point.latitude) \(point.longtitude)",
+                                isLast: false)
+                        }
                         
                         CargoRouteRegularCell(
-                            name: "Wola street",
-                            coordinates: "23.43453545 54.23456789",
-                            isLast: false)
-                        
-                        CargoRouteRegularCell(
-                            name: "Bemowo street",
-                            coordinates: "23.43453545 54.23456789",
+                            name: cargo.points.last!.label,
+                            coordinates: "\(cargo.points.last!.latitude) \(cargo.points.last!.longtitude)",
                             isLast: true)
                         
                         Button(action: {}, label: {
@@ -68,7 +65,9 @@ struct CargoDetailsView: View {
 
 
 #Preview {
-    CargoDetailsView()
+    CargoDetailsView(cargo: Cargo(id: 137287897, description: "iaybdcuwybec", status: "Created", creationDate: Date.now, carId: "24987", points: [
+        Point(id: 0, label: "kubsirv wjw r krju", latitude: 238642, longtitude: 2453534, order: 1456343), Point(id: 1, label: "kubsirv wjw r krju", latitude: 238642, longtitude: 2453534, order: 1456343)
+    ]))
 }
 
 
