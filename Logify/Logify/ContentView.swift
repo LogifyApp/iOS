@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selectedItem) {
-            DriverCargoView()
+            DriverCargoView(cargo: [])
                 .tag(0)
             DriverChatView()
                 .tag(1)

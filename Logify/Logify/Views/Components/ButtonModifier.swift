@@ -1,8 +1,8 @@
 //
-//  ButtonModifier.swift
+//  B.swift
 //  Logify
 //
-//  Created by Vlad Klunduk on 01/09/2024.
+//  Created by Vlad Klunduk on 02/09/2024.
 //
 
 import SwiftUI
