@@ -12,59 +12,56 @@ struct CargoDetailsView: View {
     let cargo: Cargo
     
     var body: some View {
-        ZStack{
-            Color.background
-                .ignoresSafeArea()
-            List {
-                // MARK: Details
-                Section {
-                    CargoDetailsCell(property: "Cargo ID",
-                                     value: String(cargo.id))
-                    CargoDetailsCell(property: "Status",
-                                     value: cargo.status)
-                    CargoDetailsCell(property: "Creation date",
-                                     value: "\(cargo.creationDate)")
-                    CargoDetailsCell(property: "Car ID", 
-                                     value: cargo.carId)
-                }
-                
-                // MARK: Description
-                Section {
-                    Text(cargo.description)
-                }
+        List {
+            // MARK: Details
+            Section {
+                CargoDetailsCell(property: "Cargo ID",
+                                 value: String(cargo.id))
+                CargoDetailsCell(property: "Status",
+                                 value: cargo.status)
+                CargoDetailsCell(property: "Creation date",
+                                 value: "\(cargo.creationDate)")
+                CargoDetailsCell(property: "Car ID",
+                                 value: cargo.carId)
+            }
+            
+            // MARK: Description
+            Section {
+                Text(cargo.description)
+            }
 
-                // MARK: Route
-                Section {
-                    VStack(spacing: 0) {
-                        ForEach(cargo.points.dropLast(), id: \.id) { point in
-                            CargoRouteRegularCell(name: point.label,
-                                                  coordinates: "\(point.latitude) \(point.longtitude)",
-                                                  isLast: false)
-                        }
-                        CargoRouteRegularCell(name: cargo.points.last!.label,
-                                              coordinates: "\(cargo.points.last!.latitude) \(cargo.points.last!.longtitude)",
-                                              isLast: true)
-                        Button(action: {}) {
-                            HStack {
-                                Image(systemName: "map")
-                                Text("Map")
-                            }
-                            .modifier(
-                                ButtonModifier(width: 310,
-                                               height: 36,
-                                               background: .black,
-                                               foreground: .white)
-                            )
-                        }
-                        .padding(.bottom, 8)
-                        .padding(.top, -8)
+            // MARK: Route
+            Section {
+                VStack(spacing: 0) {
+                    ForEach(cargo.points.dropLast(), id: \.id) { point in
+                        CargoRouteCell(name: point.label,
+                                              coordinates: "\(point.latitude) \(point.longtitude)",
+                                              isLast: false)
                     }
+                    CargoRouteCell(name: cargo.points.last!.label,
+                                          coordinates: "\(cargo.points.last!.latitude) \(cargo.points.last!.longtitude)",
+                                          isLast: true)
+                    Button(action: {}) {
+                        HStack {
+                            Image(systemName: "map")
+                            Text("Map")
+                        }
+                        .modifier(
+                            ButtonModifier(width: 310,
+                                           height: 36,
+                                           background: .black,
+                                           foreground: .white)
+                        )
+                    }
+                    .padding(.bottom, 8)
+                    .padding(.top, -8)
                 }
             }
-            .scrollContentBackground(.hidden)
         }
+        .scrollContentBackground(.hidden)
         .navigationTitle("Details")
         .toolbarTitleDisplayMode(.inline)
+        .background(Color.background)
     }
 }
 
@@ -107,7 +104,7 @@ struct CargoDetailsCell: View {
     }
 }
 
-struct CargoRouteRegularCell: View {
+struct CargoRouteCell: View {
     
     let name: String
     let coordinates: String

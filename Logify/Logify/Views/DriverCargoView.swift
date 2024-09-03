@@ -21,24 +21,21 @@ struct DriverCargoView: View {
     
     var body: some View {
         NavigationView {
-            ZStack{
-                Color.background
-                    .ignoresSafeArea()
-                ScrollView {
-                    VStack(spacing: 16) {
-                        ForEach(searchResults, id: \.id) { cargo in
-                            NavigationLink(destination: CargoDetailsView(cargo: cargo)) {
-                                CargoCell(cargoId: cargo.id,
-                                          cargoStatus: cargo.status)
-                            }
-                            .buttonStyle(PlainButtonStyle())
+            ScrollView {
+                VStack(spacing: 16) {
+                    ForEach(searchResults, id: \.id) { cargo in
+                        NavigationLink(destination: CargoDetailsView(cargo: cargo)) {
+                            CargoCell(cargoId: cargo.id,
+                                      cargoStatus: cargo.status)
                         }
-                        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+                        .buttonStyle(PlainButtonStyle())
                     }
+                    .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
                 }
             }
             .navigationTitle("Cargo")
             .toolbarTitleDisplayMode(.inline)
+            .background(Color.background)
             .toolbarBackground(.hidden, for: .tabBar)
             .toolbarBackground(Color.background, for: .navigationBar)
         }
