@@ -10,7 +10,7 @@ import Foundation
 struct Point {
     var id: Int
     var label: String
-    var latitude: Int
-    var longtitude: Int
+    var latitude: Double
+    var longtitude: Double
     var order: Int
 }
