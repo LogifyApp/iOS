@@ -14,6 +14,7 @@
 		2B6AABBE2C864A18006B968A /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABBD2C864A18006B968A /* ButtonModifier.swift */; };
 		2B6AABC02C875A84006B968A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABBF2C875A84006B968A /* MapView.swift */; };
 		2B6AABC22C88BD30006B968A /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABC12C88BD30006B968A /* MapManager.swift */; };
+		2B6AABC52C8B4423006B968A /* CargoDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABC42C8B4423006B968A /* CargoDocumentsView.swift */; };
 		2B74F3A02C73DD5100C8B0CD /* CargoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B74F39F2C73DD5100C8B0CD /* CargoCell.swift */; };
 		2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */; };
 		2BA0FBA72C4A8DDF00FE6368 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA62C4A8DDF00FE6368 /* ContentView.swift */; };
@@ -35,6 +36,7 @@
 		2B6AABBD2C864A18006B968A /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		2B6AABBF2C875A84006B968A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2B6AABC12C88BD30006B968A /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		2B6AABC42C8B4423006B968A /* CargoDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoDocumentsView.swift; sourceTree = "<group>"; };
 		2B74F39F2C73DD5100C8B0CD /* CargoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoCell.swift; sourceTree = "<group>"; };
 		2BA0FBA12C4A8DDF00FE6368 /* Logify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogifyApp.swift; sourceTree = "<group>"; };
@@ -60,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B6AABC32C8A1E61006B968A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2BAFED112C526FAB0041AF88 /* UserManager.swift */,
+				2B6AABC12C88BD30006B968A /* MapManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		2BA0FB982C4A8DDF00FE6368 = {
 			isa = PBXGroup;
 			children = (
@@ -79,14 +90,13 @@
 		2BA0FBA32C4A8DDF00FE6368 /* Logify */ = {
 			isa = PBXGroup;
 			children = (
+				2B6AABC32C8A1E61006B968A /* Managers */,
 				2BAFED0C2C526ECE0041AF88 /* Views */,
 				2BAFED032C526A810041AF88 /* Models */,
 				2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */,
 				2BA0FBA62C4A8DDF00FE6368 /* ContentView.swift */,
 				2BA0FBA82C4A8DE100FE6368 /* Assets.xcassets */,
 				2BA0FBAA2C4A8DE100FE6368 /* Preview Content */,
-				2BAFED112C526FAB0041AF88 /* UserManager.swift */,
-				2B6AABC12C88BD30006B968A /* MapManager.swift */,
 			);
 			path = Logify;
 			sourceTree = "<group>";
@@ -114,10 +124,11 @@
 			children = (
 				2BAFED0D2C526EDE0041AF88 /* Components */,
 				2BAFED062C526E360041AF88 /* DriverProfileView.swift */,
-				2B6AABBF2C875A84006B968A /* MapView.swift */,
 				2BAFED0A2C526E760041AF88 /* DriverChatView.swift */,
 				2BAFED082C526E5E0041AF88 /* DriverCargoView.swift */,
 				2B08DC7F2C77D263003F49D0 /* CargoDetailsView.swift */,
+				2B6AABBF2C875A84006B968A /* MapView.swift */,
+				2B6AABC42C8B4423006B968A /* CargoDocumentsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +218,7 @@
 				2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */,
 				2B6AABBE2C864A18006B968A /* ButtonModifier.swift in Sources */,
 				2BAFED122C526FAB0041AF88 /* UserManager.swift in Sources */,
+				2B6AABC52C8B4423006B968A /* CargoDocumentsView.swift in Sources */,
 				2B6AABC22C88BD30006B968A /* MapManager.swift in Sources */,
 				2BAFED142C52D69D0041AF88 /* CustomTabView.swift in Sources */,
 				2B6AABBC2C84D8A9006B968A /* Point.swift in Sources */,

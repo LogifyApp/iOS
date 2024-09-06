@@ -10,6 +10,7 @@ import MapKit
 
 struct MapView: View {
     
+    @Environment(\.dismiss) var dismiss
     @State private var routes: [MKRoute] = []
     var points: [Point]
     var coordinates: [CLLocationCoordinate2D] {
@@ -17,26 +18,35 @@ struct MapView: View {
     }
     
     var body: some View {
-        Map() {
-            Annotation("Warehouse", coordinate: coordinates[0]) {
-                Image(systemName: "shippingbox.fill")
-                    .padding(4)
-                    .foregroundStyle(.white)
-                    .background(.black)
-                    .clipShape(RoundedRectangle(cornerRadius: 7))
+        NavigationView{
+            Map() {
+                Annotation("Warehouse", coordinate: coordinates[0]) {
+                    Image(systemName: "shippingbox.fill")
+                        .padding(4)
+                        .foregroundStyle(.white)
+                        .background(.black)
+                        .clipShape(RoundedRectangle(cornerRadius: 7))
+                }
+                ForEach(1..<coordinates.count) { index in
+                    Marker(points[index].label, coordinate: coordinates[index])
+                }
+                ForEach(routes, id: \.self) { route in
+                    MapPolyline(route.polyline)
+                        .stroke(.blue, lineWidth: 5)
+                }
             }
-            ForEach(1..<coordinates.count) { index in
-                Marker(points[index].label, coordinate: coordinates[index])
+            .onAppear {
+                (0..<coordinates.count-1).forEach({ index in
+                    fetchRoute(coordinates[index], coordinates[index+1])
+                })
             }
-            ForEach(routes, id: \.self) { route in
-                MapPolyline(route.polyline)
-                    .stroke(.blue, lineWidth: 5)
+            .toolbar{
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Return") {
+                        dismiss()
+                    }
+                }
             }
-        }
-        .onAppear {
-            (0..<coordinates.count-1).forEach({ index in
-                fetchRoute(coordinates[index], coordinates[index+1])
-            })
         }
     }
 }

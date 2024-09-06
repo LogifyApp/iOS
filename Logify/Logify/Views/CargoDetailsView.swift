@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CargoDetailsView: View {
     
+    @State private var isMapPresented = false
     let cargo: Cargo
     
     var body: some View {
@@ -23,70 +24,74 @@ struct CargoDetailsView: View {
                                  value: "\(cargo.creationDate)")
                 CargoDetailsCell(property: "Car ID",
                                  value: cargo.carId)
+                NavigationLink {
+                    CargoDocumentsView()
+                } label: {
+                    Text("Documents")
+                        //.foregroundStyle(.secondary)
+                }
             }
             
             // MARK: Description
             Section {
                 Text(cargo.description)
             }
-
+            
             // MARK: Route
             Section {
                 VStack(spacing: 0) {
                     ForEach(cargo.points.dropLast(), id: \.id) { point in
                         CargoRouteCell(name: point.label,
-                                              coordinates: "\(point.latitude) \(point.longtitude)",
-                                              isLast: false)
+                                       coordinates: "\(point.latitude) \(point.longtitude)",
+                                       isLast: false)
                     }
                     CargoRouteCell(name: cargo.points.last!.label,
-                                          coordinates: "\(cargo.points.last!.latitude) \(cargo.points.last!.longtitude)",
-                                          isLast: true)
-                    Button(action: {}) {
-                        HStack {
-                            Image(systemName: "map")
-                            Text("Map")
-                        }
-                        .modifier(
-                            ButtonModifier(width: 310,
-                                           height: 36,
-                                           background: .black,
-                                           foreground: .white)
-                        )
-                    }
-                    .padding(.bottom, 8)
-                    .padding(.top, -8)
+                                   coordinates: "\(cargo.points.last!.latitude) \(cargo.points.last!.longtitude)",
+                                   isLast: true)
                 }
-            }
+                .padding(.bottom, -16)
+                Button(action: { isMapPresented.toggle() }) {
+                     HStack {
+                         Image(systemName: "map")
+                         Text("Map")
+                     }
+                     .modifier(
+                         ButtonModifier(width: 310,
+                         height: 36,
+                         background: .black,
+                         foreground: .white)
+                     )
+                 }
+                 .fullScreenCover(isPresented: $isMapPresented) {
+                     MapView(points: cargo.points)
+                 }
+                 
+                 .padding(.bottom, 4)
+            }.listRowSeparator(.hidden)
         }
-        .scrollContentBackground(.hidden)
         .navigationTitle("Details")
         .toolbarTitleDisplayMode(.inline)
+        .scrollContentBackground(.hidden)
         .background(Color.background)
     }
 }
 
 
 #Preview {
-    CargoDetailsView(cargo: Cargo(id: 137287897,
-                                  description: "iaybdcuwybec",
-                                  status: "Created",
-                                  creationDate: Date.now,
-                                  carId: "24987",
-                                  points: [
-                                    Point(id: 0,
-                                          label: "kubsirv wjw r krju",
-                                          latitude: 238642,
-                                          longtitude: 2453534,
-                                          order: 1456343),
-                                    Point(id: 1,
-                                          label: "kubsirv wjw r krju",
-                                          latitude: 238642,
-                                          longtitude: 2453534,
-                                          order: 1456343)
-                                  ])
+    CargoDetailsView(
+        cargo: Cargo(id: 137287897,
+                     description: "iaybdcuwybec",
+                     status: "Created",
+                     creationDate: Date.now,
+                     carId: "24987",
+                     points: [
+                        Point(id: 0, label: "start", latitude: 52.219420, longtitude: 20.983114, order: 0),
+                        Point(id: 1, label: "mokotow", latitude: 52.240238, longtitude: 21.018649, order: 0),
+                        Point(id: 2, label: "wola", latitude: 52.260238, longtitude: 21.038649, order: 0),
+                        Point(id: 3, label: "bemovo", latitude: 52.220238, longtitude: 20.95649, order: 0)
+                     ])
     )
 }
-
 
 
 struct CargoDetailsCell: View {
@@ -135,7 +140,6 @@ struct CargoRouteCell: View {
             .padding(.vertical)
             
             HStack {
-                //Image(systemName: "mappin")
                 Text(coordinates)
                     .font(.system(size: 16))
                 Button(action: {
@@ -144,7 +148,7 @@ struct CargoRouteCell: View {
                     Image(systemName: "rectangle.portrait.on.rectangle.portrait")
                 }
                 .buttonStyle(PlainButtonStyle())
-            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         }
     }
 }
