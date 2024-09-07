@@ -28,7 +28,7 @@ struct CargoDetailsView: View {
                     CargoDocumentsView()
                 } label: {
                     Text("Documents")
-                        //.foregroundStyle(.secondary)
+                        .foregroundStyle(.secondary)
                 }
             }
             
