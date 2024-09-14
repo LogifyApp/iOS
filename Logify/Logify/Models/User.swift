@@ -8,10 +8,10 @@
 import Foundation
 
 struct User {
-    var id: Int!
-    var name: String!
-    var surname: String!
-    var phoneNumber: Int!
-    var password: String!
-    var role: String!
+    var id: Int
+    var name: String
+    var surname: String
+    var phoneNumber: Int
+    var password: String
+    var role: String
 }

@@ -9,12 +9,9 @@ import SwiftUI
 
 struct DriverChatView: View {
     var body: some View {
-        ZStack{
-            Color.background
-                .ignoresSafeArea()
-            Text("Hello, World!")
-                .foregroundStyle(.green)
-        }
+        Text("Hello, World!")
+            .foregroundStyle(.green)
+            .background(Color.background)
     }
 }
 
