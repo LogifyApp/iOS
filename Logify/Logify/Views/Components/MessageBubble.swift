@@ -14,24 +14,25 @@ struct MessageBubble: View {
     
     var body: some View {
         VStack(alignment: isSender ? .trailing : .leading, spacing: 0) {
-            Text("Hello, World! eormoeir wkjci cius dcisu dci sidhc ishd cishf fivsj sijf vish fh sifv")
-                .foregroundStyle(Color.white)
+            Text(message.content)
                 .padding()
+                .foregroundStyle(Color.black)
                 .background(
                     RoundedRectangle(cornerRadius: 25.0)
-                        .foregroundStyle(isSender ? .systemBlue : .black))
-                .frame(maxWidth: 300)
+                        .foregroundStyle(isSender ? .c : .white))
+                .frame(maxWidth: 300,
+                       alignment: isSender ? .trailing : .leading)
             Text("\(message.date.formatted(.dateTime.hour().minute()))")
-                .padding(isSender ? .trailing : .leading)
-                //.foregroundStyle(Color.white)
+                .padding(isSender ? .trailing : .leading, 6)
+                .font(.system(size: 14))
         }
         .frame(maxWidth: .infinity,
                alignment: isSender ? .trailing : .leading)
-        .padding(.horizontal)
+        .padding(.horizontal, 10)
     }
 }
 
 #Preview {
-    MessageBubble(message: Message(id: 1, content: "HI", date: .now, userId: 1, chatId: 1), isSender: true)
+    MessageBubble(message: Message(id: 1, content: "Test", date: .now, userId: 1, chatId: 1), isSender: true)
         .background(Color.background)
 }

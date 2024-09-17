@@ -14,14 +14,15 @@ struct ContentView: View {
         TabView(selection: $selectedItem) {
             DriverCargoView()
                 .tag(0)
-            DriverChatView()
-                .tag(1)
+            //DriverChatView()
+                //.tag(1)
             DriverProfileView()
                 .tag(2)
         }
         .overlay(alignment: .bottom) {
             CustomTabView(selectedItem: $selectedItem)
-        }.ignoresSafeArea()
+        }
+        .ignoresSafeArea()
     }
 }
 

@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct CustomTabView: View {
-    @Binding var selectedItem: Int
+    
     @State private var items = ["shippingbox.fill", "message", "person"]
+    @State private var isPresented = false
+    @Binding var selectedItem: Int
     
     var body: some View {
         ZStack {
@@ -21,18 +23,22 @@ struct CustomTabView: View {
                 .frame(height: 60)
                 .foregroundStyle(Color.systemBlue)
             HStack {
-                ForEach(0..<3) { index in
-                    Button(action: {
-                        selectedItem = index
-                        items = ["shippingbox", "message", "person"]
-                        items[index] = "\(items[index]).fill"
-                    }){
-                        Image(systemName: items[index])
-                            .scaleEffect(1.6)
-                            .foregroundStyle(Color.white)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: 50, alignment: .center)
-                }
+                TabViewButton(action: {
+                    selectedItem = 0
+                    items = ["shippingbox.fill", "message", "person"]
+                }, imageSystemName: items[0])
+                
+                TabViewButton(action: {
+                    isPresented.toggle()
+                }, imageSystemName: items[1])
+                .fullScreenCover(isPresented: $isPresented, content: {
+                    DriverChatView()
+                })
+                
+                TabViewButton(action: {
+                    selectedItem = 2
+                    items = ["shippingbox", "message", "person.fill"]
+                }, imageSystemName: items[2])
             }
             .padding(.horizontal)
         }
@@ -43,3 +49,4 @@ struct CustomTabView: View {
 #Preview {
     CustomTabView(selectedItem: .constant(1))
 }
+

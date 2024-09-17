@@ -9,12 +9,8 @@ import SwiftUI
 
 struct DriverProfileView: View {
     var body: some View {
-        ZStack{
-            Color.background
-                .ignoresSafeArea()
-            Text("Hello, World!")
-                .foregroundStyle(.red)
-        }
+        Text("Hello, World!")
+            .foregroundStyle(.red)
     }
 }
 
