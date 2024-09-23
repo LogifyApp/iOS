@@ -32,7 +32,13 @@ struct CustomTabView: View {
                     isPresented.toggle()
                 }, imageSystemName: items[1])
                 .fullScreenCover(isPresented: $isPresented, content: {
-                    DriverChatView()
+                    DriverChatView(
+                        sender: .constant(User(id: 1, name: "Test1", surname: "Testtest1", phoneNumber: 234, password: "", role: "driver")),
+                        recipient: .constant(User(id: 2, name: "Test2", surname: "Testtest2", phoneNumber: 234, password: "", role: "employer")),
+                        messages: .constant([
+                            Message(id: 1, content: "test test test test", date: .now, userId: 1, chatId: 1),
+                            Message(id: 2, content: "test test test test", date: .now, userId: 2, chatId: 1)])
+                        )
                 })
                 
                 TabViewButton(action: {

@@ -11,32 +11,38 @@ struct DriverChatView: View {
     
     @Environment(\.dismiss) var dismiss
     @FocusState private var isFieldFocused: Bool
+    @Binding var sender: User
+    @Binding var recipient: User
+    @Binding var messages: [Message]
     
     var body: some View {
         NavigationView {
             VStack {
                 ScrollView {
                     VStack {
-                        MessageBubble(message: Message(id: 1, content: "test test test test", date: .now, userId: 1, chatId: 1), isSender: true)
-                        MessageBubble(message: Message(id: 1, content: "Test test test test test test test test test test test test test", date: .now, userId: 1, chatId: 1), isSender: false)
-                        MessageBubble(message: Message(id: 1, content: "Test", date: .now, userId: 1, chatId: 1), isSender: false)
-                        MessageBubble(message: Message(id: 1, content: "test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test", date: .now, userId: 1, chatId: 1), isSender: true)
+                        ForEach(messages, id: \.id) { message in
+                            MessageBubble(message: message,
+                                          isSender: message.userId == sender.id)
+                        }
+                        
                     }
-                    .frame(maxHeight: .infinity)
+                    .background(Color.red)
                 }
                 .defaultScrollAnchor(.bottom)
+                .background(Color.background)
                 .onTapGesture {
                     isFieldFocused = false
                 }
-                .background(Color.background)
                 MessageField(isFocused: $isFieldFocused)
             }
-            .navigationTitle("Test Testtest")
+            .navigationTitle("\(recipient.name) \(recipient.surname)")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {}) {
-                        Image(systemName: "phone.fill")
+                    Button(action: {
+                        UIApplication.shared.open(URL(string: "\(recipient.phoneNumber)")!)
+                    }) {
+                        Image(systemName: "phone")
                     }
                 }
                 ToolbarItem(placement: .topBarLeading) {
@@ -51,6 +57,15 @@ struct DriverChatView: View {
 
 #Preview {
     NavigationView {
-        DriverChatView()
+        DriverChatView(
+            sender: .constant(User(id: 1, name: "Test1", surname: "Testtest1", phoneNumber: 234, password: "", role: "driver")),
+            recipient: .constant(User(id: 2, name: "Test2", surname: "Testtest2", phoneNumber: 234, password: "", role: "employer")),
+            messages: .constant([
+                Message(id: 1, content: "test test test test", date: .now, userId: 1, chatId: 1),
+                Message(id: 2, content: "test test test test", date: .now, userId: 2, chatId: 1),
+                Message(id: 3, content: "test test test test", date: .now, userId: 1, chatId: 1),
+                Message(id: 4, content: "test test test test", date: .now, userId: 2, chatId: 1)
+            ])
+        )
     }
 }

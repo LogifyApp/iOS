@@ -14,8 +14,6 @@ struct ContentView: View {
         TabView(selection: $selectedItem) {
             DriverCargoView()
                 .tag(0)
-            //DriverChatView()
-                //.tag(1)
             DriverProfileView()
                 .tag(2)
         }
