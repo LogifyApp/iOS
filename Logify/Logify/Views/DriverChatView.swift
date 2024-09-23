@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DriverChatView: View {
     
+    @State private var text = ""
     @Environment(\.dismiss) var dismiss
     @FocusState private var isFieldFocused: Bool
     @Binding var sender: User
@@ -18,25 +19,34 @@ struct DriverChatView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ScrollView {
-                    VStack {
-                        ForEach(messages, id: \.id) { message in
-                            MessageBubble(message: message,
-                                          isSender: message.userId == sender.id)
+                if messages.isEmpty {
+                    Text("Chat history is empty")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                        .background(Color.background)
+                        .font(.system(size: 16))
+                } else {
+                    ScrollView {
+                        VStack {
+                            ForEach(messages, id: \.id) { message in
+                                MessageBubble(message: message,
+                                              isSender: message.userId == sender.id)
+                            }
                         }
-                        
                     }
-                    .background(Color.red)
+                    .background(Color.background)
+                    .defaultScrollAnchor(.bottom)
                 }
-                .defaultScrollAnchor(.bottom)
-                .background(Color.background)
-                .onTapGesture {
-                    isFieldFocused = false
+                MessageField(isFocused: $isFieldFocused,
+                             text: $text) {
+                    saveMessage()
+                    text = ""
                 }
-                MessageField(isFocused: $isFieldFocused)
             }
             .navigationTitle("\(recipient.name) \(recipient.surname)")
             .navigationBarTitleDisplayMode(.inline)
+            .onTapGesture {
+                isFieldFocused = false
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
@@ -52,6 +62,10 @@ struct DriverChatView: View {
                 }
             }
         }
+    }
+    
+    func saveMessage() {
+        messages.append(Message(id: text.count, content: text, date: .now, userId: sender.id, chatId: 1))
     }
 }
 

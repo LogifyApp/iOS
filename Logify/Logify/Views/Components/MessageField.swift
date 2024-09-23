@@ -10,10 +10,12 @@ import SwiftUI
 struct MessageField: View {
     
     @FocusState.Binding var isFocused: Bool
+    @Binding var text: String
+    var action: () -> ()
     
     var body: some View {
         HStack {
-            TextField("Message", text: .constant(""))
+            TextField("Message", text: $text)
                 .padding(8)
                 .padding(.leading, 6)
                 .keyboardType(.default)
@@ -21,7 +23,7 @@ struct MessageField: View {
                     RoundedRectangle(cornerRadius: 25.0)
                         .stroke(.gray, lineWidth: 1.0))
                 .focused($isFocused)
-            Button(action: {} ) {
+            Button(action: action) {
                 Image(systemName: "arrow.up.circle")
                     .resizable()
                     .frame(width: 30, height: 30)

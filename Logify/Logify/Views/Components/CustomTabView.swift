@@ -12,6 +12,7 @@ struct CustomTabView: View {
     @State private var items = ["shippingbox.fill", "message", "person"]
     @State private var isPresented = false
     @Binding var selectedItem: Int
+    @State private var messages: [Message] = []
     
     var body: some View {
         ZStack {
@@ -35,11 +36,8 @@ struct CustomTabView: View {
                     DriverChatView(
                         sender: .constant(User(id: 1, name: "Test1", surname: "Testtest1", phoneNumber: 234, password: "", role: "driver")),
                         recipient: .constant(User(id: 2, name: "Test2", surname: "Testtest2", phoneNumber: 234, password: "", role: "employer")),
-                        messages: .constant([
-                            Message(id: 1, content: "test test test test", date: .now, userId: 1, chatId: 1),
-                            Message(id: 2, content: "test test test test", date: .now, userId: 2, chatId: 1)])
-                        )
-                })
+                        messages: $messages
+                )})
                 
                 TabViewButton(action: {
                     selectedItem = 2
