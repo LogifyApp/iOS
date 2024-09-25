@@ -9,36 +9,48 @@ import SwiftUI
 
 struct DriverEmployerView: View {
     
+    @EnvironmentObject var driverManager: DriverManager
+    var requests: [Employer]
+    
     var body: some View {
-        ZStack{
-            Color.background
-                .ignoresSafeArea()
-            Form {
-                Section {
-                    /*Text("There is no active employer")
-                        .padding(.vertical)*/
-                    ActiveEmployerRow()
+        List {
+            Section {
+                if let employer = driverManager.getActiveEmployer() {
+                    ActiveEmployerRow(employer: employer, removeEmployer: {
+                        driverManager.removeEmployer()
+                    })
                     .padding(6)
-                } header: {
-                    SectionHeader(text: "Employer")
+                } else {
+                    Text("There is no active employer")
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical)
                 }
-
-                Section {
-                    /*Text("There is no active requests")
-                        .padding(.vertical)*/
-                    ForEach(0..<10){ index in
-                        RequestEmployerRow()
-                    }
-                } header: {
-                    SectionHeader(text: "Requests")
-                }
+            } header: {
+                SectionHeader(text: "Employer")
             }
-            .scrollContentBackground(.hidden)
+
+            Section {
+                if requests.isEmpty {
+                    Text("There is no active requests")
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical)
+                } else {
+                    ForEach(requests, id: \.id){ request in
+                        RequestEmployerRow(employer: request)
+                    }
+                }
+            } header: {
+                SectionHeader(text: "Requests")
+            }
         }
+        .background(Color.background)
+        .scrollContentBackground(.hidden)
         .navigationBarTitleDisplayMode(.inline)
+
     }
 }
 
 #Preview {
-    DriverEmployerView()
+    DriverEmployerView(requests: [])
+        .environmentObject(DriverManager())
 }

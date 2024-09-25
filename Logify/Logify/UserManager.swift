@@ -13,8 +13,4 @@ class UserManager: ObservableObject {
     init(user: User) {
         self.user = user
     }
-
-    init() {
-        self.user = User(id: 0, name: "", surname: "", phoneNumber: 0, password: "", role: "")
-    }
 }

@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ActiveEmployerRow: View {
     
+    var employer: Employer
+    var removeEmployer: () -> ()
+    
     var body: some View {
         VStack {
             HStack {
@@ -18,16 +21,18 @@ struct ActiveEmployerRow: View {
                     .padding(.horizontal, 8)
                 
                 VStack(alignment: .leading) {
-                    Text("Name")
+                    Text(employer.name)
                         .font(Font.system(size: 18))
                         .bold()
-                    Text("Surname")
+                    Text(employer.surname)
                         .font(Font.system(size: 18))
                         .bold()
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    removeEmployer()
+                }, label: {
                     Image(systemName: "trash.circle")
                         .resizable()
                         .frame(width: 26, height: 26)
@@ -44,6 +49,6 @@ struct ActiveEmployerRow: View {
 }
 
 #Preview {
-    ActiveEmployerRow()
+    ActiveEmployerRow(employer: Employer(id: 0, name: "name", surname: "surname", phoneNumber: 381475456, password: "owubr", role: "", drivers: []), removeEmployer: {})
         .frame(height: 100)
 }

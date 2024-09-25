@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct DriverContentView: View {
-    @StateObject private var driverManager = DriverManager()
+struct ContentView: View {
+    
+    @StateObject var driverManager = DriverManager()
     @State private var selectedItem = 0
     
     var body: some View {
@@ -19,6 +20,7 @@ struct DriverContentView: View {
                 .tag(1)
             DriverProfileView()
                 .tag(2)
+                .environmentObject(driverManager)
         }
         .overlay(alignment: .bottom) {
             CustomTabView(selectedItem: $selectedItem)
@@ -27,5 +29,5 @@ struct DriverContentView: View {
 }
 
 #Preview {
-    DriverContentView()
+    ContentView()
 }

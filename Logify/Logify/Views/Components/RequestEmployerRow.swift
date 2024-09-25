@@ -9,7 +9,9 @@ import SwiftUI
 
 
 struct RequestEmployerRow: View {
+    
     @State private var showButtons = false
+    var employer: Employer
     
     var body: some View {
         VStack {
@@ -41,7 +43,7 @@ struct RequestEmployerRow: View {
                         Image("user")
                             .resizable()
                             .frame(width: 28, height: 28, alignment: .center)
-                        Text("Name Surname")
+                        Text("\(employer.name) \(employer.surname)")
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     .frame(height: 37)
@@ -53,5 +55,5 @@ struct RequestEmployerRow: View {
 }
 
 #Preview {
-    RequestEmployerRow()
+    RequestEmployerRow(employer: Employer(id: 0, name: "Name", surname: "Surname", phoneNumber: 381475456, password: "owubr", role: "", drivers: []))
 }
