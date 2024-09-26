@@ -10,7 +10,6 @@
 		2B0C50102CA43CDA003FEFE3 /* Employer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C500F2CA43CDA003FEFE3 /* Employer.swift */; };
 		2B0C50122CA4BAA0003FEFE3 /* DriverProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C50112CA4BAA0003FEFE3 /* DriverProfileRow.swift */; };
 		2B0D14632C64384D00442BE3 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D14622C64384D00442BE3 /* ButtonLabel.swift */; };
-		2B0D14652C643E8300442BE3 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D14642C643E8300442BE3 /* SectionHeader.swift */; };
 		2B0D14672C64416300442BE3 /* ActiveEmployerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D14662C64416300442BE3 /* ActiveEmployerRow.swift */; };
 		2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */; };
 		2BA0FBA72C4A8DDF00FE6368 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA62C4A8DDF00FE6368 /* ContentView.swift */; };
@@ -32,7 +31,6 @@
 		2B0C500F2CA43CDA003FEFE3 /* Employer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employer.swift; sourceTree = "<group>"; };
 		2B0C50112CA4BAA0003FEFE3 /* DriverProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverProfileRow.swift; sourceTree = "<group>"; };
 		2B0D14622C64384D00442BE3 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
-		2B0D14642C643E8300442BE3 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		2B0D14662C64416300442BE3 /* ActiveEmployerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveEmployerRow.swift; sourceTree = "<group>"; };
 		2BA0FBA12C4A8DDF00FE6368 /* Logify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogifyApp.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				2B0D14662C64416300442BE3 /* ActiveEmployerRow.swift */,
 				2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */,
 				2B0D14622C64384D00442BE3 /* ButtonLabel.swift */,
-				2B0D14642C643E8300442BE3 /* SectionHeader.swift */,
 				2BAFED132C52D69D0041AF88 /* CustomTabView.swift */,
 				2B0C50112CA4BAA0003FEFE3 /* DriverProfileRow.swift */,
 			);
@@ -207,7 +204,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BA0FBA72C4A8DDF00FE6368 /* ContentView.swift in Sources */,
-				2B0D14652C643E8300442BE3 /* SectionHeader.swift in Sources */,
 				2B0C50122CA4BAA0003FEFE3 /* DriverProfileRow.swift in Sources */,
 				2B0D14632C64384D00442BE3 /* ButtonLabel.swift in Sources */,
 				2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */,
