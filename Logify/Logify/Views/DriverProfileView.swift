@@ -20,7 +20,7 @@ struct DriverProfileView: View {
                 
                 Section {
                     NavigationLink("Employer") {
-                        DriverEmployerView(requests: [])
+                        DriverEmployerView()
                     }
                     Picker("Tracking", selection: .constant(1)) {
                         Text("Default")
@@ -38,7 +38,6 @@ struct DriverProfileView: View {
                         Text("German")
                     }
                     .pickerStyle(.navigationLink)
-                    
                     Toggle("Notifications", isOn: .constant(true))
                     Toggle("Dark mode", isOn: .constant(true))
                 } header: {
@@ -50,7 +49,6 @@ struct DriverProfileView: View {
                         
                     }
                 }
-                
             }
             .background(Color.background)
             .scrollContentBackground(.hidden)
@@ -64,8 +62,4 @@ struct DriverProfileView: View {
 #Preview {
     DriverProfileView()
         .environmentObject(DriverManager())
-            
-            
-            /*Driver(id: 0, name: "Name", surname: "Surname", phoneNumber: 12, password: "", role: "",
-                                  empl: Employer(id: 1, name: "Name", surname: "Surname", phoneNumber: 12, password: "", role: "")))*/
 }

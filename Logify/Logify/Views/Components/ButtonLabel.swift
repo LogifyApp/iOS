@@ -16,8 +16,8 @@ struct ButtonLabel: View {
     
     var body: some View {
         Text(text)
-            .frame(width: width, height: height)
-            .bold()
+            .frame(maxWidth: width, maxHeight: height)
+            //.bold()
             .background(background)
             .foregroundColor(foreground)
             .clipShape(Capsule())

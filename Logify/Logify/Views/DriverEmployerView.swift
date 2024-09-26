@@ -10,16 +10,14 @@ import SwiftUI
 struct DriverEmployerView: View {
     
     @EnvironmentObject var driverManager: DriverManager
-    var requests: [Employer]
+    @State private var requests: [Employer] = []
     
     var body: some View {
         List {
             Section {
                 if let employer = driverManager.getActiveEmployer() {
-                    ActiveEmployerRow(employer: employer, removeEmployer: {
-                        driverManager.removeEmployer()
-                    })
-                    .padding(6)
+                    ActiveEmployerRow(employer: employer)
+                        .padding(6)
                 } else {
                     Text("There is no active employer")
                         .frame(maxWidth: .infinity)
@@ -35,8 +33,14 @@ struct DriverEmployerView: View {
                         .frame(maxWidth: .infinity)
                         .padding(.vertical)
                 } else {
-                    ForEach(requests, id: \.id){ request in
-                        RequestEmployerRow(employer: request)
+                    ForEach(requests, id: \.id){ employer in
+                        RequestEmployerRow(employer: employer) {
+                            driverManager.acceptRequest(with: employer.id)
+                            requests = driverManager.getEmployersRequests()
+                        } declineRequest: {
+                            driverManager.declineRequest(with: employer.id)
+                            requests = driverManager.getEmployersRequests()
+                        }
                     }
                 }
             } header: {
@@ -46,11 +50,15 @@ struct DriverEmployerView: View {
         .background(Color.background)
         .scrollContentBackground(.hidden)
         .navigationBarTitleDisplayMode(.inline)
-
+        .onAppear {
+            requests = driverManager.getEmployersRequests()
+        }
     }
 }
 
 #Preview {
-    DriverEmployerView(requests: [])
-        .environmentObject(DriverManager())
+    NavigationView {
+        DriverEmployerView()
+            .environmentObject(DriverManager())
+    }
 }
