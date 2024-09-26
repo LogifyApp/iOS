@@ -88,9 +88,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B0C50182CA61E0A003FEFE3 /* Cargo */ = {
+			isa = PBXGroup;
+			children = (
+				2BAFED082C526E5E0041AF88 /* DriverCargoView.swift */,
+				2B08DC7F2C77D263003F49D0 /* CargoDetailsView.swift */,
+				2B6AABC42C8B4423006B968A /* CargoDocumentsView.swift */,
+				2B6AABBF2C875A84006B968A /* MapView.swift */,
+				2B74F39F2C73DD5100C8B0CD /* CargoCell.swift */,
+			);
+			path = Cargo;
+			sourceTree = "<group>";
+		};
+		2B0C50192CA61E13003FEFE3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2BAFED062C526E360041AF88 /* DriverProfileView.swift */,
+				2BAFED1F2C556D710041AF88 /* DriverEmployerView.swift */,
+				2B0D14662C64416300442BE3 /* ActiveEmployerRow.swift */,
+				2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */,
+				2B0C50112CA4BAA0003FEFE3 /* DriverProfileRow.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		2B0C501A2CA61E1C003FEFE3 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				2BAFED0A2C526E760041AF88 /* DriverChatView.swift */,
+				2B03B9772C95FE1200DF48C1 /* MessageBubble.swift */,
+				2B03B97D2C971D1A00DF48C1 /* MessageField.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		2B6AABC32C8A1E61006B968A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				2BAFED1B2C55619D0041AF88 /* DriverManager.swift */,
+				2B0C50132CA5E71A003FEFE3 /* ChatManager.swift */,
 				2B6AABC12C88BD30006B968A /* MapManager.swift */,
 			);
 			path = Managers;
@@ -120,8 +156,6 @@
 				2BAFED032C526A810041AF88 /* Models */,
 				2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */,
 				2BA0FBA62C4A8DDF00FE6368 /* ContentView.swift */,
-				2BAFED1B2C55619D0041AF88 /* DriverManager.swift */,
-				2B0C50132CA5E71A003FEFE3 /* ChatManager.swift */,
 				2BA0FBA82C4A8DE100FE6368 /* Assets.xcassets */,
 				2BA0FBAA2C4A8DE100FE6368 /* Preview Content */,
 			);
@@ -153,14 +187,10 @@
 		2BAFED0C2C526ECE0041AF88 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2B0C50182CA61E0A003FEFE3 /* Cargo */,
+				2B0C50192CA61E13003FEFE3 /* Profile */,
+				2B0C501A2CA61E1C003FEFE3 /* Chat */,
 				2BAFED0D2C526EDE0041AF88 /* Components */,
-				2BAFED062C526E360041AF88 /* DriverProfileView.swift */,
-				2BAFED1F2C556D710041AF88 /* DriverEmployerView.swift */,
-				2BAFED0A2C526E760041AF88 /* DriverChatView.swift */,
-				2BAFED082C526E5E0041AF88 /* DriverCargoView.swift */,
-				2B08DC7F2C77D263003F49D0 /* CargoDetailsView.swift */,
-				2B6AABBF2C875A84006B968A /* MapView.swift */,
-				2B6AABC42C8B4423006B968A /* CargoDocumentsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,17 +198,11 @@
 		2BAFED0D2C526EDE0041AF88 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2B0D14662C64416300442BE3 /* ActiveEmployerRow.swift */,
-				2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */,
-				2B0D14622C64384D00442BE3 /* ButtonLabel.swift */,
 				2BAFED132C52D69D0041AF88 /* CustomTabView.swift */,
-				2B03B9772C95FE1200DF48C1 /* MessageBubble.swift */,
-				2B03B97D2C971D1A00DF48C1 /* MessageField.swift */,
+				2B0D14622C64384D00442BE3 /* ButtonLabel.swift */,
 				2B03B9812C99ABDF00DF48C1 /* TabViewButton.swift */,
-				2B74F39F2C73DD5100C8B0CD /* CargoCell.swift */,
 				2B6AABB32C7FC12D006B968A /* SectionHeader.swift */,
 				2B6AABBD2C864A18006B968A /* ButtonModifier.swift */,
-				2B0C50112CA4BAA0003FEFE3 /* DriverProfileRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
