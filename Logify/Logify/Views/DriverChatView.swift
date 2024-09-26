@@ -9,17 +9,17 @@ import SwiftUI
 
 struct DriverChatView: View {
     
-    @State private var text = ""
     @Environment(\.dismiss) var dismiss
+    @StateObject private var chatManager: ChatManager = ChatManager()
     @FocusState private var isFieldFocused: Bool
-    @Binding var sender: User
-    @Binding var recipient: User
-    @Binding var messages: [Message]
+    @State private var text = ""
+    var recipient: User
+    var sender: User
     
     var body: some View {
         NavigationView {
             VStack {
-                if messages.isEmpty {
+                if chatManager.messages.isEmpty {
                     Text("Chat history is empty")
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                         .background(Color.background)
@@ -27,7 +27,7 @@ struct DriverChatView: View {
                 } else {
                     ScrollView {
                         VStack {
-                            ForEach(messages, id: \.id) { message in
+                            ForEach(chatManager.messages, id: \.id) { message in
                                 MessageBubble(message: message,
                                               isSender: message.userId == sender.id)
                             }
@@ -36,9 +36,8 @@ struct DriverChatView: View {
                     .background(Color.background)
                     .defaultScrollAnchor(.bottom)
                 }
-                MessageField(isFocused: $isFieldFocused,
-                             text: $text) {
-                    saveMessage()
+                MessageField(isFocused: $isFieldFocused, text: $text) {
+                    chatManager.sendMessage(with: text)
                     text = ""
                 }
             }
@@ -50,7 +49,7 @@ struct DriverChatView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        UIApplication.shared.open(URL(string: "\(recipient.phoneNumber)")!)
+                        UIApplication.shared.open(URL(string: "tel:\(recipient.phoneNumber)")!)
                     }) {
                         Image(systemName: "phone")
                     }
@@ -62,24 +61,17 @@ struct DriverChatView: View {
                 }
             }
         }
-    }
-    
-    func saveMessage() {
-        messages.append(Message(id: text.count, content: text, date: .now, userId: sender.id, chatId: 1))
+        .onAppear {
+            chatManager.fetchChat(employerId: recipient.id, driverId: sender.id)
+        }
     }
 }
 
 #Preview {
     NavigationView {
         DriverChatView(
-            sender: .constant(User(id: 1, name: "Test1", surname: "Testtest1", phoneNumber: 234, password: "", role: "driver")),
-            recipient: .constant(User(id: 2, name: "Test2", surname: "Testtest2", phoneNumber: 234, password: "", role: "employer")),
-            messages: .constant([
-                Message(id: 1, content: "test test test test", date: .now, userId: 1, chatId: 1),
-                Message(id: 2, content: "test test test test", date: .now, userId: 2, chatId: 1),
-                Message(id: 3, content: "test test test test", date: .now, userId: 1, chatId: 1),
-                Message(id: 4, content: "test test test test", date: .now, userId: 2, chatId: 1)
-            ])
+            recipient: Employer(id: 2, name: "Name2", surname: "Surname2", phoneNumber: 123, password: "", role: ""),
+            sender: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 123, password: "", role: "")
         )
     }
 }

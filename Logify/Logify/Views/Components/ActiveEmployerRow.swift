@@ -32,6 +32,6 @@ struct ActiveEmployerRow: View {
 }
 
 #Preview {
-    ActiveEmployerRow(employer: Employer(id: 0, name: "Name", surname: "Surname", phoneNumber: 381475456, password: "owubr", role: "", drivers: []))
+    ActiveEmployerRow(employer: Employer(id: 0, name: "Name", surname: "Surname", phoneNumber: 381475456, password: "owubr", role: ""))
         .frame(height: 300)
 }

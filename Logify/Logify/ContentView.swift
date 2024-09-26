@@ -46,14 +46,13 @@ struct ContentView: View {
                       ])
             ])
                 .tag(0)
-            DriverChatView()
-                .tag(1)
             DriverProfileView()
                 .tag(2)
                 .environmentObject(driverManager)
         }
         .overlay(alignment: .bottom) {
             CustomTabView(selectedItem: $selectedItem)
+                .environmentObject(driverManager)
         }
         .ignoresSafeArea()
     }

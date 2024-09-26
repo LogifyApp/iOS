@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CustomTabView: View {
     
+    @EnvironmentObject var driverManager: DriverManager
     @State private var items = ["shippingbox.fill", "message", "person"]
     @State private var isPresented = false
     @Binding var selectedItem: Int
@@ -34,10 +35,16 @@ struct CustomTabView: View {
                 }, imageSystemName: items[1])
                 .fullScreenCover(isPresented: $isPresented, content: {
                     DriverChatView(
-                        sender: .constant(User(id: 1, name: "Test1", surname: "Testtest1", phoneNumber: 234, password: "", role: "driver")),
-                        recipient: .constant(User(id: 2, name: "Test2", surname: "Testtest2", phoneNumber: 234, password: "", role: "employer")),
-                        messages: $messages
-                )})
+                        recipient: driverManager.getActiveEmployer()!,
+                        sender: driverManager.driver
+                    )
+                    .environmentObject(
+                        ChatManager(
+                            employerId: driverManager.getActiveEmployer()!.id,
+                            driverId: driverManager.driver.id
+                        )
+                    )
+                })
                 
                 TabViewButton(action: {
                     selectedItem = 2
@@ -52,5 +59,6 @@ struct CustomTabView: View {
 
 #Preview {
     CustomTabView(selectedItem: .constant(1))
+        .environmentObject(DriverManager())
 }
 

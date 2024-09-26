@@ -20,16 +20,11 @@ class DriverManager: ObservableObject {
     }
     
     func getActiveEmployer() -> Employer? {
-        print("returned active employer")
-        return Employer(id: 2, name: "Name2", surname: "Name2", phoneNumber: 123, password: "", role: "", drivers: [])
+        return Employer(id: 2, name: "Name2", surname: "Surname2", phoneNumber: 1234535345, password: "", role: "")
     }
     
     func getEmployersRequests() -> [Employer] {
-        return [Employer(id: 2, name: "Name2", surname: "Name2", phoneNumber: 123, password: "", role: "", drivers: []), Employer(id: 3, name: "Name2", surname: "Name2", phoneNumber: 123, password: "", role: "", drivers: []), Employer(id: 4, name: "Name2", surname: "Name2", phoneNumber: 123, password: "", role: "", drivers: [])]
-    }
-    
-    func removeEmployer() {
-        print("employer removed")
+        return [Employer(id: 2, name: "Name2", surname: "Name2", phoneNumber: 123, password: "", role: ""), Employer(id: 3, name: "Name2", surname: "Name2", phoneNumber: 123, password: "", role: ""), Employer(id: 4, name: "Name2", surname: "Name2", phoneNumber: 123, password: "", role: "")]
     }
     
     func acceptRequest(with employerId: Int) {
@@ -38,5 +33,13 @@ class DriverManager: ObservableObject {
     
     func declineRequest(with employerId: Int) {
         
+    }
+    
+    func getActiveChatId() -> Int {
+        return 0
+    }
+    
+    func getChatMessages() -> [Message] {
+        return []
     }
 }
