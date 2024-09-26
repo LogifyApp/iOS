@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct User {
-    var id: Int
-    var name: String
-    var surname: String
-    var phoneNumber: Int
-    var password: String
-    var role: String
+protocol User {
+    var id: Int { get set }
+    var name: String { get set }
+    var surname: String { get set }
+    var phoneNumber: Int { get set }
+    var password: String { get set }
+    var role: String { get set }
 }
