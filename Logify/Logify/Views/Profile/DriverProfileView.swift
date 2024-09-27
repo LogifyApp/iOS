@@ -15,7 +15,7 @@ struct DriverProfileView: View {
         NavigationView {
             List {
                 Section {
-                    DriverProfileRow(driver: driverManager.driver)
+                    DriverProfileRow()
                 }
                 
                 Section {

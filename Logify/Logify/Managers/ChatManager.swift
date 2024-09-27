@@ -9,12 +9,17 @@ import Foundation
 
 class ChatManager: ObservableObject {
     
+    @Published var driver: Driver
+    @Published var employer: Employer
     @Published var messages: [Message] = []
     var chat: Chat!
-    
-    init() {}
-    
-    init(employerId: Int, driverId: Int) {}
+        
+    init(driver: Driver, employer: Employer) {
+        self.driver = driver
+        self.employer = employer
+        fetchChat(employerId: employer.id, driverId: driver.id)
+        fetchChatMessages()
+    }
     
     func fetchChat(employerId: Int, driverId: Int) {
         
@@ -27,5 +32,4 @@ class ChatManager: ObservableObject {
     func sendMessage(with content: String) {
         
     }
-    
 }

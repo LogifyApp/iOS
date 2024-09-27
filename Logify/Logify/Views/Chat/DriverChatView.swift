@@ -10,11 +10,10 @@ import SwiftUI
 struct DriverChatView: View {
     
     @Environment(\.dismiss) var dismiss
-    @StateObject private var chatManager: ChatManager = ChatManager()
+    @ObservedObject var chatManager: ChatManager
     @FocusState private var isFieldFocused: Bool
     @State private var text = ""
-    var recipient: User
-    var sender: User
+    var senderId: Int
     
     var body: some View {
         NavigationView {
@@ -29,7 +28,7 @@ struct DriverChatView: View {
                         VStack {
                             ForEach(chatManager.messages, id: \.id) { message in
                                 MessageBubble(message: message,
-                                              isSender: message.userId == sender.id)
+                                              isSender: message.userId == senderId)
                             }
                         }
                     }
@@ -41,17 +40,16 @@ struct DriverChatView: View {
                     text = ""
                 }
             }
-            .navigationTitle("\(recipient.name) \(recipient.surname)")
+            .navigationTitle(senderId == chatManager.driver.id ? chatManager.employer.getFullName() : chatManager.driver.getFullName())
             .navigationBarTitleDisplayMode(.inline)
             .onTapGesture {
                 isFieldFocused = false
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        UIApplication.shared.open(URL(string: "tel:\(recipient.phoneNumber)")!)
-                    }) {
-                        Image(systemName: "phone")
+                    Button("", systemImage: "phone") {
+                        UIApplication.shared.open(
+                            URL(string: "tel:\(senderId == chatManager.driver.id ? chatManager.employer.phoneNumber : chatManager.driver.phoneNumber)")!)
                     }
                 }
                 ToolbarItem(placement: .topBarLeading) {
@@ -61,17 +59,16 @@ struct DriverChatView: View {
                 }
             }
         }
-        .onAppear {
-            chatManager.fetchChat(employerId: recipient.id, driverId: sender.id)
-        }
     }
 }
 
 #Preview {
     NavigationView {
         DriverChatView(
-            recipient: Employer(id: 2, name: "Name2", surname: "Surname2", phoneNumber: 123, password: "", role: ""),
-            sender: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 123, password: "", role: "")
+            chatManager: ChatManager(
+                driver: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 123, password: "", role: ""),
+                employer: Employer(id: 2, name: "Name2", surname: "Surname2", phoneNumber: 123, password: "", role: "")
+            ), senderId: 1
         )
     }
 }

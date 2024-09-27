@@ -15,3 +15,9 @@ protocol User {
     var password: String { get set }
     var role: String { get set }
 }
+
+extension User {
+    func getFullName() -> String {
+        return name + " " + surname
+    }
+}

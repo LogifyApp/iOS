@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DriverProfileRow: View {
     
-    var driver: Driver
+    @EnvironmentObject var driverManager: DriverManager
     
     var body: some View {
         HStack {
@@ -19,10 +19,10 @@ struct DriverProfileRow: View {
                 .frame(width: 100, height: 100)
                 .padding(.trailing)
             VStack(alignment: .leading) {
-                Text(driver.name + " " + driver.surname)
+                Text(driverManager.driver.name + " " + driverManager.driver.surname)
                     .font(.title3)
                     .bold()
-                Text("\(driver.phoneNumber)")
+                Text("\(driverManager.driver.phoneNumber)")
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
