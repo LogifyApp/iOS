@@ -35,11 +35,42 @@ class DriverManager: ObservableObject {
         
     }
     
-    func getActiveChatId() -> Int {
-        return 0
-    }
-    
-    func getChatMessages() -> [Message] {
-        return []
-    }
+    func fetchAllCargo() -> [Cargo] {
+        return [
+            Cargo(id: 137287897,
+                  description: "iaybdcuwybec",
+                  status: "Created",
+                  creationDate: Date.now,
+                  carId: "24987",
+                  points: [
+                    Point(id: 0,
+                          label: "kubsirv wjw r krju",
+                          latitude: 238642,
+                          longtitude: 2453534,
+                          order: 1456343),
+                    Point(id: 1,
+                          label: "kubsirv wjw r krju",
+                          latitude: 238642,
+                          longtitude: 2453534,
+                          order: 1456343)
+                  ]),
+            Cargo(id: 256365346,
+                  description: "iaybdcuwybec",
+                  status: "Created",
+                  creationDate: Date.now,
+                  carId: "24987",
+                  points: [
+                    Point(id: 0,
+                          label: "kubsirv wjw r krju",
+                          latitude: 238642,
+                          longtitude: 2453534,
+                          order: 1456343),
+                    Point(id: 1,
+                          label: "kubsirv wjw r krju",
+                          latitude: 238642,
+                          longtitude: 2453534,
+                          order: 1456343)
+                  ])
+        ]
+    }    
 }

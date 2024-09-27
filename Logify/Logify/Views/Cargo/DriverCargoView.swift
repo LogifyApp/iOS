@@ -9,13 +9,13 @@ import SwiftUI
 
 struct DriverCargoView: View {
     
+    @EnvironmentObject private var driverManager: DriverManager
     @State private var searchText = ""
-    var cargo: [Cargo]
     var searchResults: [Cargo] {
         if searchText.isEmpty {
-            return cargo
+            return driverManager.fetchAllCargo()
         } else {
-            return cargo.filter({ String($0.id).contains(searchText) })
+            return driverManager.fetchAllCargo().filter({ String($0.id).contains(searchText) })
         }
     }
     
@@ -24,11 +24,12 @@ struct DriverCargoView: View {
             ScrollView {
                 VStack(spacing: 16) {
                     ForEach(searchResults, id: \.id) { cargo in
-                        NavigationLink(destination: CargoDetailsView(cargo: cargo)) {
+                        NavigationLink(destination: CargoDetailsView(cargoManager: CargoManager(cargo))) {
                             CargoCell(cargoId: cargo.id,
                                       cargoStatus: cargo.status)
                         }
                         .buttonStyle(PlainButtonStyle())
+                            
                     }
                     .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
                 }
@@ -43,40 +44,6 @@ struct DriverCargoView: View {
 }
 
 #Preview {
-    DriverCargoView(cargo: [
-        Cargo(id: 137287897,
-              description: "iaybdcuwybec",
-              status: "Created",
-              creationDate: Date.now,
-              carId: "24987",
-              points: [
-                Point(id: 0,
-                      label: "kubsirv wjw r krju",
-                      latitude: 238642,
-                      longtitude: 2453534,
-                      order: 1456343),
-                Point(id: 1,
-                      label: "kubsirv wjw r krju",
-                      latitude: 238642,
-                      longtitude: 2453534,
-                      order: 1456343)
-              ]),
-        Cargo(id: 256365346,
-              description: "iaybdcuwybec",
-              status: "Created",
-              creationDate: Date.now,
-              carId: "24987",
-              points: [
-                Point(id: 0,
-                      label: "kubsirv wjw r krju",
-                      latitude: 238642,
-                      longtitude: 2453534,
-                      order: 1456343),
-                Point(id: 1,
-                      label: "kubsirv wjw r krju",
-                      latitude: 238642,
-                      longtitude: 2453534,
-                      order: 1456343)
-              ])
-    ])
+    DriverCargoView()
+        .environmentObject(DriverManager())
 }

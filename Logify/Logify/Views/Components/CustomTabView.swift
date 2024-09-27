@@ -11,49 +11,48 @@ struct CustomTabView: View {
     
     @EnvironmentObject var driverManager: DriverManager
     @State private var items = ["shippingbox.fill", "message", "person"]
-    @State private var isPresented = false
+    @State private var isChatViewPresented = false
     @Binding var selectedItem: Int
-    @State private var messages: [Message] = []
     
     var body: some View {
         ZStack {
-            Rectangle()
-                .frame(height: 90)
-                .foregroundStyle(Color.background)
-                .offset(y: 45)
-            Capsule()
-                .frame(height: 60)
-                .foregroundStyle(Color.systemBlue)
+            TabViewPanel()
             HStack {
-                TabViewButton(action: {
+                TabViewButton(imageSystemName: items[0]) {
                     selectedItem = 0
                     items = ["shippingbox.fill", "message", "person"]
-                }, imageSystemName: items[0])
+                }
                 
-                TabViewButton(action: {
-                    isPresented.toggle()
-                }, imageSystemName: items[1])
-                .fullScreenCover(isPresented: $isPresented, content: {
+                TabViewButton(imageSystemName: items[1]) {
+                    isChatViewPresented.toggle()
+                }
+                .fullScreenCover(isPresented: $isChatViewPresented, content: {
                     DriverChatView(
                         recipient: driverManager.getActiveEmployer()!,
                         sender: driverManager.driver
                     )
-                    .environmentObject(
-                        ChatManager(
-                            employerId: driverManager.getActiveEmployer()!.id,
-                            driverId: driverManager.driver.id
-                        )
-                    )
                 })
                 
-                TabViewButton(action: {
+                TabViewButton(imageSystemName: items[2]) {
                     selectedItem = 2
                     items = ["shippingbox", "message", "person.fill"]
-                }, imageSystemName: items[2])
+                }
             }
             .padding(.horizontal)
         }
         .padding(.horizontal)
+    }
+}
+
+struct TabViewPanel: View {
+    var body: some View {
+        Rectangle()
+            .frame(height: 90)
+            .foregroundStyle(Color.background)
+            .offset(y: 45)
+        Capsule()
+            .frame(height: 60)
+            .foregroundStyle(Color.systemBlue)
     }
 }
 

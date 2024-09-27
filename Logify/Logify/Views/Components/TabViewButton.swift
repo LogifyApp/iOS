@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TabViewButton: View {
     
-    var action: () -> ()
     var imageSystemName: String
+    var action: () -> ()
     
     var body: some View {
         Button(action: action){
@@ -23,5 +23,5 @@ struct TabViewButton: View {
 }
 
 #Preview {
-    TabViewButton(action: {}, imageSystemName: "profile")
+    TabViewButton(imageSystemName: "profile", action: {})
 }

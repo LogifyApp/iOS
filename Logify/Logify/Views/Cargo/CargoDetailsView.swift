@@ -9,21 +9,21 @@ import SwiftUI
 
 struct CargoDetailsView: View {
     
+    @ObservedObject var cargoManager: CargoManager
     @State private var isMapPresented = false
-    let cargo: Cargo
     
     var body: some View {
         List {
             // MARK: Details
             Section {
                 CargoDetailsCell(property: "Cargo ID",
-                                 value: String(cargo.id))
+                                 value: String(cargoManager.selectedCargo.id))
                 CargoDetailsCell(property: "Status",
-                                 value: cargo.status)
+                                 value: cargoManager.selectedCargo.status)
                 CargoDetailsCell(property: "Creation date",
-                                 value: "\(cargo.creationDate)")
+                                 value: "\(cargoManager.selectedCargo.creationDate)")
                 CargoDetailsCell(property: "Car ID",
-                                 value: cargo.carId)
+                                 value: cargoManager.selectedCargo.carId)
                 NavigationLink {
                     CargoDocumentsView()
                 } label: {
@@ -34,19 +34,19 @@ struct CargoDetailsView: View {
             
             // MARK: Description
             Section {
-                Text(cargo.description)
+                Text(cargoManager.selectedCargo.description)
             }
             
             // MARK: Route
             Section {
                 VStack(spacing: 0) {
-                    ForEach(cargo.points.dropLast(), id: \.id) { point in
+                    ForEach(cargoManager.selectedCargo.points.dropLast(), id: \.id) { point in
                         CargoRouteCell(name: point.label,
                                        coordinates: "\(point.latitude) \(point.longtitude)",
                                        isLast: false)
                     }
-                    CargoRouteCell(name: cargo.points.last!.label,
-                                   coordinates: "\(cargo.points.last!.latitude) \(cargo.points.last!.longtitude)",
+                    CargoRouteCell(name: cargoManager.selectedCargo.points.last!.label,
+                                   coordinates: "\(cargoManager.selectedCargo.points.last!.latitude) \(cargoManager.selectedCargo.points.last!.longtitude)",
                                    isLast: true)
                 }
                 .padding(.bottom, -16)
@@ -63,11 +63,11 @@ struct CargoDetailsView: View {
                      )
                  }
                  .fullScreenCover(isPresented: $isMapPresented) {
-                     MapView(points: cargo.points)
+                     MapView(points: cargoManager.selectedCargo.points)
                  }
-                 
                  .padding(.bottom, 4)
-            }.listRowSeparator(.hidden)
+            }
+            .listRowSeparator(.hidden)
         }
         .navigationTitle("Details")
         .toolbarTitleDisplayMode(.inline)
@@ -78,19 +78,7 @@ struct CargoDetailsView: View {
 
 
 #Preview {
-    CargoDetailsView(
-        cargo: Cargo(id: 137287897,
-                     description: "iaybdcuwybec",
-                     status: "Created",
-                     creationDate: Date.now,
-                     carId: "24987",
-                     points: [
-                        Point(id: 0, label: "start", latitude: 52.219420, longtitude: 20.983114, order: 0),
-                        Point(id: 1, label: "mokotow", latitude: 52.240238, longtitude: 21.018649, order: 0),
-                        Point(id: 2, label: "wola", latitude: 52.260238, longtitude: 21.038649, order: 0),
-                        Point(id: 3, label: "bemovo", latitude: 52.220238, longtitude: 20.95649, order: 0)
-                     ])
-    )
+    CargoDetailsView(cargoManager: CargoManager())
 }
 
 

@@ -19,7 +19,7 @@ struct MessageBubble: View {
                 .foregroundStyle(Color.black)
                 .background(
                     RoundedRectangle(cornerRadius: 25.0)
-                        .foregroundStyle(isSender ? .c : .white))
+                        .foregroundStyle(isSender ? .message : .white))
                 .frame(maxWidth: 300,
                        alignment: isSender ? .trailing : .leading)
             Text("\(message.date.formatted(.dateTime.hour().minute()))")
