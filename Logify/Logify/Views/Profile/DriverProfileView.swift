@@ -15,7 +15,10 @@ struct DriverProfileView: View {
         NavigationView {
             List {
                 Section {
-                    DriverProfileRow()
+                    UserDataRow(
+                        user: driverManager.driver,
+                        imageWidth: 90
+                    )
                 }
                 
                 Section {
@@ -27,21 +30,15 @@ struct DriverProfileView: View {
                         Text("Wialon")
                     }
                     .pickerStyle(.navigationLink)
-                } header: {
-                    SectionHeader(text: "Delivery")
                 }
                 
                 Section {
                     Picker("Language", selection: .constant(1)) {
                         Text("English")
-                        Text("Polish")
-                        Text("German")
                     }
                     .pickerStyle(.navigationLink)
                     Toggle("Notifications", isOn: .constant(true))
-                    Toggle("Dark mode", isOn: .constant(true))
-                } header: {
-                    SectionHeader(text: "General")
+                    Toggle("Dark mode", isOn: .constant(false))
                 }
                 
                 Section {
@@ -50,11 +47,11 @@ struct DriverProfileView: View {
                     }
                 }
             }
+            .navigationTitle("Profile")
+            .navigationBarTitleDisplayMode(.large)
             .background(Color.background)
             .scrollContentBackground(.hidden)
         }
-        .navigationTitle("Profile")
-        .navigationBarTitleDisplayMode(.large)
         .toolbarBackground(.hidden, for: .tabBar)
     }
 }

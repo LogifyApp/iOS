@@ -19,7 +19,7 @@ struct MapView: View {
     
     var body: some View {
         NavigationView{
-            Map() {
+            Map {
                 Annotation("Warehouse", coordinate: coordinates[0]) {
                     Image(systemName: "shippingbox.fill")
                         .padding(4)

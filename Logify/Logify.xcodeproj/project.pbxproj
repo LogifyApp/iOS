@@ -13,16 +13,14 @@
 		2B03B9822C99ABDF00DF48C1 /* TabViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B03B9812C99ABDF00DF48C1 /* TabViewButton.swift */; };
 		2B08DC802C77D263003F49D0 /* CargoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08DC7F2C77D263003F49D0 /* CargoDetailsView.swift */; };
 		2B0C50102CA43CDA003FEFE3 /* Employer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C500F2CA43CDA003FEFE3 /* Employer.swift */; };
-		2B0C50122CA4BAA0003FEFE3 /* DriverProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C50112CA4BAA0003FEFE3 /* DriverProfileRow.swift */; };
+		2B0C50122CA4BAA0003FEFE3 /* UserDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C50112CA4BAA0003FEFE3 /* UserDataRow.swift */; };
 		2B0C50142CA5E71A003FEFE3 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C50132CA5E71A003FEFE3 /* ChatManager.swift */; };
 		2B0C50162CA6008C003FEFE3 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C50152CA6008C003FEFE3 /* Chat.swift */; };
 		2B0C501D2CA6BC6E003FEFE3 /* CargoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C501C2CA6BC6E003FEFE3 /* CargoManager.swift */; };
-		2B0D14632C64384D00442BE3 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D14622C64384D00442BE3 /* ButtonLabel.swift */; };
-		2B0D14672C64416300442BE3 /* ActiveEmployerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D14662C64416300442BE3 /* ActiveEmployerRow.swift */; };
 		2B6AABB42C7FC12D006B968A /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABB32C7FC12D006B968A /* SectionHeader.swift */; };
 		2B6AABBA2C84D822006B968A /* Cargo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABB92C84D822006B968A /* Cargo.swift */; };
 		2B6AABBC2C84D8A9006B968A /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABBB2C84D8A9006B968A /* Point.swift */; };
-		2B6AABBE2C864A18006B968A /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABBD2C864A18006B968A /* ButtonModifier.swift */; };
+		2B6AABBE2C864A18006B968A /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABBD2C864A18006B968A /* ButtonStyle.swift */; };
 		2B6AABC02C875A84006B968A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABBF2C875A84006B968A /* MapView.swift */; };
 		2B6AABC22C88BD30006B968A /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABC12C88BD30006B968A /* MapManager.swift */; };
 		2B6AABC52C8B4423006B968A /* CargoDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABC42C8B4423006B968A /* CargoDocumentsView.swift */; };
@@ -49,16 +47,14 @@
 		2B03B9812C99ABDF00DF48C1 /* TabViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewButton.swift; sourceTree = "<group>"; };
 		2B08DC7F2C77D263003F49D0 /* CargoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoDetailsView.swift; sourceTree = "<group>"; };
 		2B0C500F2CA43CDA003FEFE3 /* Employer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employer.swift; sourceTree = "<group>"; };
-		2B0C50112CA4BAA0003FEFE3 /* DriverProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverProfileRow.swift; sourceTree = "<group>"; };
+		2B0C50112CA4BAA0003FEFE3 /* UserDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataRow.swift; sourceTree = "<group>"; };
 		2B0C50132CA5E71A003FEFE3 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
 		2B0C50152CA6008C003FEFE3 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		2B0C501C2CA6BC6E003FEFE3 /* CargoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoManager.swift; sourceTree = "<group>"; };
-		2B0D14622C64384D00442BE3 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
-		2B0D14662C64416300442BE3 /* ActiveEmployerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveEmployerRow.swift; sourceTree = "<group>"; };
 		2B6AABB32C7FC12D006B968A /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		2B6AABB92C84D822006B968A /* Cargo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cargo.swift; sourceTree = "<group>"; };
 		2B6AABBB2C84D8A9006B968A /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
-		2B6AABBD2C864A18006B968A /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
+		2B6AABBD2C864A18006B968A /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		2B6AABBF2C875A84006B968A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2B6AABC12C88BD30006B968A /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		2B6AABC42C8B4423006B968A /* CargoDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoDocumentsView.swift; sourceTree = "<group>"; };
@@ -107,9 +103,8 @@
 			children = (
 				2BAFED062C526E360041AF88 /* DriverProfileView.swift */,
 				2BAFED1F2C556D710041AF88 /* DriverEmployerView.swift */,
-				2B0D14662C64416300442BE3 /* ActiveEmployerRow.swift */,
 				2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */,
-				2B0C50112CA4BAA0003FEFE3 /* DriverProfileRow.swift */,
+				2B0C50112CA4BAA0003FEFE3 /* UserDataRow.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -202,10 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				2BAFED132C52D69D0041AF88 /* CustomTabView.swift */,
-				2B0D14622C64384D00442BE3 /* ButtonLabel.swift */,
 				2B03B9812C99ABDF00DF48C1 /* TabViewButton.swift */,
 				2B6AABB32C7FC12D006B968A /* SectionHeader.swift */,
-				2B6AABBD2C864A18006B968A /* ButtonModifier.swift */,
+				2B6AABBD2C864A18006B968A /* ButtonStyle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -281,10 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BA0FBA72C4A8DDF00FE6368 /* ContentView.swift in Sources */,
-				2B0C50122CA4BAA0003FEFE3 /* DriverProfileRow.swift in Sources */,
-				2B0D14632C64384D00442BE3 /* ButtonLabel.swift in Sources */,
+				2B0C50122CA4BAA0003FEFE3 /* UserDataRow.swift in Sources */,
 				2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */,
-				2B6AABBE2C864A18006B968A /* ButtonModifier.swift in Sources */,
+				2B6AABBE2C864A18006B968A /* ButtonStyle.swift in Sources */,
 				2B0C501D2CA6BC6E003FEFE3 /* CargoManager.swift in Sources */,
 				2B6AABC52C8B4423006B968A /* CargoDocumentsView.swift in Sources */,
 				2B6AABC22C88BD30006B968A /* MapManager.swift in Sources */,
@@ -310,7 +303,6 @@
 				2BAFED1C2C55619D0041AF88 /* DriverManager.swift in Sources */,
 				2BAFED182C54F8640041AF88 /* RequestEmployerRow.swift in Sources */,
 				2BAFED052C526A900041AF88 /* User.swift in Sources */,
-				2B0D14672C64416300442BE3 /* ActiveEmployerRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

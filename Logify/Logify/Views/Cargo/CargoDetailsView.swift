@@ -16,14 +16,22 @@ struct CargoDetailsView: View {
         List {
             // MARK: Details
             Section {
-                CargoDetailsCell(property: "Cargo ID",
-                                 value: String(cargoManager.selectedCargo.id))
-                CargoDetailsCell(property: "Status",
-                                 value: cargoManager.selectedCargo.status)
-                CargoDetailsCell(property: "Creation date",
-                                 value: "\(cargoManager.selectedCargo.creationDate)")
-                CargoDetailsCell(property: "Car ID",
-                                 value: cargoManager.selectedCargo.carId)
+                CargoDetailsCell(
+                    property: "Cargo ID",
+                    value: "\(cargoManager.selectedCargo.id)"
+                )
+                CargoDetailsCell(
+                    property: "Status",
+                    value: cargoManager.selectedCargo.status
+                )
+                CargoDetailsCell(
+                    property: "Creation date",
+                    value: "\(cargoManager.selectedCargo.creationDate.formatted(date: .numeric, time: .omitted))"
+                )
+                CargoDetailsCell(
+                    property: "Car ID",
+                    value: cargoManager.selectedCargo.carId
+                )
                 NavigationLink {
                     CargoDocumentsView()
                 } label: {
@@ -41,13 +49,17 @@ struct CargoDetailsView: View {
             Section {
                 VStack(spacing: 0) {
                     ForEach(cargoManager.selectedCargo.points.dropLast(), id: \.id) { point in
-                        CargoRouteCell(name: point.label,
-                                       coordinates: "\(point.latitude) \(point.longtitude)",
-                                       isLast: false)
+                        CargoRouteCell(
+                            name: point.label,
+                            coordinates: "\(point.latitude) \(point.longtitude)",
+                            isLast: false
+                        )
                     }
-                    CargoRouteCell(name: cargoManager.selectedCargo.points.last!.label,
-                                   coordinates: "\(cargoManager.selectedCargo.points.last!.latitude) \(cargoManager.selectedCargo.points.last!.longtitude)",
-                                   isLast: true)
+                    CargoRouteCell(
+                        name: cargoManager.selectedCargo.points.last!.label,
+                        coordinates: "\(cargoManager.selectedCargo.points.last!.latitude) \(cargoManager.selectedCargo.points.last!.longtitude)",
+                        isLast: true
+                    )
                 }
                 .padding(.bottom, -16)
                 Button(action: { isMapPresented.toggle() }) {
@@ -56,10 +68,12 @@ struct CargoDetailsView: View {
                          Text("Map")
                      }
                      .modifier(
-                         ButtonModifier(width: 310,
-                         height: 36,
-                         background: .black,
-                         foreground: .white)
+                         ButtonStyle(
+                            width: 310,
+                            height: 36,
+                            background: .black,
+                            foreground: .white
+                         )
                      )
                  }
                  .fullScreenCover(isPresented: $isMapPresented) {
@@ -78,7 +92,9 @@ struct CargoDetailsView: View {
 
 
 #Preview {
-    CargoDetailsView(cargoManager: CargoManager())
+    NavigationView {
+        CargoDetailsView(cargoManager: CargoManager())
+    }
 }
 
 

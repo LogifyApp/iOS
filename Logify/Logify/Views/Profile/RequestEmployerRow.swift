@@ -22,22 +22,28 @@ struct RequestEmployerRow: View {
                     Button(action: {
                         acceptRequest()
                     }, label: {
-                        ButtonLabel(
-                            text: "Accept",
-                            width: .infinity,
-                            height: 30,
-                            background: .black,
-                            foreground: .white)
+                        Text("Accept")
+                            .modifier(
+                                ButtonStyle(
+                                    width: .infinity,
+                                    height: 30,
+                                    background: .black,
+                                    foreground: .white
+                                )
+                            )
                     })
                     Button(action: {
                         declineRequest()
                     }, label: {
-                        ButtonLabel(
-                            text: "Decline",
-                            width: .infinity,
-                            height: 30,
-                            background: .red,
-                            foreground: .white)
+                        Text("Decline")
+                            .modifier(
+                                ButtonStyle(
+                                    width: .infinity,
+                                    height: 30,
+                                    background: .red,
+                                    foreground: .white
+                                )
+                            )
                     })
                 }
                 .listRowSeparator(.hidden, edges: .top)

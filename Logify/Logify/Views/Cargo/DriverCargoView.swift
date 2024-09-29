@@ -15,7 +15,8 @@ struct DriverCargoView: View {
         if searchText.isEmpty {
             return driverManager.fetchAllCargo()
         } else {
-            return driverManager.fetchAllCargo().filter({ String($0.id).contains(searchText) })
+            return driverManager.fetchAllCargo()
+                .filter({ String($0.id).contains(searchText) })
         }
     }
     
@@ -25,8 +26,10 @@ struct DriverCargoView: View {
                 VStack(spacing: 16) {
                     ForEach(searchResults, id: \.id) { cargo in
                         NavigationLink(destination: CargoDetailsView(cargoManager: CargoManager(cargo))) {
-                            CargoCell(cargoId: cargo.id,
-                                      cargoStatus: cargo.status)
+                            CargoCell(
+                                cargoId: cargo.id,
+                                cargoStatus: cargo.status
+                            )
                         }
                         .buttonStyle(PlainButtonStyle())
                             

@@ -8,21 +8,22 @@
 import Foundation
 import SwiftUI
 
-struct DriverProfileRow: View {
+struct UserDataRow: View {
     
-    @EnvironmentObject var driverManager: DriverManager
+    var user: User
+    var imageWidth: CGFloat
     
     var body: some View {
         HStack {
             Image("user")
                 .resizable()
-                .frame(width: 100, height: 100)
-                .padding(.trailing)
+                .frame(width: imageWidth, height: imageWidth)
+                .padding(.trailing, imageWidth/9)
             VStack(alignment: .leading) {
-                Text(driverManager.driver.name + " " + driverManager.driver.surname)
+                Text(user.getFullName())
                     .font(.title3)
                     .bold()
-                Text("\(driverManager.driver.phoneNumber)")
+                Text("\(user.phoneNumber)")
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)

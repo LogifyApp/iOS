@@ -10,36 +10,30 @@ import SwiftUI
 struct DriverEmployerView: View {
     
     @EnvironmentObject var driverManager: DriverManager
-    @State private var requests: [Employer] = []
     
     var body: some View {
         List {
             Section {
                 if let employer = driverManager.getActiveEmployer() {
-                    ActiveEmployerRow(employer: employer)
-                        .padding(6)
+                    UserDataRow(user: employer, imageWidth: 70)
                 } else {
                     Text("There is no active employer")
                         .frame(maxWidth: .infinity)
                         .padding(.vertical)
                 }
-            } header: {
-                SectionHeader(text: "Employer")
             }
 
             Section {
-                if requests.isEmpty {
+                if driverManager.employersRequests.isEmpty {
                     Text("There is no active requests")
                         .frame(maxWidth: .infinity)
                         .padding(.vertical)
                 } else {
-                    ForEach(requests, id: \.id){ employer in
+                    ForEach(driverManager.employersRequests, id: \.id){ employer in
                         RequestEmployerRow(employer: employer) {
                             driverManager.acceptRequest(with: employer.id)
-                            requests = driverManager.getEmployersRequests()
                         } declineRequest: {
                             driverManager.declineRequest(with: employer.id)
-                            requests = driverManager.getEmployersRequests()
                         }
                     }
                 }
@@ -47,12 +41,11 @@ struct DriverEmployerView: View {
                 SectionHeader(text: "Requests")
             }
         }
+        .navigationTitle("Employer")
+        .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
         .scrollContentBackground(.hidden)
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            requests = driverManager.getEmployersRequests()
-        }
     }
 }
 

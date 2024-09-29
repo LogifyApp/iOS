@@ -25,11 +25,14 @@ class ChatManager: ObservableObject {
         
     }
     
-    func fetchChatMessages() -> [Message] {
-        return []
+    func fetchChatMessages() {
+        messages = [
+            Message(id: employer.id, content: "Hi!", date: .now, userId: 2, chatId: 0),
+            Message(id: driver.id, content: "Hi! I'm on my way.", date: .now, userId: 1, chatId: 0)
+        ]
     }
     
-    func sendMessage(with content: String) {
-        
+    func sendMessage(with content: String, from userId: Int) {
+        messages.append(Message(id: Int.random(in: 0...130984), content: content, date: .now, userId: userId, chatId: 0))
     }
 }

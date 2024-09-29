@@ -24,19 +24,25 @@ struct DriverChatView: View {
                         .background(Color.background)
                         .font(.system(size: 16))
                 } else {
-                    ScrollView {
-                        VStack {
+                    ScrollViewReader { proxy in
+                        ScrollView {
                             ForEach(chatManager.messages, id: \.id) { message in
-                                MessageBubble(message: message,
-                                              isSender: message.userId == senderId)
+                                MessageBubble(
+                                    message: message,
+                                    isSender: message.userId == senderId
+                                )
+                            }
+                        }
+                        .background(Color.background)
+                        .onChange(of: chatManager.messages.last!.id) { _, last in
+                            withAnimation {
+                                proxy.scrollTo(last, anchor: .bottom)
                             }
                         }
                     }
-                    .background(Color.background)
-                    .defaultScrollAnchor(.bottom)
                 }
                 MessageField(isFocused: $isFieldFocused, text: $text) {
-                    chatManager.sendMessage(with: text)
+                    chatManager.sendMessage(with: text, from: senderId)
                     text = ""
                 }
             }
