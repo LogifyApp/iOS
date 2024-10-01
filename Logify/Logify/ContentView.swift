@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selectedItem) {
-            DriverCargoView()
+            DriverCargoListView(cargoListViewModel: CargoListViewModel(driver: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "")))
                 .tag(0)
             DriverProfileView()
                 .tag(2)

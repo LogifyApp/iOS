@@ -1,18 +1,18 @@
 //
-//  CargoManager.swift
+//  CargoViewModel.swift
 //  Logify
 //
-//  Created by Vlad Klunduk on 27/09/2024.
+//  Created by Vlad Klunduk on 02/10/2024.
 //
 
 import Foundation
 
-class CargoManager: ObservableObject {
-    
-    @Published var selectedCargo: Cargo
+class CargoViewModel: ObservableObject {
+    @Published var cargo: Cargo
+    @Published var documents: Set<URL> = []
     
     init() {
-        selectedCargo = Cargo(id: 137287897,
+        cargo = Cargo(id: 137287897,
                               description: "Descriptioin",
                               status: "Created",
                               creationDate: Date.now,
@@ -26,6 +26,20 @@ class CargoManager: ObservableObject {
     }
     
     init(_ cargo: Cargo) {
-        selectedCargo = cargo
+        self.cargo = cargo
+    }
+    
+    func fetchDocuments() {
+        
+    }
+    
+    func addDocument(with url: URL) {
+        documents.insert(url)
+        
+    }
+    
+    func removeDocument(with url: URL) {
+        documents.remove(url)
+        
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CargoDetailsView: View {
     
-    @ObservedObject var cargoManager: CargoManager
+    @ObservedObject var cargoViewModel: CargoViewModel
     @State private var isMapPresented = false
     
     var body: some View {
@@ -18,22 +18,22 @@ struct CargoDetailsView: View {
             Section {
                 CargoDetailsCell(
                     property: "Cargo ID",
-                    value: "\(cargoManager.selectedCargo.id)"
+                    value: "\(cargoViewModel.cargo.id)"
                 )
                 CargoDetailsCell(
                     property: "Status",
-                    value: cargoManager.selectedCargo.status
+                    value: cargoViewModel.cargo.status
                 )
                 CargoDetailsCell(
                     property: "Creation date",
-                    value: "\(cargoManager.selectedCargo.creationDate.formatted(date: .numeric, time: .omitted))"
+                    value: "\(cargoViewModel.cargo.creationDate.formatted(date: .numeric, time: .omitted))"
                 )
                 CargoDetailsCell(
                     property: "Car ID",
-                    value: cargoManager.selectedCargo.carId
+                    value: cargoViewModel.cargo.carId
                 )
                 NavigationLink {
-                    CargoDocumentsView()
+                    CargoDocumentsView(cargoViewModel: cargoViewModel)
                 } label: {
                     Text("Documents")
                         .foregroundStyle(.secondary)
@@ -42,13 +42,13 @@ struct CargoDetailsView: View {
             
             // MARK: Description
             Section {
-                Text(cargoManager.selectedCargo.description)
+                Text(cargoViewModel.cargo.description)
             }
             
             // MARK: Route
             Section {
                 VStack(spacing: 0) {
-                    ForEach(cargoManager.selectedCargo.points.dropLast(), id: \.id) { point in
+                    ForEach(cargoViewModel.cargo.points.dropLast(), id: \.id) { point in
                         CargoRouteCell(
                             name: point.label,
                             coordinates: "\(point.latitude) \(point.longtitude)",
@@ -56,8 +56,8 @@ struct CargoDetailsView: View {
                         )
                     }
                     CargoRouteCell(
-                        name: cargoManager.selectedCargo.points.last!.label,
-                        coordinates: "\(cargoManager.selectedCargo.points.last!.latitude) \(cargoManager.selectedCargo.points.last!.longtitude)",
+                        name: cargoViewModel.cargo.points.last!.label,
+                        coordinates: "\(cargoViewModel.cargo.points.last!.latitude) \(cargoViewModel.cargo.points.last!.longtitude)",
                         isLast: true
                     )
                 }
@@ -77,7 +77,13 @@ struct CargoDetailsView: View {
                      )
                  }
                  .fullScreenCover(isPresented: $isMapPresented) {
-                     MapView(points: cargoManager.selectedCargo.points)
+                     MapView(
+                        mapViewModel:
+                            MapViewModel(
+                                points:
+                                    cargoViewModel.cargo.points
+                            )
+                     )
                  }
                  .padding(.bottom, 4)
             }
@@ -93,7 +99,22 @@ struct CargoDetailsView: View {
 
 #Preview {
     NavigationView {
-        CargoDetailsView(cargoManager: CargoManager())
+        CargoDetailsView(cargoViewModel:
+                CargoViewModel(
+                    Cargo(
+                        id: 137287897,
+                        description: "Descriptioin",
+                        status: "Created",
+                        creationDate: Date.now,
+                        carId: "24987",
+                        points: [
+                            Point(id: 0, label: "start", latitude: 52.219420, longtitude: 20.983114, order: 0),
+                            Point(id: 1, label: "mokotow", latitude: 52.240238, longtitude: 21.018649, order: 0),
+                            Point(id: 2, label: "wola", latitude: 52.260238, longtitude: 21.038649, order: 0),
+                            Point(id: 3, label: "bemovo", latitude: 52.220238, longtitude: 20.95649, order: 0)
+                        ])
+                )
+        )
     }
 }
 

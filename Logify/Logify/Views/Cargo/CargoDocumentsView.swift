@@ -9,22 +9,22 @@ import SwiftUI
 
 struct CargoDocumentsView: View {
     
+    @ObservedObject var cargoViewModel: CargoViewModel
     @State private var showImporter = false
-    @State private var files = Set<URL>()
     
     var body: some View {
         VStack {
-            if files.isEmpty {
+            if cargoViewModel.documents.isEmpty {
                 Text("No attached documents for this cargo")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .font(.system(size: 16))
             } else {
                 List {
-                    ForEach(Array(files), id: \.self) { url in
+                    ForEach(Array(cargoViewModel.documents), id: \.self) { url in
                         Text(url.lastPathComponent)
                             .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                 Button(role: .destructive) {
-                                    files.remove(url)
+                                    cargoViewModel.removeDocument(with: url)
                                 } label: {
                                     Image(systemName: "trash.fill")
                                 }
@@ -39,7 +39,9 @@ struct CargoDocumentsView: View {
         .background(Color.background)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button(action: { showImporter.toggle() }) {
+                Button(action: {
+                    showImporter.toggle()
+                }) {
                     Image(systemName: "plus")
                 }
                 .fileImporter(isPresented: $showImporter,
@@ -48,7 +50,7 @@ struct CargoDocumentsView: View {
                     switch(results) {
                     case .success(let urls):
                         urls.forEach { url in
-                            files.insert(url)
+                            cargoViewModel.addDocument(with: url)
                         }
                     case .failure(let error):
                         print(error)
@@ -61,6 +63,21 @@ struct CargoDocumentsView: View {
 
 #Preview {
     NavigationView {
-        CargoDocumentsView()
+        CargoDocumentsView(cargoViewModel:
+                CargoViewModel(
+                    Cargo(
+                        id: 137287897,
+                        description: "Descriptioin",
+                        status: "Created",
+                        creationDate: Date.now,
+                        carId: "24987",
+                        points: [
+                            Point(id: 0, label: "start", latitude: 52.219420, longtitude: 20.983114, order: 0),
+                            Point(id: 1, label: "mokotow", latitude: 52.240238, longtitude: 21.018649, order: 0),
+                            Point(id: 2, label: "wola", latitude: 52.260238, longtitude: 21.038649, order: 0),
+                            Point(id: 3, label: "bemovo", latitude: 52.220238, longtitude: 20.95649, order: 0)
+                        ])
+                )
+        )
     }
 }

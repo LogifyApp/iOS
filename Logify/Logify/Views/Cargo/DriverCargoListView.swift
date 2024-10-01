@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct DriverCargoView: View {
+struct DriverCargoListView: View {
     
-    @EnvironmentObject private var driverManager: DriverManager
+    @ObservedObject var cargoListViewModel: CargoListViewModel
     @State private var searchText = ""
     var searchResults: [Cargo] {
         if searchText.isEmpty {
-            return driverManager.fetchAllCargo()
+            return cargoListViewModel.cargoList
         } else {
-            return driverManager.fetchAllCargo()
+            return cargoListViewModel.cargoList
                 .filter({ String($0.id).contains(searchText) })
         }
     }
@@ -25,14 +25,17 @@ struct DriverCargoView: View {
             ScrollView {
                 VStack(spacing: 16) {
                     ForEach(searchResults, id: \.id) { cargo in
-                        NavigationLink(destination: CargoDetailsView(cargoManager: CargoManager(cargo))) {
+                        NavigationLink(
+                            destination: CargoDetailsView(
+                                    cargoViewModel: CargoViewModel(cargo)
+                            )
+                        ){
                             CargoCell(
                                 cargoId: cargo.id,
                                 cargoStatus: cargo.status
                             )
                         }
                         .buttonStyle(PlainButtonStyle())
-                            
                     }
                     .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
                 }
@@ -47,6 +50,9 @@ struct DriverCargoView: View {
 }
 
 #Preview {
-    DriverCargoView()
-        .environmentObject(DriverManager())
+    DriverCargoListView(cargoListViewModel:
+            CargoListViewModel(
+                driver: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "")
+            )
+    )
 }
