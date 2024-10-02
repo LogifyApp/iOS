@@ -16,6 +16,11 @@ class CargoListViewModel: ObservableObject {
         fetchAllCargo()
     }
     
+    init() {
+        driver = Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "")
+        fetchAllCargo()
+    }
+    
     func fetchAllCargo() {
         cargoList = [
             Cargo(id: 137287897,

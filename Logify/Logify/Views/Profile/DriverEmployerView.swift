@@ -9,31 +9,31 @@ import SwiftUI
 
 struct DriverEmployerView: View {
     
-    @EnvironmentObject var driverManager: DriverManager
+    @ObservedObject var profileViewModel: ProfileViewModel
     
     var body: some View {
         List {
             Section {
-                if let employer = driverManager.getActiveEmployer() {
+                if let employer = profileViewModel.employer {
                     UserDataRow(user: employer, imageWidth: 70)
                 } else {
-                    Text("There is no active employer")
+                    Text("You don't have active employer")
                         .frame(maxWidth: .infinity)
                         .padding(.vertical)
                 }
             }
 
             Section {
-                if driverManager.employersRequests.isEmpty {
-                    Text("There is no active requests")
+                if profileViewModel.employersRequests.isEmpty {
+                    Text("You don't have active requests")
                         .frame(maxWidth: .infinity)
                         .padding(.vertical)
                 } else {
-                    ForEach(driverManager.employersRequests, id: \.id){ employer in
+                    ForEach(profileViewModel.employersRequests, id: \.id){ employer in
                         RequestEmployerRow(employer: employer) {
-                            driverManager.acceptRequest(with: employer.id)
+                            profileViewModel.acceptRequest(with: employer.id)
                         } declineRequest: {
-                            driverManager.declineRequest(with: employer.id)
+                            profileViewModel.declineRequest(with: employer.id)
                         }
                     }
                 }
@@ -51,7 +51,6 @@ struct DriverEmployerView: View {
 
 #Preview {
     NavigationView {
-        DriverEmployerView()
-            .environmentObject(DriverManager())
+        DriverEmployerView(profileViewModel: ProfileViewModel())
     }
 }

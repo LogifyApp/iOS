@@ -64,5 +64,9 @@ struct RequestEmployerRow: View {
 }
 
 #Preview {
-    RequestEmployerRow(employer: Employer(id: 0, name: "Name", surname: "Surname", phoneNumber: 381475456, password: "owubr", role: ""), acceptRequest: {}, declineRequest: {})
+    RequestEmployerRow(
+        employer: Employer(id: 0, name: "Name", surname: "Surname", phoneNumber: 381475456, password: "owubr", role: ""),
+        acceptRequest: {},
+        declineRequest: {}
+    )
 }

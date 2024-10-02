@@ -42,7 +42,9 @@ class MapViewModel: ObservableObject {
         
         Task {
             guard let result = try? await MKDirections(request: request).calculate() else { return }
-            routes.append(result.routes.first!)
+            DispatchQueue.main.async {
+                self.routes.append(result.routes.first!)
+            }
         }
     }
 }

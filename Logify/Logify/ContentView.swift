@@ -14,9 +14,9 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selectedItem) {
-            DriverCargoListView(cargoListViewModel: CargoListViewModel(driver: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "")))
+            DriverCargoListView(cargoListViewModel: CargoListViewModel())
                 .tag(0)
-            DriverProfileView()
+            DriverProfileView(profileViewModel: ProfileViewModel())
                 .tag(2)
         }
         .overlay(alignment: .bottom) {

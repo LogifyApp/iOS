@@ -1,23 +1,22 @@
 //
-//  ChatManager.swift
+//  ChatViewModel.swift
 //  Logify
 //
-//  Created by Vlad Klunduk on 26/09/2024.
+//  Created by Vlad Klunduk on 02/10/2024.
 //
 
 import Foundation
 
-class ChatManager: ObservableObject {
-    
-    @Published var driver: Driver
-    @Published var employer: Employer
+class ChatViewModel: ObservableObject {
     @Published var messages: [Message] = []
+    var driver: Driver
+    var employer: Employer
     var chat: Chat!
         
     init(driver: Driver, employer: Employer) {
         self.driver = driver
         self.employer = employer
-        fetchChat(employerId: employer.id, driverId: driver.id)
+        
         fetchChatMessages()
     }
     

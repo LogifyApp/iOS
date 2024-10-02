@@ -22,12 +22,17 @@ struct DriverCargoListView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(spacing: 16) {
+            if cargoListViewModel.cargoList.isEmpty {
+                Text("Cargo list is empty")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    .background(Color.background)
+                    .font(.system(size: 16))
+            } else {
+                ScrollView {
                     ForEach(searchResults, id: \.id) { cargo in
                         NavigationLink(
                             destination: CargoDetailsView(
-                                    cargoViewModel: CargoViewModel(cargo)
+                                cargoViewModel: CargoViewModel(cargo)
                             )
                         ){
                             CargoCell(
@@ -37,22 +42,21 @@ struct DriverCargoListView: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
-                    .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+                    .searchable(
+                        text: $searchText,
+                        placement: .navigationBarDrawer(displayMode: .always)
+                    )
                 }
+                .navigationTitle("Cargo")
+                .toolbarTitleDisplayMode(.inline)
+                .background(Color.background)
+                .toolbarBackground(.hidden, for: .tabBar)
+                .toolbarBackground(Color.background, for: .navigationBar)
             }
-            .navigationTitle("Cargo")
-            .toolbarTitleDisplayMode(.inline)
-            .background(Color.background)
-            .toolbarBackground(.hidden, for: .tabBar)
-            .toolbarBackground(Color.background, for: .navigationBar)
         }
     }
 }
 
 #Preview {
-    DriverCargoListView(cargoListViewModel:
-            CargoListViewModel(
-                driver: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "")
-            )
-    )
+    DriverCargoListView(cargoListViewModel: CargoListViewModel())
 }

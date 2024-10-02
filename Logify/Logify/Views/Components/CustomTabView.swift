@@ -27,10 +27,11 @@ struct CustomTabView: View {
                 }
                 .fullScreenCover(isPresented: $isChatViewPresented) {
                     DriverChatView(
-                        chatManager: 
-                            ChatManager(
+                        chatViewModel:
+                            ChatViewModel(
                                 driver: driverManager.driver,
-                                employer: driverManager.getActiveEmployer()!),
+                                employer: driverManager.getActiveEmployer()!
+                            ),
                         senderId: driverManager.driver.id
                     )
                 }

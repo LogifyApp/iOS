@@ -9,21 +9,21 @@ import SwiftUI
 
 struct DriverProfileView: View {
     
-    @EnvironmentObject var driverManager: DriverManager
+    @ObservedObject var profileViewModel: ProfileViewModel
     
     var body: some View {
         NavigationView {
             List {
                 Section {
                     UserDataRow(
-                        user: driverManager.driver,
+                        user: profileViewModel.driver,
                         imageWidth: 90
                     )
                 }
                 
                 Section {
                     NavigationLink("Employer") {
-                        DriverEmployerView()
+                        DriverEmployerView(profileViewModel: profileViewModel)
                     }
                     Picker("Tracking", selection: .constant(1)) {
                         Text("Default")
@@ -57,6 +57,5 @@ struct DriverProfileView: View {
 }
 
 #Preview {
-    DriverProfileView()
-        .environmentObject(DriverManager())
+    DriverProfileView(profileViewModel: ProfileViewModel())
 }

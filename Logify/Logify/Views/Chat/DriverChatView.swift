@@ -9,16 +9,16 @@ import SwiftUI
 
 struct DriverChatView: View {
     
-    @Environment(\.dismiss) var dismiss
-    @ObservedObject var chatManager: ChatManager
+    @ObservedObject var chatViewModel: ChatViewModel
     @FocusState private var isFieldFocused: Bool
     @State private var text = ""
+    @Environment(\.dismiss) var dismiss
     var senderId: Int
     
     var body: some View {
         NavigationView {
             VStack {
-                if chatManager.messages.isEmpty {
+                if chatViewModel.messages.isEmpty {
                     Text("Chat history is empty")
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                         .background(Color.background)
@@ -26,7 +26,7 @@ struct DriverChatView: View {
                 } else {
                     ScrollViewReader { proxy in
                         ScrollView {
-                            ForEach(chatManager.messages, id: \.id) { message in
+                            ForEach(chatViewModel.messages, id: \.id) { message in
                                 MessageBubble(
                                     message: message,
                                     isSender: message.userId == senderId
@@ -34,7 +34,7 @@ struct DriverChatView: View {
                             }
                         }
                         .background(Color.background)
-                        .onChange(of: chatManager.messages.last!.id) { _, last in
+                        .onChange(of: chatViewModel.messages.last!.id) { _, last in
                             withAnimation {
                                 proxy.scrollTo(last, anchor: .bottom)
                             }
@@ -42,11 +42,11 @@ struct DriverChatView: View {
                     }
                 }
                 MessageField(isFocused: $isFieldFocused, text: $text) {
-                    chatManager.sendMessage(with: text, from: senderId)
+                    chatViewModel.sendMessage(with: text, from: senderId)
                     text = ""
                 }
             }
-            .navigationTitle(senderId == chatManager.driver.id ? chatManager.employer.getFullName() : chatManager.driver.getFullName())
+            .navigationTitle(senderId == chatViewModel.driver.id ? chatViewModel.employer.getFullName() : chatViewModel.driver.getFullName())
             .navigationBarTitleDisplayMode(.inline)
             .onTapGesture {
                 isFieldFocused = false
@@ -55,7 +55,7 @@ struct DriverChatView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("", systemImage: "phone") {
                         UIApplication.shared.open(
-                            URL(string: "tel:\(senderId == chatManager.driver.id ? chatManager.employer.phoneNumber : chatManager.driver.phoneNumber)")!)
+                            URL(string: "tel:\(senderId == chatViewModel.driver.id ? chatViewModel.employer.phoneNumber : chatViewModel.driver.phoneNumber)")!)
                     }
                 }
                 ToolbarItem(placement: .topBarLeading) {
@@ -71,7 +71,7 @@ struct DriverChatView: View {
 #Preview {
     NavigationView {
         DriverChatView(
-            chatManager: ChatManager(
+            chatViewModel: ChatViewModel(
                 driver: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 123, password: "", role: ""),
                 employer: Employer(id: 2, name: "Name2", surname: "Surname2", phoneNumber: 123, password: "", role: "")
             ), senderId: 1
