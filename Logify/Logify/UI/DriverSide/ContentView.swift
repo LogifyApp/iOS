@@ -20,7 +20,7 @@ struct ContentView: View {
                 .tag(2)
         }
         .overlay(alignment: .bottom) {
-            CustomTabView(selectedItem: $selectedItem)
+            DriverTabView(selectedItem: $selectedItem)
         }
         .ignoresSafeArea()
         .environmentObject(driverManager)

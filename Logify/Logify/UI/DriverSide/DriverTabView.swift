@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomTabView: View {
+struct DriverTabView: View {
     
     @EnvironmentObject var driverManager: DriverManager
     @State private var items = ["shippingbox.fill", "message", "person"]
@@ -26,8 +26,7 @@ struct CustomTabView: View {
                     isChatViewPresented.toggle()
                 }
                 .fullScreenCover(isPresented: $isChatViewPresented) {
-                    ChatView(
-                        chatViewModel:
+                    ChatView(chatViewModel:
                             ChatViewModel(
                                 driver: driverManager.driver,
                                 employer: driverManager.getActiveEmployer()!
@@ -46,20 +45,8 @@ struct CustomTabView: View {
     }
 }
 
-struct TabViewPanel: View {
-    var body: some View {
-        Rectangle()
-            .frame(height: 90)
-            .foregroundStyle(Color.background)
-            .offset(y: 45)
-        Capsule()
-            .frame(height: 60)
-            .foregroundStyle(Color.darkBlue)
-    }
-}
-
 #Preview {
-    CustomTabView(selectedItem: .constant(1))
+    DriverTabView(selectedItem: .constant(1))
         .environmentObject(DriverManager())
 }
 
