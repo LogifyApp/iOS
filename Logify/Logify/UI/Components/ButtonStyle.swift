@@ -16,7 +16,7 @@ struct ButtonStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(maxWidth: width, maxHeight: height)
-            .bold()
+            .fontWeight(.medium)
             .background(background)
             .foregroundColor(foreground)
             .clipShape(Capsule())

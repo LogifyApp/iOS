@@ -20,13 +20,25 @@
 		2B2442632CAEE471009E43AE /* TabViewPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442622CAEE471009E43AE /* TabViewPanel.swift */; };
 		2B2442652CAEF1E1009E43AE /* EmployerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442642CAEF1E1009E43AE /* EmployerProfileView.swift */; };
 		2B2442682CAEF40F009E43AE /* EmployerProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442672CAEF40F009E43AE /* EmployerProfileViewModel.swift */; };
+		2B24426A2CAEFCE4009E43AE /* EmployerCargoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442692CAEFCE4009E43AE /* EmployerCargoListView.swift */; };
+		2B24426C2CAF0004009E43AE /* EmployerCargoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24426B2CAF0004009E43AE /* EmployerCargoListViewModel.swift */; };
+		2B24426E2CAF039B009E43AE /* EmployerCargoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24426D2CAF039B009E43AE /* EmployerCargoDetailsView.swift */; };
+		2B2442702CAF0447009E43AE /* EmployerCargoDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24426F2CAF0447009E43AE /* EmployerCargoDocumentsView.swift */; };
+		2B2442722CAF0506009E43AE /* EmployerCargoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442712CAF0506009E43AE /* EmployerCargoViewModel.swift */; };
+		2B2442762CAF18CE009E43AE /* DriverSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442752CAF18CE009E43AE /* DriverSelectionView.swift */; };
+		2B2442782CAF199D009E43AE /* NewCargoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442772CAF199D009E43AE /* NewCargoViewModel.swift */; };
+		2B24427A2CAF1B62009E43AE /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442792CAF1B62009E43AE /* Car.swift */; };
+		2B24427C2CAF297A009E43AE /* DriverDetailsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24427B2CAF297A009E43AE /* DriverDetailsRow.swift */; };
+		2B24427E2CAF3462009E43AE /* CarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24427D2CAF3462009E43AE /* CarSelectionView.swift */; };
+		2B2442802CAF3C65009E43AE /* CarDetailsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24427F2CAF3C65009E43AE /* CarDetailsRow.swift */; };
+		2B2442822CAF4643009E43AE /* PointsSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442812CAF4643009E43AE /* PointsSelectionView.swift */; };
 		2B6AABB42C7FC12D006B968A /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABB32C7FC12D006B968A /* SectionHeader.swift */; };
 		2B6AABBA2C84D822006B968A /* Cargo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABB92C84D822006B968A /* Cargo.swift */; };
 		2B6AABBC2C84D8A9006B968A /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABBB2C84D8A9006B968A /* Point.swift */; };
 		2B6AABBE2C864A18006B968A /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABBD2C864A18006B968A /* ButtonStyle.swift */; };
 		2B6AABC02C875A84006B968A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABBF2C875A84006B968A /* MapView.swift */; };
 		2B6AABC52C8B4423006B968A /* CargoDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABC42C8B4423006B968A /* CargoDocumentsView.swift */; };
-		2B74F3A02C73DD5100C8B0CD /* CargoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B74F39F2C73DD5100C8B0CD /* CargoCell.swift */; };
+		2B74F3A02C73DD5100C8B0CD /* CargoDetailsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B74F39F2C73DD5100C8B0CD /* CargoDetailsRow.swift */; };
 		2B7C3AE02CACA4D700C62BC3 /* CargoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7C3ADF2CACA4D700C62BC3 /* CargoListViewModel.swift */; };
 		2B7C3AE22CACA9BA00C62BC3 /* CargoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7C3AE12CACA9BA00C62BC3 /* CargoViewModel.swift */; };
 		2B7C3AE42CACB42300C62BC3 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7C3AE32CACB42300C62BC3 /* MapViewModel.swift */; };
@@ -61,13 +73,25 @@
 		2B2442622CAEE471009E43AE /* TabViewPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewPanel.swift; sourceTree = "<group>"; };
 		2B2442642CAEF1E1009E43AE /* EmployerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerProfileView.swift; sourceTree = "<group>"; };
 		2B2442672CAEF40F009E43AE /* EmployerProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerProfileViewModel.swift; sourceTree = "<group>"; };
+		2B2442692CAEFCE4009E43AE /* EmployerCargoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerCargoListView.swift; sourceTree = "<group>"; };
+		2B24426B2CAF0004009E43AE /* EmployerCargoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerCargoListViewModel.swift; sourceTree = "<group>"; };
+		2B24426D2CAF039B009E43AE /* EmployerCargoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerCargoDetailsView.swift; sourceTree = "<group>"; };
+		2B24426F2CAF0447009E43AE /* EmployerCargoDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerCargoDocumentsView.swift; sourceTree = "<group>"; };
+		2B2442712CAF0506009E43AE /* EmployerCargoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerCargoViewModel.swift; sourceTree = "<group>"; };
+		2B2442752CAF18CE009E43AE /* DriverSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSelectionView.swift; sourceTree = "<group>"; };
+		2B2442772CAF199D009E43AE /* NewCargoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCargoViewModel.swift; sourceTree = "<group>"; };
+		2B2442792CAF1B62009E43AE /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		2B24427B2CAF297A009E43AE /* DriverDetailsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverDetailsRow.swift; sourceTree = "<group>"; };
+		2B24427D2CAF3462009E43AE /* CarSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionView.swift; sourceTree = "<group>"; };
+		2B24427F2CAF3C65009E43AE /* CarDetailsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsRow.swift; sourceTree = "<group>"; };
+		2B2442812CAF4643009E43AE /* PointsSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsSelectionView.swift; sourceTree = "<group>"; };
 		2B6AABB32C7FC12D006B968A /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		2B6AABB92C84D822006B968A /* Cargo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cargo.swift; sourceTree = "<group>"; };
 		2B6AABBB2C84D8A9006B968A /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		2B6AABBD2C864A18006B968A /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		2B6AABBF2C875A84006B968A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2B6AABC42C8B4423006B968A /* CargoDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoDocumentsView.swift; sourceTree = "<group>"; };
-		2B74F39F2C73DD5100C8B0CD /* CargoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoCell.swift; sourceTree = "<group>"; };
+		2B74F39F2C73DD5100C8B0CD /* CargoDetailsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoDetailsRow.swift; sourceTree = "<group>"; };
 		2B7C3ADF2CACA4D700C62BC3 /* CargoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoListViewModel.swift; sourceTree = "<group>"; };
 		2B7C3AE12CACA9BA00C62BC3 /* CargoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoViewModel.swift; sourceTree = "<group>"; };
 		2B7C3AE32CACB42300C62BC3 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
@@ -107,7 +131,7 @@
 				2B08DC7F2C77D263003F49D0 /* CargoDetailsView.swift */,
 				2B6AABC42C8B4423006B968A /* CargoDocumentsView.swift */,
 				2B6AABBF2C875A84006B968A /* MapView.swift */,
-				2B74F39F2C73DD5100C8B0CD /* CargoCell.swift */,
+				2B74F39F2C73DD5100C8B0CD /* CargoDetailsRow.swift */,
 			);
 			path = Cargo;
 			sourceTree = "<group>";
@@ -183,6 +207,14 @@
 		2B24425F2CAEE3DE009E43AE /* Cargo */ = {
 			isa = PBXGroup;
 			children = (
+				2B2442692CAEFCE4009E43AE /* EmployerCargoListView.swift */,
+				2B24426D2CAF039B009E43AE /* EmployerCargoDetailsView.swift */,
+				2B24426F2CAF0447009E43AE /* EmployerCargoDocumentsView.swift */,
+				2B2442752CAF18CE009E43AE /* DriverSelectionView.swift */,
+				2B24427D2CAF3462009E43AE /* CarSelectionView.swift */,
+				2B2442812CAF4643009E43AE /* PointsSelectionView.swift */,
+				2B24427B2CAF297A009E43AE /* DriverDetailsRow.swift */,
+				2B24427F2CAF3C65009E43AE /* CarDetailsRow.swift */,
 			);
 			path = Cargo;
 			sourceTree = "<group>";
@@ -191,6 +223,9 @@
 			isa = PBXGroup;
 			children = (
 				2B2442672CAEF40F009E43AE /* EmployerProfileViewModel.swift */,
+				2B24426B2CAF0004009E43AE /* EmployerCargoListViewModel.swift */,
+				2B2442712CAF0506009E43AE /* EmployerCargoViewModel.swift */,
+				2B2442772CAF199D009E43AE /* NewCargoViewModel.swift */,
 			);
 			path = Employer;
 			sourceTree = "<group>";
@@ -256,12 +291,13 @@
 			isa = PBXGroup;
 			children = (
 				2BAFED042C526A900041AF88 /* User.swift */,
-				2B03B9792C95FE7300DF48C1 /* Message.swift */,
+				2B0C500F2CA43CDA003FEFE3 /* Employer.swift */,
+				2BAFED192C555E880041AF88 /* Driver.swift */,
+				2B2442792CAF1B62009E43AE /* Car.swift */,
 				2B6AABB92C84D822006B968A /* Cargo.swift */,
 				2B6AABBB2C84D8A9006B968A /* Point.swift */,
-				2BAFED192C555E880041AF88 /* Driver.swift */,
-				2B0C500F2CA43CDA003FEFE3 /* Employer.swift */,
 				2B0C50152CA6008C003FEFE3 /* Chat.swift */,
+				2B03B9792C95FE7300DF48C1 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -365,33 +401,45 @@
 				2B2442612CAEE41D009E43AE /* EmployerTabView.swift in Sources */,
 				2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */,
 				2B6AABBE2C864A18006B968A /* ButtonStyle.swift in Sources */,
+				2B24426C2CAF0004009E43AE /* EmployerCargoListViewModel.swift in Sources */,
 				2B7C3AE02CACA4D700C62BC3 /* CargoListViewModel.swift in Sources */,
 				2B2442682CAEF40F009E43AE /* EmployerProfileViewModel.swift in Sources */,
 				2B7C3AE62CAD5F8300C62BC3 /* ChatViewModel.swift in Sources */,
+				2B2442802CAF3C65009E43AE /* CarDetailsRow.swift in Sources */,
 				2B6AABC52C8B4423006B968A /* CargoDocumentsView.swift in Sources */,
+				2B2442782CAF199D009E43AE /* NewCargoViewModel.swift in Sources */,
+				2B24426E2CAF039B009E43AE /* EmployerCargoDetailsView.swift in Sources */,
 				2B2442632CAEE471009E43AE /* TabViewPanel.swift in Sources */,
 				2B24425C2CAEE31D009E43AE /* EmployerStartView.swift in Sources */,
 				2BAFED202C556D710041AF88 /* DriverEmployerView.swift in Sources */,
 				2B0C50102CA43CDA003FEFE3 /* Employer.swift in Sources */,
+				2B2442822CAF4643009E43AE /* PointsSelectionView.swift in Sources */,
 				2BAFED142C52D69D0041AF88 /* DriverTabView.swift in Sources */,
+				2B24427A2CAF1B62009E43AE /* Car.swift in Sources */,
 				2B03B9782C95FE1200DF48C1 /* MessageBubble.swift in Sources */,
 				2B7C3AE82CAD695B00C62BC3 /* ProfileViewModel.swift in Sources */,
 				2B6AABBC2C84D8A9006B968A /* Point.swift in Sources */,
 				2B08DC802C77D263003F49D0 /* CargoDetailsView.swift in Sources */,
 				2B0C50162CA6008C003FEFE3 /* Chat.swift in Sources */,
 				2B2442652CAEF1E1009E43AE /* EmployerProfileView.swift in Sources */,
+				2B24426A2CAEFCE4009E43AE /* EmployerCargoListView.swift in Sources */,
 				2B6AABC02C875A84006B968A /* MapView.swift in Sources */,
 				2B6AABBA2C84D822006B968A /* Cargo.swift in Sources */,
 				2BAFED0B2C526E760041AF88 /* ChatView.swift in Sources */,
 				2BAFED1A2C555E880041AF88 /* Driver.swift in Sources */,
+				2B2442762CAF18CE009E43AE /* DriverSelectionView.swift in Sources */,
 				2BAFED072C526E360041AF88 /* DriverProfileView.swift in Sources */,
 				2B03B97A2C95FE7300DF48C1 /* Message.swift in Sources */,
+				2B24427C2CAF297A009E43AE /* DriverDetailsRow.swift in Sources */,
 				2B03B9822C99ABDF00DF48C1 /* TabViewButton.swift in Sources */,
 				2BAFED092C526E5E0041AF88 /* DriverCargoListView.swift in Sources */,
+				2B2442722CAF0506009E43AE /* EmployerCargoViewModel.swift in Sources */,
 				2B03B97E2C971D1A00DF48C1 /* MessageField.swift in Sources */,
+				2B24427E2CAF3462009E43AE /* CarSelectionView.swift in Sources */,
 				2B7C3AE22CACA9BA00C62BC3 /* CargoViewModel.swift in Sources */,
+				2B2442702CAF0447009E43AE /* EmployerCargoDocumentsView.swift in Sources */,
 				2B6AABB42C7FC12D006B968A /* SectionHeader.swift in Sources */,
-				2B74F3A02C73DD5100C8B0CD /* CargoCell.swift in Sources */,
+				2B74F3A02C73DD5100C8B0CD /* CargoDetailsRow.swift in Sources */,
 				2BAFED1C2C55619D0041AF88 /* DriverManager.swift in Sources */,
 				2BAFED182C54F8640041AF88 /* RequestEmployerRow.swift in Sources */,
 				2BAFED052C526A900041AF88 /* User.swift in Sources */,

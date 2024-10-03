@@ -13,4 +13,5 @@ struct Point {
     var latitude: Double
     var longtitude: Double
     var order: Int
+    var cargoId: Int
 }

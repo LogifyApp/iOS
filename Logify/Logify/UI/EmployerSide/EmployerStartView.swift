@@ -12,7 +12,8 @@ struct EmployerStartView: View {
     
     var body: some View {
         TabView(selection: $selectedItem) {
-            
+            EmployerProfileView(profileViewModel: EmployerProfileViewModel())
+                .tag(3)
         }
         .overlay(alignment: .bottom) {
             EmployerTabView(selectedItem: $selectedItem)

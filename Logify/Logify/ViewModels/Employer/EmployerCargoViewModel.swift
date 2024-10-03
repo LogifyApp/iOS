@@ -1,16 +1,15 @@
 //
-//  CargoViewModel.swift
+//  EmployerCargoViewModel.swift
 //  Logify
 //
-//  Created by Vlad Klunduk on 02/10/2024.
+//  Created by Vlad Klunduk on 03/10/2024.
 //
 
 import Foundation
-
-class CargoViewModel: ObservableObject {
+class EmployerCargoViewModel: ObservableObject {
     @Published var cargo: Cargo
     @Published var points: [Point] = []
-    @Published var documents: Set<URL> = []
+    @Published var documents: Set<URL> = [URL(filePath: "sdf")]
     
     init() {
         cargo = Cargo(
@@ -43,13 +42,12 @@ class CargoViewModel: ObservableObject {
         
     }
     
-    func addDocument(with url: URL) {
-        documents.insert(url)
+    func removeDocument(with url: URL) {
+        documents.remove(url)
         
     }
     
-    func removeDocument(with url: URL) {
-        documents.remove(url)
+    func approveDocuments() {
         
     }
 }

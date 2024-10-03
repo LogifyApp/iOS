@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CargoCell: View {
+struct CargoDetailsRow: View {
     
     let cargoId: Int
     let cargoStatus: String
@@ -34,5 +34,5 @@ struct CargoCell: View {
 }
 
 #Preview {
-    CargoCell(cargoId: 234, cargoStatus: "Created")
+    CargoDetailsRow(cargoId: 234, cargoStatus: "Created")
 }

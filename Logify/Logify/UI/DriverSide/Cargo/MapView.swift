@@ -46,10 +46,10 @@ struct MapView: View {
     MapView(mapViewModel:
                 MapViewModel(
                     points: [
-                        Point(id: 0, label: "start", latitude: 52.219420, longtitude: 20.983114, order: 0),
-                        Point(id: 0, label: "mokotow", latitude: 52.240238, longtitude: 21.018649, order: 0),
-                        Point(id: 0, label: "wola", latitude: 52.260238, longtitude: 21.038649, order: 0),
-                        Point(id: 0, label: "bemovo", latitude: 52.220238, longtitude: 20.95649, order: 0)
+                        Point(id: 0, label: "start", latitude: 52.219420, longtitude: 20.983114, order: 0, cargoId: 1),
+                        Point(id: 0, label: "mokotow", latitude: 52.240238, longtitude: 21.018649, order: 0, cargoId: 1),
+                        Point(id: 0, label: "wola", latitude: 52.260238, longtitude: 21.038649, order: 0, cargoId: 1),
+                        Point(id: 0, label: "bemovo", latitude: 52.220238, longtitude: 20.95649, order: 0, cargoId: 1)
                     ]
                 )
         )

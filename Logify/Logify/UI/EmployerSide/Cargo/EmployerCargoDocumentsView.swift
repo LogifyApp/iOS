@@ -1,16 +1,14 @@
 //
-//  CargoDocumentsView.swift
+//  EmployerCargoDocumentsView.swift
 //  Logify
 //
-//  Created by Vlad Klunduk on 06/09/2024.
+//  Created by Vlad Klunduk on 03/10/2024.
 //
 
 import SwiftUI
 
-struct CargoDocumentsView: View {
-    
-    @ObservedObject var cargoViewModel: CargoViewModel
-    @State private var showImporter = false
+struct EmployerCargoDocumentsView: View {
+    @ObservedObject var cargoViewModel: EmployerCargoViewModel
     
     var body: some View {
         VStack {
@@ -32,37 +30,29 @@ struct CargoDocumentsView: View {
                     }
                 }
                 .scrollContentBackground(.hidden)
+                Button(action: {
+                    cargoViewModel.approveDocuments()
+                }) {
+                    Text("Approve")
+                        .modifier(
+                            ButtonStyle(
+                                width: 320,
+                                height: 40,
+                                background: .black,
+                                foreground: .white
+                            )
+                        )
+                }
             }
         }
         .navigationTitle("Documents")
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button(action: {
-                    showImporter.toggle()
-                }) {
-                    Image(systemName: "plus")
-                }
-                .fileImporter(isPresented: $showImporter,
-                              allowedContentTypes: [.data],
-                              allowsMultipleSelection: true) { results in
-                    switch(results) {
-                    case .success(let urls):
-                        urls.forEach { url in
-                            cargoViewModel.addDocument(with: url)
-                        }
-                    case .failure(let error):
-                        print(error)
-                    }
-                }
-            }
-        }
     }
 }
 
 #Preview {
     NavigationView {
-        CargoDocumentsView(cargoViewModel: CargoViewModel())
+        EmployerCargoDocumentsView(cargoViewModel: EmployerCargoViewModel())
     }
 }

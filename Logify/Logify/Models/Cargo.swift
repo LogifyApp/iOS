@@ -12,7 +12,7 @@ struct Cargo {
     var description: String
     var status: String
     var creationDate: Date
+    var employerId: Int
+    var driverId: Int
     var carId: String
-    var points: [Point]
-    //MARK: add driver and employer
 }
