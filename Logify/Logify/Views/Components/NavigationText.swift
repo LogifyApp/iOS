@@ -11,12 +11,14 @@ struct NavigationText: View {
     let text: String
     let foreground: Color
     let backround: Color
+    let width: CGFloat
+    let height: CGFloat
     
     var body: some View {
         Text(text)
-            .frame(width: 320, height: 34)
+            .frame(width: width, height: height)
             .font(.title3)
-            .bold()
+            .fontWeight(.medium)
             .background(backround)
             .foregroundColor(foreground)
             .clipShape(Capsule())
@@ -25,5 +27,11 @@ struct NavigationText: View {
 }
 
 #Preview {
-    NavigationText(text: "Log in", foreground: .white, backround: .black)
+    NavigationText(
+        text: "Log in",
+        foreground: .white,
+        backround: .black,
+        width: 320,
+        height: 40
+    )
 }

@@ -15,7 +15,7 @@ struct RegistrationTextField: View {
     var body: some View {
         TextField(placeholder, text: $inputText)
             .padding()
-            .frame(width: 320, height: 34)
+            .frame(width: 320, height: 40)
             .background(.white)
             .clipShape(Capsule())
             .overlay(Capsule().stroke(.gray, lineWidth: 0.4))

@@ -14,24 +14,26 @@ struct LoginView: View {
                 .resizable()
                 .ignoresSafeArea()
                 .scaleEffect(1.15)
-            
-            VStack(spacing: 70) {
-                VStack(spacing: 10){
-                    Image("logo")
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                    Text("Logify")
-                        .font(.system(size: 40))
-                        .fontWeight(.semibold)
-                }
-                
-                VStack(spacing: 20){
-                    RegistrationTextField(savedText: .constant(""), placeholder: "Name")
-                    RegistrationTextField(savedText: .constant(""), placeholder: "Surname")
-                }
-                
-                Button(action: {}){
-                    NavigationText(text: "Log in", foreground: .white, backround: .black)
+            VStack(spacing: 80) {
+                LogoLabel()
+                VStack(spacing: 20) {
+                    RegistrationTextField(
+                        savedText: .constant(""),
+                        placeholder: "Phone number"
+                    )
+                    RegistrationTextField(
+                        savedText: .constant(""),
+                        placeholder: "Password"
+                    )
+                    Button(action: {}) {
+                        NavigationText(
+                            text: "Sign in",
+                            foreground: .white,
+                            backround: .black,
+                            width: 320,
+                            height: 40
+                        )
+                    }
                 }
             }
         }

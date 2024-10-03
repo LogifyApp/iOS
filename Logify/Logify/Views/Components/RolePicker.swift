@@ -13,7 +13,6 @@ struct RolePicker: View {
     var body: some View {
         VStack {
             Text("Select your role")
-                .font(.title3)
             Picker("", selection: $role){
                 Text("Driver")
                     .tag("Driver")

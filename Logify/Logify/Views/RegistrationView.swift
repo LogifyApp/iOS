@@ -15,9 +15,9 @@ struct RegistrationView: View {
             Image("background")
                 .resizable()
                 .ignoresSafeArea()
-                .scaleEffect(1.05)
+                .scaleEffect(1.15)
             
-            VStack(spacing: 30) {
+            VStack(spacing: 20) {
                 Image("logo")
                     .resizable()
                     .frame(width: 200, height: 200)
@@ -26,15 +26,18 @@ struct RegistrationView: View {
                     RolePicker()
                     RegistrationTextField(savedText: $userManager.user.name, placeholder: "Name")
                     RegistrationTextField(savedText: $userManager.user.surname, placeholder: "Surname")
-                    
 // TODO: cast phone number string value to int
                     RegistrationTextField(savedText: .constant(""), placeholder: "Phone number")
                     RegistrationTextField(savedText: $userManager.user.password, placeholder: "Password")
                 }
-                .offset(y: -30)
-
                 Button(action: {}){
-                    NavigationText(text: "Register", foreground: .white, backround: .black)
+                    NavigationText(
+                        text: "Sign up",
+                        foreground: .white,
+                        backround: .black,
+                        width: 320,
+                        height: 40
+                    )
                 }
             }
         }
