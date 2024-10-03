@@ -14,9 +14,10 @@ struct EmployerStartView: View {
         TabView(selection: $selectedItem) {
             
         }
-        .overlay {
+        .overlay(alignment: .bottom) {
             EmployerTabView(selectedItem: $selectedItem)
         }
+        .ignoresSafeArea()
     }
 }
 

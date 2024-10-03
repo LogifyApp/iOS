@@ -18,6 +18,8 @@
 		2B24425C2CAEE31D009E43AE /* EmployerStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24425B2CAEE31D009E43AE /* EmployerStartView.swift */; };
 		2B2442612CAEE41D009E43AE /* EmployerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442602CAEE41D009E43AE /* EmployerTabView.swift */; };
 		2B2442632CAEE471009E43AE /* TabViewPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442622CAEE471009E43AE /* TabViewPanel.swift */; };
+		2B2442652CAEF1E1009E43AE /* EmployerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442642CAEF1E1009E43AE /* EmployerProfileView.swift */; };
+		2B2442682CAEF40F009E43AE /* EmployerProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442672CAEF40F009E43AE /* EmployerProfileViewModel.swift */; };
 		2B6AABB42C7FC12D006B968A /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABB32C7FC12D006B968A /* SectionHeader.swift */; };
 		2B6AABBA2C84D822006B968A /* Cargo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABB92C84D822006B968A /* Cargo.swift */; };
 		2B6AABBC2C84D8A9006B968A /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABBB2C84D8A9006B968A /* Point.swift */; };
@@ -57,6 +59,8 @@
 		2B24425B2CAEE31D009E43AE /* EmployerStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerStartView.swift; sourceTree = "<group>"; };
 		2B2442602CAEE41D009E43AE /* EmployerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerTabView.swift; sourceTree = "<group>"; };
 		2B2442622CAEE471009E43AE /* TabViewPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewPanel.swift; sourceTree = "<group>"; };
+		2B2442642CAEF1E1009E43AE /* EmployerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerProfileView.swift; sourceTree = "<group>"; };
+		2B2442672CAEF40F009E43AE /* EmployerProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerProfileViewModel.swift; sourceTree = "<group>"; };
 		2B6AABB32C7FC12D006B968A /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		2B6AABB92C84D822006B968A /* Cargo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cargo.swift; sourceTree = "<group>"; };
 		2B6AABBB2C84D8A9006B968A /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
@@ -114,7 +118,6 @@
 				2BAFED062C526E360041AF88 /* DriverProfileView.swift */,
 				2BAFED1F2C556D710041AF88 /* DriverEmployerView.swift */,
 				2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */,
-				2B0C50112CA4BAA0003FEFE3 /* UserDataRow.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 		2B24425D2CAEE3C1009E43AE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				2B2442642CAEF1E1009E43AE /* EmployerProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -183,6 +187,14 @@
 			path = Cargo;
 			sourceTree = "<group>";
 		};
+		2B2442662CAEF3F8009E43AE /* Employer */ = {
+			isa = PBXGroup;
+			children = (
+				2B2442672CAEF40F009E43AE /* EmployerProfileViewModel.swift */,
+			);
+			path = Employer;
+			sourceTree = "<group>";
+		};
 		2B6AABC32C8A1E61006B968A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +206,7 @@
 		2B7C3ADE2CACA4BC00C62BC3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2B2442662CAEF3F8009E43AE /* Employer */,
 				2B2442572CAEDD66009E43AE /* Driver */,
 				2B7C3AE32CACB42300C62BC3 /* MapViewModel.swift */,
 				2B7C3AE52CAD5F8300C62BC3 /* ChatViewModel.swift */,
@@ -267,9 +280,10 @@
 		2BAFED0D2C526EDE0041AF88 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2B03B9812C99ABDF00DF48C1 /* TabViewButton.swift */,
+				2B0C50112CA4BAA0003FEFE3 /* UserDataRow.swift */,
 				2B6AABB32C7FC12D006B968A /* SectionHeader.swift */,
 				2B6AABBD2C864A18006B968A /* ButtonStyle.swift */,
+				2B03B9812C99ABDF00DF48C1 /* TabViewButton.swift */,
 				2B2442622CAEE471009E43AE /* TabViewPanel.swift */,
 			);
 			path = Components;
@@ -352,6 +366,7 @@
 				2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */,
 				2B6AABBE2C864A18006B968A /* ButtonStyle.swift in Sources */,
 				2B7C3AE02CACA4D700C62BC3 /* CargoListViewModel.swift in Sources */,
+				2B2442682CAEF40F009E43AE /* EmployerProfileViewModel.swift in Sources */,
 				2B7C3AE62CAD5F8300C62BC3 /* ChatViewModel.swift in Sources */,
 				2B6AABC52C8B4423006B968A /* CargoDocumentsView.swift in Sources */,
 				2B2442632CAEE471009E43AE /* TabViewPanel.swift in Sources */,
@@ -364,6 +379,7 @@
 				2B6AABBC2C84D8A9006B968A /* Point.swift in Sources */,
 				2B08DC802C77D263003F49D0 /* CargoDetailsView.swift in Sources */,
 				2B0C50162CA6008C003FEFE3 /* Chat.swift in Sources */,
+				2B2442652CAEF1E1009E43AE /* EmployerProfileView.swift in Sources */,
 				2B6AABC02C875A84006B968A /* MapView.swift in Sources */,
 				2B6AABBA2C84D822006B968A /* Cargo.swift in Sources */,
 				2BAFED0B2C526E760041AF88 /* ChatView.swift in Sources */,
