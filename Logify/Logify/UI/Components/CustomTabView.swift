@@ -26,7 +26,7 @@ struct CustomTabView: View {
                     isChatViewPresented.toggle()
                 }
                 .fullScreenCover(isPresented: $isChatViewPresented) {
-                    DriverChatView(
+                    ChatView(
                         chatViewModel:
                             ChatViewModel(
                                 driver: driverManager.driver,
@@ -54,7 +54,7 @@ struct TabViewPanel: View {
             .offset(y: 45)
         Capsule()
             .frame(height: 60)
-            .foregroundStyle(Color.systemBlue)
+            .foregroundStyle(Color.darkBlue)
     }
 }
 

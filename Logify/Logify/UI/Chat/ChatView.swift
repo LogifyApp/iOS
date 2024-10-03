@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DriverChatView: View {
+struct ChatView: View {
     
     @ObservedObject var chatViewModel: ChatViewModel
     @FocusState private var isFieldFocused: Bool
@@ -70,7 +70,7 @@ struct DriverChatView: View {
 
 #Preview {
     NavigationView {
-        DriverChatView(
+        ChatView(
             chatViewModel: ChatViewModel(
                 driver: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 123, password: "", role: ""),
                 employer: Employer(id: 2, name: "Name2", surname: "Surname2", phoneNumber: 123, password: "", role: "")
