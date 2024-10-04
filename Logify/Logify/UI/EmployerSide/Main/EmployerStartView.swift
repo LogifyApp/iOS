@@ -12,6 +12,8 @@ struct EmployerStartView: View {
     
     var body: some View {
         TabView(selection: $selectedItem) {
+            EmployerCargoListView(cargoListViewModel: EmployerCargoListViewModel())
+                .tag(0)
             EmployerProfileView(profileViewModel: EmployerProfileViewModel())
                 .tag(3)
         }

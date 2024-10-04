@@ -17,6 +17,7 @@ struct RouteCreationView: View {
                 if newCargoViewModel.points.isEmpty {
                     Text("Route doesn't have points")
                         .frame(maxWidth: .infinity)
+                        .font(.subheadline)
                         .padding(.vertical)
                 } else {
                     List {

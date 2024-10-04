@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CarDetailsRow: View {
+struct CarDetailsCell: View {
     var car: Car
     
     var body: some View {
@@ -18,27 +18,27 @@ struct CarDetailsRow: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(car.plate)
+                    Spacer()
                     if let brand = car.brand, let model = car.model {
                         Text(brand + " " + model)
-                            .font(.subheadline)
                     }
                 }
                 Spacer()
-                Text("Available")
-                Image(systemName: "chevron.right")
-                    .font(.system(size: 13))
-                    .bold()
-                    .foregroundStyle(.secondary)
+                VStack {
+//MARK: Car status??
+                    Text("Available")
+                    Spacer()
+                }
             }
-            .padding(.horizontal)
+            .padding()
         }
-        .frame(height: 60)
         .padding(.horizontal)
+        .padding(.bottom, 5)
     }
 }
 
 #Preview {
-    CarDetailsRow(car: Car(plate: "PP6745C",
+    CarDetailsCell(car: Car(plate: "PP6745C",
                            brand: "Ford",
                            model: "Focus",
                            status: 0,

@@ -13,9 +13,9 @@ struct SectionHeader: View {
     var body: some View {
         Text(text)
             .foregroundStyle(.black)
-            .font(.system(size: 18))
+            .font(.title3)
             .textCase(.none)
-            .bold()
+            .fontWeight(.medium)
     }
 }
 

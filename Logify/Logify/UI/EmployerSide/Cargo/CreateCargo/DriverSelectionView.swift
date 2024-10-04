@@ -1,5 +1,5 @@
 //
-//  CarSelectionView.swift
+//  NewCargoView.swift
 //  Logify
 //
 //  Created by Vlad Klunduk on 03/10/2024.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct CarSelectionView: View {
+struct DriverSelectionView: View {
     @EnvironmentObject var newCargoViewModel: NewCargoViewModel
-    @Environment(\.dismiss) var dismiss
     @State private var searchText = ""
-    private var searchResults: [Car] {
+    @Environment(\.dismiss) var dismiss
+    private var searchResults: [Driver] {
         if searchText.isEmpty {
-            return newCargoViewModel.cars
+            return newCargoViewModel.drivers
         } else {
-            return newCargoViewModel.cars
+            return newCargoViewModel.drivers
                 .filter {
-                    $0.plate.contains(searchText)
+                    $0.getFullName().contains(searchText) || String($0.id).contains(searchText)
                 }
         }
     }
@@ -25,20 +25,20 @@ struct CarSelectionView: View {
     var body: some View {
         VStack {
             if searchResults.isEmpty {
-                Text("Cars list is empty")
+                Text("Drivers list is empty")
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                    .font(.system(size: 16))
+                    .font(.subheadline)
             } else {
                 ScrollView {
-                    ForEach(searchResults, id: \.plate) { car in
-                        CarDetailsRow(car: car)
+                    ForEach(searchResults, id: \.id) { driver in
+                        DriverDetailsCell(driver: driver)
                             .onTapGesture {
-                                newCargoViewModel.car = car
+                                newCargoViewModel.driver = driver
                                 dismiss()
                             }
                     }
                 }
-                .navigationTitle("Car Selection")
+                .navigationTitle("Drivers")
                 .toolbarTitleDisplayMode(.inline)
                 .toolbarBackground(Color.background, for: .navigationBar)
             }
@@ -53,7 +53,7 @@ struct CarSelectionView: View {
 
 #Preview {
     NavigationView {
-        CarSelectionView()
+        DriverSelectionView()
             .environmentObject(NewCargoViewModel())
     }
 }

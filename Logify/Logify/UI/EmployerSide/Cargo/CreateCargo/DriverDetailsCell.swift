@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DriverDetailsRow: View {
+struct DriverDetailsCell: View {
     var driver: Driver
     
     var body: some View {
@@ -15,28 +15,16 @@ struct DriverDetailsRow: View {
             RoundedRectangle(cornerRadius: 16)
                 .foregroundStyle(.white)
                 .shadow(radius: 0.5)
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(driver.getFullName())
-                    Text("#\(driver.id)")
-                        .font(.subheadline)
-                }
-                Spacer()
-                Text("Available")
-                Image(systemName: "chevron.right")
-                    .font(.system(size: 13))
-                    .bold()
-                    .foregroundStyle(.secondary)
-            }
-            .padding(.horizontal)
+            DriverDetailsRow(driver: driver)
+                .padding()
         }
-        .frame(height: 60)
         .padding(.horizontal)
+        .padding(.bottom, 5)
     }
 }
 
 #Preview {
-    DriverDetailsRow(driver: 
+    DriverDetailsCell(driver: 
                         Driver(
                             id: 14356,
                             name: "Name",

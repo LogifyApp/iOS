@@ -17,11 +17,8 @@ struct NewCargoView: View {
             List {
                 Section {
                     if let driver = newCargoViewModel.driver {
-                        NewCargoDriverDetailsRow(
-                            id: driver.id,
-                            fullname: driver.getFullName(),
-                            phoneNumber: driver.phoneNumber
-                        )
+                        DriverDetailsRow(driver: driver)
+                            .padding(.vertical)
                         NavigationLink("Change") {
                             DriverSelectionView()
                         }
@@ -29,12 +26,15 @@ struct NewCargoView: View {
                     } else {
                         Text("Driver doesn't selected yet")
                             .frame(maxWidth: .infinity)
+                            .font(.subheadline)
                             .padding(.vertical)
                         NavigationLink("Select") {
                             DriverSelectionView()
                         }
                         .foregroundStyle(.blue)
                     }
+                } header: {
+                    SectionHeader(text: "Driver")
                 }
                 
                 Section {
@@ -51,12 +51,15 @@ struct NewCargoView: View {
                     } else {
                         Text("Car doesn't selected yet")
                             .frame(maxWidth: .infinity)
+                            .font(.subheadline)
                             .padding(.vertical)
                         NavigationLink("Select") {
                             CarSelectionView()
                         }
                         .foregroundStyle(.blue)
                     }
+                } header: {
+                    SectionHeader(text: "Car")
                 }
                 
                 Section {
@@ -67,6 +70,7 @@ struct NewCargoView: View {
                     if newCargoViewModel.points.isEmpty {
                         Text("Route doesn't created yet")
                             .frame(maxWidth: .infinity)
+                            .font(.subheadline)
                             .padding(.vertical)
                         NavigationLink("Create") {
                             NewPointView()
@@ -90,11 +94,13 @@ struct NewCargoView: View {
                                 )
                             }
                         }
-                        NavigationLink("Add") {
+                        NavigationLink("Add point") {
                             NewPointView()
                         }
                         .foregroundStyle(.blue)
                     }
+                } header: {
+                    SectionHeader(text: "Route")
                 }
             }
             .background(Color.background)
@@ -129,10 +135,14 @@ struct NewCargoDriverDetailsRow: View {
                 Text(fullname)
                 Spacer()
                 Text("#\(id)")
+                //Spacer()
+                //Text("#\(id)")
             }
             Text("\(phoneNumber)")
-                .font(.subheadline)
+            //Text("\(phoneNumber)")
+                //.font(.subheadline)
         }
+        .padding(.vertical)
     }
 }
 
