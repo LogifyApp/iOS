@@ -36,13 +36,14 @@ struct DriverDetailsRow: View {
 }
 
 #Preview {
-    DriverDetailsRow(driver: Driver(
-        id: 14356,
-        name: "Name",
-        surname: "Surname",
-        phoneNumber: 12837498357,
-        password: "",
-        role: "driver"
-    )
+    DriverDetailsRow(driver: 
+                        Driver(
+                            id: 14356,
+                            name: "Name",
+                            surname: "Surname",
+                            phoneNumber: 12837498357,
+                            password: "",
+                            role: "driver"
+                        )
     )
 }

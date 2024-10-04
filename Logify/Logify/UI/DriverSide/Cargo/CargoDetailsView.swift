@@ -51,15 +51,17 @@ struct CargoDetailsView: View {
                     ForEach(cargoViewModel.points.dropLast(), id: \.id) { point in
                         CargoRouteCell(
                             name: point.label,
-                            coordinates: "\(point.latitude) \(point.longtitude)",
+                            coordinates: point.getCoordinates(),
                             isLast: false
                         )
                     }
-                    CargoRouteCell(
-                        name: cargoViewModel.points.last!.label,
-                        coordinates: "\(cargoViewModel.points.last!.latitude) \(cargoViewModel.points.last!.longtitude)",
-                        isLast: true
-                    )
+                    if let point = cargoViewModel.points.last {
+                        CargoRouteCell(
+                            name: point.label,
+                            coordinates: point.getCoordinates(),
+                            isLast: true
+                        )
+                    }
                 }
                 .padding(.bottom, -16)
                 Button(action: { isMapPresented.toggle() }) {
@@ -111,50 +113,6 @@ struct CargoDetailsCell: View {
                 .foregroundStyle(.secondary)
             Spacer()
             Text(value)
-        }
-    }
-}
-
-struct CargoRouteCell: View {
-    
-    let name: String
-    let coordinates: String
-    let isLast: Bool
-    
-    var body: some View {
-        HStack {
-            Image(systemName: "circle.dashed")
-                .foregroundStyle(.blue)
-            Text(name)
-                .font(.system(size: 18))
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.top, 8)
-        
-        HStack {
-            VStack() {
-                if isLast {
-                    Image(systemName: "chevron.down")
-                        .foregroundStyle(.clear)
-                } else {
-                    Image(systemName: "chevron.down")
-                        .foregroundStyle(.blue)
-                    Image(systemName: "chevron.down")
-                        .foregroundStyle(.blue)
-                }
-            }
-            .padding(.vertical)
-            
-            HStack {
-                Text(coordinates)
-                    .font(.system(size: 16))
-                Button(action: {
-                    UIPasteboard.general.string = coordinates
-                }) {
-                    Image(systemName: "rectangle.portrait.on.rectangle.portrait")
-                }
-                .buttonStyle(PlainButtonStyle())
-            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         }
     }
 }

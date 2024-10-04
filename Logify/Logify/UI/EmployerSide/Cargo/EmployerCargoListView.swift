@@ -35,7 +35,7 @@ struct EmployerCargoListView: View {
                                 cargoViewModel: EmployerCargoViewModel(cargo)
                             )
                         ){
-                            CargoDetailsRow(
+                            CargoRow(
                                 cargoId: cargo.id,
                                 cargoStatus: cargo.status
                             )
@@ -59,7 +59,8 @@ struct EmployerCargoListView: View {
                     }
                 }
                 .fullScreenCover(isPresented: $showNewCargoScreen) {
-                    DriverSelectionView(newCargoViewModel: NewCargoViewModel())
+                    NewCargoView()
+                        .environmentObject(NewCargoViewModel())
                 }
             }
         }

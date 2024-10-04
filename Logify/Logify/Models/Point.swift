@@ -15,3 +15,10 @@ struct Point {
     var order: Int
     var cargoId: Int
 }
+
+extension Point {
+    func getCoordinates() -> String {
+        "\(latitude) \(longtitude)"
+    }
+}
+

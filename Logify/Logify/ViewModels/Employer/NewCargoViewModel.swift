@@ -7,7 +7,10 @@
 
 import Foundation
 class NewCargoViewModel: ObservableObject {
-    @Published var cargo: Cargo
+    var cargo: Cargo
+    @Published var driver: Driver?
+    @Published var car: Car?
+    @Published var points: [Point] = []
     @Published var drivers: [Driver] = []
     @Published var cars: [Car] = []
     
@@ -34,5 +37,44 @@ class NewCargoViewModel: ObservableObject {
             Car(plate: "KI3597K", brand: "VW", model: "Golf", status: 0, isDeleted: 0, employerId: 1),
             Car(plate: "PO8972M", brand: "Renault", model: "Arkana", status: 0, isDeleted: 0, employerId: 1)
         ]
+    }
+    
+    func addNewPoint(name: String, coordinatesString: String) {
+        let coordinates = coordinatesString.components(separatedBy: " ")
+        let latitude = Double(coordinates.first!)!
+        let longtitude = Double(coordinates.last!)!
+        points.append(
+            Point(
+                id: Int.random(in: 0...1000),
+                label: name,
+                latitude: latitude,
+                longtitude: longtitude,
+                order: 1,
+                cargoId: 1
+            )
+        )
+    }
+    
+    func getNewPoint(name: String, coordinatesString: String) -> Point {
+        let coordinates = coordinatesString.components(separatedBy: " ")
+        let latitude = Double(coordinates.first!)!
+        let longtitude = Double(coordinates.last!)!
+        return Point(
+            id: Int.random(in: 0...1000),
+            label: name,
+            latitude: latitude,
+            longtitude: longtitude,
+            order: 1,
+            cargoId: cargo.id
+        )
+    }
+    
+    func validateCoordinates(_ coordinates: String) -> Bool {
+        let array = coordinates.components(separatedBy: " ")
+        if array.count == 2, let latitude = array.first,
+            let longtitude = array.last {
+            return true
+        }
+        return false
     }
 }

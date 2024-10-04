@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct DriverSelectionView: View {
-    @ObservedObject var newCargoViewModel: NewCargoViewModel
+    @EnvironmentObject var newCargoViewModel: NewCargoViewModel
     @State private var searchText = ""
     @Environment(\.dismiss) var dismiss
-    var searchResults: [Driver] {
+    private var searchResults: [Driver] {
         if searchText.isEmpty {
             return newCargoViewModel.drivers
         } else {
@@ -32,11 +32,11 @@ struct DriverSelectionView: View {
                 } else {
                     ScrollView {
                         ForEach(searchResults, id: \.id) { driver in
-                            NavigationLink { CarSelectionView(newCargoViewModel: newCargoViewModel)
-                            } label: {
-                                DriverDetailsRow(driver: driver)
-                            }
-                            .buttonStyle(PlainButtonStyle())
+                            DriverDetailsRow(driver: driver)
+                                .onTapGesture {
+                                    newCargoViewModel.driver = driver
+                                    dismiss()
+                                }
                         }
                     }
                     .navigationTitle("Driver selection")
@@ -49,17 +49,11 @@ struct DriverSelectionView: View {
                 text: $searchText,
                 placement: .navigationBarDrawer(displayMode: .always)
             )
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button("Return") {
-                        dismiss()
-                    }
-                }
-            }
         }
     }
 }
 
 #Preview {
-    DriverSelectionView(newCargoViewModel: NewCargoViewModel())
+    DriverSelectionView()
+        .environmentObject(NewCargoViewModel())
 }

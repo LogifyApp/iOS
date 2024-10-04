@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct CarSelectionView: View {
-    @ObservedObject var newCargoViewModel: NewCargoViewModel
+    @EnvironmentObject var newCargoViewModel: NewCargoViewModel
+    @Environment(\.dismiss) var dismiss
     @State private var searchText = ""
-    var searchResults: [Car] {
+    private var searchResults: [Car] {
         if searchText.isEmpty {
             return newCargoViewModel.cars
         } else {
@@ -30,12 +31,11 @@ struct CarSelectionView: View {
             } else {
                 ScrollView {
                     ForEach(searchResults, id: \.plate) { car in
-                        NavigationLink {
-                            PointsSelectionView()
-                        } label: {
-                            CarDetailsRow(car: car)
-                        }
-                        .buttonStyle(PlainButtonStyle())
+                        CarDetailsRow(car: car)
+                            .onTapGesture {
+                                newCargoViewModel.car = car
+                                dismiss()
+                            }
                     }
                 }
                 .navigationTitle("Car Selection")
@@ -53,6 +53,7 @@ struct CarSelectionView: View {
 
 #Preview {
     NavigationView {
-        CarSelectionView(newCargoViewModel: NewCargoViewModel())
+        CarSelectionView()
+            .environmentObject(NewCargoViewModel())
     }
 }

@@ -35,7 +35,7 @@ struct DriverCargoListView: View {
                                 cargoViewModel: CargoViewModel(cargo)
                             )
                         ){
-                            CargoDetailsRow(
+                            CargoRow(
                                 cargoId: cargo.id,
                                 cargoStatus: cargo.status
                             )
