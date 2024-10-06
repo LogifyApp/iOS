@@ -61,7 +61,7 @@ struct CargoDetailsView: View {
                         )
                     }
                 }
-                .padding(.bottom, -16)
+                .padding(.vertical, 8)
                 Button {
                     isMapPresented.toggle()
                 } label: {

@@ -87,24 +87,27 @@ struct NewCargoView: View {
                                 .opacity(0)
                             }
                     } else {
-                        ForEach(newCargoViewModel.points, id: \.id) { point in
-                            PointRow(
-                                point: point,
-                                isLast: newCargoViewModel.points.last!.id == point.id
-                            )
-                            .onTapGesture {
-                                UIPasteboard.general.string = point.getCoordinates()
-                                withAnimation(.snappy) {
-                                    wasTapped = true
-                                }
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        VStack {
+                            ForEach(newCargoViewModel.points, id: \.id) { point in
+                                PointRow(
+                                    point: point,
+                                    isLast: newCargoViewModel.points.last!.id == point.id
+                                )
+                                .onTapGesture {
+                                    UIPasteboard.general.string = point.getCoordinates()
                                     withAnimation(.snappy) {
-                                        wasTapped = false
+                                        wasTapped = true
+                                    }
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                        withAnimation(.snappy) {
+                                            wasTapped = false
+                                        }
                                     }
                                 }
                             }
+                            .listRowSeparator(.hidden, edges: .top)
                         }
-                        .listRowSeparator(.hidden, edges: .top)
+                        //.padding(.vertical, 8)
                         
                         Text("Edit")
                             .foregroundStyle(.blue)

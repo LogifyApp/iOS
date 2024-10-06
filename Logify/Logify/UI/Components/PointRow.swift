@@ -29,7 +29,7 @@ struct PointRow: View {
                     Image(systemName: "chevron.down")
                         .foregroundStyle(.blue)
                 }
-                .padding(.top)
+                .padding(.vertical)
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
         }

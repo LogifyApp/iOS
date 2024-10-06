@@ -15,7 +15,7 @@ struct SectionHeader: View {
             .foregroundStyle(.black)
             .font(.title3)
             .textCase(.none)
-            .fontWeight(.medium)
+            .fontWeight(.semibold)
     }
 }
 
