@@ -11,93 +11,117 @@ struct NewCargoView: View {
     @EnvironmentObject var newCargoViewModel: NewCargoViewModel
     @Environment(\.dismiss) var dismiss
     @State private var description = ""
+    @State private var wasTapped = false
     
     var body: some View {
         NavigationView {
             List {
+                //MARK: Driver
                 Section {
                     if let driver = newCargoViewModel.driver {
                         DriverDetailsRow(driver: driver)
-                            .padding(.vertical)
-                        NavigationLink("Change") {
-                            DriverSelectionView()
-                        }
-                        .foregroundStyle(.blue)
+                            .padding(.top)
+                        Text("Change")
+                            .foregroundStyle(.blue)
+                            .overlay {
+                                NavigationLink("") {
+                                    DriverSelectionView()
+                                }
+                                .opacity(0)
+                            }
                     } else {
-                        Text("Driver doesn't selected yet")
-                            .frame(maxWidth: .infinity)
-                            .font(.subheadline)
-                            .padding(.vertical)
-                        NavigationLink("Select") {
-                            DriverSelectionView()
-                        }
-                        .foregroundStyle(.blue)
+                        NewCargoEmptyElementView(text: "Doesn't selected yet")
+                        Text("Select")
+                            .foregroundStyle(.blue)
+                            .overlay {
+                                NavigationLink("") {
+                                    DriverSelectionView()
+                                }
+                                .opacity(0)
+                            }
                     }
                 } header: {
                     SectionHeader(text: "Driver")
                 }
-                
+                //MARK: Car
                 Section {
                     if let car = newCargoViewModel.car {
-                        NewCargoCarDetailsRow(
-                            plate: car.plate,
-                            brand: car.brand,
-                            model: car.model
-                        )
-                        NavigationLink("Change") {
-                            CarSelectionView()
-                        }
-                        .foregroundStyle(.blue)
+                        CarDetailsRow(car: car)
+                            .padding(.top)
+                        Text("Change")
+                            .foregroundStyle(.blue)
+                            .overlay {
+                                NavigationLink("") {
+                                    CarSelectionView()
+                                }
+                                .opacity(0)
+                            }
                     } else {
-                        Text("Car doesn't selected yet")
-                            .frame(maxWidth: .infinity)
-                            .font(.subheadline)
-                            .padding(.vertical)
-                        NavigationLink("Select") {
-                            CarSelectionView()
-                        }
-                        .foregroundStyle(.blue)
+                        NewCargoEmptyElementView(text: "Doesn't selected yet")
+                        Text("Select")
+                            .foregroundStyle(.blue)
+                            .overlay {
+                                NavigationLink("") {
+                                    CarSelectionView()
+                                }
+                                .opacity(0)
+                            }
                     }
                 } header: {
                     SectionHeader(text: "Car")
                 }
-                
+                //MARK: Description
                 Section {
                     TextField("Description", text: $description, axis: .vertical)
                 }
-                
+                //MARK: Route
                 Section {
                     if newCargoViewModel.points.isEmpty {
-                        Text("Route doesn't created yet")
-                            .frame(maxWidth: .infinity)
-                            .font(.subheadline)
-                            .padding(.vertical)
-                        NavigationLink("Create") {
-                            NewPointView()
-                        }
-                        .foregroundStyle(.blue)
+                        NewCargoEmptyElementView(text: "Doesn't created yet")
+                        Text("Create")
+                            .foregroundStyle(.blue)
+                            .overlay {
+                                NavigationLink("") {
+                                    NewPointView()
+                                }
+                                .opacity(0)
+                            }
                     } else {
-                        VStack (spacing: 0){
-                            ForEach(newCargoViewModel.points.dropLast(), id: \.id) { point in
-                                CargoRouteCell(
-                                    name: point.label,
-                                    coordinates: point.getCoordinates(),
-                                    isLast: false
-                                )
-                            }
-                            .listRowSeparator(.hidden)
-                            if let point = newCargoViewModel.points.last {
-                                CargoRouteCell(
-                                    name: point.label,
-                                    coordinates: point.getCoordinates(),
-                                    isLast: true
-                                )
+                        ForEach(newCargoViewModel.points, id: \.id) { point in
+                            PointRow(
+                                point: point,
+                                isLast: newCargoViewModel.points.last!.id == point.id
+                            )
+                            .onTapGesture {
+                                UIPasteboard.general.string = point.getCoordinates()
+                                withAnimation(.snappy) {
+                                    wasTapped = true
+                                }
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    withAnimation(.snappy) {
+                                        wasTapped = false
+                                    }
+                                }
                             }
                         }
-                        NavigationLink("Add point") {
-                            NewPointView()
-                        }
-                        .foregroundStyle(.blue)
+                        .listRowSeparator(.hidden, edges: .top)
+                        
+                        Text("Edit")
+                            .foregroundStyle(.blue)
+                            .overlay {
+                                NavigationLink("") {
+                                    RouteCreationView()
+                                }
+                                .opacity(0)
+                            }
+                        Text("Add point")
+                            .foregroundStyle(.blue)
+                            .overlay {
+                                NavigationLink("") {
+                                    NewPointView()
+                                }
+                                .opacity(0)
+                            }
                     }
                 } header: {
                     SectionHeader(text: "Route")
@@ -114,6 +138,18 @@ struct NewCargoView: View {
                     }
                 }
             }
+            .overlay {
+                if wasTapped {
+                    Text("Coordinates were copied")
+                        .fontWeight(.semibold)
+                        .padding()
+                        .background(.blue)
+                        .foregroundStyle(.white)
+                        .clipShape(Capsule())
+                        .transition(.move(edge: .bottom))
+                        .frame(maxHeight: .infinity, alignment: .bottom)
+                }
+            }
         }
     }
 }
@@ -124,45 +160,13 @@ struct NewCargoView: View {
 }
 
 
-struct NewCargoDriverDetailsRow: View {
-    var id: Int
-    var fullname: String
-    var phoneNumber: Int
+struct NewCargoEmptyElementView: View {
+    var text: String
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text(fullname)
-                Spacer()
-                Text("#\(id)")
-                //Spacer()
-                //Text("#\(id)")
-            }
-            Text("\(phoneNumber)")
-            //Text("\(phoneNumber)")
-                //.font(.subheadline)
-        }
-        .padding(.vertical)
+        Text(text)
+            .frame(maxWidth: .infinity)
+            .font(.subheadline)
+            .padding(.vertical)
     }
-}
-
-struct NewCargoCarDetailsRow: View {
-    var plate: String
-    var brand: String?
-    var model: String?
-    
-    var body: some View {
-        HStack {
-            Text(plate)
-            Spacer()
-            if let brand = brand, let model = model {
-                Text(brand + " " + model)
-            }
-        }
-    }
-}
-
-struct NewCargo {
-    var driver: Driver?
-    var car: Car?
 }

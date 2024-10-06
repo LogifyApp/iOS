@@ -47,43 +47,43 @@ struct CargoDetailsView: View {
             
             // MARK: Route
             Section {
-                VStack(spacing: 0) {
+                VStack {
                     ForEach(cargoViewModel.points.dropLast(), id: \.id) { point in
-                        CargoRouteCell(
-                            name: point.label,
-                            coordinates: point.getCoordinates(),
+                        PointRow(
+                            point: point,
                             isLast: false
                         )
                     }
                     if let point = cargoViewModel.points.last {
-                        CargoRouteCell(
-                            name: point.label,
-                            coordinates: point.getCoordinates(),
+                        PointRow(
+                            point: point,
                             isLast: true
                         )
                     }
                 }
                 .padding(.bottom, -16)
-                Button(action: { isMapPresented.toggle() }) {
-                     HStack {
-                         Image(systemName: "map")
-                         Text("Map")
-                     }
-                     .modifier(
-                         ButtonStyle(
+                Button {
+                    isMapPresented.toggle()
+                } label: {
+                    HStack {
+                        Image(systemName: "map")
+                        Text("Map")
+                    }
+                    .modifier(
+                        ButtonStyleModifier(
                             width: 310,
-                            height: 36,
+                            height: 38,
                             background: .black,
                             foreground: .white
-                         )
-                     )
-                 }
-                 .fullScreenCover(isPresented: $isMapPresented) {
-                     MapView(mapViewModel:
-                            MapViewModel(points: cargoViewModel.points)
-                     )
-                 }
-                 .padding(.bottom, 4)
+                        )
+                    )
+                }
+                .fullScreenCover(isPresented: $isMapPresented) {
+                    MapView(mapViewModel:
+                        MapViewModel(points: cargoViewModel.points)
+                    )
+                }
+                .padding(.bottom, 4)
             }
             .listRowSeparator(.hidden)
         }

@@ -35,7 +35,7 @@ struct EmployerCargoDocumentsView: View {
                 }) {
                     Text("Approve")
                         .modifier(
-                            ButtonStyle(
+                            ButtonStyleModifier(
                                 width: 320,
                                 height: 40,
                                 background: .black,

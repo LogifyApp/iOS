@@ -39,9 +39,9 @@ struct CargoDocumentsView: View {
         .background(Color.background)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button(action: {
+                Button {
                     showImporter.toggle()
-                }) {
+                } label: {
                     Image(systemName: "plus")
                 }
                 .fileImporter(isPresented: $showImporter,

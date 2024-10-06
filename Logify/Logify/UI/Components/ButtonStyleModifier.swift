@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ButtonStyle: ViewModifier {
+struct ButtonStyleModifier: ViewModifier {
     let width: CGFloat
     let height: CGFloat
     let background: Color
@@ -15,7 +15,7 @@ struct ButtonStyle: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .frame(maxWidth: width, maxHeight: height)
+            .frame(width: width, height: height)
             .fontWeight(.medium)
             .background(background)
             .foregroundColor(foreground)

@@ -41,19 +41,19 @@ struct EmployerCargoDetailsView: View {
                 Text(cargoViewModel.cargo.description)
             }
             Section {
-                VStack(spacing: 0) {
+                VStack {
                     ForEach(cargoViewModel.points.dropLast(), id: \.id) { point in
-                        CargoRouteCell(
-                            name: point.label,
-                            coordinates: "\(point.latitude) \(point.longtitude)",
+                        PointRow(
+                            point: point,
                             isLast: false
                         )
                     }
-                    CargoRouteCell(
-                        name: cargoViewModel.points.last!.label,
-                        coordinates: "\(cargoViewModel.points.last!.latitude) \(cargoViewModel.points.last!.longtitude)",
-                        isLast: true
-                    )
+                    if let point = cargoViewModel.points.last {
+                        PointRow(
+                            point: point,
+                            isLast: true
+                        )
+                    }
                 }
                 .padding(.bottom, -16)
                 Button(action: { isMapPresented.toggle() }) {
@@ -62,9 +62,9 @@ struct EmployerCargoDetailsView: View {
                          Text("Map")
                      }
                      .modifier(
-                         ButtonStyle(
+                         ButtonStyleModifier(
                             width: 310,
-                            height: 36,
+                            height: 38,
                             background: .black,
                             foreground: .white
                          )

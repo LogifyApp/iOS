@@ -15,22 +15,8 @@ struct CarDetailsCell: View {
             RoundedRectangle(cornerRadius: 16)
                 .foregroundStyle(.white)
                 .shadow(radius: 0.5)
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(car.plate)
-                    Spacer()
-                    if let brand = car.brand, let model = car.model {
-                        Text(brand + " " + model)
-                    }
-                }
-                Spacer()
-                VStack {
-//MARK: Car status??
-                    Text("Available")
-                    Spacer()
-                }
-            }
-            .padding()
+            CarDetailsRow(car: car)
+                .padding()
         }
         .padding(.horizontal)
         .padding(.bottom, 5)

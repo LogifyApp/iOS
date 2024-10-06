@@ -9,44 +9,32 @@ import SwiftUI
 
 struct RouteCreationView: View {
     @EnvironmentObject var newCargoViewModel: NewCargoViewModel
-    @State private var showNewPointView = false
     
     var body: some View {
-        List {
-            Section {
-                if newCargoViewModel.points.isEmpty {
-                    Text("Route doesn't have points")
-                        .frame(maxWidth: .infinity)
-                        .font(.subheadline)
-                        .padding(.vertical)
-                } else {
-                    List {
-                        ForEach(newCargoViewModel.points, id: \.id) { point in
-                            VStack {
-                                Text(point.label)
-                                Text(point.getCoordinates())
-                                    .font(.subheadline)
-                            }
-                        }
-                    }
-                }
-                Button("Add point") {
-                    showNewPointView.toggle()
+        if newCargoViewModel.points.isEmpty {
+            Text("Route doesn't have points")
+                .frame(maxWidth: .infinity)
+                .font(.subheadline)
+                .padding(.vertical)
+        } else {
+            List {
+                ForEach (newCargoViewModel.points, id: \.id) { point in
+                    Text(point.label)
                 }
             }
-        }
-        .background(Color.background)
-        .scrollContentBackground(.hidden)
-        .navigationTitle("Route")
-        .navigationBarTitleDisplayMode(.inline)
-        .sheet(isPresented: $showNewPointView) {
-            NewPointView()
+            .background(Color.background)
+            .scrollContentBackground(.hidden)
+            .navigationTitle("Route")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                EditButton()
+            }
         }
     }
 }
 
 #Preview {
-    NavigationView {
+    NavigationStack {
         RouteCreationView()
             .environmentObject(NewCargoViewModel())
     }

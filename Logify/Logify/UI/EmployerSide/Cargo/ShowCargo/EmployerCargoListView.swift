@@ -36,7 +36,7 @@ struct EmployerCargoListView: View {
                                     cargoViewModel: EmployerCargoViewModel(cargo)
                                 )
                             ){
-                                CargoRow(
+                                CargoCell(
                                     cargoId: cargo.id,
                                     cargoStatus: cargo.status
                                 )

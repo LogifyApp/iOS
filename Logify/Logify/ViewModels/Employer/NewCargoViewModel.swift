@@ -37,6 +37,11 @@ class NewCargoViewModel: ObservableObject {
             Car(plate: "KI3597K", brand: "VW", model: "Golf", status: 0, isDeleted: 0, employerId: 1),
             Car(plate: "PO8972M", brand: "Renault", model: "Arkana", status: 0, isDeleted: 0, employerId: 1)
         ]
+        points = [
+            Point(id: 1, label: "Point 1", latitude: 52.219420, longtitude: 20.983114, order: 0, cargoId: 1),
+            Point(id: 2, label: "Point 2", latitude: 52.219420, longtitude: 20.983114, order: 0, cargoId: 1),
+            Point(id: 3, label: "Point 3", latitude: 52.219420, longtitude: 20.983114, order: 0, cargoId: 1)
+        ]
     }
     
     func addNewPoint(name: String, coordinatesString: String) {
@@ -76,5 +81,9 @@ class NewCargoViewModel: ObservableObject {
             return true
         }
         return false
+    }
+    
+    func removePoint(_ point: Point) {
+        points.removeAll { $0.id == point.id }
     }
 }

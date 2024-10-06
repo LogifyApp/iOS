@@ -15,15 +15,14 @@ struct DriverDetailsRow: View {
             VStack(alignment: .leading) {
                 Text("#\(driver.id)")
                     .fontWeight(.medium)
-                Spacer(minLength: 12)
+                    .padding(.bottom, 5)
                 Text(driver.getFullName())
                 Text("\(driver.phoneNumber)")
             }
+            .frame(maxHeight: .infinity, alignment: .top)
             Spacer()
-            VStack(alignment: .trailing) {
-                Text("Available")
-                Spacer()
-            }
+            Text("Available")
+                .frame(maxHeight: .infinity, alignment: .top)
         }
     }
 }

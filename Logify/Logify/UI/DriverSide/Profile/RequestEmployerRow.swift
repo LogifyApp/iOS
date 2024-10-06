@@ -24,7 +24,7 @@ struct RequestEmployerRow: View {
                     }, label: {
                         Text("Accept")
                             .modifier(
-                                ButtonStyle(
+                                ButtonStyleModifier(
                                     width: .infinity,
                                     height: 30,
                                     background: .black,
@@ -37,7 +37,7 @@ struct RequestEmployerRow: View {
                     }, label: {
                         Text("Decline")
                             .modifier(
-                                ButtonStyle(
+                                ButtonStyleModifier(
                                     width: .infinity,
                                     height: 30,
                                     background: .red,
