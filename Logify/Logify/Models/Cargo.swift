@@ -16,3 +16,9 @@ struct Cargo {
     var driverId: Int
     var carId: String
 }
+
+extension Cargo {
+    func getCreationDateString() -> String {
+        "\(creationDate.formatted(date: .numeric, time: .omitted))"
+    }
+}

@@ -26,7 +26,7 @@ struct CargoDetailsView: View {
                 )
                 CargoDetailsCell(
                     property: "Creation date",
-                    value: "\(cargoViewModel.cargo.creationDate.formatted(date: .numeric, time: .omitted))"
+                    value: cargoViewModel.cargo.getCreationDateString()
                 )
                 CargoDetailsCell(
                     property: "Car ID",
@@ -39,25 +39,17 @@ struct CargoDetailsView: View {
                         .foregroundStyle(.secondary)
                 }
             }
-            
             // MARK: Description
             Section {
                 Text(cargoViewModel.cargo.description)
             }
-            
             // MARK: Route
             Section {
                 VStack {
-                    ForEach(cargoViewModel.points.dropLast(), id: \.id) { point in
+                    ForEach(cargoViewModel.points, id: \.id) { point in
                         PointRow(
                             point: point,
-                            isLast: false
-                        )
-                    }
-                    if let point = cargoViewModel.points.last {
-                        PointRow(
-                            point: point,
-                            isLast: true
+                            isLast: cargoViewModel.points.last?.id == point.id
                         )
                     }
                 }

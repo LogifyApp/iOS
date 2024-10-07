@@ -10,9 +10,12 @@ import SwiftUI
 struct EmployerCargoDetailsView: View {
     @ObservedObject var cargoViewModel: EmployerCargoViewModel
     @State private var isMapPresented = false
+    @State private var description = ""
+    @State private var disableEditing = true
     
     var body: some View {
         List {
+            //MARK: Info
             Section {
                 CargoDetailsCell(
                     property: "Cargo ID",
@@ -24,7 +27,7 @@ struct EmployerCargoDetailsView: View {
                 )
                 CargoDetailsCell(
                     property: "Creation date",
-                    value: "\(cargoViewModel.cargo.creationDate.formatted(date: .numeric, time: .omitted))"
+                    value: cargoViewModel.cargo.getCreationDateString()
                 )
                 CargoDetailsCell(
                     property: "Car ID",
@@ -37,21 +40,26 @@ struct EmployerCargoDetailsView: View {
                         .foregroundStyle(.secondary)
                 }
             }
+            //MARK: Description
             Section {
-                Text(cargoViewModel.cargo.description)
+                TextField("", text: $description)
+                    .disabled(disableEditing)
+            } header: {
+                HStack {
+                    Spacer()
+                    Button("Edit") {
+                        
+                    }
+                    .textCase(.none)
+                }
             }
+            //MARK: Route
             Section {
                 VStack {
-                    ForEach(cargoViewModel.points.dropLast(), id: \.id) { point in
+                    ForEach(cargoViewModel.points, id: \.id) { point in
                         PointRow(
                             point: point,
-                            isLast: false
-                        )
-                    }
-                    if let point = cargoViewModel.points.last {
-                        PointRow(
-                            point: point,
-                            isLast: true
+                            isLast: cargoViewModel.points.last?.id == point.id
                         )
                     }
                 }
@@ -82,12 +90,8 @@ struct EmployerCargoDetailsView: View {
         .navigationTitle("Details")
         .toolbarTitleDisplayMode(.inline)
         .scrollContentBackground(.hidden)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button("Edit") {
-                    
-                }
-            }
+        .onAppear {
+            description = cargoViewModel.cargo.description
         }
     }
 }

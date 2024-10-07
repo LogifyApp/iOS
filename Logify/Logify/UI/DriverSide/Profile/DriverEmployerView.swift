@@ -15,7 +15,7 @@ struct DriverEmployerView: View {
         List {
             Section {
                 if let employer = profileViewModel.employer {
-                    UserDataRow(user: employer, imageWidth: 70)
+                    UserDataCell(user: employer)
                 } else {
                     Text("You don't have active employer")
                         .frame(maxWidth: .infinity)

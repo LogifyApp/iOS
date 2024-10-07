@@ -9,13 +9,11 @@ import Foundation
 import SwiftUI
 
 struct UserDataCell: View {
-    
     var user: User
-    var imageWidth: CGFloat
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(profileViewModel.employer.getFullName())
+            Text(user.getFullName())
                 .font(.system(size: 34, weight: .semibold))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(28)
@@ -23,7 +21,7 @@ struct UserDataCell: View {
                 .clipShape(RoundedRectangle(cornerRadius: 14))
                 .padding(.bottom, 10)
             HStack {
-                Text("\(profileViewModel.employer.phoneNumber)")
+                Text("\(user.phoneNumber)")
                     .font(.system(size: 18, weight: .medium))
                     .frame(maxWidth: .infinity)
                     .padding(20)
@@ -31,7 +29,7 @@ struct UserDataCell: View {
                     .clipShape(RoundedRectangle(cornerRadius: 14))
                     .padding(.trailing, 10)
                     .lineLimit(1)
-                Text("Employer")
+                Text(user.role)
                     .font(.system(size: 18, weight: .medium))
                     .padding(20)
                     .padding(.horizontal, 5)

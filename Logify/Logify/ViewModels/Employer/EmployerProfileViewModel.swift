@@ -14,6 +14,6 @@ class EmployerProfileViewModel: ObservableObject {
     }
     
     init() {
-        self.employer = Employer(id: 2, name: "Name", surname: "Surname", phoneNumber: 1234535345, password: "", role: "")
+        self.employer = Employer(id: 2, name: "Name", surname: "Surname", phoneNumber: 1234535345, password: "", role: "Employer")
     }
 }

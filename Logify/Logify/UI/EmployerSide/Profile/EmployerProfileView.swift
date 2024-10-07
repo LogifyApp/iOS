@@ -9,16 +9,12 @@ import SwiftUI
 
 struct EmployerProfileView: View {
     @ObservedObject var profileViewModel: EmployerProfileViewModel
-    
+
     var body: some View {
-        NavigationView {
+        VStack {
+            UserDataCell(user: profileViewModel.employer)
+                .padding([.horizontal, .top], 20)
             List {
-                Section {
-                    UserDataRow(
-                        user: profileViewModel.employer,
-                        imageWidth: 90
-                    )
-                }
                 Section {
                     Picker("Language", selection: .constant(1)) {
                         Text("English")
@@ -33,12 +29,11 @@ struct EmployerProfileView: View {
                     }
                 }
             }
-            .navigationTitle("Profile")
-            .navigationBarTitleDisplayMode(.large)
-            .background(Color.background)
+            .navigationBarTitleDisplayMode(.inline)
             .scrollContentBackground(.hidden)
+            .scrollDisabled(true)
         }
-        .toolbarBackground(.hidden, for: .tabBar)
+        .background(Color.background)
     }
 }
 
