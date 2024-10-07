@@ -55,7 +55,6 @@ struct EmployerCargoDetailsView: View {
                         )
                     }
                 }
-                .padding(.bottom, -16)
                 Button(action: { isMapPresented.toggle() }) {
                      HStack {
                          Image(systemName: "map")

@@ -13,9 +13,8 @@ struct SectionHeader: View {
     var body: some View {
         Text(text)
             .foregroundStyle(.black)
-            .font(.title3)
+            .font(.system(.title3, weight: .medium))
             .textCase(.none)
-            .fontWeight(.semibold)
     }
 }
 

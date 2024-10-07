@@ -11,7 +11,7 @@ struct NewCargoView: View {
     @EnvironmentObject var newCargoViewModel: NewCargoViewModel
     @Environment(\.dismiss) var dismiss
     @State private var description = ""
-    @State private var wasTapped = false
+    @State private var pointWasTapped = false
     
     var body: some View {
         NavigationView {
@@ -72,7 +72,10 @@ struct NewCargoView: View {
                 }
                 //MARK: Description
                 Section {
-                    TextField("Description", text: $description, axis: .vertical)
+                    TextField("Description", 
+                              text: $description,
+                              axis: .vertical
+                    )
                 }
                 //MARK: Route
                 Section {
@@ -96,24 +99,23 @@ struct NewCargoView: View {
                                 .onTapGesture {
                                     UIPasteboard.general.string = point.getCoordinates()
                                     withAnimation(.snappy) {
-                                        wasTapped = true
+                                        pointWasTapped = true
                                     }
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                         withAnimation(.snappy) {
-                                            wasTapped = false
+                                            pointWasTapped = false
                                         }
                                     }
                                 }
                             }
                             .listRowSeparator(.hidden, edges: .top)
                         }
-                        //.padding(.vertical, 8)
-                        
+                        .padding(.vertical, 8)
                         Text("Edit")
                             .foregroundStyle(.blue)
                             .overlay {
                                 NavigationLink("") {
-                                    RouteCreationView()
+                                    RouteEditingView()
                                 }
                                 .opacity(0)
                             }
@@ -140,9 +142,15 @@ struct NewCargoView: View {
                         dismiss()
                     }
                 }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Save") {
+                        
+                        dismiss()
+                    }
+                }
             }
             .overlay {
-                if wasTapped {
+                if pointWasTapped {
                     Text("Coordinates were copied")
                         .fontWeight(.semibold)
                         .padding()

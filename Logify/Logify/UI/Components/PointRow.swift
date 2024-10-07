@@ -17,7 +17,7 @@ struct PointRow: View {
             HStack {
                 Image(systemName: "circle.dashed")
                     .foregroundStyle(.blue)
-                    .padding(.trailing)
+                    .padding(.trailing, 6)
                 Text(point.label)
                     .font(.system(size: 18))
                 Spacer()
