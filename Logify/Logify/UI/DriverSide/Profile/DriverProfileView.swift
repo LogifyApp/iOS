@@ -36,6 +36,8 @@ struct DriverProfileView: View {
                 .scrollDisabled(true)
             }
             .background(Color.background)
+            .navigationTitle("Profile")
+            .toolbarTitleDisplayMode(.inline)
         }
     }
 }

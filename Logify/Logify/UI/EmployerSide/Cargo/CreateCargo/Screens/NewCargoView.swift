@@ -144,7 +144,7 @@ struct NewCargoView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        
+                        //save cargo
                         dismiss()
                     }
                 }
@@ -154,7 +154,7 @@ struct NewCargoView: View {
                     Text("Coordinates were copied")
                         .fontWeight(.semibold)
                         .padding()
-                        .background(.blue)
+                        .background(.darkBlue)
                         .foregroundStyle(.white)
                         .clipShape(Capsule())
                         .transition(.move(edge: .bottom))

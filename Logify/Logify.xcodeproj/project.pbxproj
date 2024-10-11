@@ -255,16 +255,8 @@
 		2B24428D2CB07499009E43AE /* CreateCargo */ = {
 			isa = PBXGroup;
 			children = (
-				2B2442892CB007FA009E43AE /* NewCargoView.swift */,
-				2B2442752CAF18CE009E43AE /* DriverSelectionView.swift */,
-				2B24427D2CAF3462009E43AE /* CarSelectionView.swift */,
-				2B2442852CAFD7BF009E43AE /* NewPointView.swift */,
-				2B2442872CAFE0A2009E43AE /* NewPointMapView.swift */,
-				2B24427B2CAF297A009E43AE /* DriverDetailsCell.swift */,
-				2B24428F2CB0A700009E43AE /* DriverDetailsRow.swift */,
-				2B24427F2CAF3C65009E43AE /* CarDetailsCell.swift */,
-				2B2442912CB1EEF2009E43AE /* CarDetailsRow.swift */,
-				2B2442812CAF4643009E43AE /* RouteEditingView.swift */,
+				2B2442962CB4891B009E43AE /* Screens */,
+				2B2442952CB488D1009E43AE /* Components */,
 			);
 			path = CreateCargo;
 			sourceTree = "<group>";
@@ -277,6 +269,30 @@
 				2B24426F2CAF0447009E43AE /* EmployerCargoDocumentsView.swift */,
 			);
 			path = ShowCargo;
+			sourceTree = "<group>";
+		};
+		2B2442952CB488D1009E43AE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2B24427B2CAF297A009E43AE /* DriverDetailsCell.swift */,
+				2B24428F2CB0A700009E43AE /* DriverDetailsRow.swift */,
+				2B24427F2CAF3C65009E43AE /* CarDetailsCell.swift */,
+				2B2442912CB1EEF2009E43AE /* CarDetailsRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2B2442962CB4891B009E43AE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2B2442892CB007FA009E43AE /* NewCargoView.swift */,
+				2B2442752CAF18CE009E43AE /* DriverSelectionView.swift */,
+				2B24427D2CAF3462009E43AE /* CarSelectionView.swift */,
+				2B2442852CAFD7BF009E43AE /* NewPointView.swift */,
+				2B2442872CAFE0A2009E43AE /* NewPointMapView.swift */,
+				2B2442812CAF4643009E43AE /* RouteEditingView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		2B6AABC32C8A1E61006B968A /* Managers */ = {

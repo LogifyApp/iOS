@@ -12,6 +12,7 @@ struct EmployerCargoDetailsView: View {
     @State private var isMapPresented = false
     @State private var description = ""
     @State private var disableEditing = true
+    @Binding var hideTabView: Bool
     
     var body: some View {
         List {
@@ -30,6 +31,10 @@ struct EmployerCargoDetailsView: View {
                     value: cargoViewModel.cargo.getCreationDateString()
                 )
                 CargoDetailsCell(
+                    property: "Driver ID",
+                    value: "\(cargoViewModel.cargo.driverId)"
+                )
+                CargoDetailsCell(
                     property: "Car ID",
                     value: cargoViewModel.cargo.carId
                 )
@@ -42,15 +47,11 @@ struct EmployerCargoDetailsView: View {
             }
             //MARK: Description
             Section {
-                TextField("", text: $description)
-                    .disabled(disableEditing)
-            } header: {
-                HStack {
-                    Spacer()
-                    Button("Edit") {
-                        
-                    }
-                    .textCase(.none)
+                TextField("", text: $description, axis: .vertical)
+                        .disabled(disableEditing)
+                Button(disableEditing ? "Edit" : "Done") {
+                    //save description
+                    disableEditing.toggle()
                 }
             }
             //MARK: Route
@@ -86,18 +87,25 @@ struct EmployerCargoDetailsView: View {
             }
             .listRowSeparator(.hidden)
         }
-        .background(Color.background)
         .navigationTitle("Details")
         .toolbarTitleDisplayMode(.inline)
+        .background(Color.background)
+        .toolbarBackground(.hidden, for: .tabBar)
         .scrollContentBackground(.hidden)
         .onAppear {
             description = cargoViewModel.cargo.description
+            withAnimation {
+                hideTabView = true
+            }
         }
     }
 }
 
 #Preview {
     NavigationView {
-        EmployerCargoDetailsView(cargoViewModel: EmployerCargoViewModel())
+        EmployerCargoDetailsView(
+            cargoViewModel: EmployerCargoViewModel(),
+            hideTabView: .constant(true)
+        )
     }
 }

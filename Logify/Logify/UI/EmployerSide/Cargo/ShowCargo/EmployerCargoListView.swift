@@ -11,6 +11,7 @@ struct EmployerCargoListView: View {
     @ObservedObject var cargoListViewModel: EmployerCargoListViewModel
     @State private var searchText = ""
     @State private var showNewCargoScreen = false
+    @Binding var hideTabView: Bool
     var searchResults: [Cargo] {
         if searchText.isEmpty {
             return cargoListViewModel.cargoList
@@ -33,7 +34,8 @@ struct EmployerCargoListView: View {
                         ForEach(searchResults, id: \.id) { cargo in
                             NavigationLink(
                                 destination: EmployerCargoDetailsView(
-                                    cargoViewModel: EmployerCargoViewModel(cargo)
+                                    cargoViewModel: EmployerCargoViewModel(cargo),
+                                    hideTabView: $hideTabView
                                 )
                             ){
                                 CargoCell(
@@ -44,9 +46,10 @@ struct EmployerCargoListView: View {
                             .buttonStyle(PlainButtonStyle())
                         }
                     }
-                    .background(Color.background)
                     .navigationTitle("Cargo")
                     .toolbarTitleDisplayMode(.inline)
+                    .background(Color.background)
+                    .toolbarBackground(.hidden, for: .tabBar)
                     .toolbarBackground(Color.background, for: .navigationBar)
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
@@ -65,10 +68,15 @@ struct EmployerCargoListView: View {
                 text: $searchText,
                 placement: .navigationBarDrawer(displayMode: .always)
             )
+            .onAppear {
+                withAnimation {
+                    hideTabView = false
+                }
+            }
         }
     }
 }
 
 #Preview {
-    EmployerCargoListView(cargoListViewModel: EmployerCargoListViewModel())
+    EmployerCargoListView(cargoListViewModel: EmployerCargoListViewModel(), hideTabView: .constant(false))
 }

@@ -11,29 +11,33 @@ struct EmployerProfileView: View {
     @ObservedObject var profileViewModel: EmployerProfileViewModel
 
     var body: some View {
-        VStack {
-            UserDataCell(user: profileViewModel.employer)
-                .padding([.horizontal, .top], 20)
-            List {
-                Section {
-                    Picker("Language", selection: .constant(1)) {
-                        Text("English")
+        NavigationView {
+            VStack {
+                UserDataCell(user: profileViewModel.employer)
+                    .padding([.horizontal, .top], 20)
+                List {
+                    Section {
+                        Picker("Language", selection: .constant(1)) {
+                            Text("English")
+                        }
+                        .pickerStyle(.navigationLink)
+                        Toggle("Notifications", isOn: .constant(true))
+                        Toggle("Dark mode", isOn: .constant(false))
                     }
-                    .pickerStyle(.navigationLink)
-                    Toggle("Notifications", isOn: .constant(true))
-                    Toggle("Dark mode", isOn: .constant(false))
-                }
-                Section {
-                    Button("Log out", role: .destructive) {
-                        
+                    Section {
+                        Button("Log out", role: .destructive) {
+                            
+                        }
                     }
                 }
+                .navigationBarTitleDisplayMode(.inline)
+                .scrollContentBackground(.hidden)
+                .scrollDisabled(true)
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .scrollContentBackground(.hidden)
-            .scrollDisabled(true)
+            .background(Color.background)
+            .navigationTitle("Profile")
+            .toolbarTitleDisplayMode(.inline)
         }
-        .background(Color.background)
     }
 }
 
