@@ -17,7 +17,7 @@ class ProfileViewModel: ObservableObject {
     }
 
     init() {
-        self.driver = Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "Driver")
+        self.driver = Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "Driver", status: "Available")
         getEmployersRequests()
     }
     

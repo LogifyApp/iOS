@@ -35,7 +35,8 @@ struct DriverDetailsRow: View {
                             surname: "Surname",
                             phoneNumber: 12837498357,
                             password: "",
-                            role: "driver"
+                            role: "driver",
+                            status: "Available"
                         )
     )
 }

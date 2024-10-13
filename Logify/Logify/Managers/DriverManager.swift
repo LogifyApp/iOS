@@ -17,7 +17,7 @@ class DriverManager: ObservableObject {
     }
 
     init() {
-        self.driver = Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "")
+        self.driver = Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "", status: "Available")
         getEmployersRequests()
     }
     

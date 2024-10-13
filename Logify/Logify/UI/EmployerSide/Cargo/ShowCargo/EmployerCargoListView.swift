@@ -10,8 +10,8 @@ import SwiftUI
 struct EmployerCargoListView: View {
     @ObservedObject var cargoListViewModel: EmployerCargoListViewModel
     @State private var searchText = ""
-    @State private var showNewCargoScreen = false
-    @Binding var hideTabView: Bool
+    @State private var isNewCargoViewPresented = false
+    @Binding var isTabViewPresented: Bool
     var searchResults: [Cargo] {
         if searchText.isEmpty {
             return cargoListViewModel.cargoList
@@ -35,7 +35,7 @@ struct EmployerCargoListView: View {
                             NavigationLink(
                                 destination: EmployerCargoDetailsView(
                                     cargoViewModel: EmployerCargoViewModel(cargo),
-                                    hideTabView: $hideTabView
+                                    isTabViewPresented: $isTabViewPresented
                                 )
                             ){
                                 CargoCell(
@@ -49,16 +49,16 @@ struct EmployerCargoListView: View {
                     .navigationTitle("Cargo")
                     .toolbarTitleDisplayMode(.inline)
                     .background(Color.background)
-                    .toolbarBackground(.hidden, for: .tabBar)
+                    //.toolbarBackground(.hidden, for: .tabBar)
                     .toolbarBackground(Color.background, for: .navigationBar)
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
                             Button("", systemImage: "plus") {
-                                showNewCargoScreen.toggle()
+                                isNewCargoViewPresented.toggle()
                             }
                         }
                     }
-                    .fullScreenCover(isPresented: $showNewCargoScreen) {
+                    .fullScreenCover(isPresented: $isNewCargoViewPresented) {
                         NewCargoView()
                             .environmentObject(NewCargoViewModel())
                     }
@@ -70,7 +70,7 @@ struct EmployerCargoListView: View {
             )
             .onAppear {
                 withAnimation {
-                    hideTabView = false
+                    isTabViewPresented = true
                 }
             }
         }
@@ -78,5 +78,5 @@ struct EmployerCargoListView: View {
 }
 
 #Preview {
-    EmployerCargoListView(cargoListViewModel: EmployerCargoListViewModel(), hideTabView: .constant(false))
+    EmployerCargoListView(cargoListViewModel: EmployerCargoListViewModel(), isTabViewPresented: .constant(true))
 }

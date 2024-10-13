@@ -38,11 +38,11 @@ struct CarSelectionView: View {
                             }
                     }
                 }
-                .navigationTitle("Cars")
-                .toolbarTitleDisplayMode(.inline)
-                .toolbarBackground(Color.background, for: .navigationBar)
             }
         }
+        .navigationTitle("Cars")
+        .toolbarTitleDisplayMode(.inline)
+        .toolbarBackground(Color.background, for: .navigationBar)
         .background(Color.background)
         .searchable(
             text: $searchText,

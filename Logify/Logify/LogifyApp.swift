@@ -11,7 +11,7 @@ import SwiftUI
 struct LogifyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EmployerStartView()
         }
     }
 }

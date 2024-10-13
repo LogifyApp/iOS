@@ -16,19 +16,19 @@ struct CargoDetailsView: View {
         List {
             // MARK: Details
             Section {
-                CargoDetailsCell(
+                ListDetailRow(
                     property: "Cargo ID",
                     value: "\(cargoViewModel.cargo.id)"
                 )
-                CargoDetailsCell(
+                ListDetailRow(
                     property: "Status",
                     value: cargoViewModel.cargo.status
                 )
-                CargoDetailsCell(
+                ListDetailRow(
                     property: "Creation date",
                     value: cargoViewModel.cargo.getCreationDateString()
                 )
-                CargoDetailsCell(
+                ListDetailRow(
                     property: "Car ID",
                     value: cargoViewModel.cargo.carId
                 )
@@ -90,21 +90,5 @@ struct CargoDetailsView: View {
 #Preview {
     NavigationView {
         CargoDetailsView(cargoViewModel: CargoViewModel())
-    }
-}
-
-
-struct CargoDetailsCell: View {
-    
-    let property: String
-    let value: String
-    
-    var body: some View {
-        HStack {
-            Text(property)
-                .foregroundStyle(.secondary)
-            Spacer()
-            Text(value)
-        }
     }
 }

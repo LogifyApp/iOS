@@ -12,29 +12,29 @@ struct EmployerCargoDetailsView: View {
     @State private var isMapPresented = false
     @State private var description = ""
     @State private var disableEditing = true
-    @Binding var hideTabView: Bool
+    @Binding var isTabViewPresented: Bool
     
     var body: some View {
         List {
             //MARK: Info
             Section {
-                CargoDetailsCell(
+                ListDetailRow(
                     property: "Cargo ID",
                     value: "\(cargoViewModel.cargo.id)"
                 )
-                CargoDetailsCell(
+                ListDetailRow(
                     property: "Status",
                     value: cargoViewModel.cargo.status
                 )
-                CargoDetailsCell(
+                ListDetailRow(
                     property: "Creation date",
                     value: cargoViewModel.cargo.getCreationDateString()
                 )
-                CargoDetailsCell(
+                ListDetailRow(
                     property: "Driver ID",
                     value: "\(cargoViewModel.cargo.driverId)"
                 )
-                CargoDetailsCell(
+                ListDetailRow(
                     property: "Car ID",
                     value: cargoViewModel.cargo.carId
                 )
@@ -95,7 +95,7 @@ struct EmployerCargoDetailsView: View {
         .onAppear {
             description = cargoViewModel.cargo.description
             withAnimation {
-                hideTabView = true
+                isTabViewPresented = false
             }
         }
     }
@@ -105,7 +105,7 @@ struct EmployerCargoDetailsView: View {
     NavigationView {
         EmployerCargoDetailsView(
             cargoViewModel: EmployerCargoViewModel(),
-            hideTabView: .constant(true)
+            isTabViewPresented: .constant(false)
         )
     }
 }

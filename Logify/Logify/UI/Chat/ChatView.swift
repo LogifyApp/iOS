@@ -72,7 +72,7 @@ struct ChatView: View {
     NavigationView {
         ChatView(
             chatViewModel: ChatViewModel(
-                driver: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 123, password: "", role: ""),
+                driver: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 123, password: "", role: "", status: "Available"),
                 employer: Employer(id: 2, name: "Name2", surname: "Surname2", phoneNumber: 123, password: "", role: "")
             ), senderId: 1
         )

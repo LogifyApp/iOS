@@ -14,4 +14,5 @@ struct Driver: User {
     var phoneNumber: Int
     var password: String
     var role: String
+    var status: String
 }

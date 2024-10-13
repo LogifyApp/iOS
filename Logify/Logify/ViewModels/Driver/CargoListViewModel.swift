@@ -17,7 +17,7 @@ class CargoListViewModel: ObservableObject {
     }
     
     init() {
-        driver = Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "")
+        driver = Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "", status: "Available")
         fetchAllCargo()
     }
     

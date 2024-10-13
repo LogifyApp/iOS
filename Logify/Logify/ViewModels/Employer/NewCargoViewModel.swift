@@ -22,10 +22,10 @@ class NewCargoViewModel: ObservableObject {
     
     func fetchDriversList() {
         drivers = [
-            Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: ""),
-            Driver(id: 2, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: ""),
-            Driver(id: 3, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: ""),
-            Driver(id: 4, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "")
+            Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "", status: "Available"),
+            Driver(id: 2, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "", status: "Available"),
+            Driver(id: 3, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "", status: "Available"),
+            Driver(id: 4, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "", status: "Available")
         
         ]
     }

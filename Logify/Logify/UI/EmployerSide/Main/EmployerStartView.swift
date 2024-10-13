@@ -9,22 +9,27 @@ import SwiftUI
 
 struct EmployerStartView: View {
     @State private var selectedItem = 0
-    @State private var hideTabView = false
+    @State private var isTabViewPresented = true
     
     var body: some View {
         TabView(selection: $selectedItem) {
             EmployerCargoListView(
                 cargoListViewModel: EmployerCargoListViewModel(),
-                hideTabView: $hideTabView
+                isTabViewPresented: $isTabViewPresented
             )
             .tag(0)
+            EmployerDriversListView(
+                viewModel: EmployerDriversListViewModel(),
+                isTabViewPresented: $isTabViewPresented
+            )
+            .tag(1)
             EmployerProfileView(
                 profileViewModel: EmployerProfileViewModel()
             )
             .tag(3)
         }
         .overlay(alignment: .bottom) {
-            if !hideTabView {
+            if isTabViewPresented {
                 EmployerTabView(selectedItem: $selectedItem)
                     .transition(.move(edge: .bottom))
             }
