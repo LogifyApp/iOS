@@ -45,6 +45,7 @@
 		2B2442A02CB9C172009E43AE /* SearchDriverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24429F2CB9C172009E43AE /* SearchDriverView.swift */; };
 		2B2442A22CBC392E009E43AE /* NewDriverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442A12CBC392E009E43AE /* NewDriverCell.swift */; };
 		2B2442A42CBC3C26009E43AE /* NewDriverDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442A32CBC3C25009E43AE /* NewDriverDetailsView.swift */; };
+		2B2442A72CBD33DC009E43AE /* EmployerChatsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442A62CBD33DC009E43AE /* EmployerChatsListView.swift */; };
 		2B6AABB42C7FC12D006B968A /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABB32C7FC12D006B968A /* SectionHeader.swift */; };
 		2B6AABBA2C84D822006B968A /* Cargo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABB92C84D822006B968A /* Cargo.swift */; };
 		2B6AABBC2C84D8A9006B968A /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABBB2C84D8A9006B968A /* Point.swift */; };
@@ -111,6 +112,7 @@
 		2B24429F2CB9C172009E43AE /* SearchDriverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDriverView.swift; sourceTree = "<group>"; };
 		2B2442A12CBC392E009E43AE /* NewDriverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDriverCell.swift; sourceTree = "<group>"; };
 		2B2442A32CBC3C25009E43AE /* NewDriverDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDriverDetailsView.swift; sourceTree = "<group>"; };
+		2B2442A62CBD33DC009E43AE /* EmployerChatsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerChatsListView.swift; sourceTree = "<group>"; };
 		2B6AABB32C7FC12D006B968A /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		2B6AABB92C84D822006B968A /* Cargo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cargo.swift; sourceTree = "<group>"; };
 		2B6AABBB2C84D8A9006B968A /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				2B2442832CAF4728009E43AE /* Main */,
 				2B24425F2CAEE3DE009E43AE /* Cargo */,
 				2B24425E2CAEE3CE009E43AE /* Drivers */,
+				2B2442A52CBD33A7009E43AE /* Chat */,
 				2B24425D2CAEE3C1009E43AE /* Profile */,
 			);
 			path = EmployerSide;
@@ -313,6 +316,14 @@
 				2B2442812CAF4643009E43AE /* RouteEditingView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		2B2442A52CBD33A7009E43AE /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				2B2442A62CBD33DC009E43AE /* EmployerChatsListView.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		2B6AABC32C8A1E61006B968A /* Managers */ = {
@@ -504,6 +515,7 @@
 				2B0C50102CA43CDA003FEFE3 /* Employer.swift in Sources */,
 				2B2442822CAF4643009E43AE /* RouteEditingView.swift in Sources */,
 				2BAFED142C52D69D0041AF88 /* DriverTabView.swift in Sources */,
+				2B2442A72CBD33DC009E43AE /* EmployerChatsListView.swift in Sources */,
 				2B24427A2CAF1B62009E43AE /* Car.swift in Sources */,
 				2B03B9782C95FE1200DF48C1 /* MessageBubble.swift in Sources */,
 				2B7C3AE82CAD695B00C62BC3 /* ProfileViewModel.swift in Sources */,

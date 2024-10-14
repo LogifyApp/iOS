@@ -9,7 +9,6 @@ import SwiftUI
 
 struct EmployerTabView: View {
     @State private var items = ["shippingbox", "person.2", "message", "person"]
-    @State private var isChatPresented = false
     @Binding var selectedItem: Int
     
     var body: some View {
@@ -25,7 +24,8 @@ struct EmployerTabView: View {
                     selectedItem = 1
                 }
                 TabViewButton(imageSystemName: items[2]) {
-                    isChatPresented.toggle()
+                    items = ["shippingbox", "person.2", "message.fill", "person"]
+                    selectedItem = 2
                 }
                 TabViewButton(imageSystemName: items[3]){
                     items = ["shippingbox", "person.2", "message", "person.fill"]
@@ -35,12 +35,6 @@ struct EmployerTabView: View {
             .padding(.horizontal)
         }
         .padding(.horizontal)
-        .fullScreenCover(isPresented: $isChatPresented) {
-            /*ChatView(
-                chatViewModel: ChatViewModel(driver: <#T##Driver#>, employer: <#T##Employer#>),
-                senderId: 0
-            )*/
-        }
         .onAppear {
             items[selectedItem] += ".fill"
         }

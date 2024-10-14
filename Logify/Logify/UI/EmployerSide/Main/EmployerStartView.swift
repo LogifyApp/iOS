@@ -23,6 +23,8 @@ struct EmployerStartView: View {
                 isTabViewPresented: $isTabViewPresented
             )
             .tag(1)
+            EmployerChatsListView()
+                .tag(2)
             EmployerProfileView(
                 profileViewModel: EmployerProfileViewModel()
             )

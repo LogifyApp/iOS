@@ -28,6 +28,7 @@ struct EmployerProfileView: View {
                         Button("Log out", role: .destructive) {
                             
                         }
+                        .foregroundStyle(.red)
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)
