@@ -42,11 +42,11 @@ struct DriverSelectionView: View {
         }
         .navigationTitle("Drivers")
         .toolbarTitleDisplayMode(.inline)
-        .toolbarBackground(Color.background, for: .navigationBar)
         .background(Color.background)
+        .toolbarBackground(.thinMaterial, for: .navigationBar)
         .searchable(
             text: $searchText,
-            placement: .navigationBarDrawer(displayMode: .always)
+            placement: .navigationBarDrawer(displayMode: .automatic)
         )
     }
 }

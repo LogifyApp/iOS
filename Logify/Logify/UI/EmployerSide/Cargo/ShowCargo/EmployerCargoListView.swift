@@ -49,8 +49,8 @@ struct EmployerCargoListView: View {
                     .navigationTitle("Cargo")
                     .toolbarTitleDisplayMode(.inline)
                     .background(Color.background)
-                    //.toolbarBackground(.hidden, for: .tabBar)
-                    .toolbarBackground(Color.background, for: .navigationBar)
+                    .toolbarBackground(.hidden, for: .tabBar)
+                    .toolbarBackground(.thinMaterial, for: .navigationBar)
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
                             Button("", systemImage: "plus") {
@@ -66,7 +66,7 @@ struct EmployerCargoListView: View {
             }
             .searchable(
                 text: $searchText,
-                placement: .navigationBarDrawer(displayMode: .always)
+                placement: .navigationBarDrawer(displayMode: .automatic)
             )
             .onAppear {
                 withAnimation {

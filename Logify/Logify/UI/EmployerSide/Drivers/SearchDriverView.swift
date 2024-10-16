@@ -41,12 +41,7 @@ struct SearchDriverView: View {
             .navigationTitle("New Driver")
             .toolbarTitleDisplayMode(.inline)
             .background(Color.background)
-            .toolbarBackground(Color.background, for: .navigationBar)
-            .searchable(
-                text: $searchText,
-                placement: .navigationBarDrawer(displayMode: .always),
-                prompt: Text("Phone number")
-            )
+            .toolbarBackground(.thinMaterial, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
@@ -54,6 +49,11 @@ struct SearchDriverView: View {
                     }
                 }
             }
+            .searchable(
+                text: $searchText,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: Text("Phone number")
+            )
         }
     }
 }

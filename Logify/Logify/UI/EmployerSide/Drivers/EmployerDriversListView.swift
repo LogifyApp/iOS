@@ -50,11 +50,8 @@ struct EmployerDriversListView: View {
             .navigationTitle("Drivers")
             .toolbarTitleDisplayMode(.inline)
             .background(Color.background)
-            .toolbarBackground(Color.background, for: .navigationBar)
-            .searchable(
-                text: $searchText,
-                placement: .navigationBarDrawer(displayMode: .always)
-            )
+            .toolbarBackground(.thinMaterial, for: .navigationBar)
+            .toolbarBackground(.hidden, for: .tabBar)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Image(systemName: "plus")
@@ -64,6 +61,10 @@ struct EmployerDriversListView: View {
                         }
                 }
             }
+            .searchable(
+                text: $searchText,
+                placement: .navigationBarDrawer(displayMode: .automatic)
+            )
             .fullScreenCover(isPresented: $isSearchDriverViewPresented) {
                 SearchDriverView(viewModel: viewModel)
             }
