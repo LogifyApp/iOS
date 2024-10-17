@@ -14,40 +14,43 @@ struct EmployerChatsListView: View {
     
     var body: some View {
         NavigationView {
-            List {
+            ScrollView {
                 ForEach(viewModel.chats, id: \.id) { chat in
-                    ChatDetailsRow(
-                        driver: viewModel.getDriver(chatId: chat.id),
-                        lastMessage: viewModel.getLastMessage(chatId: chat.id)
-                    )
-                    .listRowBackground(Color.background)
-                    .overlay {
-                        NavigationLink("") {
-                            EmployerChatView(
-                                chatViewModel:
-                                    ChatViewModel(
-                                        driver: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "", status: "Available"),
-                                        employer: Employer(id: 2, name: "Name", surname: "Surname", phoneNumber: 1234535345, password: "", role: "")
-                                    ),
-                                isTabViewPresented: $isTabViewPresented,
-                                senderId: 2
-                            )
-                        }
+                    NavigationLink {
+                        EmployerChatView(
+                            chatViewModel:
+                                ChatViewModel(
+                                    driver: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "", status: "Available"),
+                                    employer: Employer(id: 2, name: "Name", surname: "Surname", phoneNumber: 1234535345, password: "", role: "")
+                                ),
+                            isTabViewPresented: $isTabViewPresented,
+                            senderId: 2
+                        )
+                    } label: {
+                        ChatDetailsRow(
+                            driver: viewModel.getDriver(chatId: chat.id),
+                            lastMessage: viewModel.getLastMessage(chatId: chat.id)
+                        )
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
             .navigationTitle("Chats")
             .navigationBarTitleDisplayMode(.inline)
             .background(Color.background)
-            .scrollContentBackground(.hidden)
-            .listStyle(.grouped)
             .toolbarBackground(.thinMaterial, for: .navigationBar)
             .toolbarBackground(.hidden, for: .tabBar)
+            .toolbar(isTabViewPresented ? .visible : .hidden, for: .tabBar)
+            .searchable(
+                text: $searchBarText,
+                placement: .navigationBarDrawer(displayMode: .automatic)
+            )
+            .onAppear {
+                withAnimation {
+                    isTabViewPresented = true
+                }
+            }
         }
-        .searchable(
-            text: $searchBarText,
-            placement: .navigationBarDrawer(displayMode: .automatic)
-        )
     }
 }
 

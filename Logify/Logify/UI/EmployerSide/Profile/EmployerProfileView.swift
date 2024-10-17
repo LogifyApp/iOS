@@ -31,13 +31,12 @@ struct EmployerProfileView: View {
                         .foregroundStyle(.red)
                     }
                 }
+                .navigationTitle("Profile")
                 .navigationBarTitleDisplayMode(.inline)
                 .scrollContentBackground(.hidden)
                 .scrollDisabled(true)
             }
             .background(Color.background)
-            .navigationTitle("Profile")
-            .toolbarTitleDisplayMode(.inline)
         }
     }
 }

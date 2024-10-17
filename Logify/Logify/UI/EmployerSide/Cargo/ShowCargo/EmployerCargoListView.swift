@@ -49,20 +49,21 @@ struct EmployerCargoListView: View {
                     .navigationTitle("Cargo")
                     .toolbarTitleDisplayMode(.inline)
                     .background(Color.background)
-                    .toolbarBackground(.hidden, for: .tabBar)
-                    .toolbarBackground(.thinMaterial, for: .navigationBar)
-                    .toolbar {
-                        ToolbarItem(placement: .topBarTrailing) {
-                            Button("", systemImage: "plus") {
-                                isNewCargoViewPresented.toggle()
-                            }
-                        }
-                    }
-                    .fullScreenCover(isPresented: $isNewCargoViewPresented) {
-                        NewCargoView()
-                            .environmentObject(NewCargoViewModel())
+                }
+            }
+            .toolbarBackground(.thinMaterial, for: .navigationBar)
+            .toolbarBackground(.hidden, for: .tabBar)
+            .toolbar(isTabViewPresented ? .visible : .hidden, for: .tabBar)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("", systemImage: "plus") {
+                        isNewCargoViewPresented.toggle()
                     }
                 }
+            }
+            .fullScreenCover(isPresented: $isNewCargoViewPresented) {
+                NewCargoView()
+                    .environmentObject(NewCargoViewModel())
             }
             .searchable(
                 text: $searchText,

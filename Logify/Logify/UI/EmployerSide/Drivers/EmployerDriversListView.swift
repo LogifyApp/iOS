@@ -52,6 +52,7 @@ struct EmployerDriversListView: View {
             .background(Color.background)
             .toolbarBackground(.thinMaterial, for: .navigationBar)
             .toolbarBackground(.hidden, for: .tabBar)
+            .toolbar(isTabViewPresented ? .visible : .hidden, for: .tabBar)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Image(systemName: "plus")

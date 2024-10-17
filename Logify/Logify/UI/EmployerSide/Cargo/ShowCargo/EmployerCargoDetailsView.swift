@@ -90,11 +90,11 @@ struct EmployerCargoDetailsView: View {
         .navigationTitle("Details")
         .toolbarTitleDisplayMode(.inline)
         .background(Color.background)
-        .toolbarBackground(.hidden, for: .tabBar)
+        
         .scrollContentBackground(.hidden)
         .onAppear {
-            description = cargoViewModel.cargo.description
             withAnimation {
+                description = cargoViewModel.cargo.description
                 isTabViewPresented = false
             }
         }

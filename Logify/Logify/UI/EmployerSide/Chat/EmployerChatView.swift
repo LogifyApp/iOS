@@ -11,6 +11,7 @@ struct EmployerChatView: View {
     @ObservedObject var chatViewModel: ChatViewModel
     @FocusState private var isFieldFocused: Bool
     @State private var text = ""
+    @State private var isTextFiledPresented = false
     @Binding var isTabViewPresented: Bool
     var senderId: Int
     
@@ -19,7 +20,6 @@ struct EmployerChatView: View {
             if chatViewModel.messages.isEmpty {
                 Text("Chat history is empty")
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                    .background(Color.background)
                     .font(.system(size: 16))
             } else {
                 ScrollViewReader { proxy in
@@ -31,7 +31,6 @@ struct EmployerChatView: View {
                             )
                         }
                     }
-                    .background(Color.background)
                     .onChange(of: chatViewModel.messages.last!.id) { _, last in
                         withAnimation {
                             proxy.scrollTo(last, anchor: .bottom)
@@ -39,15 +38,17 @@ struct EmployerChatView: View {
                     }
                 }
             }
-            if !isTabViewPresented {
+            if isTextFiledPresented {
                 MessageField(isFocused: $isFieldFocused, text: $text) {
                     chatViewModel.sendMessage(with: text, from: senderId)
                     text = ""
                 }
                 .padding(.top, 8)
                 .background(.thickMaterial)
+                .transition(.move(edge: .bottom))
             }
         }
+        .background(Color.background)
         .navigationTitle(senderId == chatViewModel.driver.id ? chatViewModel.employer.getFullName() : chatViewModel.driver.getFullName())
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.thickMaterial, for: .navigationBar)
@@ -66,8 +67,12 @@ struct EmployerChatView: View {
             withAnimation {
                 isTabViewPresented = false
             }
+            DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+                withAnimation {
+                    isTextFiledPresented = true
+                }
+            }
         }
-        .toolbar(.hidden, for: .tabBar)
     }
 }
 

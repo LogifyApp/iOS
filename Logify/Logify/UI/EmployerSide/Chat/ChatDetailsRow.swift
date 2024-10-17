@@ -12,20 +12,21 @@ struct ChatDetailsRow: View {
     var lastMessage: Message
     
     var body: some View {
-        HStack(alignment: .top) {
-            VStack(alignment: .leading) {
+        VStack(alignment: .leading) {
+            HStack {
                 Text("Name Surname")
                     .fontWeight(.semibold)
-                Text(lastMessage.userId == driver.id ? driver.getFullName() : "You")
-                Text("This message was sent by driver oernofr fenrofiner eriofnrif")
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
+                Spacer()
+                Text("23:23")
             }
-            
-            Spacer()
-            Text("23:23")
-                
+            Text(lastMessage.userId == driver.id ? driver.getFullName() : "You")
+            Text("This message was sent by driver oernofr fenrofiner eriofnrif")
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+            Divider()
         }
+        .frame(maxHeight: 80)
+        .padding(.horizontal)
     }
 }
 
