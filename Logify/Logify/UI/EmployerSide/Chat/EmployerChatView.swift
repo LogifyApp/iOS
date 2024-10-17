@@ -11,7 +11,7 @@ struct EmployerChatView: View {
     @ObservedObject var chatViewModel: ChatViewModel
     @FocusState private var isFieldFocused: Bool
     @State private var text = ""
-    @State private var isTextFiledPresented = false
+    @State private var isMessageFieldPresented = false
     @Binding var isTabViewPresented: Bool
     var senderId: Int
     
@@ -38,7 +38,7 @@ struct EmployerChatView: View {
                     }
                 }
             }
-            if isTextFiledPresented {
+            if isMessageFieldPresented {
                 MessageField(isFocused: $isFieldFocused, text: $text) {
                     chatViewModel.sendMessage(with: text, from: senderId)
                     text = ""
@@ -67,9 +67,9 @@ struct EmployerChatView: View {
             withAnimation {
                 isTabViewPresented = false
             }
-            DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
                 withAnimation {
-                    isTextFiledPresented = true
+                    isMessageFieldPresented = true
                 }
             }
         }
