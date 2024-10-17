@@ -26,7 +26,7 @@ struct DriverTabView: View {
                     isChatViewPresented.toggle()
                 }
                 .fullScreenCover(isPresented: $isChatViewPresented) {
-                    ChatView(chatViewModel:
+                    DriverChatView(chatViewModel:
                             ChatViewModel(
                                 driver: driverManager.driver,
                                 employer: driverManager.getActiveEmployer()!

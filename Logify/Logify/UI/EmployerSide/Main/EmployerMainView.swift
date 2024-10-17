@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EmployerStartView: View {
+struct EmployerMainView: View {
     @State private var selectedItem = 0
     @State private var isTabViewPresented = true
     
@@ -35,7 +35,7 @@ struct EmployerStartView: View {
         }
         .overlay(alignment: .bottom) {
             if isTabViewPresented {
-                EmployerTabView(selectedItem: $selectedItem)
+                EmployerTabViewPanel(selectedItem: $selectedItem)
                     .transition(.move(edge: .bottom))
             }
         }
@@ -44,5 +44,5 @@ struct EmployerStartView: View {
 }
 
 #Preview {
-    EmployerStartView()
+    EmployerMainView()
 }

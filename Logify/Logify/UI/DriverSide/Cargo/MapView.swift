@@ -16,7 +16,7 @@ struct MapView: View {
     var body: some View {
         NavigationView{
             Map {
-                Annotation("Warehouse", coordinate: mapViewModel.coordinates[0]) {
+                Annotation(mapViewModel.points[0].label, coordinate: mapViewModel.coordinates[0]) {
                     Image(systemName: "shippingbox.fill")
                         .padding(4)
                         .foregroundStyle(.white)

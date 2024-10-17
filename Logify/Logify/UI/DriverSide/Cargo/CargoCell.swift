@@ -21,10 +21,6 @@ struct CargoCell: View {
                 Text("#\(cargoId)")
                 Spacer()
                 Text(cargoStatus)
-                Image(systemName: "chevron.right")
-                    .font(.system(size: 13))
-                    .bold()
-                    .foregroundStyle(.secondary)
             }
             .padding(.horizontal)
         }
