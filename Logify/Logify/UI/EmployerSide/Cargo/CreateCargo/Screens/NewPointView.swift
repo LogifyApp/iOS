@@ -37,10 +37,10 @@ struct NewPointView: View {
                 }
             }
         }
-        .background(Color.background)
-        .scrollContentBackground(.hidden)
         .navigationTitle("Details")
         .navigationBarTitleDisplayMode(.inline)
+        .background(Color.background)
+        .scrollContentBackground(.hidden)
         .scrollDisabled(true)
         .toolbarBackground(.hidden, for: .navigationBar)
         .toolbar {

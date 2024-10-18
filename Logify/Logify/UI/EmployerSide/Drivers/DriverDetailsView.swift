@@ -51,6 +51,7 @@ struct DriverDetailsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
         .scrollContentBackground(.hidden)
+        .toolbarBackground(.thinMaterial, for: .navigationBar)
         .onAppear {
             withAnimation {
                 isTabViewPresented = false

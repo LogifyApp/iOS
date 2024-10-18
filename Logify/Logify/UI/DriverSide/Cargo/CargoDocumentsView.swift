@@ -37,6 +37,7 @@ struct CargoDocumentsView: View {
         .navigationTitle("Documents")
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
+        .toolbarBackground(.thinMaterial, for: .navigationBar)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {

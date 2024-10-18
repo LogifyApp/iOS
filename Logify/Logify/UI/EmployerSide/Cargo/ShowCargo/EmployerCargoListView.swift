@@ -27,7 +27,6 @@ struct EmployerCargoListView: View {
                 if searchResults.isEmpty {
                     Text("Cargo list is empty")
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                        .background(Color.background)
                         .font(.subheadline)
                 } else {
                     ScrollView {
@@ -46,11 +45,11 @@ struct EmployerCargoListView: View {
                             .buttonStyle(PlainButtonStyle())
                         }
                     }
-                    .navigationTitle("Cargo")
-                    .toolbarTitleDisplayMode(.inline)
-                    .background(Color.background)
                 }
             }
+            .navigationTitle("Cargo")
+            .navigationBarTitleDisplayMode(.inline)
+            .background(Color.background)
             .toolbarBackground(.thinMaterial, for: .navigationBar)
             .toolbarBackground(.hidden, for: .tabBar)
             .toolbar(isTabViewPresented ? .visible : .hidden, for: .tabBar)

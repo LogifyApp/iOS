@@ -48,7 +48,7 @@ struct EmployerDriversListView: View {
                 }
             }
             .navigationTitle("Drivers")
-            .toolbarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline)
             .background(Color.background)
             .toolbarBackground(.thinMaterial, for: .navigationBar)
             .toolbarBackground(.hidden, for: .tabBar)

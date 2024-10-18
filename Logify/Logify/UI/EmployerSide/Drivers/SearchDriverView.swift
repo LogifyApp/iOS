@@ -39,7 +39,7 @@ struct SearchDriverView: View {
                 }
             }
             .navigationTitle("New Driver")
-            .toolbarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline)
             .background(Color.background)
             .toolbarBackground(.thinMaterial, for: .navigationBar)
             .toolbar {

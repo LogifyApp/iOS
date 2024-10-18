@@ -41,7 +41,7 @@ struct CarSelectionView: View {
             }
         }
         .navigationTitle("Cars")
-        .toolbarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
         .toolbarBackground(.thinMaterial, for: .navigationBar)
         .searchable(

@@ -41,7 +41,7 @@ struct DriverSelectionView: View {
             }
         }
         .navigationTitle("Drivers")
-        .toolbarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
         .toolbarBackground(.thinMaterial, for: .navigationBar)
         .searchable(

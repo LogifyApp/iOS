@@ -45,6 +45,8 @@ struct NewPointMapView: View {
                 .frame(width: 10, height: 30)
                 .foregroundStyle(.red)
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(.thinMaterial, for: .navigationBar)
     }
 }
 

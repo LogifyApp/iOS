@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DriverTabView: View {
+struct DriverTabViewPanel: View {
     
     @EnvironmentObject var driverManager: DriverManager
     @State private var items = ["shippingbox.fill", "message", "person"]
@@ -25,15 +25,6 @@ struct DriverTabView: View {
                 TabViewButton(imageSystemName: items[1]) {
                     isChatViewPresented.toggle()
                 }
-                .fullScreenCover(isPresented: $isChatViewPresented) {
-                    DriverChatView(chatViewModel:
-                            ChatViewModel(
-                                driver: driverManager.driver,
-                                employer: driverManager.getActiveEmployer()!
-                            ),
-                        senderId: driverManager.driver.id
-                    )
-                }
                 TabViewButton(imageSystemName: items[2]) {
                     selectedItem = 2
                     items = ["shippingbox", "message", "person.fill"]
@@ -42,11 +33,20 @@ struct DriverTabView: View {
             .padding(.horizontal)
         }
         .padding(.horizontal)
+        .fullScreenCover(isPresented: $isChatViewPresented) {
+            DriverChatView(chatViewModel:
+                    ChatViewModel(
+                        driver: driverManager.driver,
+                        employer: driverManager.getActiveEmployer()!
+                    ),
+                senderId: driverManager.driver.id
+            )
+        }
     }
 }
 
 #Preview {
-    DriverTabView(selectedItem: .constant(1))
+    DriverTabViewPanel(selectedItem: .constant(1))
         .environmentObject(DriverManager())
 }
 

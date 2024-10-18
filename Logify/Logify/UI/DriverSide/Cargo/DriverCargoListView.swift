@@ -11,6 +11,7 @@ struct DriverCargoListView: View {
     
     @ObservedObject var cargoListViewModel: CargoListViewModel
     @State private var searchText = ""
+    @Binding var isTabViewPresented: Bool
     var searchResults: [Cargo] {
         if searchText.isEmpty {
             return cargoListViewModel.cargoList
@@ -26,14 +27,14 @@ struct DriverCargoListView: View {
                 if searchResults.isEmpty {
                     Text("Cargo list is empty")
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                        .background(Color.background)
                         .font(.system(size: 16))
                 } else {
                     ScrollView {
                         ForEach(searchResults, id: \.id) { cargo in
                             NavigationLink(
                                 destination: CargoDetailsView(
-                                    cargoViewModel: CargoViewModel(cargo)
+                                    cargoViewModel: CargoViewModel(cargo),
+                                    isTabViewPresented: $isTabViewPresented
                                 )
                             ){
                                 CargoCell(
@@ -44,21 +45,30 @@ struct DriverCargoListView: View {
                             .buttonStyle(PlainButtonStyle())
                         }
                     }
-                    .navigationTitle("Cargo")
-                    .toolbarTitleDisplayMode(.inline)
-                    .background(Color.background)
-                    .toolbarBackground(.hidden, for: .tabBar)
-                    .toolbarBackground(Color.background, for: .navigationBar)
                 }
             }
+            .navigationTitle("Cargo")
+            .navigationBarTitleDisplayMode(.inline)
+            .background(Color.background)
+            .toolbar(isTabViewPresented ? .visible : .hidden, for: .tabBar)
+            .toolbarBackground(.hidden, for: .tabBar)
+            .toolbarBackground(.thinMaterial, for: .navigationBar)
             .searchable(
                 text: $searchText,
-                placement: .navigationBarDrawer(displayMode: .always)
+                placement: .navigationBarDrawer(displayMode: .automatic)
             )
+            .onAppear {
+                withAnimation {
+                    isTabViewPresented = true
+                }
+            }
         }
     }
 }
 
 #Preview {
-    DriverCargoListView(cargoListViewModel: CargoListViewModel())
+    DriverCargoListView(
+        cargoListViewModel: CargoListViewModel(),
+        isTabViewPresented: .constant(true)
+    )
 }

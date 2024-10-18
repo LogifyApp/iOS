@@ -132,10 +132,11 @@ struct NewCargoView: View {
                     SectionHeader(text: "Route")
                 }
             }
-            .background(Color.background)
-            .scrollContentBackground(.hidden)
             .navigationTitle("New cargo")
             .navigationBarTitleDisplayMode(.inline)
+            .background(Color.background)
+            .scrollContentBackground(.hidden)
+            .toolbarBackground(.thinMaterial, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {

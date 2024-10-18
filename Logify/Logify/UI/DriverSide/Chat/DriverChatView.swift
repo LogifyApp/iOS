@@ -17,7 +17,7 @@ struct DriverChatView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 0) {
                 if chatViewModel.messages.isEmpty {
                     Text("Chat history is empty")
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
@@ -45,12 +45,12 @@ struct DriverChatView: View {
                     chatViewModel.sendMessage(with: text, from: senderId)
                     text = ""
                 }
+                .padding(.top, 8)
+                .background(.thickMaterial)
             }
             .navigationTitle(senderId == chatViewModel.driver.id ? chatViewModel.employer.getFullName() : chatViewModel.driver.getFullName())
             .navigationBarTitleDisplayMode(.inline)
-            .onTapGesture {
-                isFieldFocused = false
-            }
+            .toolbarBackground(.thickMaterial, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("", systemImage: "phone") {
@@ -63,6 +63,9 @@ struct DriverChatView: View {
                         Text("Back")
                     }
                 }
+            }
+            .onTapGesture {
+                isFieldFocused = false
             }
         }
     }

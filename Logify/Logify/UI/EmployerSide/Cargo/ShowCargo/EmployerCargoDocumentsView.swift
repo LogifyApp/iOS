@@ -48,6 +48,7 @@ struct EmployerCargoDocumentsView: View {
         .navigationTitle("Documents")
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
+        .toolbarBackground(.thinMaterial, for: .navigationBar)
     }
 }
 

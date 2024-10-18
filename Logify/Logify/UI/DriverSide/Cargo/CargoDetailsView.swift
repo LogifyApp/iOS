@@ -11,6 +11,7 @@ struct CargoDetailsView: View {
     
     @ObservedObject var cargoViewModel: CargoViewModel
     @State private var isMapPresented = false
+    @Binding var isTabViewPresented: Bool
     
     var body: some View {
         List {
@@ -80,15 +81,24 @@ struct CargoDetailsView: View {
             .listRowSeparator(.hidden)
         }
         .navigationTitle("Details")
-        .toolbarTitleDisplayMode(.inline)
-        .scrollContentBackground(.hidden)
+        .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
+        .scrollContentBackground(.hidden)
+        .toolbarBackground(.thinMaterial, for: .navigationBar)
+        .onAppear {
+            withAnimation {
+                isTabViewPresented = false
+            }
+        }
     }
 }
 
 
 #Preview {
     NavigationView {
-        CargoDetailsView(cargoViewModel: CargoViewModel())
+        CargoDetailsView(
+            cargoViewModel: CargoViewModel(),
+            isTabViewPresented: .constant(false)
+        )
     }
 }

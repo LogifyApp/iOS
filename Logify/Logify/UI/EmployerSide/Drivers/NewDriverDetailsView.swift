@@ -37,7 +37,7 @@ struct NewDriverDetailsView: View {
             )
         }
         .navigationTitle("Details")
-        .toolbarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
         .overlay {
             if isNotificationPresented {

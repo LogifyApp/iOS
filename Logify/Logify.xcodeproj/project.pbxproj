@@ -62,14 +62,14 @@
 		2B7C3AE62CAD5F8300C62BC3 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7C3AE52CAD5F8300C62BC3 /* ChatViewModel.swift */; };
 		2B7C3AE82CAD695B00C62BC3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7C3AE72CAD695B00C62BC3 /* ProfileViewModel.swift */; };
 		2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */; };
-		2BA0FBA72C4A8DDF00FE6368 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA62C4A8DDF00FE6368 /* ContentView.swift */; };
+		2BA0FBA72C4A8DDF00FE6368 /* DriverMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA62C4A8DDF00FE6368 /* DriverMainView.swift */; };
 		2BA0FBA92C4A8DE100FE6368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA82C4A8DE100FE6368 /* Assets.xcassets */; };
 		2BA0FBAC2C4A8DE100FE6368 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA0FBAB2C4A8DE100FE6368 /* Preview Assets.xcassets */; };
 		2BAFED052C526A900041AF88 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED042C526A900041AF88 /* User.swift */; };
 		2BAFED072C526E360041AF88 /* DriverProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED062C526E360041AF88 /* DriverProfileView.swift */; };
 		2BAFED092C526E5E0041AF88 /* DriverCargoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED082C526E5E0041AF88 /* DriverCargoListView.swift */; };
 		2BAFED0B2C526E760041AF88 /* DriverChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED0A2C526E760041AF88 /* DriverChatView.swift */; };
-		2BAFED142C52D69D0041AF88 /* DriverTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED132C52D69D0041AF88 /* DriverTabView.swift */; };
+		2BAFED142C52D69D0041AF88 /* DriverTabViewPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED132C52D69D0041AF88 /* DriverTabViewPanel.swift */; };
 		2BAFED182C54F8640041AF88 /* RequestEmployerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */; };
 		2BAFED1A2C555E880041AF88 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED192C555E880041AF88 /* Driver.swift */; };
 		2BAFED1C2C55619D0041AF88 /* DriverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED1B2C55619D0041AF88 /* DriverManager.swift */; };
@@ -133,14 +133,14 @@
 		2B7C3AE72CAD695B00C62BC3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		2BA0FBA12C4A8DDF00FE6368 /* Logify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogifyApp.swift; sourceTree = "<group>"; };
-		2BA0FBA62C4A8DDF00FE6368 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2BA0FBA62C4A8DDF00FE6368 /* DriverMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMainView.swift; sourceTree = "<group>"; };
 		2BA0FBA82C4A8DE100FE6368 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BA0FBAB2C4A8DE100FE6368 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2BAFED042C526A900041AF88 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2BAFED062C526E360041AF88 /* DriverProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverProfileView.swift; sourceTree = "<group>"; };
 		2BAFED082C526E5E0041AF88 /* DriverCargoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverCargoListView.swift; sourceTree = "<group>"; };
 		2BAFED0A2C526E760041AF88 /* DriverChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverChatView.swift; sourceTree = "<group>"; };
-		2BAFED132C52D69D0041AF88 /* DriverTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTabView.swift; sourceTree = "<group>"; };
+		2BAFED132C52D69D0041AF88 /* DriverTabViewPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTabViewPanel.swift; sourceTree = "<group>"; };
 		2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEmployerRow.swift; sourceTree = "<group>"; };
 		2BAFED192C555E880041AF88 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		2BAFED1B2C55619D0041AF88 /* DriverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverManager.swift; sourceTree = "<group>"; };
@@ -275,8 +275,8 @@
 		2B2442842CAF4742009E43AE /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				2BA0FBA62C4A8DDF00FE6368 /* ContentView.swift */,
-				2BAFED132C52D69D0041AF88 /* DriverTabView.swift */,
+				2BA0FBA62C4A8DDF00FE6368 /* DriverMainView.swift */,
+				2BAFED132C52D69D0041AF88 /* DriverTabViewPanel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B7C3AE42CACB42300C62BC3 /* MapViewModel.swift in Sources */,
-				2BA0FBA72C4A8DDF00FE6368 /* ContentView.swift in Sources */,
+				2BA0FBA72C4A8DDF00FE6368 /* DriverMainView.swift in Sources */,
 				2B0C50122CA4BAA0003FEFE3 /* UserDataCell.swift in Sources */,
 				2B2442612CAEE41D009E43AE /* EmployerTabViewPanel.swift in Sources */,
 				2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */,
@@ -524,7 +524,7 @@
 				2BAFED202C556D710041AF88 /* DriverEmployerView.swift in Sources */,
 				2B0C50102CA43CDA003FEFE3 /* Employer.swift in Sources */,
 				2B2442822CAF4643009E43AE /* RouteEditingView.swift in Sources */,
-				2BAFED142C52D69D0041AF88 /* DriverTabView.swift in Sources */,
+				2BAFED142C52D69D0041AF88 /* DriverTabViewPanel.swift in Sources */,
 				2B2442A72CBD33DC009E43AE /* EmployerChatsListView.swift in Sources */,
 				2B24427A2CAF1B62009E43AE /* Car.swift in Sources */,
 				2B03B9782C95FE1200DF48C1 /* MessageBubble.swift in Sources */,

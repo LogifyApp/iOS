@@ -88,10 +88,10 @@ struct EmployerCargoDetailsView: View {
             .listRowSeparator(.hidden)
         }
         .navigationTitle("Details")
-        .toolbarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
-        
         .scrollContentBackground(.hidden)
+        .toolbarBackground(.thinMaterial, for: .navigationBar)
         .onAppear {
             withAnimation {
                 description = cargoViewModel.cargo.description

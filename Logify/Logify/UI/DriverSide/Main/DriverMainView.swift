@@ -7,20 +7,27 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DriverMainView: View {
     
     @StateObject private var driverManager = DriverManager()
     @State private var selectedItem = 0
+    @State private var isTabViewPresented = true
     
     var body: some View {
         TabView(selection: $selectedItem) {
-            DriverCargoListView(cargoListViewModel: CargoListViewModel())
-                .tag(0)
+            DriverCargoListView(
+                cargoListViewModel: CargoListViewModel(),
+                isTabViewPresented: $isTabViewPresented
+            )
+            .tag(0)
             DriverProfileView(profileViewModel: ProfileViewModel())
                 .tag(2)
         }
         .overlay(alignment: .bottom) {
-            DriverTabView(selectedItem: $selectedItem)
+            if isTabViewPresented {
+                DriverTabViewPanel(selectedItem: $selectedItem)
+                    .transition(.move(edge: .bottom))
+            }
         }
         .ignoresSafeArea()
         .environmentObject(driverManager)
@@ -28,5 +35,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    DriverMainView()
 }

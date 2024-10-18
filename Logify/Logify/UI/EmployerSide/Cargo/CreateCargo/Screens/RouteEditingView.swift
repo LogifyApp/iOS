@@ -30,10 +30,11 @@ struct RouteEditingView: View {
                 )
             }
         }
-        .background(Color.background)
-        .scrollContentBackground(.hidden)
         .navigationTitle("Route")
         .navigationBarTitleDisplayMode(.inline)
+        .background(Color.background)
+        .scrollContentBackground(.hidden)
+        .toolbarBackground(.thinMaterial, for: .navigationBar)
         .environment(\.editMode, .constant(.active))
     }
 }

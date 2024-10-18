@@ -31,13 +31,13 @@ struct DriverProfileView: View {
                         }
                     }
                 }
-                .navigationBarTitleDisplayMode(.inline)
                 .scrollContentBackground(.hidden)
                 .scrollDisabled(true)
             }
-            .background(Color.background)
             .navigationTitle("Profile")
-            .toolbarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline)
+            .background(Color.background)
+            .toolbarBackground(.thinMaterial, for: .navigationBar)
         }
     }
 }
