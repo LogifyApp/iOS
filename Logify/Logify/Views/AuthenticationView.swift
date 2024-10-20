@@ -20,29 +20,33 @@ struct AuthenticationView: View {
                 
                 VStack(spacing: 120) {
                     LogoLabel()
-                    VStack(spacing: 0) {
+                    VStack(spacing: 20) {
                         NavigationLink(
                             destination: LoginView(),
                             label: {
-                                NavigationText(
-                                    text: "Sign in",
-                                    foreground: .white,
-                                    backround: .black,
-                                    width: 320,
-                                    height: 40
-                                )
+                                Text("Sign in")
+                                    .modifier(
+                                        ButtonStyleModifier(
+                                            width: 320,
+                                            height: 38,
+                                            background: .black,
+                                            foreground: .white
+                                        )
+                                    )
                         })
                         NavigationLink(
                             destination:
                                 RegistrationView().environmentObject(userManager),
                             label: {
-                                NavigationText(
-                                    text: "Sign up",
-                                    foreground: .white,
-                                    backround: .black,
-                                    width: 320,
-                                    height: 40
-                                )
+                                Text("Sign up")
+                                    .modifier(
+                                        ButtonStyleModifier(
+                                            width: 320,
+                                            height: 38,
+                                            background: .black,
+                                            foreground: .white
+                                        )
+                                    )
                             }
                         )
                     }

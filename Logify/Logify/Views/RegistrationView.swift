@@ -24,20 +24,34 @@ struct RegistrationView: View {
     
                 VStack(spacing: 20){
                     RolePicker()
-                    RegistrationTextField(savedText: $userManager.user.name, placeholder: "Name")
-                    RegistrationTextField(savedText: $userManager.user.surname, placeholder: "Surname")
-// TODO: cast phone number string value to int
-                    RegistrationTextField(savedText: .constant(""), placeholder: "Phone number")
-                    RegistrationTextField(savedText: $userManager.user.password, placeholder: "Password")
-                }
-                Button(action: {}){
-                    NavigationText(
-                        text: "Sign up",
-                        foreground: .white,
-                        backround: .black,
-                        width: 320,
-                        height: 40
+                    CustomTextField(
+                        savedText: $userManager.user.name,
+                        placeholder: "Name"
                     )
+                    CustomTextField(
+                        savedText: $userManager.user.surname,
+                        placeholder: "Surname"
+                    )
+// TODO: cast phone number string value to int
+                    CustomTextField(
+                        savedText: .constant(""),
+                        placeholder: "Phone number"
+                    )
+                    CustomTextField(
+                        savedText: $userManager.user.password,
+                        placeholder: "Password"
+                    )
+                }
+                Button(action: {}) {
+                    Text("Sign up")
+                        .modifier(
+                            ButtonStyleModifier(
+                                width: 320,
+                                height: 38,
+                                background: .black,
+                                foreground: .white
+                            )
+                        )
                 }
             }
         }

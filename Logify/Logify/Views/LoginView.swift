@@ -17,22 +17,24 @@ struct LoginView: View {
             VStack(spacing: 80) {
                 LogoLabel()
                 VStack(spacing: 20) {
-                    RegistrationTextField(
+                    CustomTextField(
                         savedText: .constant(""),
                         placeholder: "Phone number"
                     )
-                    RegistrationTextField(
+                    CustomTextField(
                         savedText: .constant(""),
                         placeholder: "Password"
                     )
                     Button(action: {}) {
-                        NavigationText(
-                            text: "Sign in",
-                            foreground: .white,
-                            backround: .black,
-                            width: 320,
-                            height: 40
-                        )
+                        Button(action: {}) {
+                            Text("Sign in")
+                                .modifier(ButtonStyleModifier(
+                                    width: 320,
+                                    height: 38,
+                                    background: .black,
+                                    foreground: .white
+                                ))
+                        }
                     }
                 }
             }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RegistrationTextField: View {
+struct CustomTextField: View {
     @State private var inputText = ""
     @Binding var savedText: String
     let placeholder: String
@@ -15,7 +15,7 @@ struct RegistrationTextField: View {
     var body: some View {
         TextField(placeholder, text: $inputText)
             .padding()
-            .frame(width: 320, height: 40)
+            .frame(width: 320, height: 38)
             .background(.white)
             .clipShape(Capsule())
             .overlay(Capsule().stroke(.gray, lineWidth: 0.4))
@@ -23,5 +23,5 @@ struct RegistrationTextField: View {
 }
 
 #Preview {
-    RegistrationTextField(savedText: .constant(""), placeholder: "name")
+    CustomTextField(savedText: .constant(""), placeholder: "name")
 }
