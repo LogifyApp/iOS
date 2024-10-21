@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct RolePicker: View {
-    @State private var role = "Driver"
+    @Binding var role: Role
     
     var body: some View {
         VStack {
             Text("Select your role")
             Picker("", selection: $role){
                 Text("Driver")
-                    .tag("Driver")
+                    .tag(Role.driver)
                 Text("Employer")
-                    .tag("Employer")
+                    .tag(Role.employer)
             }
             .frame(width: 320)
             .pickerStyle(.segmented)
@@ -26,6 +26,11 @@ struct RolePicker: View {
     }
 }
 
+enum Role: String {
+    case driver = "driver"
+    case employer = "employer"
+}
+
 #Preview {
-    RolePicker()
+    RolePicker(role: .constant(.driver))
 }

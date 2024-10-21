@@ -8,49 +8,45 @@
 import SwiftUI
 
 struct AuthenticationView: View {
-    @EnvironmentObject var userManager: UserManager
-    
     var body: some View {
         NavigationStack {
-            ZStack {
+            VStack(spacing: 120) {
+                LogoLabel()
+                VStack(spacing: 20) {
+                    NavigationLink {
+                        LoginView()
+                    } label: {
+                        Text("Sign in")
+                            .modifier(
+                                ButtonStyleModifier(
+                                    width: 320,
+                                    height: 38,
+                                    background: .black,
+                                    foreground: .white
+                                )
+                            )
+                    }
+                    NavigationLink {
+                        RegistrationView()
+                    } label: {
+                        Text("Sign up")
+                            .modifier(
+                                ButtonStyleModifier(
+                                    width: 320,
+                                    height: 38,
+                                    background: .black,
+                                    foreground: .white
+                                )
+                            )
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background {
                 Image("background")
                     .resizable()
                     .ignoresSafeArea()
-                    .scaleEffect(1.15)
-                
-                VStack(spacing: 120) {
-                    LogoLabel()
-                    VStack(spacing: 20) {
-                        NavigationLink(
-                            destination: LoginView(),
-                            label: {
-                                Text("Sign in")
-                                    .modifier(
-                                        ButtonStyleModifier(
-                                            width: 320,
-                                            height: 38,
-                                            background: .black,
-                                            foreground: .white
-                                        )
-                                    )
-                        })
-                        NavigationLink(
-                            destination:
-                                RegistrationView().environmentObject(userManager),
-                            label: {
-                                Text("Sign up")
-                                    .modifier(
-                                        ButtonStyleModifier(
-                                            width: 320,
-                                            height: 38,
-                                            background: .black,
-                                            foreground: .white
-                                        )
-                                    )
-                            }
-                        )
-                    }
-                }
+                    .scaleEffect(1.3)
             }
         }
     }
@@ -58,5 +54,4 @@ struct AuthenticationView: View {
 
 #Preview {
     AuthenticationView()
-        .environmentObject(UserManager())
 }

@@ -8,36 +8,39 @@
 import SwiftUI
 
 struct LoginView: View {
+    @StateObject private var viewModel = LoginViewModel()
+    
     var body: some View {
-        ZStack {
+        VStack(spacing: 80) {
+            LogoLabel()
+            VStack(spacing: 20) {
+                CustomTextField(
+                    savedText: $viewModel.phoneNumber,
+                    placeholder: "Phone number"
+                )
+                CustomTextField(
+                    savedText: $viewModel.password,
+                    placeholder: "Password"
+                )
+                Button {
+                    viewModel.login()
+                } label: {
+                    Text("Sign in")
+                        .modifier(ButtonStyleModifier(
+                            width: 320,
+                            height: 38,
+                            background: .black,
+                            foreground: .white
+                        ))
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background {
             Image("background")
                 .resizable()
                 .ignoresSafeArea()
-                .scaleEffect(1.15)
-            VStack(spacing: 80) {
-                LogoLabel()
-                VStack(spacing: 20) {
-                    CustomTextField(
-                        savedText: .constant(""),
-                        placeholder: "Phone number"
-                    )
-                    CustomTextField(
-                        savedText: .constant(""),
-                        placeholder: "Password"
-                    )
-                    Button(action: {}) {
-                        Button(action: {}) {
-                            Text("Sign in")
-                                .modifier(ButtonStyleModifier(
-                                    width: 320,
-                                    height: 38,
-                                    background: .black,
-                                    foreground: .white
-                                ))
-                        }
-                    }
-                }
-            }
+                .scaleEffect(1.3)
         }
     }
 }
