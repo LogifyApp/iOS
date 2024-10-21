@@ -16,7 +16,6 @@
 		2BD4B9422CC6CDAA00D36A9E /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD4B9412CC6CDAA00D36A9E /* RegistrationViewModel.swift */; };
 		2BE802432C4D38D600F7C65C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE802422C4D38D600F7C65C /* RegistrationView.swift */; };
 		2BE802452C4D3C5900F7C65C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE802442C4D3C5900F7C65C /* CustomTextField.swift */; };
-		2BE8024B2C4D45D800F7C65C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8024A2C4D45D800F7C65C /* User.swift */; };
 		2BE802512C4D6C5600F7C65C /* RolePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE802502C4D6C5600F7C65C /* RolePicker.swift */; };
 		2BE802552C4DC07900F7C65C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE802542C4DC07900F7C65C /* LoginView.swift */; };
 		2BE802572C4DC1E400F7C65C /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE802562C4DC1E400F7C65C /* AuthenticationView.swift */; };
@@ -33,7 +32,6 @@
 		2BD4B9412CC6CDAA00D36A9E /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		2BE802422C4D38D600F7C65C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		2BE802442C4D3C5900F7C65C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		2BE8024A2C4D45D800F7C65C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2BE802502C4D6C5600F7C65C /* RolePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolePicker.swift; sourceTree = "<group>"; };
 		2BE802542C4DC07900F7C65C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2BE802562C4DC1E400F7C65C /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				2BE802522C4D7FFB00F7C65C /* Views */,
-				2BE802492C4D45CB00F7C65C /* Models */,
 				2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */,
 				2BA0FBA82C4A8DE100FE6368 /* Assets.xcassets */,
 				2BA0FBAA2C4A8DE100FE6368 /* Preview Content */,
@@ -86,14 +83,6 @@
 				2BA0FBAB2C4A8DE100FE6368 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		2BE802492C4D45CB00F7C65C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2BE8024A2C4D45D800F7C65C /* User.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		2BE802522C4D7FFB00F7C65C /* Views */ = {
@@ -193,7 +182,6 @@
 				2BD4B9402CC6CD0700D36A9E /* LoginViewModel.swift in Sources */,
 				2BE802572C4DC1E400F7C65C /* AuthenticationView.swift in Sources */,
 				2BE802452C4D3C5900F7C65C /* CustomTextField.swift in Sources */,
-				2BE8024B2C4D45D800F7C65C /* User.swift in Sources */,
 				2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */,
 				2B93CF802CC5B67D00ADA29D /* ButtonStyleModifier.swift in Sources */,
 				2BE802552C4DC07900F7C65C /* LoginView.swift in Sources */,
