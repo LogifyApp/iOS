@@ -12,7 +12,7 @@ struct AuthenticationView: View {
         NavigationStack {
             VStack(spacing: 120) {
                 LogoLabel()
-                VStack(spacing: 20) {
+                VStack(spacing: 32) {
                     NavigationLink {
                         LoginView()
                     } label: {

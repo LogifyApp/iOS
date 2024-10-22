@@ -11,17 +11,21 @@ struct LoginView: View {
     @StateObject private var viewModel = LoginViewModel()
     
     var body: some View {
-        VStack(spacing: 80) {
+        VStack {
             LogoLabel()
-            VStack(spacing: 20) {
-                CustomTextField(
-                    savedText: $viewModel.phoneNumber,
-                    placeholder: "Phone number"
-                )
-                CustomTextField(
-                    savedText: $viewModel.password,
-                    placeholder: "Password"
-                )
+                .padding(.top, 80)
+                .padding(.bottom, 100)
+            VStack(spacing: 32) {
+                VStack(spacing: 16) {
+                    CustomTextField(
+                        savedText: $viewModel.phoneNumber,
+                        placeholder: "Phone number"
+                    )
+                    CustomTextField(
+                        savedText: $viewModel.password,
+                        placeholder: "Password"
+                    )
+                }
                 Button {
                     viewModel.login()
                 } label: {
@@ -34,6 +38,7 @@ struct LoginView: View {
                         ))
                 }
             }
+            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background {

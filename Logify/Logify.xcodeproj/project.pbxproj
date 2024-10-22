@@ -458,9 +458,9 @@
 			isa = PBXGroup;
 			children = (
 				2BD880952CC7FF3C00629991 /* Components */,
+				2BD8808B2CC7FDD800629991 /* AuthenticationView.swift */,
 				2BD880832CC7FC5700629991 /* LoginView.swift */,
 				2BD880852CC7FC6700629991 /* RegistrationView.swift */,
-				2BD8808B2CC7FDD800629991 /* AuthenticationView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";

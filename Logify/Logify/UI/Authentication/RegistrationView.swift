@@ -15,38 +15,40 @@ struct RegistrationView: View {
             Image("logo")
                 .resizable()
                 .frame(width: 200, height: 200)
-
-            VStack(spacing: 20){
-                RolePicker(role: $viewModel.role)
-                CustomTextField(
-                    savedText: $viewModel.name,
-                    placeholder: "Name"
-                )
-                CustomTextField(
-                    savedText: $viewModel.surname,
-                    placeholder: "Surname"
-                )
-                CustomTextField(
-                    savedText: $viewModel.phoneNumber,
-                    placeholder: "Phone number"
-                )
-                CustomTextField(
-                    savedText: $viewModel.password,
-                    placeholder: "Password"
-                )
-            }
-            Button {
-                viewModel.register()
-            } label: {
-                Text("Sign up")
-                    .modifier(
-                        ButtonStyleModifier(
-                            width: 320,
-                            height: 38,
-                            background: .black,
-                            foreground: .white
-                        )
+            VStack(spacing: 32) {
+                VStack(spacing: 16) {
+                    RolePicker(role: $viewModel.role)
+                    CustomTextField(
+                        savedText: $viewModel.name,
+                        placeholder: "Name"
                     )
+                    CustomTextField(
+                        savedText: $viewModel.surname,
+                        placeholder: "Surname"
+                    )
+                    CustomTextField(
+                        savedText: $viewModel.phoneNumber,
+                        placeholder: "Phone number"
+                    )
+                    CustomTextField(
+                        savedText: $viewModel.password,
+                        placeholder: "Password"
+                    )
+                }
+                Button {
+                    viewModel.register()
+                } label: {
+                    Text("Sign up")
+                        .modifier(
+                            ButtonStyleModifier(
+                                width: 320,
+                                height: 38,
+                                background: .black,
+                                foreground: .white
+                            )
+                        )
+                    
+                }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
