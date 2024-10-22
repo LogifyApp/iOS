@@ -74,6 +74,15 @@
 		2BAFED1A2C555E880041AF88 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED192C555E880041AF88 /* Driver.swift */; };
 		2BAFED1C2C55619D0041AF88 /* DriverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED1B2C55619D0041AF88 /* DriverManager.swift */; };
 		2BAFED202C556D710041AF88 /* DriverEmployerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED1F2C556D710041AF88 /* DriverEmployerView.swift */; };
+		2BD880842CC7FC5700629991 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880832CC7FC5700629991 /* LoginView.swift */; };
+		2BD880862CC7FC6700629991 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880852CC7FC6700629991 /* RegistrationView.swift */; };
+		2BD880882CC7FC7B00629991 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880872CC7FC7B00629991 /* RegistrationViewModel.swift */; };
+		2BD8808A2CC7FCAC00629991 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880892CC7FCAC00629991 /* LoginViewModel.swift */; };
+		2BD8808C2CC7FDD800629991 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8808B2CC7FDD800629991 /* AuthenticationView.swift */; };
+		2BD8808E2CC7FDF400629991 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8808D2CC7FDF400629991 /* CustomTextField.swift */; };
+		2BD880902CC7FE0400629991 /* LogoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8808F2CC7FE0400629991 /* LogoLabel.swift */; };
+		2BD880922CC7FE1B00629991 /* RolePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880912CC7FE1B00629991 /* RolePicker.swift */; };
+		2BD880942CC7FE8700629991 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880932CC7FE8700629991 /* Role.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +154,15 @@
 		2BAFED192C555E880041AF88 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		2BAFED1B2C55619D0041AF88 /* DriverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverManager.swift; sourceTree = "<group>"; };
 		2BAFED1F2C556D710041AF88 /* DriverEmployerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverEmployerView.swift; sourceTree = "<group>"; };
+		2BD880832CC7FC5700629991 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2BD880852CC7FC6700629991 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		2BD880872CC7FC7B00629991 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		2BD880892CC7FCAC00629991 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2BD8808B2CC7FDD800629991 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		2BD8808D2CC7FDF400629991 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		2BD8808F2CC7FE0400629991 /* LogoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoLabel.swift; sourceTree = "<group>"; };
+		2BD880912CC7FE1B00629991 /* RolePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolePicker.swift; sourceTree = "<group>"; };
+		2BD880932CC7FE8700629991 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +367,8 @@
 				2B2442572CAEDD66009E43AE /* Driver */,
 				2B7C3AE32CACB42300C62BC3 /* MapViewModel.swift */,
 				2B7C3AE52CAD5F8300C62BC3 /* ChatViewModel.swift */,
+				2BD880872CC7FC7B00629991 /* RegistrationViewModel.swift */,
+				2BD880892CC7FCAC00629991 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -402,6 +422,7 @@
 				2B6AABBB2C84D8A9006B968A /* Point.swift */,
 				2B0C50152CA6008C003FEFE3 /* Chat.swift */,
 				2B03B9792C95FE7300DF48C1 /* Message.swift */,
+				2BD880932CC7FE8700629991 /* Role.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -409,6 +430,7 @@
 		2BAFED0C2C526ECE0041AF88 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2BD880822CC7F93E00629991 /* Authentication */,
 				2B24425A2CAEE2D5009E43AE /* EmployerSide */,
 				2B2442562CAEDD2F009E43AE /* DriverSide */,
 				2BAFED0D2C526EDE0041AF88 /* Components */,
@@ -428,6 +450,27 @@
 				2B24429D2CB95EC5009E43AE /* ListDetailRow.swift */,
 				2B03B97D2C971D1A00DF48C1 /* MessageField.swift */,
 				2B03B9772C95FE1200DF48C1 /* MessageBubble.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2BD880822CC7F93E00629991 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				2BD880952CC7FF3C00629991 /* Components */,
+				2BD880832CC7FC5700629991 /* LoginView.swift */,
+				2BD880852CC7FC6700629991 /* RegistrationView.swift */,
+				2BD8808B2CC7FDD800629991 /* AuthenticationView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		2BD880952CC7FF3C00629991 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2BD8808D2CC7FDF400629991 /* CustomTextField.swift */,
+				2BD8808F2CC7FE0400629991 /* LogoLabel.swift */,
+				2BD880912CC7FE1B00629991 /* RolePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -503,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B7C3AE42CACB42300C62BC3 /* MapViewModel.swift in Sources */,
+				2BD880882CC7FC7B00629991 /* RegistrationViewModel.swift in Sources */,
 				2BA0FBA72C4A8DDF00FE6368 /* DriverMainView.swift in Sources */,
 				2B0C50122CA4BAA0003FEFE3 /* UserDataCell.swift in Sources */,
 				2B2442612CAEE41D009E43AE /* EmployerTabViewPanel.swift in Sources */,
@@ -512,6 +556,7 @@
 				2B6AABBE2C864A18006B968A /* ButtonStyleModifier.swift in Sources */,
 				2B24426C2CAF0004009E43AE /* EmployerCargoListViewModel.swift in Sources */,
 				2B7C3AE02CACA4D700C62BC3 /* CargoListViewModel.swift in Sources */,
+				2BD880902CC7FE0400629991 /* LogoLabel.swift in Sources */,
 				2B2442AD2CBFD97E009E43AE /* EmployerChatView.swift in Sources */,
 				2B2442682CAEF40F009E43AE /* EmployerProfileViewModel.swift in Sources */,
 				2B7C3AE62CAD5F8300C62BC3 /* ChatViewModel.swift in Sources */,
@@ -524,14 +569,19 @@
 				2BAFED202C556D710041AF88 /* DriverEmployerView.swift in Sources */,
 				2B0C50102CA43CDA003FEFE3 /* Employer.swift in Sources */,
 				2B2442822CAF4643009E43AE /* RouteEditingView.swift in Sources */,
+				2BD8808A2CC7FCAC00629991 /* LoginViewModel.swift in Sources */,
+				2BD8808C2CC7FDD800629991 /* AuthenticationView.swift in Sources */,
 				2BAFED142C52D69D0041AF88 /* DriverTabViewPanel.swift in Sources */,
+				2BD880942CC7FE8700629991 /* Role.swift in Sources */,
 				2B2442A72CBD33DC009E43AE /* EmployerChatsListView.swift in Sources */,
 				2B24427A2CAF1B62009E43AE /* Car.swift in Sources */,
 				2B03B9782C95FE1200DF48C1 /* MessageBubble.swift in Sources */,
+				2BD880862CC7FC6700629991 /* RegistrationView.swift in Sources */,
 				2B7C3AE82CAD695B00C62BC3 /* ProfileViewModel.swift in Sources */,
 				2B2442862CAFD7BF009E43AE /* NewPointView.swift in Sources */,
 				2B6AABBC2C84D8A9006B968A /* Point.swift in Sources */,
 				2B2442A02CB9C172009E43AE /* SearchDriverView.swift in Sources */,
+				2BD880842CC7FC5700629991 /* LoginView.swift in Sources */,
 				2B24429E2CB95EC5009E43AE /* ListDetailRow.swift in Sources */,
 				2B08DC802C77D263003F49D0 /* CargoDetailsView.swift in Sources */,
 				2B0C50162CA6008C003FEFE3 /* Chat.swift in Sources */,
@@ -561,8 +611,10 @@
 				2B2442702CAF0447009E43AE /* EmployerCargoDocumentsView.swift in Sources */,
 				2B2442922CB1EEF2009E43AE /* CarDetailsRow.swift in Sources */,
 				2B6AABB42C7FC12D006B968A /* SectionHeader.swift in Sources */,
+				2BD8808E2CC7FDF400629991 /* CustomTextField.swift in Sources */,
 				2B2442A22CBC392E009E43AE /* NewDriverCell.swift in Sources */,
 				2B74F3A02C73DD5100C8B0CD /* CargoCell.swift in Sources */,
+				2BD880922CC7FE1B00629991 /* RolePicker.swift in Sources */,
 				2BAFED1C2C55619D0041AF88 /* DriverManager.swift in Sources */,
 				2B2442A42CBC3C26009E43AE /* NewDriverDetailsView.swift in Sources */,
 				2BAFED182C54F8640041AF88 /* RequestEmployerRow.swift in Sources */,
