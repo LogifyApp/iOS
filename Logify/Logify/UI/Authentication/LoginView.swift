@@ -22,7 +22,7 @@ struct LoginView: View {
                         errorMessage: $viewModel.phoneNumberErrorMessage,
                         placeholder: "Phone number"
                     )
-                    CustomTextField(
+                    CustomSecureField(
                         inputText: $viewModel.password,
                         errorMessage: $viewModel.passwordErorMessage,
                         placeholder: "Password"

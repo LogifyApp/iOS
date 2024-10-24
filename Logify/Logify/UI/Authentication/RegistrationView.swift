@@ -35,7 +35,7 @@ struct RegistrationView: View {
                         errorMessage: $viewModel.phoneNumberErrorMessage,
                         placeholder: "Phone number"
                     )
-                    CustomTextField(
+                    CustomSecureField(
                         inputText: $viewModel.password,
                         errorMessage: $viewModel.passwordErrorMessage,
                         placeholder: "Password"

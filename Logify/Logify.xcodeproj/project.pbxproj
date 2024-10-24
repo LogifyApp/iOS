@@ -84,6 +84,7 @@
 		2BD880942CC7FE8700629991 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880932CC7FE8700629991 /* Role.swift */; };
 		2BD880972CC8FD2B00629991 /* CustomRolePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880962CC8FD2B00629991 /* CustomRolePicker.swift */; };
 		2BD8809B2CCA9E1400629991 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8809A2CCA9E1400629991 /* TextFieldValidator.swift */; };
+		2BD8809F2CCAEAA600629991 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8809E2CCAEAA600629991 /* CustomSecureField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +166,7 @@
 		2BD880932CC7FE8700629991 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		2BD880962CC8FD2B00629991 /* CustomRolePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRolePicker.swift; sourceTree = "<group>"; };
 		2BD8809A2CCA9E1400629991 /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
+		2BD8809E2CCAEAA600629991 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -474,6 +476,7 @@
 				2BD8808D2CC7FDF400629991 /* CustomTextField.swift */,
 				2BD8808F2CC7FE0400629991 /* LogoLabel.swift */,
 				2BD880962CC8FD2B00629991 /* CustomRolePicker.swift */,
+				2BD8809E2CCAEAA600629991 /* CustomSecureField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				2B2442782CAF199D009E43AE /* NewCargoViewModel.swift in Sources */,
 				2B24426E2CAF039B009E43AE /* EmployerCargoDetailsView.swift in Sources */,
 				2B2442632CAEE471009E43AE /* TabViewPanel.swift in Sources */,
+				2BD8809F2CCAEAA600629991 /* CustomSecureField.swift in Sources */,
 				2B24425C2CAEE31D009E43AE /* EmployerMainView.swift in Sources */,
 				2BAFED202C556D710041AF88 /* DriverEmployerView.swift in Sources */,
 				2B0C50102CA43CDA003FEFE3 /* Employer.swift in Sources */,
