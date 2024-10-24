@@ -16,7 +16,7 @@ struct CustomRolePicker: View {
                 .frame(width: 160, height: 38)
                 .background {
                     Capsule()
-                        .foregroundStyle(selection == role ? .black : .clear)
+                        .foregroundStyle(selection == role ? .black : .white)
                 }
             }
         }

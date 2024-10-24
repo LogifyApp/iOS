@@ -66,7 +66,22 @@ struct RegistrationView: View {
         }
         .onChange(of: viewModel.name) { oldValue, newValue in
             withAnimation {
-                
+                viewModel.nameErrorMessage = TextFieldValidator.shared.validateName(newValue)
+            }
+        }
+        .onChange(of: viewModel.surname) { _, newValue in
+            withAnimation {
+                viewModel.surnameErorMessage = TextFieldValidator.shared.validateSurname(newValue)
+            }
+        }
+        .onChange(of: viewModel.phoneNumber) { _, newValue in
+            withAnimation {
+                viewModel.phoneNumberErrorMessage = TextFieldValidator.shared.validatePhoneNumber(newValue)
+            }
+        }
+        .onChange(of: viewModel.password) { _, newValue in
+            withAnimation {
+                viewModel.passwordErrorMessage = TextFieldValidator.shared.validatePassword(newValue)
             }
         }
     }
