@@ -10,8 +10,10 @@ import SwiftUI
 struct AuthenticationView: View {
     var body: some View {
         NavigationStack {
-            VStack(spacing: 120) {
+            VStack {
                 LogoLabel()
+                    .padding(.top, 100)
+                    .padding(.bottom, 140)
                 VStack(spacing: 32) {
                     NavigationLink {
                         LoginView()
@@ -40,6 +42,7 @@ struct AuthenticationView: View {
                             )
                     }
                 }
+                Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background {
