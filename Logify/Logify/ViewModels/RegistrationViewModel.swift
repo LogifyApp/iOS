@@ -14,6 +14,15 @@ class RegistrationViewModel: ObservableObject {
     @Published var password = ""
     @Published var role = Role.driver
     
+    @Published var nameErrorMessage = ""
+    @Published var surnameErorMessage = ""
+    @Published var phoneNumberErrorMessage = ""
+    @Published var passwordErrorMessage = ""
+    
+    func validate(){
+        
+    }
+    
     func register() {
         
     }

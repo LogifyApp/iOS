@@ -21,19 +21,23 @@ struct RegistrationView: View {
                 VStack(spacing: 16) {
                     CustomRolePicker(selection: $viewModel.role)
                     CustomTextField(
-                        savedText: $viewModel.name,
+                        inputText: $viewModel.name, 
+                        errorMessage: $viewModel.nameErrorMessage,
                         placeholder: "Name"
                     )
                     CustomTextField(
-                        savedText: $viewModel.surname,
+                        inputText: $viewModel.surname,
+                        errorMessage: $viewModel.surnameErorMessage,
                         placeholder: "Surname"
                     )
                     CustomTextField(
-                        savedText: $viewModel.phoneNumber,
+                        inputText: $viewModel.phoneNumber,
+                        errorMessage: $viewModel.phoneNumberErrorMessage,
                         placeholder: "Phone number"
                     )
                     CustomTextField(
-                        savedText: $viewModel.password,
+                        inputText: $viewModel.password,
+                        errorMessage: $viewModel.passwordErrorMessage,
                         placeholder: "Password"
                     )
                 }
@@ -59,6 +63,11 @@ struct RegistrationView: View {
                 .resizable()
                 .ignoresSafeArea()
                 .scaleEffect(1.3)
+        }
+        .onChange(of: viewModel.name) { oldValue, newValue in
+            withAnimation {
+                
+            }
         }
     }
 }

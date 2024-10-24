@@ -8,20 +8,39 @@
 import SwiftUI
 
 struct CustomTextField: View {
-    @State private var inputText = ""
-    @Binding var savedText: String
+    @Binding var inputText: String
+    @Binding var errorMessage: String
     let placeholder: String
     
     var body: some View {
-        TextField(placeholder, text: $inputText)
-            .padding()
-            .frame(width: 320, height: 38)
-            .background(.white)
-            .clipShape(Capsule())
-            .overlay(Capsule().stroke(.gray, lineWidth: 0.4))
+        VStack {
+            TextField(placeholder, text: $inputText)
+                .padding()
+                .frame(width: 320, height: 38)
+                .background(.white)
+                .clipShape(Capsule())
+                .overlay(
+                    Capsule()
+                        .stroke(
+                            errorMessage.isEmpty ? .gray : .red,
+                            lineWidth: errorMessage.isEmpty ? 0.4 : 1
+                        )
+                )
+                .textInputAutocapitalization(.never)
+            if !errorMessage.isEmpty {
+                Text(errorMessage)
+                    .frame(width: 280, alignment: .leading)
+                    .foregroundStyle(.red)
+                    .font(.footnote)
+            }
+        }
     }
 }
 
 #Preview {
-    CustomTextField(savedText: .constant(""), placeholder: "name")
+    CustomTextField(
+        inputText: .constant(""),
+        errorMessage: .constant("Error incorrect email"),
+        placeholder: "name"
+    )
 }

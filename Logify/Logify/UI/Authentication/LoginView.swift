@@ -18,11 +18,13 @@ struct LoginView: View {
             VStack(spacing: 32) {
                 VStack(spacing: 16) {
                     CustomTextField(
-                        savedText: $viewModel.phoneNumber,
+                        inputText: $viewModel.phoneNumber, 
+                        errorMessage: $viewModel.phoneNumberErrorMessage,
                         placeholder: "Phone number"
                     )
                     CustomTextField(
-                        savedText: $viewModel.password,
+                        inputText: $viewModel.password,
+                        errorMessage: $viewModel.passwordErorMessage,
                         placeholder: "Password"
                     )
                 }
@@ -46,6 +48,11 @@ struct LoginView: View {
                 .resizable()
                 .ignoresSafeArea()
                 .scaleEffect(1.3)
+        }
+        .onChange(of: viewModel.phoneNumber) { _, newValue in
+            withAnimation {
+                viewModel.phoneNumberErrorMessage = TextFieldValidator.shared.validatePhoneNumber(newValue)
+            }
         }
     }
 }

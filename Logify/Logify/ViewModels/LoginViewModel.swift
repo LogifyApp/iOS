@@ -11,6 +11,13 @@ class LoginViewModel: ObservableObject {
     @Published var phoneNumber = ""
     @Published var password = ""
     
+    @Published var phoneNumberErrorMessage = ""
+    @Published var passwordErorMessage = ""
+    
+    func validate() {
+        
+    }
+    
     func login() {
         
     }

@@ -83,6 +83,7 @@
 		2BD880902CC7FE0400629991 /* LogoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8808F2CC7FE0400629991 /* LogoLabel.swift */; };
 		2BD880942CC7FE8700629991 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880932CC7FE8700629991 /* Role.swift */; };
 		2BD880972CC8FD2B00629991 /* CustomRolePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880962CC8FD2B00629991 /* CustomRolePicker.swift */; };
+		2BD8809B2CCA9E1400629991 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8809A2CCA9E1400629991 /* TextFieldValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +164,7 @@
 		2BD8808F2CC7FE0400629991 /* LogoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoLabel.swift; sourceTree = "<group>"; };
 		2BD880932CC7FE8700629991 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		2BD880962CC8FD2B00629991 /* CustomRolePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRolePicker.swift; sourceTree = "<group>"; };
+		2BD8809A2CCA9E1400629991 /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -399,6 +401,7 @@
 				2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */,
 				2BA0FBA82C4A8DE100FE6368 /* Assets.xcassets */,
 				2BA0FBAA2C4A8DE100FE6368 /* Preview Content */,
+				2BD8809A2CCA9E1400629991 /* TextFieldValidator.swift */,
 			);
 			path = Logify;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				2B0C50102CA43CDA003FEFE3 /* Employer.swift in Sources */,
 				2B2442822CAF4643009E43AE /* RouteEditingView.swift in Sources */,
 				2BD8808A2CC7FCAC00629991 /* LoginViewModel.swift in Sources */,
+				2BD8809B2CCA9E1400629991 /* TextFieldValidator.swift in Sources */,
 				2BD8808C2CC7FDD800629991 /* AuthenticationView.swift in Sources */,
 				2BAFED142C52D69D0041AF88 /* DriverTabViewPanel.swift in Sources */,
 				2BD880942CC7FE8700629991 /* Role.swift in Sources */,
