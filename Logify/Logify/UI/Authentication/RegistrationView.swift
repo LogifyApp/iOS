@@ -11,13 +11,15 @@ struct RegistrationView: View {
     @StateObject private var viewModel = RegistrationViewModel()
     
     var body: some View {
-        VStack(spacing: 20) {
+        VStack {
             Image("logo")
                 .resizable()
                 .frame(width: 200, height: 200)
+                .padding(.top, 80)
+                .padding(.bottom, 40)
             VStack(spacing: 32) {
                 VStack(spacing: 16) {
-                    RolePicker(role: $viewModel.role)
+                    CustomRolePicker(selection: $viewModel.role)
                     CustomTextField(
                         savedText: $viewModel.name,
                         placeholder: "Name"
@@ -47,9 +49,9 @@ struct RegistrationView: View {
                                 foreground: .white
                             )
                         )
-                    
                 }
             }
+            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Role: String {
+enum Role: String, CaseIterable {
     case driver = "Driver"
     case employer = "Employer"
 }
