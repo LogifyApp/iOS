@@ -33,7 +33,7 @@ struct DriverEmployerView: View {
                     } else {
                         ForEach(profileViewModel.employersRequests, id: \.id){ employer in
                             NavigationLink {
-                                
+                                EmployerRequestDetailsView(employer: employer)
                             } label: {
                                 Text(employer.getFullName())
                             }

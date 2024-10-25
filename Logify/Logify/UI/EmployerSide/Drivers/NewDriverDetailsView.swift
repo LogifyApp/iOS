@@ -33,6 +33,7 @@ struct NewDriverDetailsView: View {
                     foreground: .white
                 )
             )
+            .padding()
         }
         .navigationTitle("Details")
         .navigationBarTitleDisplayMode(.inline)

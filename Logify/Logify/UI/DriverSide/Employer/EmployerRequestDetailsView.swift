@@ -15,26 +15,29 @@ struct EmployerRequestDetailsView: View {
             UserDataCell(user: employer)
                 .padding(20)
             Spacer()
-            Button("Accept") {
-                
-            }
-            .modifier(
-                ButtonStyleModifier(
+            HStack {
+                Button("Accept") {
                     
-                    background: .black,
-                    foreground: .white
+                }
+                .frame(maxWidth: .infinity, maxHeight: 38)
+                .modifier(
+                    ButtonStyleModifier(
+                        background: .black,
+                        foreground: .white
+                    )
                 )
-            )
-            Button("Decline") {
-                
-            }
-            .modifier(
-                ButtonStyleModifier(
+                Button("Decline") {
                     
-                    background: .black,
-                    foreground: .white
+                }
+                .frame(maxWidth: .infinity, maxHeight: 38)
+                .modifier(
+                    ButtonStyleModifier(
+                        background: .red,
+                        foreground: .white
+                    )
                 )
-            )
+            }
+            .padding()
         }
         .navigationTitle("Request details")
         .navigationBarTitleDisplayMode(.inline)
