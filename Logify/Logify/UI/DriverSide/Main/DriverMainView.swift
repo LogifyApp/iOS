@@ -21,7 +21,8 @@ struct DriverMainView: View {
             )
             .tag(0)
             DriverEmployerView(
-                viewModel: EmployersViewModel()
+                viewModel: EmployersViewModel(),
+                isTabViewPresented: $isTabViewPresented
             )
             .tag(1)
             DriverProfileView(

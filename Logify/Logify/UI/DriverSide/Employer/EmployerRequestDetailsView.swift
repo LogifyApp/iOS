@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EmployerRequestDetailsView: View {
+    @Binding var isTabViewPresented: Bool
     var employer: Employer
     
     var body: some View {
@@ -37,16 +38,23 @@ struct EmployerRequestDetailsView: View {
                     )
                 )
             }
-            .padding()
+            .padding([.horizontal], 20)
         }
-        .navigationTitle("Request details")
+        .navigationTitle("Details")
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
+        .toolbarBackground(.thinMaterial, for: .navigationBar)
+        .onAppear {
+            withAnimation {
+                isTabViewPresented = false
+            }
+        }
     }
 }
 
 #Preview {
     EmployerRequestDetailsView(
+        isTabViewPresented: .constant(false),
         employer: Employer(id: 2, name: "Name", surname: "Surname", phoneNumber: 1234535345, password: "", role: "Employer")
     )
 }
