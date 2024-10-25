@@ -158,8 +158,8 @@ struct NewCargoView: View {
                         .background(.darkBlue)
                         .foregroundStyle(.white)
                         .clipShape(Capsule())
-                        .transition(.move(edge: .bottom))
-                        .frame(maxHeight: .infinity, alignment: .bottom)
+                        .transition(.move(edge: .top))
+                        .frame(maxHeight: .infinity, alignment: .top)
                 }
             }
         }
