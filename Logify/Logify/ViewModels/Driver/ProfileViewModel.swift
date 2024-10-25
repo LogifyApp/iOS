@@ -19,10 +19,11 @@ class ProfileViewModel: ObservableObject {
     init() {
         self.driver = Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "Driver", status: "Available")
         getEmployersRequests()
+        employer = getActiveEmployer()
     }
     
     func getActiveEmployer() -> Employer? {
-        return Employer(id: 2, name: "Name", surname: "Surname", phoneNumber: 1234535345, password: "", role: "")
+        return Employer(id: 2, name: "Name", surname: "Surname", phoneNumber: 1234535345, password: "", role: "Employer")
     }
     
     func getEmployersRequests() {

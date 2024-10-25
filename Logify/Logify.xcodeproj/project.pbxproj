@@ -73,7 +73,6 @@
 		2BAFED182C54F8640041AF88 /* RequestEmployerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */; };
 		2BAFED1A2C555E880041AF88 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED192C555E880041AF88 /* Driver.swift */; };
 		2BAFED1C2C55619D0041AF88 /* DriverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED1B2C55619D0041AF88 /* DriverManager.swift */; };
-		2BAFED202C556D710041AF88 /* DriverEmployerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED1F2C556D710041AF88 /* DriverEmployerView.swift */; };
 		2BD880842CC7FC5700629991 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880832CC7FC5700629991 /* LoginView.swift */; };
 		2BD880862CC7FC6700629991 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880852CC7FC6700629991 /* RegistrationView.swift */; };
 		2BD880882CC7FC7B00629991 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880872CC7FC7B00629991 /* RegistrationViewModel.swift */; };
@@ -85,6 +84,8 @@
 		2BD880972CC8FD2B00629991 /* CustomRolePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880962CC8FD2B00629991 /* CustomRolePicker.swift */; };
 		2BD8809B2CCA9E1400629991 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8809A2CCA9E1400629991 /* TextFieldValidator.swift */; };
 		2BD8809F2CCAEAA600629991 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8809E2CCAEAA600629991 /* CustomSecureField.swift */; };
+		2BD880A22CCC0F8C00629991 /* DriverEmployerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880A12CCC0F8C00629991 /* DriverEmployerView.swift */; };
+		2BD880A42CCC26CA00629991 /* EmployerRequestDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880A32CCC26CA00629991 /* EmployerRequestDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,7 +156,6 @@
 		2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEmployerRow.swift; sourceTree = "<group>"; };
 		2BAFED192C555E880041AF88 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		2BAFED1B2C55619D0041AF88 /* DriverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverManager.swift; sourceTree = "<group>"; };
-		2BAFED1F2C556D710041AF88 /* DriverEmployerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverEmployerView.swift; sourceTree = "<group>"; };
 		2BD880832CC7FC5700629991 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2BD880852CC7FC6700629991 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		2BD880872CC7FC7B00629991 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -167,6 +167,8 @@
 		2BD880962CC8FD2B00629991 /* CustomRolePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRolePicker.swift; sourceTree = "<group>"; };
 		2BD8809A2CCA9E1400629991 /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 		2BD8809E2CCAEAA600629991 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
+		2BD880A12CCC0F8C00629991 /* DriverEmployerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverEmployerView.swift; sourceTree = "<group>"; };
+		2BD880A32CCC26CA00629991 /* EmployerRequestDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerRequestDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,8 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				2BAFED062C526E360041AF88 /* DriverProfileView.swift */,
-				2BAFED1F2C556D710041AF88 /* DriverEmployerView.swift */,
-				2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -214,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				2B2442842CAF4742009E43AE /* Main */,
+				2BD880A02CCC0F5A00629991 /* Employer */,
 				2B0C50182CA61E0A003FEFE3 /* Cargo */,
 				2B0C501A2CA61E1C003FEFE3 /* Chat */,
 				2B0C50192CA61E13003FEFE3 /* Profile */,
@@ -481,6 +482,16 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		2BD880A02CCC0F5A00629991 /* Employer */ = {
+			isa = PBXGroup;
+			children = (
+				2BD880A12CCC0F8C00629991 /* DriverEmployerView.swift */,
+				2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */,
+				2BD880A32CCC26CA00629991 /* EmployerRequestDetailsView.swift */,
+			);
+			path = Employer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -554,11 +565,13 @@
 				2B7C3AE42CACB42300C62BC3 /* MapViewModel.swift in Sources */,
 				2BD880882CC7FC7B00629991 /* RegistrationViewModel.swift in Sources */,
 				2BA0FBA72C4A8DDF00FE6368 /* DriverMainView.swift in Sources */,
+				2BD880A22CCC0F8C00629991 /* DriverEmployerView.swift in Sources */,
 				2B0C50122CA4BAA0003FEFE3 /* UserDataCell.swift in Sources */,
 				2B2442612CAEE41D009E43AE /* EmployerTabViewPanel.swift in Sources */,
 				2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */,
 				2B2442882CAFE0A2009E43AE /* NewPointMapView.swift in Sources */,
 				2B24428C2CB02D66009E43AE /* PointRow.swift in Sources */,
+				2BD880A42CCC26CA00629991 /* EmployerRequestDetailsView.swift in Sources */,
 				2B6AABBE2C864A18006B968A /* ButtonStyleModifier.swift in Sources */,
 				2B24426C2CAF0004009E43AE /* EmployerCargoListViewModel.swift in Sources */,
 				2B7C3AE02CACA4D700C62BC3 /* CargoListViewModel.swift in Sources */,
@@ -573,7 +586,6 @@
 				2B2442632CAEE471009E43AE /* TabViewPanel.swift in Sources */,
 				2BD8809F2CCAEAA600629991 /* CustomSecureField.swift in Sources */,
 				2B24425C2CAEE31D009E43AE /* EmployerMainView.swift in Sources */,
-				2BAFED202C556D710041AF88 /* DriverEmployerView.swift in Sources */,
 				2B0C50102CA43CDA003FEFE3 /* Employer.swift in Sources */,
 				2B2442822CAF4643009E43AE /* RouteEditingView.swift in Sources */,
 				2BD8808A2CC7FCAC00629991 /* LoginViewModel.swift in Sources */,

@@ -20,8 +20,10 @@ struct DriverMainView: View {
                 isTabViewPresented: $isTabViewPresented
             )
             .tag(0)
-            DriverProfileView(profileViewModel: ProfileViewModel())
-                .tag(2)
+            DriverProfileView(
+                profileViewModel: ProfileViewModel()
+            )
+            .tag(2)
         }
         .overlay(alignment: .bottom) {
             if isTabViewPresented {
@@ -31,6 +33,7 @@ struct DriverMainView: View {
         }
         .ignoresSafeArea()
         .environmentObject(driverManager)
+        .navigationBarBackButtonHidden()
     }
 }
 

@@ -40,6 +40,7 @@ struct EmployerMainView: View {
             }
         }
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden()
     }
 }
 

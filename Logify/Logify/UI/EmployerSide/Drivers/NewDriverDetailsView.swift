@@ -13,9 +13,8 @@ struct NewDriverDetailsView: View {
     
     var body: some View {
         VStack {
-            //TODO: fix role panel
             UserDataCell(user: driver)
-                .padding()
+                .padding(20)
             Spacer()
             Button("Send request") {
                 withAnimation {
