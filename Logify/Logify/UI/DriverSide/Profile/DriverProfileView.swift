@@ -45,17 +45,3 @@ struct DriverProfileView: View {
 #Preview {
     DriverProfileView(profileViewModel: ProfileViewModel())
 }
-
-
-/*
- Section {
-     NavigationLink("Employer") {
-         DriverEmployerView(profileViewModel: profileViewModel)
-     }
-     Picker("Tracking", selection: .constant(1)) {
-         Text("Default")
-         Text("Wialon")
-     }
-     .pickerStyle(.navigationLink)
- }
- */

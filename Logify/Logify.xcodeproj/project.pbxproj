@@ -85,6 +85,8 @@
 		2BD8809F2CCAEAA600629991 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8809E2CCAEAA600629991 /* CustomSecureField.swift */; };
 		2BD880A22CCC0F8C00629991 /* DriverEmployerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880A12CCC0F8C00629991 /* DriverEmployerView.swift */; };
 		2BD880A42CCC26CA00629991 /* EmployerRequestDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880A32CCC26CA00629991 /* EmployerRequestDetailsView.swift */; };
+		2BD880A62CCC2E1E00629991 /* ActionNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880A52CCC2E1E00629991 /* ActionNotificationView.swift */; };
+		2BD880A82CCC31C300629991 /* EmployersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880A72CCC31C300629991 /* EmployersViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,6 +169,8 @@
 		2BD8809E2CCAEAA600629991 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		2BD880A12CCC0F8C00629991 /* DriverEmployerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverEmployerView.swift; sourceTree = "<group>"; };
 		2BD880A32CCC26CA00629991 /* EmployerRequestDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerRequestDetailsView.swift; sourceTree = "<group>"; };
+		2BD880A52CCC2E1E00629991 /* ActionNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionNotificationView.swift; sourceTree = "<group>"; };
+		2BD880A72CCC31C300629991 /* EmployersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployersViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +230,7 @@
 				2B7C3ADF2CACA4D700C62BC3 /* CargoListViewModel.swift */,
 				2B7C3AE12CACA9BA00C62BC3 /* CargoViewModel.swift */,
 				2B7C3AE72CAD695B00C62BC3 /* ProfileViewModel.swift */,
+				2BD880A72CCC31C300629991 /* EmployersViewModel.swift */,
 			);
 			path = Driver;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				2B24429D2CB95EC5009E43AE /* ListDetailRow.swift */,
 				2B03B97D2C971D1A00DF48C1 /* MessageField.swift */,
 				2B03B9772C95FE1200DF48C1 /* MessageBubble.swift */,
+				2BD880A52CCC2E1E00629991 /* ActionNotificationView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -607,6 +613,8 @@
 				2B24426A2CAEFCE4009E43AE /* EmployerCargoListView.swift in Sources */,
 				2B6AABC02C875A84006B968A /* MapView.swift in Sources */,
 				2B6AABBA2C84D822006B968A /* Cargo.swift in Sources */,
+				2BD880A62CCC2E1E00629991 /* ActionNotificationView.swift in Sources */,
+				2BD880A82CCC31C300629991 /* EmployersViewModel.swift in Sources */,
 				2BAFED0B2C526E760041AF88 /* DriverChatView.swift in Sources */,
 				2B24428A2CB007FA009E43AE /* NewCargoView.swift in Sources */,
 				2BAFED1A2C555E880041AF88 /* Driver.swift in Sources */,

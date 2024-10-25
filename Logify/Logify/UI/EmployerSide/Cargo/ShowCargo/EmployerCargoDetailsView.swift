@@ -12,6 +12,7 @@ struct EmployerCargoDetailsView: View {
     @State private var isMapPresented = false
     @State private var description = ""
     @State private var disableEditing = true
+    @State private var pointWasTapped = false
     @Binding var isTabViewPresented: Bool
     
     var body: some View {
@@ -62,6 +63,17 @@ struct EmployerCargoDetailsView: View {
                             point: point,
                             isLast: cargoViewModel.points.last?.id == point.id
                         )
+                        .onTapGesture {
+                            UIPasteboard.general.string = point.getCoordinates()
+                            withAnimation(.snappy) {
+                                pointWasTapped = true
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                withAnimation(.snappy) {
+                                    pointWasTapped = false
+                                }
+                            }
+                        }
                     }
                 }
                 Button(action: { isMapPresented.toggle() }) {
@@ -69,7 +81,7 @@ struct EmployerCargoDetailsView: View {
                          Image(systemName: "map")
                          Text("Map")
                      }
-                     .frame(width: 310, height: 38)
+                     .frame(width: 320, height: 38)
                      .modifier(
                          ButtonStyleModifier(
                             background: .black,
@@ -95,6 +107,11 @@ struct EmployerCargoDetailsView: View {
             withAnimation {
                 description = cargoViewModel.cargo.description
                 isTabViewPresented = false
+            }
+        }
+        .overlay {
+            if pointWasTapped {
+                ActionNotificationView(text: "Coordinates were copied")
             }
         }
     }

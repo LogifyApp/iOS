@@ -40,14 +40,7 @@ struct NewDriverDetailsView: View {
         .background(Color.background)
         .overlay {
             if isNotificationPresented {
-                Text("Request was sent")
-                    .fontWeight(.semibold)
-                    .padding()
-                    .background(.darkBlue)
-                    .foregroundStyle(.white)
-                    .clipShape(Capsule())
-                    .transition(.move(edge: .top))
-                    .frame(maxHeight: .infinity, alignment: .top)
+                ActionNotificationView(text: "Request was sent")
             }
         }
     }

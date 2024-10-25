@@ -152,14 +152,7 @@ struct NewCargoView: View {
             }
             .overlay {
                 if pointWasTapped {
-                    Text("Coordinates were copied")
-                        .fontWeight(.semibold)
-                        .padding()
-                        .background(.darkBlue)
-                        .foregroundStyle(.white)
-                        .clipShape(Capsule())
-                        .transition(.move(edge: .top))
-                        .frame(maxHeight: .infinity, alignment: .top)
+                    ActionNotificationView(text: "Coordinates were copied")
                 }
             }
         }

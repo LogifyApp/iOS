@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct DriverEmployerView: View {
-    @ObservedObject var profileViewModel: ProfileViewModel
+    @ObservedObject var viewModel: EmployersViewModel
     
     var body: some View {
         VStack {
-            if let employer = profileViewModel.employer {
+            if let employer = viewModel.employer {
                 UserDataCell(user: employer)
                     .padding(20)
             } else {
@@ -26,12 +26,12 @@ struct DriverEmployerView: View {
             }
             List {
                 Section {
-                    if profileViewModel.employersRequests.isEmpty {
+                    if viewModel.employersRequests.isEmpty {
                         Text("You don't have active requests")
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 30)
                     } else {
-                        ForEach(profileViewModel.employersRequests, id: \.id){ employer in
+                        ForEach(viewModel.employersRequests, id: \.id){ employer in
                             NavigationLink {
                                 EmployerRequestDetailsView(employer: employer)
                             } label: {
@@ -55,6 +55,6 @@ struct DriverEmployerView: View {
 
 #Preview {
     NavigationView {
-        DriverEmployerView(profileViewModel: ProfileViewModel())
+        DriverEmployerView(viewModel: EmployersViewModel())
     }
 }

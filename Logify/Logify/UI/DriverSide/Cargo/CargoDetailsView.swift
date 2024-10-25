@@ -11,6 +11,7 @@ struct CargoDetailsView: View {
     
     @ObservedObject var cargoViewModel: CargoViewModel
     @State private var isMapPresented = false
+    @State private var pointWasTapped = false
     @Binding var isTabViewPresented: Bool
     
     var body: some View {
@@ -52,6 +53,17 @@ struct CargoDetailsView: View {
                             point: point,
                             isLast: cargoViewModel.points.last?.id == point.id
                         )
+                        .onTapGesture {
+                            UIPasteboard.general.string = point.getCoordinates()
+                            withAnimation(.snappy) {
+                                pointWasTapped = true
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                withAnimation(.snappy) {
+                                    pointWasTapped = false
+                                }
+                            }
+                        }
                     }
                 }
                 .padding(.vertical, 8)
@@ -87,6 +99,11 @@ struct CargoDetailsView: View {
         .onAppear {
             withAnimation {
                 isTabViewPresented = false
+            }
+        }
+        .overlay {
+            if pointWasTapped {
+                ActionNotificationView(text: "Coordinates were copied")
             }
         }
     }
