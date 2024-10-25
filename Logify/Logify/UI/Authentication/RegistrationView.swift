@@ -45,10 +45,9 @@ struct RegistrationView: View {
                     viewModel.register()
                 } label: {
                     Text("Sign up")
+                        .frame(width: 320, height: 38)
                         .modifier(
                             ButtonStyleModifier(
-                                width: 320,
-                                height: 38,
                                 background: .black,
                                 foreground: .white
                             )

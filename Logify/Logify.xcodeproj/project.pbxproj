@@ -70,7 +70,6 @@
 		2BAFED092C526E5E0041AF88 /* DriverCargoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED082C526E5E0041AF88 /* DriverCargoListView.swift */; };
 		2BAFED0B2C526E760041AF88 /* DriverChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED0A2C526E760041AF88 /* DriverChatView.swift */; };
 		2BAFED142C52D69D0041AF88 /* DriverTabViewPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED132C52D69D0041AF88 /* DriverTabViewPanel.swift */; };
-		2BAFED182C54F8640041AF88 /* RequestEmployerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */; };
 		2BAFED1A2C555E880041AF88 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED192C555E880041AF88 /* Driver.swift */; };
 		2BAFED1C2C55619D0041AF88 /* DriverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED1B2C55619D0041AF88 /* DriverManager.swift */; };
 		2BD880842CC7FC5700629991 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880832CC7FC5700629991 /* LoginView.swift */; };
@@ -153,7 +152,6 @@
 		2BAFED082C526E5E0041AF88 /* DriverCargoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverCargoListView.swift; sourceTree = "<group>"; };
 		2BAFED0A2C526E760041AF88 /* DriverChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverChatView.swift; sourceTree = "<group>"; };
 		2BAFED132C52D69D0041AF88 /* DriverTabViewPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTabViewPanel.swift; sourceTree = "<group>"; };
-		2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEmployerRow.swift; sourceTree = "<group>"; };
 		2BAFED192C555E880041AF88 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		2BAFED1B2C55619D0041AF88 /* DriverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverManager.swift; sourceTree = "<group>"; };
 		2BD880832CC7FC5700629991 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -486,7 +484,6 @@
 			isa = PBXGroup;
 			children = (
 				2BD880A12CCC0F8C00629991 /* DriverEmployerView.swift */,
-				2BAFED172C54F8640041AF88 /* RequestEmployerRow.swift */,
 				2BD880A32CCC26CA00629991 /* EmployerRequestDetailsView.swift */,
 			);
 			path = Employer;
@@ -637,7 +634,6 @@
 				2B74F3A02C73DD5100C8B0CD /* CargoCell.swift in Sources */,
 				2BAFED1C2C55619D0041AF88 /* DriverManager.swift in Sources */,
 				2B2442A42CBC3C26009E43AE /* NewDriverDetailsView.swift in Sources */,
-				2BAFED182C54F8640041AF88 /* RequestEmployerRow.swift in Sources */,
 				2BAFED052C526A900041AF88 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

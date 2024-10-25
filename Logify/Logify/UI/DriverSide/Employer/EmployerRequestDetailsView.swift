@@ -20,8 +20,7 @@ struct EmployerRequestDetailsView: View {
             }
             .modifier(
                 ButtonStyleModifier(
-                    width: 320,
-                    height: 38,
+                    
                     background: .black,
                     foreground: .white
                 )
@@ -31,8 +30,7 @@ struct EmployerRequestDetailsView: View {
             }
             .modifier(
                 ButtonStyleModifier(
-                    width: 320,
-                    height: 38,
+                    
                     background: .black,
                     foreground: .white
                 )

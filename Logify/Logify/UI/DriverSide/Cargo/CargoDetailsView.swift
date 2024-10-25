@@ -62,10 +62,9 @@ struct CargoDetailsView: View {
                         Image(systemName: "map")
                         Text("Map")
                     }
+                    .frame(width: 320, height: 38)
                     .modifier(
                         ButtonStyleModifier(
-                            width: 310,
-                            height: 38,
                             background: .black,
                             foreground: .white
                         )

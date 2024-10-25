@@ -26,10 +26,9 @@ struct NewDriverDetailsView: View {
                     }
                 }
             }
+            .frame(width: 320, height: 38)
             .modifier(
                 ButtonStyleModifier(
-                    width: 320,
-                    height: 40,
                     background: .black,
                     foreground: .white
                 )

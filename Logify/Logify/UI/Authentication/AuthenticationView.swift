@@ -19,10 +19,9 @@ struct AuthenticationView: View {
                         LoginView()
                     } label: {
                         Text("Sign in")
+                            .frame(width: 320, height: 38)
                             .modifier(
                                 ButtonStyleModifier(
-                                    width: 320,
-                                    height: 38,
                                     background: .black,
                                     foreground: .white
                                 )
@@ -32,10 +31,9 @@ struct AuthenticationView: View {
                         RegistrationView()
                     } label: {
                         Text("Sign up")
+                            .frame(width: 320, height: 38)
                             .modifier(
                                 ButtonStyleModifier(
-                                    width: 320,
-                                    height: 38,
                                     background: .black,
                                     foreground: .white
                                 )
