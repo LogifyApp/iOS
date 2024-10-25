@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CargoDetailsView: View {
-    
-    @ObservedObject var cargoViewModel: CargoViewModel
+    @ObservedObject var viewModel: CargoViewModel
     @State private var isMapPresented = false
     @State private var pointWasTapped = false
     @Binding var isTabViewPresented: Bool
@@ -20,22 +19,22 @@ struct CargoDetailsView: View {
             Section {
                 ListDetailRow(
                     property: "Cargo ID",
-                    value: "\(cargoViewModel.cargo.id)"
+                    value: "\(viewModel.cargo.id)"
                 )
                 ListDetailRow(
                     property: "Status",
-                    value: cargoViewModel.cargo.status
+                    value: viewModel.cargo.status
                 )
                 ListDetailRow(
                     property: "Creation date",
-                    value: cargoViewModel.cargo.getCreationDateString()
+                    value: viewModel.cargo.getCreationDateString()
                 )
                 ListDetailRow(
                     property: "Car ID",
-                    value: cargoViewModel.cargo.carId
+                    value: viewModel.cargo.carId
                 )
                 NavigationLink {
-                    CargoDocumentsView(cargoViewModel: cargoViewModel)
+                    CargoDocumentsView(viewModel: viewModel)
                 } label: {
                     Text("Documents")
                         .foregroundStyle(.secondary)
@@ -43,15 +42,15 @@ struct CargoDetailsView: View {
             }
             // MARK: Description
             Section {
-                Text(cargoViewModel.cargo.description)
+                Text(viewModel.cargo.description)
             }
             // MARK: Route
             Section {
                 VStack {
-                    ForEach(cargoViewModel.points, id: \.id) { point in
+                    ForEach(viewModel.points, id: \.id) { point in
                         PointRow(
                             point: point,
-                            isLast: cargoViewModel.points.last?.id == point.id
+                            isLast: viewModel.points.last?.id == point.id
                         )
                         .onTapGesture {
                             UIPasteboard.general.string = point.getCoordinates()
@@ -83,8 +82,8 @@ struct CargoDetailsView: View {
                     )
                 }
                 .fullScreenCover(isPresented: $isMapPresented) {
-                    MapView(mapViewModel:
-                        MapViewModel(points: cargoViewModel.points)
+                    MapView(viewModel:
+                        MapViewModel(points: viewModel.points)
                     )
                 }
                 .padding(.bottom, 4)
@@ -113,7 +112,7 @@ struct CargoDetailsView: View {
 #Preview {
     NavigationView {
         CargoDetailsView(
-            cargoViewModel: CargoViewModel(),
+            viewModel: CargoViewModel(),
             isTabViewPresented: .constant(false)
         )
     }

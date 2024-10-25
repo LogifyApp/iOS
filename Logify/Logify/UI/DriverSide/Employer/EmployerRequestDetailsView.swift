@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct EmployerRequestDetailsView: View {
-    @Environment(\.dismiss) var dismiss
     var employer: Employer
     
     var body: some View {

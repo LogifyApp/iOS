@@ -9,14 +9,14 @@ import SwiftUI
 
 struct DriverCargoListView: View {
     
-    @ObservedObject var cargoListViewModel: CargoListViewModel
+    @ObservedObject var viewModel: CargoListViewModel
     @State private var searchText = ""
     @Binding var isTabViewPresented: Bool
     var searchResults: [Cargo] {
         if searchText.isEmpty {
-            return cargoListViewModel.cargoList
+            return viewModel.cargoList
         } else {
-            return cargoListViewModel.cargoList
+            return viewModel.cargoList
                 .filter({ String($0.id).contains(searchText) })
         }
     }
@@ -33,7 +33,7 @@ struct DriverCargoListView: View {
                         ForEach(searchResults, id: \.id) { cargo in
                             NavigationLink(
                                 destination: CargoDetailsView(
-                                    cargoViewModel: CargoViewModel(cargo),
+                                    viewModel: CargoViewModel(cargo),
                                     isTabViewPresented: $isTabViewPresented
                                 )
                             ){
@@ -68,7 +68,7 @@ struct DriverCargoListView: View {
 
 #Preview {
     DriverCargoListView(
-        cargoListViewModel: CargoListViewModel(),
+        viewModel: CargoListViewModel(),
         isTabViewPresented: .constant(true)
     )
 }

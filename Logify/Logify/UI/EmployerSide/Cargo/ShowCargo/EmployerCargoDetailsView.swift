@@ -90,7 +90,7 @@ struct EmployerCargoDetailsView: View {
                      )
                  }
                  .fullScreenCover(isPresented: $isMapPresented) {
-                     MapView(mapViewModel:
+                     MapView(viewModel:
                                 MapViewModel(points: cargoViewModel.points)
                      )
                  }

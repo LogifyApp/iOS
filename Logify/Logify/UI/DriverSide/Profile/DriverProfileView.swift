@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct DriverProfileView: View {
-    
-    @ObservedObject var profileViewModel: ProfileViewModel
+    @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
         NavigationView {
             VStack {
-                UserDataCell(user: profileViewModel.driver)
+                UserDataCell(user: viewModel.driver)
                     .padding([.horizontal, .top], 20)
                 List {
                     Section {
@@ -43,5 +42,5 @@ struct DriverProfileView: View {
 }
 
 #Preview {
-    DriverProfileView(profileViewModel: ProfileViewModel())
+    DriverProfileView(viewModel: ProfileViewModel())
 }

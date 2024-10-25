@@ -38,7 +38,7 @@ struct DriverTabViewPanel: View {
         }
         .padding(.horizontal)
         .fullScreenCover(isPresented: $isChatViewPresented) {
-            DriverChatView(chatViewModel:
+            DriverChatView(viewModel:
                     ChatViewModel(
                         driver: driverManager.driver,
                         employer: driverManager.getActiveEmployer()!

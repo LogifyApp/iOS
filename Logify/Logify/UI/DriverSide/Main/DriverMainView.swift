@@ -16,7 +16,7 @@ struct DriverMainView: View {
     var body: some View {
         TabView(selection: $selectedItem) {
             DriverCargoListView(
-                cargoListViewModel: CargoListViewModel(),
+                viewModel: CargoListViewModel(),
                 isTabViewPresented: $isTabViewPresented
             )
             .tag(0)
@@ -25,7 +25,7 @@ struct DriverMainView: View {
             )
             .tag(1)
             DriverProfileView(
-                profileViewModel: ProfileViewModel()
+                viewModel: ProfileViewModel()
             )
             .tag(2)
         }

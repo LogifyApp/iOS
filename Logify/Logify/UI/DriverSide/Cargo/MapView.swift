@@ -9,24 +9,23 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    
-    @StateObject var mapViewModel: MapViewModel
+    @StateObject var viewModel: MapViewModel
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationView{
             Map {
-                Annotation(mapViewModel.points[0].label, coordinate: mapViewModel.coordinates[0]) {
+                Annotation(viewModel.points[0].label, coordinate: viewModel.coordinates[0]) {
                     Image(systemName: "shippingbox.fill")
                         .padding(4)
                         .foregroundStyle(.white)
                         .background(.black)
                         .clipShape(RoundedRectangle(cornerRadius: 7))
                 }
-                ForEach(1..<mapViewModel.coordinates.count) { index in
-                    Marker(mapViewModel.points[index].label, coordinate: mapViewModel.coordinates[index])
+                ForEach(1..<viewModel.coordinates.count) { index in
+                    Marker(viewModel.points[index].label, coordinate: viewModel.coordinates[index])
                 }
-                ForEach(mapViewModel.routes, id: \.self) { route in
+                ForEach(viewModel.routes, id: \.self) { route in
                     MapPolyline(route.polyline)
                         .stroke(.blue, lineWidth: 5)
                 }
@@ -43,7 +42,7 @@ struct MapView: View {
 }
 
 #Preview {
-    MapView(mapViewModel:
+    MapView(viewModel:
                 MapViewModel(
                     points: [
                         Point(id: 0, label: "start", latitude: 52.219420, longtitude: 20.983114, order: 0, cargoId: 1),

@@ -8,23 +8,22 @@
 import SwiftUI
 
 struct CargoDocumentsView: View {
-    
-    @ObservedObject var cargoViewModel: CargoViewModel
+    @ObservedObject var viewModel: CargoViewModel
     @State private var showImporter = false
     
     var body: some View {
         VStack {
-            if cargoViewModel.documents.isEmpty {
+            if viewModel.documents.isEmpty {
                 Text("No attached documents for this cargo")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .font(.system(size: 16))
             } else {
                 List {
-                    ForEach(Array(cargoViewModel.documents), id: \.self) { url in
+                    ForEach(Array(viewModel.documents), id: \.self) { url in
                         Text(url.lastPathComponent)
                             .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                 Button(role: .destructive) {
-                                    cargoViewModel.removeDocument(with: url)
+                                    viewModel.removeDocument(with: url)
                                 } label: {
                                     Image(systemName: "trash.fill")
                                 }
@@ -51,7 +50,7 @@ struct CargoDocumentsView: View {
                     switch(results) {
                     case .success(let urls):
                         urls.forEach { url in
-                            cargoViewModel.addDocument(with: url)
+                            viewModel.addDocument(with: url)
                         }
                     case .failure(let error):
                         print(error)
@@ -64,6 +63,6 @@ struct CargoDocumentsView: View {
 
 #Preview {
     NavigationView {
-        CargoDocumentsView(cargoViewModel: CargoViewModel())
+        CargoDocumentsView(viewModel: CargoViewModel())
     }
 }
