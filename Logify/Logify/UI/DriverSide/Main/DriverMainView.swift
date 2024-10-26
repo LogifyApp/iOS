@@ -28,7 +28,7 @@ struct DriverMainView: View {
             DriverProfileView(
                 viewModel: ProfileViewModel()
             )
-            .tag(2)
+            .tag(3)
         }
         .overlay(alignment: .bottom) {
             if isTabViewPresented {
