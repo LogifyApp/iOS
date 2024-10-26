@@ -14,31 +14,13 @@ struct EmployerRequestDetailsView: View {
     var body: some View {
         VStack {
             UserDataCell(user: employer)
-                .padding(20)
+                .padding([.top, .horizontal], 20)
+                .padding(.bottom, 10)
+            EmployerRequestButtons(
+                accept: {},
+                decline: {}
+            )
             Spacer()
-            HStack {
-                Button("Accept") {
-                    
-                }
-                .frame(maxWidth: .infinity, maxHeight: 38)
-                .modifier(
-                    ButtonStyleModifier(
-                        background: .black,
-                        foreground: .white
-                    )
-                )
-                Button("Decline") {
-                    
-                }
-                .frame(maxWidth: .infinity, maxHeight: 38)
-                .modifier(
-                    ButtonStyleModifier(
-                        background: .red,
-                        foreground: .white
-                    )
-                )
-            }
-            .padding([.horizontal], 20)
         }
         .navigationTitle("Details")
         .navigationBarTitleDisplayMode(.inline)
@@ -55,6 +37,6 @@ struct EmployerRequestDetailsView: View {
 #Preview {
     EmployerRequestDetailsView(
         isTabViewPresented: .constant(false),
-        employer: Employer(id: 2, name: "Name", surname: "Surname", phoneNumber: 1234535345, password: "", role: "Employer")
+        employer: Employer(id: 2, name: "Mmnmnmnm", surname: "Nmnmnmnmnnm", phoneNumber: 1234535345, password: "", role: "Employer")
     )
 }

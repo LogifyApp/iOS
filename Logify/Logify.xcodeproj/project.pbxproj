@@ -87,6 +87,7 @@
 		2BD880A42CCC26CA00629991 /* EmployerRequestDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880A32CCC26CA00629991 /* EmployerRequestDetailsView.swift */; };
 		2BD880A62CCC2E1E00629991 /* ActionNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880A52CCC2E1E00629991 /* ActionNotificationView.swift */; };
 		2BD880A82CCC31C300629991 /* EmployersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880A72CCC31C300629991 /* EmployersViewModel.swift */; };
+		2BD880AA2CCD8E3300629991 /* EmployerRequestButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880A92CCD8E3300629991 /* EmployerRequestButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -171,6 +172,7 @@
 		2BD880A32CCC26CA00629991 /* EmployerRequestDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerRequestDetailsView.swift; sourceTree = "<group>"; };
 		2BD880A52CCC2E1E00629991 /* ActionNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionNotificationView.swift; sourceTree = "<group>"; };
 		2BD880A72CCC31C300629991 /* EmployersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployersViewModel.swift; sourceTree = "<group>"; };
+		2BD880A92CCD8E3300629991 /* EmployerRequestButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerRequestButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -491,6 +493,7 @@
 			children = (
 				2BD880A12CCC0F8C00629991 /* DriverEmployerView.swift */,
 				2BD880A32CCC26CA00629991 /* EmployerRequestDetailsView.swift */,
+				2BD880A92CCD8E3300629991 /* EmployerRequestButtons.swift */,
 			);
 			path = Employer;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				2BD880A42CCC26CA00629991 /* EmployerRequestDetailsView.swift in Sources */,
 				2B6AABBE2C864A18006B968A /* ButtonStyleModifier.swift in Sources */,
 				2B24426C2CAF0004009E43AE /* EmployerCargoListViewModel.swift in Sources */,
+				2BD880AA2CCD8E3300629991 /* EmployerRequestButtons.swift in Sources */,
 				2B7C3AE02CACA4D700C62BC3 /* CargoListViewModel.swift in Sources */,
 				2BD880902CC7FE0400629991 /* LogoLabel.swift in Sources */,
 				2B2442AD2CBFD97E009E43AE /* EmployerChatView.swift in Sources */,
