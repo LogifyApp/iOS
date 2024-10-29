@@ -9,31 +9,25 @@ import SwiftUI
 
 struct NewDriverDetailsView: View {
     @State private var isNotificationPresented = false
+    @State private var isAlertPresented = false
     var driver: Driver
     
     var body: some View {
         VStack {
             UserDataCell(user: driver)
-                .padding(20)
-            Spacer()
-            Button("Send request") {
-                withAnimation {
-                    isNotificationPresented = true
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    withAnimation(.snappy) {
-                        isNotificationPresented = false
-                    }
-                }
+                .padding([.top, .horizontal], 20)
+                .padding(.bottom, 10)
+            Button("Send Request") {
+                isAlertPresented = true
             }
-            .frame(width: 320, height: 38)
-            .modifier(
-                ButtonStyleModifier(
-                    background: .black,
-                    foreground: .white
-                )
-            )
-            .padding()
+            .font(.system(size: 18, weight: .medium))
+            .foregroundStyle(.white)
+            .frame(maxWidth: .infinity)
+            .padding(20)
+            .background(.black)
+            .clipShape(RoundedRectangle(cornerRadius: 14))
+            .padding(.horizontal, 20)
+            Spacer()
         }
         .navigationTitle("Details")
         .navigationBarTitleDisplayMode(.inline)
@@ -43,6 +37,7 @@ struct NewDriverDetailsView: View {
                 ActionNotificationView(text: "Request was sent")
             }
         }
+        .alert("Request was sent", isPresented: $isAlertPresented) {}
     }
 }
 
