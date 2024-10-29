@@ -9,7 +9,8 @@ import SwiftUI
 
 struct EmployerProfileView: View {
     @ObservedObject var profileViewModel: EmployerProfileViewModel
-
+    @State private var isAlertPresented = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -26,7 +27,7 @@ struct EmployerProfileView: View {
                     }
                     Section {
                         Button("Log out", role: .destructive) {
-                            
+                            isAlertPresented = true
                         }
                         .foregroundStyle(.red)
                     }
@@ -37,6 +38,14 @@ struct EmployerProfileView: View {
                 .scrollDisabled(true)
             }
             .background(Color.background)
+            .confirmationDialog("Log out", isPresented: $isAlertPresented) {
+                Button("Log out", role: .destructive) {
+                    
+                }
+            } message: {
+                Text("Are you sure you want to Log out?")
+            }
+
         }
     }
 }
