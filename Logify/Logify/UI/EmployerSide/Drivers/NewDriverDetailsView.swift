@@ -17,27 +17,26 @@ struct NewDriverDetailsView: View {
             UserDataCell(user: driver)
                 .padding([.top, .horizontal], 20)
                 .padding(.bottom, 10)
-            Button("Send Request") {
-                isAlertPresented = true
+            Button {
+                withAnimation {
+                    isAlertPresented = true
+                }
+            } label: {
+                Text("Send Request")
+                    .font(.system(size: 18, weight: .medium))
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding(20)
+                    .background(.black)
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .padding(.horizontal, 20)
             }
-            .font(.system(size: 18, weight: .medium))
-            .foregroundStyle(.white)
-            .frame(maxWidth: .infinity)
-            .padding(20)
-            .background(.black)
-            .clipShape(RoundedRectangle(cornerRadius: 14))
-            .padding(.horizontal, 20)
             Spacer()
         }
         .navigationTitle("Details")
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
-        .overlay {
-            if isNotificationPresented {
-                ActionNotificationView(text: "Request was sent")
-            }
-        }
-        .alert("Request was sent", isPresented: $isAlertPresented) {}
+        .hud($isAlertPresented, "Request was sent")
     }
 }
 

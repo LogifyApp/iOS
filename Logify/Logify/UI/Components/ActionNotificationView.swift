@@ -23,7 +23,11 @@ struct ActionNotificationView: View {
 }
 
 #Preview {
-    ActionNotificationView(
-        text: "Coordinates were copied"
-    )
+    NavigationView {
+        ActionNotificationView(
+            text: "Coordinates were copied"
+        )
+        .navigationTitle("A")
+        .navigationBarTitleDisplayMode(.inline)
+    }
 }

@@ -61,6 +61,7 @@
 		2B7C3AE42CACB42300C62BC3 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7C3AE32CACB42300C62BC3 /* MapViewModel.swift */; };
 		2B7C3AE62CAD5F8300C62BC3 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7C3AE52CAD5F8300C62BC3 /* ChatViewModel.swift */; };
 		2B7C3AE82CAD695B00C62BC3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7C3AE72CAD695B00C62BC3 /* ProfileViewModel.swift */; };
+		2B7E985B2CD18E1E007255CE /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E985A2CD18E1E007255CE /* HUD.swift */; };
 		2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */; };
 		2BA0FBA72C4A8DDF00FE6368 /* DriverMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA62C4A8DDF00FE6368 /* DriverMainView.swift */; };
 		2BA0FBA92C4A8DE100FE6368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA82C4A8DE100FE6368 /* Assets.xcassets */; };
@@ -145,6 +146,7 @@
 		2B7C3AE32CACB42300C62BC3 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2B7C3AE52CAD5F8300C62BC3 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		2B7C3AE72CAD695B00C62BC3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		2B7E985A2CD18E1E007255CE /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		2BA0FBA12C4A8DDF00FE6368 /* Logify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogifyApp.swift; sourceTree = "<group>"; };
 		2BA0FBA62C4A8DDF00FE6368 /* DriverMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMainView.swift; sourceTree = "<group>"; };
@@ -462,6 +464,7 @@
 				2B03B97D2C971D1A00DF48C1 /* MessageField.swift */,
 				2B03B9772C95FE1200DF48C1 /* MessageBubble.swift */,
 				2BD880A52CCC2E1E00629991 /* ActionNotificationView.swift */,
+				2B7E985A2CD18E1E007255CE /* HUD.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				2B2442802CAF3C65009E43AE /* CarDetailsCell.swift in Sources */,
 				2B6AABC52C8B4423006B968A /* CargoDocumentsView.swift in Sources */,
 				2B2442782CAF199D009E43AE /* NewCargoViewModel.swift in Sources */,
+				2B7E985B2CD18E1E007255CE /* HUD.swift in Sources */,
 				2B24426E2CAF039B009E43AE /* EmployerCargoDetailsView.swift in Sources */,
 				2B2442632CAEE471009E43AE /* TabViewPanel.swift in Sources */,
 				2BD8809F2CCAEAA600629991 /* CustomSecureField.swift in Sources */,
