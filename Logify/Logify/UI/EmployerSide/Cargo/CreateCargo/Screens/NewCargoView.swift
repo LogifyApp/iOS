@@ -12,7 +12,7 @@ struct NewCargoView: View {
     @Environment(\.dismiss) var dismiss
     @State private var description = ""
     @State private var pointWasTapped = false
-    @State private var isCancelAlertPresented = false
+    @State private var isReturnConfirmationPresented = false
     
     var body: some View {
         NavigationView {
@@ -138,7 +138,7 @@ struct NewCargoView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Return") {
-                        isCancelAlertPresented = true
+                        isReturnConfirmationPresented = true
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
@@ -149,7 +149,7 @@ struct NewCargoView: View {
                 }
             }
             .hud($pointWasTapped, "Coordinates were copied")
-            .confirmationDialog("", isPresented: $isCancelAlertPresented) {
+            .confirmationDialog("", isPresented: $isReturnConfirmationPresented) {
                 Button("Return", role: .destructive) {
                     dismiss()
                 }

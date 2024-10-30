@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EmployerProfileView: View {
     @ObservedObject var profileViewModel: EmployerProfileViewModel
-    @State private var isAlertPresented = false
+    @State private var isLogoutConfirmationPresented = false
     
     var body: some View {
         NavigationView {
@@ -27,7 +27,7 @@ struct EmployerProfileView: View {
                     }
                     Section {
                         Button("Log out", role: .destructive) {
-                            isAlertPresented = true
+                            isLogoutConfirmationPresented = true
                         }
                         .foregroundStyle(.red)
                     }
@@ -38,12 +38,12 @@ struct EmployerProfileView: View {
                 .scrollDisabled(true)
             }
             .background(Color.background)
-            .confirmationDialog("Log out", isPresented: $isAlertPresented) {
+            .confirmationDialog("Log out", isPresented: $isLogoutConfirmationPresented) {
                 Button("Log out", role: .destructive) {
                     
                 }
             } message: {
-                Text("Are you sure you want to Log out?")
+                Text("Are you sure you want to log out?")
             }
 
         }

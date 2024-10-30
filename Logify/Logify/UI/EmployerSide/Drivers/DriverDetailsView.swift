@@ -10,7 +10,7 @@ import SwiftUI
 struct DriverDetailsView: View {
     @ObservedObject var viewModel: EmployerDriversListViewModel
     @State private var isChatPresented = false
-    @State private var isAlertPresented = false
+    @State private var isRemoveConfirmationPresented = false
     @Binding var isTabViewPresented: Bool
     var driver: Driver
     
@@ -45,7 +45,7 @@ struct DriverDetailsView: View {
             }
             Section {
                 Button("Remove", role: .destructive) {
-                    isAlertPresented = true
+                    isRemoveConfirmationPresented = true
                 }
             }
         }
@@ -62,14 +62,13 @@ struct DriverDetailsView: View {
         .fullScreenCover(isPresented: $isChatPresented) {
             
         }
-        .confirmationDialog("Remove driver", isPresented: $isAlertPresented) {
+        .confirmationDialog("Remove driver", isPresented: $isRemoveConfirmationPresented) {
             Button("Remove", role: .destructive) {
                 
             }
         } message: {
             Text("Are you sure you want to remove this driver?")
         }
-        
     }
 }
 

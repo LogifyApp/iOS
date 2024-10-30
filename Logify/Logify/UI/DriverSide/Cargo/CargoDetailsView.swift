@@ -54,13 +54,8 @@ struct CargoDetailsView: View {
                         )
                         .onTapGesture {
                             UIPasteboard.general.string = point.getCoordinates()
-                            withAnimation(.snappy) {
+                            withAnimation {
                                 pointWasTapped = true
-                            }
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                withAnimation(.snappy) {
-                                    pointWasTapped = false
-                                }
                             }
                         }
                     }
@@ -100,11 +95,7 @@ struct CargoDetailsView: View {
                 isTabViewPresented = false
             }
         }
-        .overlay {
-            if pointWasTapped {
-                ActionNotificationView(text: "Coordinates were copied")
-            }
-        }
+        .hud($pointWasTapped, "Coordinates were copied")
     }
 }
 

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EmployerRequestDetailsView: View {
+    @State private var isDeclineConfirmationPresented = false
     @Binding var isTabViewPresented: Bool
     var employer: Employer
     
@@ -17,8 +18,12 @@ struct EmployerRequestDetailsView: View {
                 .padding([.top, .horizontal], 20)
                 .padding(.bottom, 10)
             EmployerRequestButtons(
-                accept: {},
-                decline: {}
+                accept: {
+                    
+                },
+                decline: {
+                    isDeclineConfirmationPresented = true
+                }
             )
             Spacer()
         }
@@ -30,6 +35,13 @@ struct EmployerRequestDetailsView: View {
             withAnimation {
                 isTabViewPresented = false
             }
+        }
+        .confirmationDialog("Decline request", isPresented: $isDeclineConfirmationPresented) {
+            Button("Decline", role: .destructive) {
+                
+            }
+        } message: {
+            Text("Are you sure you want to decline request?")
         }
     }
 }

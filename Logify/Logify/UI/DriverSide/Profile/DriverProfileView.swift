@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DriverProfileView: View {
     @ObservedObject var viewModel: ProfileViewModel
+    @State private var isLogoutConfirmationPresented = false
     
     var body: some View {
         NavigationView {
@@ -26,8 +27,9 @@ struct DriverProfileView: View {
                     }
                     Section {
                         Button("Log out", role: .destructive) {
-                            
+                            isLogoutConfirmationPresented = true
                         }
+                        .foregroundStyle(.red)
                     }
                 }
                 .scrollContentBackground(.hidden)
@@ -37,6 +39,13 @@ struct DriverProfileView: View {
             .navigationBarTitleDisplayMode(.inline)
             .background(Color.background)
             .toolbarBackground(.thinMaterial, for: .navigationBar)
+        }
+        .confirmationDialog("Log out", isPresented: $isLogoutConfirmationPresented) {
+            Button("Log out", role: .destructive) {
+                
+            }
+        } message: {
+            Text("Are you sure you want to log out?")
         }
     }
 }
