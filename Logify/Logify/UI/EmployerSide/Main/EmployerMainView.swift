@@ -28,8 +28,8 @@ struct EmployerMainView: View {
                 isTabViewPresented: $isTabViewPresented
             )
             .tag(2)
-            EmployerProfileView(
-                profileViewModel: EmployerProfileViewModel()
+            ProfileView(
+                viewModel: ProfileViewModel()
             )
             .tag(3)
         }

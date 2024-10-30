@@ -8,14 +8,14 @@
 import Foundation
 
 class ProfileViewModel: ObservableObject {
-    @Published var driver: Driver
+    @Published var user: User
     
     
-    init(driver: Driver) {
-        self.driver = driver
+    init(user: User) {
+        self.user = user
     }
 
     init() {
-        self.driver = Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "Driver", status: "Available")
+        self.user = Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "Driver", status: "Available")
     }
 }

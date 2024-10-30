@@ -1,20 +1,20 @@
 //
-//  EmployerProfileView.swift
+//  ProfileView.swift
 //  Logify
 //
-//  Created by Vlad Klunduk on 03/10/2024.
+//  Created by Vlad Klunduk on 30/10/2024.
 //
 
 import SwiftUI
 
-struct EmployerProfileView: View {
-    @ObservedObject var profileViewModel: EmployerProfileViewModel
+struct ProfileView: View {
+    @ObservedObject var viewModel: ProfileViewModel
     @State private var isLogoutConfirmationPresented = false
     
     var body: some View {
         NavigationView {
             VStack {
-                UserDataCell(user: profileViewModel.employer)
+                UserDataCell(user: viewModel.user)
                     .padding([.horizontal, .top], 20)
                 List {
                     Section {
@@ -51,5 +51,5 @@ struct EmployerProfileView: View {
 }
 
 #Preview {
-    EmployerProfileView(profileViewModel: EmployerProfileViewModel())
+    ProfileView(viewModel: ProfileViewModel())
 }

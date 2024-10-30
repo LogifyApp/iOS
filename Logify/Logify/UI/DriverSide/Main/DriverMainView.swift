@@ -25,7 +25,7 @@ struct DriverMainView: View {
                 isTabViewPresented: $isTabViewPresented
             )
             .tag(1)
-            DriverProfileView(
+            ProfileView(
                 viewModel: ProfileViewModel()
             )
             .tag(3)
