@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EmployerCargoDocumentsView: View {
     @ObservedObject var cargoViewModel: EmployerCargoViewModel
+    @State private var isApproveTapped = false
     
     var body: some View {
         VStack {
@@ -32,6 +33,9 @@ struct EmployerCargoDocumentsView: View {
                 .scrollContentBackground(.hidden)
                 Button(action: {
                     cargoViewModel.approveDocuments()
+                    withAnimation {
+                        isApproveTapped = true
+                    }
                 }) {
                     Text("Approve")
                         .frame(width: 320, height: 38)
@@ -48,6 +52,7 @@ struct EmployerCargoDocumentsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
         .toolbarBackground(.thinMaterial, for: .navigationBar)
+        .hud($isApproveTapped, "Documents approved")
     }
 }
 

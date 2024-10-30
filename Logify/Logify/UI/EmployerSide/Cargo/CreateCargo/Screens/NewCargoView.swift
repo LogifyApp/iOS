@@ -99,13 +99,8 @@ struct NewCargoView: View {
                                 )
                                 .onTapGesture {
                                     UIPasteboard.general.string = point.getCoordinates()
-                                    withAnimation(.snappy) {
+                                    withAnimation {
                                         pointWasTapped = true
-                                    }
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                        withAnimation(.snappy) {
-                                            pointWasTapped = false
-                                        }
                                     }
                                 }
                             }
@@ -132,7 +127,7 @@ struct NewCargoView: View {
                 } header: {
                     SectionHeader(text: "Route")
                 } footer: {
-                    Text("To copy point coordinates tap on it")
+                    Text("You can copy point coordinates by tapping on it")
                 }
             }
             .navigationTitle("New cargo")
