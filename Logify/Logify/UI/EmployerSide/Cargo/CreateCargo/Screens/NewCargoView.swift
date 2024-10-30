@@ -12,6 +12,7 @@ struct NewCargoView: View {
     @Environment(\.dismiss) var dismiss
     @State private var description = ""
     @State private var pointWasTapped = false
+    @State private var isCancelAlertPresented = false
     
     var body: some View {
         NavigationView {
@@ -130,6 +131,8 @@ struct NewCargoView: View {
                     }
                 } header: {
                     SectionHeader(text: "Route")
+                } footer: {
+                    Text("To copy point coordinates tap on it")
                 }
             }
             .navigationTitle("New cargo")
@@ -139,8 +142,8 @@ struct NewCargoView: View {
             .toolbarBackground(.thinMaterial, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button("Cancel") {
-                        dismiss()
+                    Button("Return") {
+                        isCancelAlertPresented = true
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
@@ -150,10 +153,13 @@ struct NewCargoView: View {
                     }
                 }
             }
-            .overlay {
-                if pointWasTapped {
-                    ActionNotificationView(text: "Coordinates were copied")
+            .hud($pointWasTapped, "Coordinates were copied")
+            .confirmationDialog("", isPresented: $isCancelAlertPresented) {
+                Button("Return", role: .destructive) {
+                    dismiss()
                 }
+            } message: {
+                Text("Changes will not be saved")
             }
         }
     }
