@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct DriverTabViewPanel: View {
-    
+struct DriverTabView: View {
     @EnvironmentObject var driverManager: DriverManager
     @State private var items = ["shippingbox.fill", "doc.text", "message", "person"]
     @State private var isChatViewPresented = false
@@ -50,7 +49,7 @@ struct DriverTabViewPanel: View {
 }
 
 #Preview {
-    DriverTabViewPanel(selectedItem: .constant(1))
+    DriverTabView(selectedItem: .constant(1))
         .environmentObject(DriverManager())
 }
 

@@ -32,7 +32,7 @@ struct DriverMainView: View {
         }
         .overlay(alignment: .bottom) {
             if isTabViewPresented {
-                DriverTabViewPanel(selectedItem: $selectedItem)
+                DriverTabView(selectedItem: $selectedItem)
                     .transition(.move(edge: .bottom))
             }
         }

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct EmployerDriversListView: View {
     @ObservedObject var viewModel: EmployerDriversListViewModel
-    @State private var searchText = ""
-    @State private var isSearchDriverViewPresented = false
+    //@State private var searchText = ""
+    //@State private var isSearchDriverViewPresented = false
     @Binding var isTabViewPresented: Bool
-    private var searchResults: [Driver] {
+    /*private var searchResults: [Driver] {
         if searchText.isEmpty {
             return viewModel.drivers
         } else {
@@ -21,18 +21,18 @@ struct EmployerDriversListView: View {
                     $0.getFullName().contains(searchText) || String($0.id).contains(searchText)
                 }
         }
-    }
+    }*/
     
     var body: some View {
-        NavigationView {
-            VStack {
-                if searchResults.isEmpty {
+        //NavigationView {
+            //VStack {
+                if viewModel.drivers.isEmpty {
                     Text("Drivers list is empty")
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                         .font(.subheadline)
                 } else {
                     ScrollView {
-                        ForEach(searchResults, id: \.id) { driver in
+                        ForEach(viewModel.drivers, id: \.id) { driver in
                             NavigationLink {
                                 DriverDetailsView(
                                     viewModel: viewModel,
@@ -46,10 +46,10 @@ struct EmployerDriversListView: View {
                         }
                     }
                 }
-            }
-            .navigationTitle("Drivers")
-            .navigationBarTitleDisplayMode(.inline)
-            .background(Color.background)
+            //}
+            //.navigationTitle("Drivers")
+            //.navigationBarTitleDisplayMode(.inline)
+            /*.background(Color.background)
             .toolbarBackground(.thinMaterial, for: .navigationBar)
             .toolbarBackground(.hidden, for: .tabBar)
             .toolbar(isTabViewPresented ? .visible : .hidden, for: .tabBar)
@@ -73,8 +73,8 @@ struct EmployerDriversListView: View {
                 withAnimation {
                     isTabViewPresented = true
                 }
-            }
-        }
+            }*/
+        //}
     }
 }
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EmployerTabViewPanel: View {
+struct EmployerTabView: View {
     @State private var items = ["shippingbox", "person.2", "message", "person"]
     @Binding var selectedItem: Int
     
@@ -42,5 +42,5 @@ struct EmployerTabViewPanel: View {
 }
 
 #Preview {
-    EmployerTabViewPanel(selectedItem: .constant(0))
+    EmployerTabView(selectedItem: .constant(0))
 }

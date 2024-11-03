@@ -18,10 +18,7 @@ struct EmployerMainView: View {
                 isTabViewPresented: $isTabViewPresented
             )
             .tag(0)
-            EmployerDriversListView(
-                viewModel: EmployerDriversListViewModel(),
-                isTabViewPresented: $isTabViewPresented
-            )
+            ViewPicker(isTabViewPresented: $isTabViewPresented)
             .tag(1)
             EmployerChatsListView(
                 viewModel: EmployerChatsListViewModel(),
@@ -35,7 +32,7 @@ struct EmployerMainView: View {
         }
         .overlay(alignment: .bottom) {
             if isTabViewPresented {
-                EmployerTabViewPanel(selectedItem: $selectedItem)
+                EmployerTabView(selectedItem: $selectedItem)
                     .transition(.move(edge: .bottom))
             }
         }
