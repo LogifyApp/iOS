@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ViewPicker: View {
+struct DeliveryView: View {
     @State private var selectedView = 0
+    @State private var isPlusTapped = false
     @Binding var isTabViewPresented: Bool
-
     
     var body: some View {
         NavigationView {
@@ -21,10 +21,15 @@ struct ViewPicker: View {
                         isTabViewPresented: $isTabViewPresented
                     )
                 } else {
-                    
+                    CarsListView(
+                        viewModel: CarsListViewModel(),
+                        isTabViewPresented: $isTabViewPresented
+                    )
                 }
             }
+            .padding(.top)
             .background(Color.background)
+            .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.thinMaterial, for: .navigationBar)
             .toolbarBackground(.hidden, for: .tabBar)
             .toolbar(isTabViewPresented ? .visible : .hidden, for: .tabBar)
@@ -37,6 +42,12 @@ struct ViewPicker: View {
                             .tag(1)
                     }
                     .pickerStyle(SegmentedPickerStyle())
+                    .frame(width: 200)
+                }
+                ToolbarItem {
+                    Button("", systemImage: "plus") {
+                        
+                    }
                 }
             }
             .onAppear {
@@ -44,12 +55,15 @@ struct ViewPicker: View {
                     isTabViewPresented = true
                 }
             }
+            .fullScreenCover(isPresented: $isPlusTapped) {
+                
+            }
         }
     }
 }
 
 #Preview {
     NavigationView {
-        ViewPicker(isTabViewPresented: .constant(false))
+        DeliveryView(isTabViewPresented: .constant(false))
     }
 }

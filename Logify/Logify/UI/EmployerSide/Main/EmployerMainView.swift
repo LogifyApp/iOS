@@ -18,7 +18,9 @@ struct EmployerMainView: View {
                 isTabViewPresented: $isTabViewPresented
             )
             .tag(0)
-            ViewPicker(isTabViewPresented: $isTabViewPresented)
+            DeliveryView(
+                isTabViewPresented: $isTabViewPresented
+            )
             .tag(1)
             EmployerChatsListView(
                 viewModel: EmployerChatsListViewModel(),

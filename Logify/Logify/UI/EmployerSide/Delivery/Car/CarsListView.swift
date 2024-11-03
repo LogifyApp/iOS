@@ -20,9 +20,13 @@ struct CarsListView: View {
             ScrollView {
                 ForEach(viewModel.cars, id: \.plate) { car in
                     NavigationLink {
-                        
+                        CarDetailsView(
+                            viewModel: viewModel,
+                            isTabViewPresented: $isTabViewPresented,
+                            car: car
+                        )
                     } label: {
-                        Text("car")
+                        CarDetailsCell(car: car)
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
