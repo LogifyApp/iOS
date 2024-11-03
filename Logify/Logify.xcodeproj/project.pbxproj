@@ -66,6 +66,7 @@
 		2B7E98DF2CD7DC6C007255CE /* SegmentedPickerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E98DE2CD7DC6C007255CE /* SegmentedPickerExample.swift */; };
 		2B7E98E12CD7E4AF007255CE /* ViewPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E98E02CD7E4AF007255CE /* ViewPicker.swift */; };
 		2B7E98E32CD7E9F5007255CE /* CarsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E98E22CD7E9F5007255CE /* CarsListViewModel.swift */; };
+		2B7E98E72CD7F6B9007255CE /* CarDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E98E62CD7F6B9007255CE /* CarDetailsView.swift */; };
 		2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */; };
 		2BA0FBA72C4A8DDF00FE6368 /* DriverMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA62C4A8DDF00FE6368 /* DriverMainView.swift */; };
 		2BA0FBA92C4A8DE100FE6368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA82C4A8DE100FE6368 /* Assets.xcassets */; };
@@ -154,6 +155,7 @@
 		2B7E98DE2CD7DC6C007255CE /* SegmentedPickerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPickerExample.swift; sourceTree = "<group>"; };
 		2B7E98E02CD7E4AF007255CE /* ViewPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPicker.swift; sourceTree = "<group>"; };
 		2B7E98E22CD7E9F5007255CE /* CarsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewModel.swift; sourceTree = "<group>"; };
+		2B7E98E62CD7F6B9007255CE /* CarDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsView.swift; sourceTree = "<group>"; };
 		2BA0FBA12C4A8DDF00FE6368 /* Logify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogifyApp.swift; sourceTree = "<group>"; };
 		2BA0FBA62C4A8DDF00FE6368 /* DriverMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMainView.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				2B2442A32CBC3C25009E43AE /* NewDriverDetailsView.swift */,
 				2B7E98E02CD7E4AF007255CE /* ViewPicker.swift */,
 				2B7E98DC2CD7D945007255CE /* CarsListView.swift */,
+				2B7E98E62CD7F6B9007255CE /* CarDetailsView.swift */,
 			);
 			path = Drivers;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				2BD8808C2CC7FDD800629991 /* AuthenticationView.swift in Sources */,
 				2BAFED142C52D69D0041AF88 /* DriverTabView.swift in Sources */,
 				2BD880942CC7FE8700629991 /* Role.swift in Sources */,
+				2B7E98E72CD7F6B9007255CE /* CarDetailsView.swift in Sources */,
 				2B2442A72CBD33DC009E43AE /* EmployerChatsListView.swift in Sources */,
 				2B24427A2CAF1B62009E43AE /* Car.swift in Sources */,
 				2B03B9782C95FE1200DF48C1 /* MessageBubble.swift in Sources */,
