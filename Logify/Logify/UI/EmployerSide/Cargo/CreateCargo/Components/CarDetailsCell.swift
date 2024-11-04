@@ -11,15 +11,15 @@ struct CarDetailsCell: View {
     var car: Car
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 16)
-                .foregroundStyle(.white)
-                .shadow(radius: 0.5)
-            CarDetailsRow(car: car)
-                .padding()
-        }
-        .padding(.horizontal)
-        .padding(.bottom, 5)
+        CarDetailsRow(car: car)
+            .padding()
+            .background {
+                RoundedRectangle(cornerRadius: 16)
+                    .foregroundStyle(.white)
+                    .shadow(radius: 0.5)
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 5)
     }
 }
 

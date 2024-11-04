@@ -15,10 +15,10 @@ class CarsListViewModel: ObservableObject {
     
     init() {
         cars = [
-            Car(plate: "AA1111", status: 1, isDeleted: 1, employerId: 1),
-            Car(plate: "AA1111", status: 1, isDeleted: 1, employerId: 1),
-            Car(plate: "AA1111", status: 1, isDeleted: 1, employerId: 1),
-            Car(plate: "AA1111", status: 1, isDeleted: 1, employerId: 1)
+            Car(plate: "AA1111", brand: "Volvo", model: "xc 90", status: 1, isDeleted: 1, employerId: 1),
+            Car(plate: "AA1112", status: 1, isDeleted: 1, employerId: 1),
+            Car(plate: "AA1113", brand: "VW", model: "Golf", status: 1, isDeleted: 1, employerId: 1),
+            Car(plate: "AA1114", status: 1, isDeleted: 1, employerId: 1)
         ]
     }
 }

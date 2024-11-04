@@ -250,8 +250,8 @@
 		2B24425E2CAEE3CE009E43AE /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
-				2B7E98E92CD80746007255CE /* Driver */,
-				2B7E98E82CD8073E007255CE /* Car */,
+				2B7E98E92CD80746007255CE /* Drivers */,
+				2B7E98E82CD8073E007255CE /* Cars */,
 				2B7E98E02CD7E4AF007255CE /* DeliveryView.swift */,
 			);
 			path = Delivery;
@@ -380,16 +380,16 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		2B7E98E82CD8073E007255CE /* Car */ = {
+		2B7E98E82CD8073E007255CE /* Cars */ = {
 			isa = PBXGroup;
 			children = (
 				2B7E98DC2CD7D945007255CE /* CarsListView.swift */,
 				2B7E98E62CD7F6B9007255CE /* CarDetailsView.swift */,
 			);
-			path = Car;
+			path = Cars;
 			sourceTree = "<group>";
 		};
-		2B7E98E92CD80746007255CE /* Driver */ = {
+		2B7E98E92CD80746007255CE /* Drivers */ = {
 			isa = PBXGroup;
 			children = (
 				2B2442972CB95153009E43AE /* EmployerDriversListView.swift */,
@@ -398,7 +398,7 @@
 				2B2442A12CBC392E009E43AE /* NewDriverCell.swift */,
 				2B2442A32CBC3C25009E43AE /* NewDriverDetailsView.swift */,
 			);
-			path = Driver;
+			path = Drivers;
 			sourceTree = "<group>";
 		};
 		2BA0FB982C4A8DDF00FE6368 = {

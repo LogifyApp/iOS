@@ -11,15 +11,15 @@ struct DriverDetailsCell: View {
     var driver: Driver
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 16)
-                .foregroundStyle(.white)
-                .shadow(radius: 0.5)
-            DriverDetailsRow(driver: driver)
-                .padding()
-        }
-        .padding(.horizontal)
-        .padding(.bottom, 5)
+        DriverDetailsRow(driver: driver)
+            .padding()
+            .background {
+                RoundedRectangle(cornerRadius: 16)
+                    .foregroundStyle(.white)
+                    .shadow(radius: 0.5)
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 5)
     }
 }
 
