@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmployerTabView: View {
-    @State private var items = ["shippingbox", "person.2", "message", "person"]
+    @State private var items = ["shippingbox", "box.truck", "message", "person"]
     @Binding var selectedItem: Int
     
     var body: some View {
@@ -16,19 +16,19 @@ struct EmployerTabView: View {
             TabViewPanel()
             HStack {
                 TabViewButton(imageSystemName: items[0]){
-                    items = ["shippingbox.fill", "person.2", "message", "person"]
+                    items = ["shippingbox.fill", "box.truck", "message", "person"]
                     selectedItem = 0
                 }
                 TabViewButton(imageSystemName: items[1]){
-                    items = ["shippingbox", "person.2.fill", "message", "person"]
+                    items = ["shippingbox", "box.truck.fill", "message", "person"]
                     selectedItem = 1
                 }
                 TabViewButton(imageSystemName: items[2]) {
-                    items = ["shippingbox", "person.2", "message.fill", "person"]
+                    items = ["shippingbox", "box.truck", "message.fill", "person"]
                     selectedItem = 2
                 }
                 TabViewButton(imageSystemName: items[3]){
-                    items = ["shippingbox", "person.2", "message", "person.fill"]
+                    items = ["shippingbox", "box.truck", "message", "person.fill"]
                     selectedItem = 3
                 }
             }
