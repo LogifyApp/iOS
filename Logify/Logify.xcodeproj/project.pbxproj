@@ -66,6 +66,9 @@
 		2B7E98E12CD7E4AF007255CE /* DeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E98E02CD7E4AF007255CE /* DeliveryView.swift */; };
 		2B7E98E32CD7E9F5007255CE /* CarsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E98E22CD7E9F5007255CE /* CarsListViewModel.swift */; };
 		2B7E98E72CD7F6B9007255CE /* CarDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E98E62CD7F6B9007255CE /* CarDetailsView.swift */; };
+		2B7E98EB2CD8F1AF007255CE /* NewCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E98EA2CD8F1AF007255CE /* NewCarView.swift */; };
+		2B7E98ED2CD913D5007255CE /* car_brands.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B7E98EC2CD913D5007255CE /* car_brands.json */; };
+		2B7E98EF2CD948E2007255CE /* NewCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E98EE2CD948E2007255CE /* NewCarViewModel.swift */; };
 		2BA0FBA52C4A8DDF00FE6368 /* LogifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */; };
 		2BA0FBA72C4A8DDF00FE6368 /* DriverMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA62C4A8DDF00FE6368 /* DriverMainView.swift */; };
 		2BA0FBA92C4A8DE100FE6368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA0FBA82C4A8DE100FE6368 /* Assets.xcassets */; };
@@ -154,6 +157,9 @@
 		2B7E98E02CD7E4AF007255CE /* DeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryView.swift; sourceTree = "<group>"; };
 		2B7E98E22CD7E9F5007255CE /* CarsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewModel.swift; sourceTree = "<group>"; };
 		2B7E98E62CD7F6B9007255CE /* CarDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsView.swift; sourceTree = "<group>"; };
+		2B7E98EA2CD8F1AF007255CE /* NewCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarView.swift; sourceTree = "<group>"; };
+		2B7E98EC2CD913D5007255CE /* car_brands.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = car_brands.json; sourceTree = "<group>"; };
+		2B7E98EE2CD948E2007255CE /* NewCarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarViewModel.swift; sourceTree = "<group>"; };
 		2BA0FBA12C4A8DDF00FE6368 /* Logify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA0FBA42C4A8DDF00FE6368 /* LogifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogifyApp.swift; sourceTree = "<group>"; };
 		2BA0FBA62C4A8DDF00FE6368 /* DriverMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMainView.swift; sourceTree = "<group>"; };
@@ -276,6 +282,7 @@
 				2B2442992CB951E8009E43AE /* EmployerDriversListViewModel.swift */,
 				2B2442A82CBD3805009E43AE /* EmployerChatsListViewModel.swift */,
 				2B7E98E22CD7E9F5007255CE /* CarsListViewModel.swift */,
+				2B7E98EE2CD948E2007255CE /* NewCarViewModel.swift */,
 			);
 			path = Employer;
 			sourceTree = "<group>";
@@ -385,6 +392,7 @@
 			children = (
 				2B7E98DC2CD7D945007255CE /* CarsListView.swift */,
 				2B7E98E62CD7F6B9007255CE /* CarDetailsView.swift */,
+				2B7E98EA2CD8F1AF007255CE /* NewCarView.swift */,
 			);
 			path = Cars;
 			sourceTree = "<group>";
@@ -428,6 +436,7 @@
 				2BA0FBA82C4A8DE100FE6368 /* Assets.xcassets */,
 				2BA0FBAA2C4A8DE100FE6368 /* Preview Content */,
 				2BD8809A2CCA9E1400629991 /* TextFieldValidator.swift */,
+				2B7E98EC2CD913D5007255CE /* car_brands.json */,
 			);
 			path = Logify;
 			sourceTree = "<group>";
@@ -577,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BA0FBAC2C4A8DE100FE6368 /* Preview Assets.xcassets in Resources */,
+				2B7E98ED2CD913D5007255CE /* car_brands.json in Resources */,
 				2BA0FBA92C4A8DE100FE6368 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,6 +637,7 @@
 				2B03B9782C95FE1200DF48C1 /* MessageBubble.swift in Sources */,
 				2BD880862CC7FC6700629991 /* RegistrationView.swift in Sources */,
 				2B7C3AE82CAD695B00C62BC3 /* ProfileViewModel.swift in Sources */,
+				2B7E98EF2CD948E2007255CE /* NewCarViewModel.swift in Sources */,
 				2B2442862CAFD7BF009E43AE /* NewPointView.swift in Sources */,
 				2B6AABBC2C84D8A9006B968A /* Point.swift in Sources */,
 				2B2442A02CB9C172009E43AE /* SearchDriverView.swift in Sources */,
@@ -651,6 +662,7 @@
 				2B24429C2CB95CB6009E43AE /* DriverDetailsView.swift in Sources */,
 				2B03B97A2C95FE7300DF48C1 /* Message.swift in Sources */,
 				2B24427C2CAF297A009E43AE /* DriverDetailsCell.swift in Sources */,
+				2B7E98EB2CD8F1AF007255CE /* NewCarView.swift in Sources */,
 				2B7E98E12CD7E4AF007255CE /* DeliveryView.swift in Sources */,
 				2B03B9822C99ABDF00DF48C1 /* TabViewButton.swift in Sources */,
 				2BAFED092C526E5E0041AF88 /* DriverCargoListView.swift in Sources */,

@@ -46,7 +46,7 @@ struct DeliveryView: View {
                 }
                 ToolbarItem {
                     Button("", systemImage: "plus") {
-                        
+                        isPlusTapped.toggle()
                     }
                 }
             }
@@ -56,7 +56,13 @@ struct DeliveryView: View {
                 }
             }
             .fullScreenCover(isPresented: $isPlusTapped) {
-                
+                if selectedView == 0 {
+                    SearchDriverView(
+                        viewModel: EmployerDriversListViewModel()
+                    )
+                } else {
+                    NewCarView()
+                }
             }
         }
     }
