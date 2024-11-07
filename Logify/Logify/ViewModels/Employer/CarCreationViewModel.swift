@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class NewCarViewModel: ObservableObject {
+class CarCreationViewModel: ObservableObject {
     @Published var plate = ""
     @Published var brand = ""
     @Published var model = ""

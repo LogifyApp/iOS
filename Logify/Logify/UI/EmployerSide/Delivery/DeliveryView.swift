@@ -61,7 +61,7 @@ struct DeliveryView: View {
                         viewModel: EmployerDriversListViewModel()
                     )
                 } else {
-                    NewCarView()
+                    CarCreationView()
                 }
             }
         }

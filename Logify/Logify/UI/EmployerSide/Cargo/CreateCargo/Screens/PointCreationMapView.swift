@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-struct NewPointMapView: View {
+struct PointCreationMapView: View {
     @Environment(\.dismiss) var dismiss
     @State private var position = MapCameraPosition.automatic
     @State private var point = MKMapPoint()
@@ -52,6 +52,6 @@ struct NewPointMapView: View {
 
 #Preview {
     NavigationView {
-        NewPointMapView(coordinates: .constant(""))
+        PointCreationMapView(coordinates: .constant(""))
     }
 }

@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct NewCarView: View {
+struct CarCreationView: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject private var viewModel = NewCarViewModel()
+    @StateObject private var viewModel = CarCreationViewModel()
     @State private var isReturnConfirmationPresented = false
     
     var body: some View {
@@ -26,6 +26,7 @@ struct NewCarView: View {
                             Text(brand)
                         }
                     }
+                    .pickerStyle(NavigationLinkPickerStyle())
                     HStack {
                         Text("Model")
                         TextField("", text: $viewModel.model, prompt: Text("Name"))
@@ -75,5 +76,5 @@ struct NewCarView: View {
 }
 
 #Preview {
-    NewCarView()
+    CarCreationView()
 }

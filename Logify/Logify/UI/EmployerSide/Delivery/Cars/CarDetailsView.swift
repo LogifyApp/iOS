@@ -36,6 +36,9 @@ struct CarDetailsView: View {
                     property: "Status",
                     value: "\(car.status)"
                 )
+                Button("Edit") {
+                    isRemoveConfirmationPresented = true
+                }
             }
             Section {
                 Button("Remove", role: .destructive) {

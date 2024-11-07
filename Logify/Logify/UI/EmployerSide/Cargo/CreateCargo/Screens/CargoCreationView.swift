@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct NewCargoView: View {
-    @EnvironmentObject var newCargoViewModel: NewCargoViewModel
+struct CargoCreationView: View {
+    @EnvironmentObject var newCargoViewModel: CargoCreationViewModel
     @Environment(\.dismiss) var dismiss
     @State private var description = ""
     @State private var pointWasTapped = false
@@ -86,7 +86,7 @@ struct NewCargoView: View {
                             .foregroundStyle(.blue)
                             .overlay {
                                 NavigationLink("") {
-                                    NewPointView()
+                                    PointCreationView()
                                 }
                                 .opacity(0)
                             }
@@ -119,7 +119,7 @@ struct NewCargoView: View {
                             .foregroundStyle(.blue)
                             .overlay {
                                 NavigationLink("") {
-                                    NewPointView()
+                                    PointCreationView()
                                 }
                                 .opacity(0)
                             }
@@ -161,8 +161,8 @@ struct NewCargoView: View {
 }
 
 #Preview {
-    NewCargoView()
-        .environmentObject(NewCargoViewModel())
+    CargoCreationView()
+        .environmentObject(CargoCreationViewModel())
 }
 
 

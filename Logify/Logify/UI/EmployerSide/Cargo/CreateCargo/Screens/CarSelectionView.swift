@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CarSelectionView: View {
-    @EnvironmentObject var newCargoViewModel: NewCargoViewModel
+    @EnvironmentObject var newCargoViewModel: CargoCreationViewModel
     @Environment(\.dismiss) var dismiss
     @State private var searchText = ""
     private var searchResults: [Car] {
@@ -54,6 +54,6 @@ struct CarSelectionView: View {
 #Preview {
     NavigationView {
         CarSelectionView()
-            .environmentObject(NewCargoViewModel())
+            .environmentObject(CargoCreationViewModel())
     }
 }

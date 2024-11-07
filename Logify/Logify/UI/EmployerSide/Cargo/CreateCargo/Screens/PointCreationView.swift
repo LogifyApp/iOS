@@ -8,8 +8,8 @@
 import SwiftUI
 import MapKit
 
-struct NewPointView: View {
-    @EnvironmentObject var newCargoViewModel: NewCargoViewModel
+struct PointCreationView: View {
+    @EnvironmentObject var newCargoViewModel: CargoCreationViewModel
     @Environment(\.dismiss) var dismiss
     @State private var name = ""
     @State private var coordinates = ""
@@ -25,7 +25,7 @@ struct NewPointView: View {
             }
             Section {
                 NavigationLink {
-                    NewPointMapView(coordinates: $coordinates)
+                    PointCreationMapView(coordinates: $coordinates)
                 } label: {
                     EmptyView()
                 }
@@ -64,7 +64,7 @@ struct NewPointView: View {
 
 #Preview {
     NavigationView {
-        NewPointView()
-            .environmentObject(NewCargoViewModel())
+        PointCreationView()
+            .environmentObject(CargoCreationViewModel())
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DriverSelectionView: View {
-    @EnvironmentObject var newCargoViewModel: NewCargoViewModel
+    @EnvironmentObject var newCargoViewModel: CargoCreationViewModel
     @State private var searchText = ""
     @Environment(\.dismiss) var dismiss
     private var searchResults: [Driver] {
@@ -54,6 +54,6 @@ struct DriverSelectionView: View {
 #Preview {
     NavigationView {
         DriverSelectionView()
-            .environmentObject(NewCargoViewModel())
+            .environmentObject(CargoCreationViewModel())
     }
 }

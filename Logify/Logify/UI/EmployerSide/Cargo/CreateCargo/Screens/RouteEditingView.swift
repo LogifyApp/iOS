@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RouteEditingView: View {
-    @EnvironmentObject var newCargoViewModel: NewCargoViewModel
+    @EnvironmentObject var newCargoViewModel: CargoCreationViewModel
     @State private var d: [Point] = [
         Point(id: 1, label: "Point 1", latitude: 52.219420, longtitude: 20.983114, order: 0, cargoId: 1),
         Point(id: 2, label: "Point 2", latitude: 52.219420, longtitude: 20.983114, order: 0, cargoId: 1),
@@ -42,6 +42,6 @@ struct RouteEditingView: View {
 #Preview {
     NavigationStack {
         RouteEditingView()
-            .environmentObject(NewCargoViewModel())
+            .environmentObject(CargoCreationViewModel())
     }
 }

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class NewCargoViewModel: ObservableObject {
+class CargoCreationViewModel: ObservableObject {
     var cargo: Cargo
     @Published var driver: Driver?
     @Published var car: Car?
