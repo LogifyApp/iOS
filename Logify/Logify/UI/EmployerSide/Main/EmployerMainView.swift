@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-enum Tab {
-    case cargo, delivery, chat, profile
-}
-
 struct EmployerMainView: View {
     @State private var selectedItem = Tab.cargo
     @State private var isTabViewPresented = true
