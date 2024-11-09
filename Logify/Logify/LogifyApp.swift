@@ -11,7 +11,8 @@ import SwiftUI
 struct LogifyApp: App {
     var body: some Scene {
         WindowGroup {
-            AuthenticationView()
+            CoordinatorView()
+            //AuthenticationView()
         }
     }
 }

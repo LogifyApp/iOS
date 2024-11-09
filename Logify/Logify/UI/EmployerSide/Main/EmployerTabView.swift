@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct EmployerTabView: View {
-    @State private var items = ["shippingbox", "box.truck", "message", "person"]
-    @Binding var selectedItem: Int
+    @State private var items = ["shippingbox.fill", "box.truck", "message", "person"]
+    @Binding var selectedItem: Tab
     
     var body: some View {
         ZStack {
@@ -17,30 +17,27 @@ struct EmployerTabView: View {
             HStack {
                 TabViewButton(imageSystemName: items[0]){
                     items = ["shippingbox.fill", "box.truck", "message", "person"]
-                    selectedItem = 0
+                    selectedItem = .cargo
                 }
                 TabViewButton(imageSystemName: items[1]){
                     items = ["shippingbox", "box.truck.fill", "message", "person"]
-                    selectedItem = 1
+                    selectedItem = .delivery
                 }
                 TabViewButton(imageSystemName: items[2]) {
                     items = ["shippingbox", "box.truck", "message.fill", "person"]
-                    selectedItem = 2
+                    selectedItem = .chat
                 }
                 TabViewButton(imageSystemName: items[3]){
                     items = ["shippingbox", "box.truck", "message", "person.fill"]
-                    selectedItem = 3
+                    selectedItem = .profile
                 }
             }
             .padding(.horizontal)
         }
         .padding(.horizontal)
-        .onAppear {
-            items[selectedItem] += ".fill"
-        }
     }
 }
 
 #Preview {
-    EmployerTabView(selectedItem: .constant(0))
+    EmployerTabView(selectedItem: .constant(.cargo))
 }

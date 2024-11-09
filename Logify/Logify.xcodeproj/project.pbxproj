@@ -60,6 +60,8 @@
 		2B7C3AE42CACB42300C62BC3 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7C3AE32CACB42300C62BC3 /* MapViewModel.swift */; };
 		2B7C3AE62CAD5F8300C62BC3 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7C3AE52CAD5F8300C62BC3 /* ChatViewModel.swift */; };
 		2B7C3AE82CAD695B00C62BC3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7C3AE72CAD695B00C62BC3 /* ProfileViewModel.swift */; };
+		2B7E81BC2CDFA03700FB6AF9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E81BB2CDFA03700FB6AF9 /* AppCoordinator.swift */; };
+		2B7E81BE2CDFA58800FB6AF9 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E81BD2CDFA58800FB6AF9 /* CoordinatorView.swift */; };
 		2B7E985B2CD18E1E007255CE /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E985A2CD18E1E007255CE /* HUD.swift */; };
 		2B7E985E2CD284D4007255CE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E985D2CD284D4007255CE /* ProfileView.swift */; };
 		2B7E98DD2CD7D945007255CE /* CarsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E98DC2CD7D945007255CE /* CarsListView.swift */; };
@@ -151,6 +153,8 @@
 		2B7C3AE32CACB42300C62BC3 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2B7C3AE52CAD5F8300C62BC3 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		2B7C3AE72CAD695B00C62BC3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		2B7E81BB2CDFA03700FB6AF9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		2B7E81BD2CDFA58800FB6AF9 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 		2B7E985A2CD18E1E007255CE /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		2B7E985D2CD284D4007255CE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2B7E98DC2CD7D945007255CE /* CarsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListView.swift; sourceTree = "<group>"; };
@@ -380,6 +384,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		2B7E81BA2CDFA02600FB6AF9 /* Coordiantors */ = {
+			isa = PBXGroup;
+			children = (
+				2B7E81BB2CDFA03700FB6AF9 /* AppCoordinator.swift */,
+				2B7E81BD2CDFA58800FB6AF9 /* CoordinatorView.swift */,
+			);
+			path = Coordiantors;
+			sourceTree = "<group>";
+		};
 		2B7E985C2CD284C8007255CE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +442,7 @@
 		2BA0FBA32C4A8DDF00FE6368 /* Logify */ = {
 			isa = PBXGroup;
 			children = (
+				2B7E81BA2CDFA02600FB6AF9 /* Coordiantors */,
 				2B7C3ADE2CACA4BC00C62BC3 /* ViewModels */,
 				2B6AABC32C8A1E61006B968A /* Services */,
 				2BAFED0C2C526ECE0041AF88 /* UI */,
@@ -646,6 +660,7 @@
 				2B24429E2CB95EC5009E43AE /* ListDetailRow.swift in Sources */,
 				2B7E98E32CD7E9F5007255CE /* CarsListViewModel.swift in Sources */,
 				2B08DC802C77D263003F49D0 /* CargoDetailsView.swift in Sources */,
+				2B7E81BC2CDFA03700FB6AF9 /* AppCoordinator.swift in Sources */,
 				2B0C50162CA6008C003FEFE3 /* Chat.swift in Sources */,
 				2B2442AB2CBD392B009E43AE /* ChatDetailsRow.swift in Sources */,
 				2B24426A2CAEFCE4009E43AE /* EmployerCargoListView.swift in Sources */,
@@ -670,6 +685,7 @@
 				2BD880972CC8FD2B00629991 /* CustomRolePicker.swift in Sources */,
 				2B03B97E2C971D1A00DF48C1 /* MessageField.swift in Sources */,
 				2B2442902CB0A701009E43AE /* DriverDetailsRow.swift in Sources */,
+				2B7E81BE2CDFA58800FB6AF9 /* CoordinatorView.swift in Sources */,
 				2B2442982CB95153009E43AE /* EmployerDriversListView.swift in Sources */,
 				2B24427E2CAF3462009E43AE /* CarSelectionView.swift in Sources */,
 				2B7C3AE22CACA9BA00C62BC3 /* CargoViewModel.swift in Sources */,

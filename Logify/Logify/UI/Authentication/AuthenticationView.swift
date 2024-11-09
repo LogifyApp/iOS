@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct AuthenticationView: View {
+    @EnvironmentObject var coordinator: AppCoordinator
+    
     var body: some View {
-        NavigationStack {
+        //NavigationStack {
             VStack {
                 LogoLabel()
                     .padding(.top, 100)
                     .padding(.bottom, 180)
                 VStack(spacing: 32) {
-                    NavigationLink {
-                        LoginView()
+                    Button {
+                        coordinator.push(.login)
                     } label: {
                         Text("Sign in")
                             .frame(width: 320, height: 38)
@@ -27,9 +29,9 @@ struct AuthenticationView: View {
                                 )
                             )
                     }
-                    NavigationLink {
-                        RegistrationView()
-                    } label: {
+                    Button {
+                        coordinator.push(.registration)
+                    }  label: {
                         Text("Sign up")
                             .frame(width: 320, height: 38)
                             .modifier(
@@ -49,7 +51,7 @@ struct AuthenticationView: View {
                     .ignoresSafeArea()
                     .scaleEffect(1.3)
             }
-        }
+        //}
     }
 }
 
