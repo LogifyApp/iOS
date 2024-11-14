@@ -58,6 +58,8 @@ struct EmployerCargoDocumentsView: View {
 
 #Preview {
     NavigationView {
-        EmployerCargoDocumentsView(cargoViewModel: EmployerCargoViewModel())
+        EmployerCargoDocumentsView(
+            cargoViewModel: EmployerCargoViewModel(coordinator: EmployerCargoCoordinator())
+        )
     }
 }

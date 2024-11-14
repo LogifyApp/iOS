@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct EmployerCargoListView: View {
-    @ObservedObject var cargoListViewModel: EmployerCargoListViewModel
+    @ObservedObject var viewModel: EmployerCargoListViewModel
     @State private var searchText = ""
     @State private var isNewCargoViewPresented = false
     @Binding var isTabViewPresented: Bool
     var searchResults: [Cargo] {
         if searchText.isEmpty {
-            return cargoListViewModel.cargoList
+            return viewModel.cargoList
         } else {
-            return cargoListViewModel.cargoList
+            return viewModel.cargoList
                 .filter({ String($0.id).contains(searchText) })
         }
     }
@@ -31,12 +31,9 @@ struct EmployerCargoListView: View {
                 } else {
                     ScrollView {
                         ForEach(searchResults, id: \.id) { cargo in
-                            NavigationLink(
-                                destination: EmployerCargoDetailsView(
-                                    cargoViewModel: EmployerCargoViewModel(cargo),
-                                    isTabViewPresented: $isTabViewPresented
-                                )
-                            ){
+                            Button {
+                                viewModel.showDetails(cargo)
+                            } label: {
                                 CargoCell(
                                     cargoId: cargo.id,
                                     cargoStatus: cargo.status
@@ -78,5 +75,7 @@ struct EmployerCargoListView: View {
 }
 
 #Preview {
-    EmployerCargoListView(cargoListViewModel: EmployerCargoListViewModel(), isTabViewPresented: .constant(true))
+    EmployerCargoListView(
+        viewModel: EmployerCargoListViewModel(coordinator: EmployerCargoCoordinator()),
+        isTabViewPresented: .constant(true))
 }

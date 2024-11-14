@@ -8,6 +8,7 @@
 import Foundation
 class EmployerCargoListViewModel: ObservableObject {
     @Published var cargoList: [Cargo] = []
+    var coordinator: EmployerCargoCoordinator!
     var employer: Employer
     
     init(employer: Employer) {
@@ -15,7 +16,8 @@ class EmployerCargoListViewModel: ObservableObject {
         fetchAllCargo()
     }
     
-    init() {
+    init(coordinator: EmployerCargoCoordinator) {
+        self.coordinator = coordinator
         self.employer = Employer(id: 2, name: "Name", surname: "Surname", phoneNumber: 1234535345, password: "", role: "")
         fetchAllCargo()
     }
@@ -39,5 +41,9 @@ class EmployerCargoListViewModel: ObservableObject {
                   carId: "24987"
                   ),
         ]
+    }
+    
+    func showDetails(_ cargo: Cargo) {
+        coordinator.push(.details(of: cargo))
     }
 }

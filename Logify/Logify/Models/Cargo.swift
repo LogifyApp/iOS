@@ -22,3 +22,7 @@ extension Cargo {
         "\(creationDate.formatted(date: .numeric, time: .omitted))"
     }
 }
+
+extension Cargo: Hashable {
+    
+}

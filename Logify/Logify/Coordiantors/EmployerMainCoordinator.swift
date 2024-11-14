@@ -12,14 +12,9 @@ enum Tab {
 }
 
 class EmployerMainCoordinator: ObservableObject {
-    @Published var cargoCoordinator: EmployerCargoCoordinator!
-    @Published var deliveryCoordinator: EmployerDeliveryCoordinator!
-    @Published var chatCoordinator: EmployerChatCoordinator!
-    @Published var profileCoordinator: EmployerProfileCoordinator!
     
     @Published var selectedTab = Tab.cargo
     
     init() {
-        chatCoordinator = .init()
     }
 }

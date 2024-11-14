@@ -49,6 +49,8 @@
 		2B2442AB2CBD392B009E43AE /* ChatDetailsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442AA2CBD392B009E43AE /* ChatDetailsRow.swift */; };
 		2B2442AD2CBFD97E009E43AE /* EmployerChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442AC2CBFD97E009E43AE /* EmployerChatView.swift */; };
 		2B3E7F5D2CE65499001D4F7F /* EmployerChatCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3E7F5C2CE65499001D4F7F /* EmployerChatCoordinatorView.swift */; };
+		2B3E7F622CE6969C001D4F7F /* EmployerCargoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3E7F612CE6969C001D4F7F /* EmployerCargoCoordinator.swift */; };
+		2B3E7F642CE6A23A001D4F7F /* EmployerCargoCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3E7F632CE6A23A001D4F7F /* EmployerCargoCoordinatorView.swift */; };
 		2B6AABB42C7FC12D006B968A /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABB32C7FC12D006B968A /* SectionHeader.swift */; };
 		2B6AABBA2C84D822006B968A /* Cargo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABB92C84D822006B968A /* Cargo.swift */; };
 		2B6AABBC2C84D8A9006B968A /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AABBB2C84D8A9006B968A /* Point.swift */; };
@@ -64,10 +66,7 @@
 		2B7E81BC2CDFA03700FB6AF9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E81BB2CDFA03700FB6AF9 /* AppCoordinator.swift */; };
 		2B7E81BE2CDFA58800FB6AF9 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E81BD2CDFA58800FB6AF9 /* CoordinatorView.swift */; };
 		2B7E81E82CE0133B00FB6AF9 /* EmployerMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E81E72CE0133B00FB6AF9 /* EmployerMainCoordinator.swift */; };
-		2B7E81EA2CE013D700FB6AF9 /* EmployerCargoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E81E92CE013D700FB6AF9 /* EmployerCargoCoordinator.swift */; };
-		2B7E81EC2CE013F200FB6AF9 /* EmployerDeliveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E81EB2CE013F200FB6AF9 /* EmployerDeliveryCoordinator.swift */; };
 		2B7E81EE2CE0140D00FB6AF9 /* EmployerChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E81ED2CE0140D00FB6AF9 /* EmployerChatCoordinator.swift */; };
-		2B7E81F02CE0141800FB6AF9 /* EmployerProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E81EF2CE0141800FB6AF9 /* EmployerProfileCoordinator.swift */; };
 		2B7E985B2CD18E1E007255CE /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E985A2CD18E1E007255CE /* HUD.swift */; };
 		2B7E985E2CD284D4007255CE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E985D2CD284D4007255CE /* ProfileView.swift */; };
 		2B7E98DD2CD7D945007255CE /* CarsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E98DC2CD7D945007255CE /* CarsListView.swift */; };
@@ -148,6 +147,8 @@
 		2B2442AA2CBD392B009E43AE /* ChatDetailsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailsRow.swift; sourceTree = "<group>"; };
 		2B2442AC2CBFD97E009E43AE /* EmployerChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerChatView.swift; sourceTree = "<group>"; };
 		2B3E7F5C2CE65499001D4F7F /* EmployerChatCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerChatCoordinatorView.swift; sourceTree = "<group>"; };
+		2B3E7F612CE6969C001D4F7F /* EmployerCargoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerCargoCoordinator.swift; sourceTree = "<group>"; };
+		2B3E7F632CE6A23A001D4F7F /* EmployerCargoCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerCargoCoordinatorView.swift; sourceTree = "<group>"; };
 		2B6AABB32C7FC12D006B968A /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		2B6AABB92C84D822006B968A /* Cargo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cargo.swift; sourceTree = "<group>"; };
 		2B6AABBB2C84D8A9006B968A /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
@@ -163,10 +164,7 @@
 		2B7E81BB2CDFA03700FB6AF9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2B7E81BD2CDFA58800FB6AF9 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 		2B7E81E72CE0133B00FB6AF9 /* EmployerMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerMainCoordinator.swift; sourceTree = "<group>"; };
-		2B7E81E92CE013D700FB6AF9 /* EmployerCargoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerCargoCoordinator.swift; sourceTree = "<group>"; };
-		2B7E81EB2CE013F200FB6AF9 /* EmployerDeliveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerDeliveryCoordinator.swift; sourceTree = "<group>"; };
 		2B7E81ED2CE0140D00FB6AF9 /* EmployerChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerChatCoordinator.swift; sourceTree = "<group>"; };
-		2B7E81EF2CE0141800FB6AF9 /* EmployerProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerProfileCoordinator.swift; sourceTree = "<group>"; };
 		2B7E985A2CD18E1E007255CE /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		2B7E985D2CD284D4007255CE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2B7E98DC2CD7D945007255CE /* CarsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListView.swift; sourceTree = "<group>"; };
@@ -336,6 +334,8 @@
 				2B2442692CAEFCE4009E43AE /* EmployerCargoListView.swift */,
 				2B24426D2CAF039B009E43AE /* EmployerCargoDetailsView.swift */,
 				2B24426F2CAF0447009E43AE /* EmployerCargoDocumentsView.swift */,
+				2B3E7F612CE6969C001D4F7F /* EmployerCargoCoordinator.swift */,
+				2B3E7F632CE6A23A001D4F7F /* EmployerCargoCoordinatorView.swift */,
 			);
 			path = ShowCargo;
 			sourceTree = "<group>";
@@ -404,9 +404,6 @@
 				2B7E81BB2CDFA03700FB6AF9 /* AppCoordinator.swift */,
 				2B7E81BD2CDFA58800FB6AF9 /* CoordinatorView.swift */,
 				2B7E81E72CE0133B00FB6AF9 /* EmployerMainCoordinator.swift */,
-				2B7E81E92CE013D700FB6AF9 /* EmployerCargoCoordinator.swift */,
-				2B7E81EB2CE013F200FB6AF9 /* EmployerDeliveryCoordinator.swift */,
-				2B7E81EF2CE0141800FB6AF9 /* EmployerProfileCoordinator.swift */,
 			);
 			path = Coordiantors;
 			sourceTree = "<group>";
@@ -647,7 +644,6 @@
 				2BD880902CC7FE0400629991 /* LogoLabel.swift in Sources */,
 				2B2442AD2CBFD97E009E43AE /* EmployerChatView.swift in Sources */,
 				2B2442682CAEF40F009E43AE /* EmployerProfileViewModel.swift in Sources */,
-				2B7E81EA2CE013D700FB6AF9 /* EmployerCargoCoordinator.swift in Sources */,
 				2B7C3AE62CAD5F8300C62BC3 /* ChatViewModel.swift in Sources */,
 				2B2442802CAF3C65009E43AE /* CarDetailsCell.swift in Sources */,
 				2B6AABC52C8B4423006B968A /* CargoDocumentsView.swift in Sources */,
@@ -679,7 +675,6 @@
 				2BD880842CC7FC5700629991 /* LoginView.swift in Sources */,
 				2B24429E2CB95EC5009E43AE /* ListDetailRow.swift in Sources */,
 				2B7E98E32CD7E9F5007255CE /* CarsListViewModel.swift in Sources */,
-				2B7E81EC2CE013F200FB6AF9 /* EmployerDeliveryCoordinator.swift in Sources */,
 				2B08DC802C77D263003F49D0 /* CargoDetailsView.swift in Sources */,
 				2B7E81BC2CDFA03700FB6AF9 /* AppCoordinator.swift in Sources */,
 				2B0C50162CA6008C003FEFE3 /* Chat.swift in Sources */,
@@ -693,7 +688,6 @@
 				2BAFED0B2C526E760041AF88 /* DriverChatView.swift in Sources */,
 				2B24428A2CB007FA009E43AE /* CargoCreationView.swift in Sources */,
 				2BAFED1A2C555E880041AF88 /* Driver.swift in Sources */,
-				2B7E81F02CE0141800FB6AF9 /* EmployerProfileCoordinator.swift in Sources */,
 				2B7E985E2CD284D4007255CE /* ProfileView.swift in Sources */,
 				2B2442762CAF18CE009E43AE /* DriverSelectionView.swift in Sources */,
 				2B24429A2CB951E8009E43AE /* EmployerDriversListViewModel.swift in Sources */,
@@ -710,6 +704,7 @@
 				2B2442902CB0A701009E43AE /* DriverDetailsRow.swift in Sources */,
 				2B7E81BE2CDFA58800FB6AF9 /* CoordinatorView.swift in Sources */,
 				2B2442982CB95153009E43AE /* EmployerDriversListView.swift in Sources */,
+				2B3E7F622CE6969C001D4F7F /* EmployerCargoCoordinator.swift in Sources */,
 				2B24427E2CAF3462009E43AE /* CarSelectionView.swift in Sources */,
 				2B7E81EE2CE0140D00FB6AF9 /* EmployerChatCoordinator.swift in Sources */,
 				2B7C3AE22CACA9BA00C62BC3 /* CargoViewModel.swift in Sources */,
@@ -721,6 +716,7 @@
 				2B2442A22CBC392E009E43AE /* NewDriverCell.swift in Sources */,
 				2B74F3A02C73DD5100C8B0CD /* CargoCell.swift in Sources */,
 				2BAFED1C2C55619D0041AF88 /* DriverManager.swift in Sources */,
+				2B3E7F642CE6A23A001D4F7F /* EmployerCargoCoordinatorView.swift in Sources */,
 				2B2442A42CBC3C26009E43AE /* NewDriverDetailsView.swift in Sources */,
 				2BAFED052C526A900041AF88 /* User.swift in Sources */,
 			);

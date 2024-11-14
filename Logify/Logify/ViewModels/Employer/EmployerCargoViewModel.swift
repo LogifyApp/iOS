@@ -10,8 +10,10 @@ class EmployerCargoViewModel: ObservableObject {
     @Published var cargo: Cargo
     @Published var points: [Point] = []
     @Published var documents: Set<URL> = [URL(filePath: "sdf")]
+    var coordinator: EmployerCargoCoordinator!
     
-    init() {
+    init(coordinator: EmployerCargoCoordinator) {
+        self.coordinator = coordinator
         cargo = Cargo(
             id: 137287897,
             description: "Descriptioin",
@@ -49,5 +51,9 @@ class EmployerCargoViewModel: ObservableObject {
     
     func approveDocuments() {
         
+    }
+    
+    func showMap() {
+        coordinator.push(.map(points: points))
     }
 }

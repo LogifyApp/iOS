@@ -13,11 +13,8 @@ struct EmployerMainView: View {
     
     var body: some View {
         TabView(selection: $cordinator.selectedTab) {
-            EmployerCargoListView(
-                cargoListViewModel: EmployerCargoListViewModel(),
-                isTabViewPresented: $isTabViewPresented
-            )
-            .tag(Tab.cargo)
+            EmployerCargoCoordinatorView()
+                .tag(Tab.cargo)
             DeliveryView(
                 isTabViewPresented: $isTabViewPresented
             )

@@ -22,3 +22,6 @@ extension Point {
     }
 }
 
+extension Point: Hashable {
+    
+}

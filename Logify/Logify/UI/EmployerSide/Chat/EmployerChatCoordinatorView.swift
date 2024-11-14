@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmployerChatCoordinatorView: View {
-    @ObservedObject var coordinator: EmployerChatCoordinator = EmployerChatCoordinator()
+    @StateObject var coordinator = EmployerChatCoordinator()
     
     var body: some View {
         NavigationStack(path: $coordinator.path) {

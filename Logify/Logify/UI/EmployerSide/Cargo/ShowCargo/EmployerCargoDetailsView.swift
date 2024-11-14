@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmployerCargoDetailsView: View {
-    @ObservedObject var cargoViewModel: EmployerCargoViewModel
+    @ObservedObject var viewModel: EmployerCargoViewModel
     @State private var isMapPresented = false
     @State private var description = ""
     @State private var disableEditing = true
@@ -21,26 +21,26 @@ struct EmployerCargoDetailsView: View {
             Section {
                 ListDetailRow(
                     property: "Cargo ID",
-                    value: "\(cargoViewModel.cargo.id)"
+                    value: "\(viewModel.cargo.id)"
                 )
                 ListDetailRow(
                     property: "Status",
-                    value: cargoViewModel.cargo.status
+                    value: viewModel.cargo.status
                 )
                 ListDetailRow(
                     property: "Creation date",
-                    value: cargoViewModel.cargo.getCreationDateString()
+                    value: viewModel.cargo.getCreationDateString()
                 )
                 ListDetailRow(
                     property: "Driver ID",
-                    value: "\(cargoViewModel.cargo.driverId)"
+                    value: "\(viewModel.cargo.driverId)"
                 )
                 ListDetailRow(
                     property: "Car ID",
-                    value: cargoViewModel.cargo.carId
+                    value: viewModel.cargo.carId
                 )
                 NavigationLink {
-                    EmployerCargoDocumentsView(cargoViewModel: cargoViewModel)
+                    EmployerCargoDocumentsView(cargoViewModel: viewModel)
                 } label: {
                     Text("Documents")
                         .foregroundStyle(.secondary)
@@ -58,10 +58,10 @@ struct EmployerCargoDetailsView: View {
             //MARK: Route
             Section {
                 VStack {
-                    ForEach(cargoViewModel.points, id: \.id) { point in
+                    ForEach(viewModel.points, id: \.id) { point in
                         PointRow(
                             point: point,
-                            isLast: cargoViewModel.points.last?.id == point.id
+                            isLast: viewModel.points.last?.id == point.id
                         )
                         .onTapGesture {
                             UIPasteboard.general.string = point.getCoordinates()
@@ -71,7 +71,9 @@ struct EmployerCargoDetailsView: View {
                         }
                     }
                 }
-                Button(action: { isMapPresented.toggle() }) {
+                Button {
+                    viewModel.showMap()
+                } label: {
                      HStack {
                          Image(systemName: "map")
                          Text("Map")
@@ -82,11 +84,6 @@ struct EmployerCargoDetailsView: View {
                             background: .black,
                             foreground: .white
                          )
-                     )
-                 }
-                 .fullScreenCover(isPresented: $isMapPresented) {
-                     MapView(viewModel:
-                                MapViewModel(points: cargoViewModel.points)
                      )
                  }
                  .padding(.bottom, 4)
@@ -102,7 +99,7 @@ struct EmployerCargoDetailsView: View {
         .toolbarBackground(.thinMaterial, for: .navigationBar)
         .onAppear {
             withAnimation {
-                description = cargoViewModel.cargo.description
+                description = viewModel.cargo.description
                 isTabViewPresented = false
             }
         }
@@ -113,7 +110,7 @@ struct EmployerCargoDetailsView: View {
 #Preview {
     NavigationView {
         EmployerCargoDetailsView(
-            cargoViewModel: EmployerCargoViewModel(),
+            viewModel: EmployerCargoViewModel(coordinator: EmployerCargoCoordinator()),
             isTabViewPresented: .constant(false)
         )
     }
