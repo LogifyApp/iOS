@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct EmployerMainView: View {
-    @State private var selectedItem = Tab.cargo
+    @ObservedObject var cordinator = EmployerMainCoordinator()
     @State private var isTabViewPresented = true
     
     var body: some View {
-        TabView(selection: $selectedItem) {
+        TabView(selection: $cordinator.selectedTab) {
             EmployerCargoListView(
                 cargoListViewModel: EmployerCargoListViewModel(),
                 isTabViewPresented: $isTabViewPresented
@@ -34,7 +34,7 @@ struct EmployerMainView: View {
         }
         .overlay(alignment: .bottom) {
             if isTabViewPresented {
-                EmployerTabView(selectedItem: $selectedItem)
+                EmployerTabView(selectedItem: $cordinator.selectedTab)
                     .transition(.move(edge: .bottom))
             }
         }

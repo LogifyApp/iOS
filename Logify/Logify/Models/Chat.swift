@@ -13,3 +13,7 @@ struct Chat {
     var employerId: Int
     var driverId: Int
 }
+
+extension Chat: Hashable {
+    
+}

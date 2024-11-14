@@ -67,6 +67,7 @@
 		2B7E81EC2CE013F200FB6AF9 /* EmployerDeliveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E81EB2CE013F200FB6AF9 /* EmployerDeliveryCoordinator.swift */; };
 		2B7E81EE2CE0140D00FB6AF9 /* EmployerChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E81ED2CE0140D00FB6AF9 /* EmployerChatCoordinator.swift */; };
 		2B7E81F02CE0141800FB6AF9 /* EmployerProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E81EF2CE0141800FB6AF9 /* EmployerProfileCoordinator.swift */; };
+		2B7E81F22CE0196000FB6AF9 /* EmployerChatListCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E81F12CE0196000FB6AF9 /* EmployerChatListCoordinatorView.swift */; };
 		2B7E985B2CD18E1E007255CE /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E985A2CD18E1E007255CE /* HUD.swift */; };
 		2B7E985E2CD284D4007255CE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E985D2CD284D4007255CE /* ProfileView.swift */; };
 		2B7E98DD2CD7D945007255CE /* CarsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E98DC2CD7D945007255CE /* CarsListView.swift */; };
@@ -165,6 +166,7 @@
 		2B7E81EB2CE013F200FB6AF9 /* EmployerDeliveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerDeliveryCoordinator.swift; sourceTree = "<group>"; };
 		2B7E81ED2CE0140D00FB6AF9 /* EmployerChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerChatCoordinator.swift; sourceTree = "<group>"; };
 		2B7E81EF2CE0141800FB6AF9 /* EmployerProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerProfileCoordinator.swift; sourceTree = "<group>"; };
+		2B7E81F12CE0196000FB6AF9 /* EmployerChatListCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerChatListCoordinatorView.swift; sourceTree = "<group>"; };
 		2B7E985A2CD18E1E007255CE /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		2B7E985D2CD284D4007255CE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2B7E98DC2CD7D945007255CE /* CarsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListView.swift; sourceTree = "<group>"; };
@@ -402,8 +404,9 @@
 				2B7E81E72CE0133B00FB6AF9 /* EmployerMainCoordinator.swift */,
 				2B7E81E92CE013D700FB6AF9 /* EmployerCargoCoordinator.swift */,
 				2B7E81EB2CE013F200FB6AF9 /* EmployerDeliveryCoordinator.swift */,
-				2B7E81ED2CE0140D00FB6AF9 /* EmployerChatCoordinator.swift */,
 				2B7E81EF2CE0141800FB6AF9 /* EmployerProfileCoordinator.swift */,
+				2B7E81ED2CE0140D00FB6AF9 /* EmployerChatCoordinator.swift */,
+				2B7E81F12CE0196000FB6AF9 /* EmployerChatListCoordinatorView.swift */,
 			);
 			path = Coordiantors;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				2BD880AA2CCD8E3300629991 /* EmployerRequestButtons.swift in Sources */,
 				2B7C3AE02CACA4D700C62BC3 /* CargoListViewModel.swift in Sources */,
 				2BD880902CC7FE0400629991 /* LogoLabel.swift in Sources */,
+				2B7E81F22CE0196000FB6AF9 /* EmployerChatListCoordinatorView.swift in Sources */,
 				2B2442AD2CBFD97E009E43AE /* EmployerChatView.swift in Sources */,
 				2B2442682CAEF40F009E43AE /* EmployerProfileViewModel.swift in Sources */,
 				2B7E81EA2CE013D700FB6AF9 /* EmployerCargoCoordinator.swift in Sources */,

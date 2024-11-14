@@ -9,8 +9,8 @@ import Foundation
 
 class ChatViewModel: ObservableObject {
     @Published var messages: [Message] = []
-    var driver: Driver
-    var employer: Employer
+    var driver: Driver!
+    var employer: Employer!
     var chat: Chat!
         
     init(driver: Driver, employer: Employer) {
@@ -18,6 +18,10 @@ class ChatViewModel: ObservableObject {
         self.employer = employer
         
         fetchChatMessages()
+    }
+    
+    init(chat: Chat) {
+        
     }
     
     func fetchChat(employerId: Int, driverId: Int) {

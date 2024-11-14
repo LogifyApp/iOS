@@ -13,19 +13,10 @@ struct EmployerChatsListView: View {
     @Binding var isTabViewPresented: Bool
     
     var body: some View {
-        NavigationView {
             ScrollView {
                 ForEach(viewModel.chats, id: \.id) { chat in
-                    NavigationLink {
-                        EmployerChatView(
-                            chatViewModel:
-                                ChatViewModel(
-                                    driver: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "", status: "Available"),
-                                    employer: Employer(id: 2, name: "Name", surname: "Surname", phoneNumber: 1234535345, password: "", role: "")
-                                ),
-                            isTabViewPresented: $isTabViewPresented,
-                            senderId: 2
-                        )
+                    Button {
+                        viewModel.push(.details(of: Chat(id: 1, startDate: .now, employerId: 1, driverId: 1)))
                     } label: {
                         ChatDetailsRow(
                             driver: viewModel.getDriver(chatId: chat.id),
@@ -50,7 +41,7 @@ struct EmployerChatsListView: View {
                     isTabViewPresented = true
                 }
             }
-        }
+        
     }
 }
 
