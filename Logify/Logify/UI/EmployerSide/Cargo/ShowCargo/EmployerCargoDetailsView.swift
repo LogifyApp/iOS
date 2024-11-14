@@ -39,12 +39,13 @@ struct EmployerCargoDetailsView: View {
                     property: "Car ID",
                     value: viewModel.cargo.carId
                 )
-                NavigationLink {
-                    EmployerCargoDocumentsView(cargoViewModel: viewModel)
+                Button {
+                    viewModel.showDocuments()
                 } label: {
                     Text("Documents")
                         .foregroundStyle(.secondary)
                 }
+                .buttonStyle(PlainButtonStyle())
             }
             //MARK: Description
             Section {

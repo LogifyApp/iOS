@@ -16,6 +16,9 @@ struct EmployerCargoCoordinatorView: View {
                 .navigationDestination(for: CargoPage.self) { page in
                     coordinator.build(page)
                 }
+                .fullScreenCover(item: $coordinator.fullScreenCover) { item in
+                    coordinator.build(item)
+                }
         }
     }
 }

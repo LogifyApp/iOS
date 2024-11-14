@@ -40,20 +40,11 @@ class EmployerCargoViewModel: ObservableObject {
          ]
     }
     
-    func fetchDocuments() {
-        
-    }
-    
-    func removeDocument(with url: URL) {
-        documents.remove(url)
-        
-    }
-    
-    func approveDocuments() {
-        
-    }
-    
     func showMap() {
         coordinator.push(.map(points: points))
+    }
+    
+    func showDocuments() {
+        coordinator.push(.documents(cargoId: cargo.id))
     }
 }

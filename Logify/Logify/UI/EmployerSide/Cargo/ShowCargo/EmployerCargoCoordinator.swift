@@ -11,10 +11,18 @@ enum CargoPage: Hashable {
     case list
     case details(of: Cargo)
     case map(points: [Point])
+    case documents(cargoId: Int)
+}
+
+enum CargoFullScreenCover: Hashable, Identifiable {
+    case create
+    
+    var id: Self { return self }
 }
 
 class EmployerCargoCoordinator: ObservableObject {
     @Published var path: NavigationPath
+    @Published var fullScreenCover: CargoFullScreenCover?
     
     init() {
         path = NavigationPath()
@@ -35,8 +43,22 @@ class EmployerCargoCoordinator: ObservableObject {
             )
         case .map(let points):
             MapView(viewModel: MapViewModel(points: points))
+        case .documents(let id):
+            EmployerCargoDocumentsView(
+                viewModel: EmployerCargoDocumentsViewModel(
+                    coordinator: self,
+                    cargoId: id
+                )
+            )
         }
-        
+    }
+    
+    @ViewBuilder
+    func build(_ fullScreenCover: CargoFullScreenCover) -> some View {
+        switch fullScreenCover {
+        case .create:
+            CargoCreationView()
+        }
     }
     
     func push(_ page: CargoPage) {

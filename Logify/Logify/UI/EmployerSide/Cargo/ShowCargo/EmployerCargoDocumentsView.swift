@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct EmployerCargoDocumentsView: View {
-    @ObservedObject var cargoViewModel: EmployerCargoViewModel
+    @ObservedObject var viewModel: EmployerCargoDocumentsViewModel
     @State private var isApproveTapped = false
     
     var body: some View {
         VStack {
-            if cargoViewModel.documents.isEmpty {
+            if viewModel.documents.isEmpty {
                 Text("No attached documents for this cargo")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .font(.system(size: 16))
             } else {
                 List {
-                    ForEach(Array(cargoViewModel.documents), id: \.self) { url in
+                    ForEach(Array(viewModel.documents), id: \.self) { url in
                         Text(url.lastPathComponent)
                             .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                 Button(role: .destructive) {
-                                    cargoViewModel.removeDocument(with: url)
+                                    viewModel.removeDocument(with: url)
                                 } label: {
                                     Image(systemName: "trash.fill")
                                 }
@@ -32,7 +32,7 @@ struct EmployerCargoDocumentsView: View {
                 }
                 .scrollContentBackground(.hidden)
                 Button(action: {
-                    cargoViewModel.approveDocuments()
+                    viewModel.approveDocuments()
                     withAnimation {
                         isApproveTapped = true
                     }
@@ -59,7 +59,10 @@ struct EmployerCargoDocumentsView: View {
 #Preview {
     NavigationView {
         EmployerCargoDocumentsView(
-            cargoViewModel: EmployerCargoViewModel(coordinator: EmployerCargoCoordinator())
+            viewModel: EmployerCargoDocumentsViewModel(
+                coordinator: EmployerCargoCoordinator(),
+                cargoId: 1
+            )
         )
     }
 }
