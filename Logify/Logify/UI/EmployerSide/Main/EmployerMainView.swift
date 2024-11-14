@@ -22,11 +22,8 @@ struct EmployerMainView: View {
                 isTabViewPresented: $isTabViewPresented
             )
             .tag(Tab.delivery)
-            EmployerChatsListView(
-                viewModel: EmployerChatsListViewModel(),
-                isTabViewPresented: $isTabViewPresented
-            )
-            .tag(Tab.chat)
+            EmployerChatCoordinatorView()
+                .tag(Tab.chat)
             ProfileView(
                 viewModel: ProfileViewModel()
             )

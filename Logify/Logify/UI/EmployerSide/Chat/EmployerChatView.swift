@@ -48,7 +48,7 @@ struct EmployerChatView: View {
                 .transition(.move(edge: .bottom))
             }
         }
-        .navigationTitle(senderId == chatViewModel.driver.id ? chatViewModel.employer.getFullName() : chatViewModel.driver.getFullName())
+        .navigationTitle("senderId == chatViewModel.driver.id ? chatViewModel.employer.getFullName() : chatViewModel.driver.getFullName()")
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.background)
         .toolbarBackground(.thickMaterial, for: .navigationBar)

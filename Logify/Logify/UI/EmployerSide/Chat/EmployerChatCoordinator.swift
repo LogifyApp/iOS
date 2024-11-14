@@ -15,9 +15,6 @@ enum ChatPage: Hashable {
 class EmployerChatCoordinator: ObservableObject {
     @Published var path: NavigationPath
     
-    @Published var chatListViewModel: EmployerChatsListViewModel!
-    @Published var chatViewModel: ChatViewModel?
-    
     init() {
         path = NavigationPath()
     }
@@ -26,9 +23,15 @@ class EmployerChatCoordinator: ObservableObject {
     func build(_ page: ChatPage) -> some View {
         switch page {
         case .list:
-            EmployerChatsListView(viewModel: EmployerChatsListViewModel(coordinator: self), isTabViewPresented: .constant(true))
+            EmployerChatsListView(
+                viewModel: EmployerChatsListViewModel(coordinator: self),
+                isTabViewPresented: .constant(true)
+            )
         case .details(let chat):
-            EmployerChatView(chatViewModel: ChatViewModel(chat: chat), isTabViewPresented: .constant(true), senderId: 1)
+            EmployerChatView(
+                chatViewModel: ChatViewModel(chat: chat),
+                isTabViewPresented: .constant(true), senderId: 1
+            )
         }
     }
     
@@ -38,10 +41,5 @@ class EmployerChatCoordinator: ObservableObject {
     
     func pop() {
         path.removeLast()
-    }
-    
-    func chatView(chat: Chat) -> some View {
-        chatViewModel = ChatViewModel(chat: chat)
-        return EmployerChatView(chatViewModel: chatViewModel!, isTabViewPresented: .constant(true), senderId: 0)
     }
 }

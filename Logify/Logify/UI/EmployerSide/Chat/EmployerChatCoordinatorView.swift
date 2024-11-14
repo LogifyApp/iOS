@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EmployerChatListCoordinatorView: View {
+struct EmployerChatCoordinatorView: View {
     @ObservedObject var coordinator: EmployerChatCoordinator = EmployerChatCoordinator()
     
     var body: some View {
@@ -21,5 +21,5 @@ struct EmployerChatListCoordinatorView: View {
 }
 
 #Preview {
-    EmployerChatListCoordinatorView(coordinator: EmployerChatCoordinator())
+    EmployerChatCoordinatorView(coordinator: EmployerChatCoordinator())
 }

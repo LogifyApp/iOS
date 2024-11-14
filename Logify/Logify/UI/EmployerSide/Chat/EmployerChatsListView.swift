@@ -16,7 +16,7 @@ struct EmployerChatsListView: View {
             ScrollView {
                 ForEach(viewModel.chats, id: \.id) { chat in
                     Button {
-                        viewModel.push(.details(of: Chat(id: 1, startDate: .now, employerId: 1, driverId: 1)))
+                        viewModel.push(.details(of: Chat(id: 1, startDate: .now, employerId: 0, driverId: 1)))
                     } label: {
                         ChatDetailsRow(
                             driver: viewModel.getDriver(chatId: chat.id),
