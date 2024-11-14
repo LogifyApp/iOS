@@ -9,13 +9,15 @@ import Foundation
 
 class ProfileViewModel: ObservableObject {
     @Published var user: User
+    var coordinator: ProfileCoordinator
     
-    
-    init(user: User) {
+    init(coordinator: ProfileCoordinator, user: User) {
+        self.coordinator = coordinator
         self.user = user
     }
 
-    init() {
+    init(coordinator: ProfileCoordinator) {
+        self.coordinator = coordinator
         self.user = Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "Driver", status: "Available")
     }
 }

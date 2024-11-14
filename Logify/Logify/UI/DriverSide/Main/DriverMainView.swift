@@ -25,10 +25,8 @@ struct DriverMainView: View {
                 isTabViewPresented: $isTabViewPresented
             )
             .tag(1)
-            ProfileView(
-                viewModel: ProfileViewModel()
-            )
-            .tag(3)
+            ProfileCoordinatorView()
+                .tag(3)
         }
         .overlay(alignment: .bottom) {
             if isTabViewPresented {

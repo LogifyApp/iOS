@@ -21,10 +21,8 @@ struct EmployerMainView: View {
             .tag(Tab.delivery)
             EmployerChatCoordinatorView()
                 .tag(Tab.chat)
-            ProfileView(
-                viewModel: ProfileViewModel()
-            )
-            .tag(Tab.profile)
+            ProfileCoordinatorView()
+                .tag(Tab.profile)
         }
         .overlay(alignment: .bottom) {
             if isTabViewPresented {

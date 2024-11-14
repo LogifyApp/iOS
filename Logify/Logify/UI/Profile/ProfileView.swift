@@ -51,5 +51,9 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(viewModel: ProfileViewModel())
+    ProfileView(
+        viewModel: ProfileViewModel(
+            coordinator: ProfileCoordinator()
+        )
+    )
 }

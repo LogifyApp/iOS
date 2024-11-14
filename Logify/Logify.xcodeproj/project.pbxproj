@@ -18,7 +18,6 @@
 		2B24425C2CAEE31D009E43AE /* EmployerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24425B2CAEE31D009E43AE /* EmployerMainView.swift */; };
 		2B2442612CAEE41D009E43AE /* EmployerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442602CAEE41D009E43AE /* EmployerTabView.swift */; };
 		2B2442632CAEE471009E43AE /* TabViewPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442622CAEE471009E43AE /* TabViewPanel.swift */; };
-		2B2442682CAEF40F009E43AE /* EmployerProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442672CAEF40F009E43AE /* EmployerProfileViewModel.swift */; };
 		2B24426A2CAEFCE4009E43AE /* EmployerCargoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2442692CAEFCE4009E43AE /* EmployerCargoListView.swift */; };
 		2B24426C2CAF0004009E43AE /* EmployerCargoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24426B2CAF0004009E43AE /* EmployerCargoListViewModel.swift */; };
 		2B24426E2CAF039B009E43AE /* EmployerCargoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24426D2CAF039B009E43AE /* EmployerCargoDetailsView.swift */; };
@@ -103,6 +102,8 @@
 		2BD880A82CCC31C300629991 /* EmployersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880A72CCC31C300629991 /* EmployersViewModel.swift */; };
 		2BD880AA2CCD8E3300629991 /* EmployerRequestButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880A92CCD8E3300629991 /* EmployerRequestButtons.swift */; };
 		2BD9E41F2CE6BADE005666C1 /* EmployerCargoDocumentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD9E41E2CE6BADE005666C1 /* EmployerCargoDocumentsViewModel.swift */; };
+		2BD9E4262CE6C24C005666C1 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD9E4252CE6C24C005666C1 /* ProfileCoordinator.swift */; };
+		2BD9E4282CE6C36A005666C1 /* ProfileCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD9E4272CE6C36A005666C1 /* ProfileCoordinatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,7 +118,6 @@
 		2B24425B2CAEE31D009E43AE /* EmployerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerMainView.swift; sourceTree = "<group>"; };
 		2B2442602CAEE41D009E43AE /* EmployerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerTabView.swift; sourceTree = "<group>"; };
 		2B2442622CAEE471009E43AE /* TabViewPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewPanel.swift; sourceTree = "<group>"; };
-		2B2442672CAEF40F009E43AE /* EmployerProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerProfileViewModel.swift; sourceTree = "<group>"; };
 		2B2442692CAEFCE4009E43AE /* EmployerCargoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerCargoListView.swift; sourceTree = "<group>"; };
 		2B24426B2CAF0004009E43AE /* EmployerCargoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerCargoListViewModel.swift; sourceTree = "<group>"; };
 		2B24426D2CAF039B009E43AE /* EmployerCargoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerCargoDetailsView.swift; sourceTree = "<group>"; };
@@ -203,6 +203,8 @@
 		2BD880A72CCC31C300629991 /* EmployersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployersViewModel.swift; sourceTree = "<group>"; };
 		2BD880A92CCD8E3300629991 /* EmployerRequestButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerRequestButtons.swift; sourceTree = "<group>"; };
 		2BD9E41E2CE6BADE005666C1 /* EmployerCargoDocumentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerCargoDocumentsViewModel.swift; sourceTree = "<group>"; };
+		2BD9E4252CE6C24C005666C1 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		2BD9E4272CE6C36A005666C1 /* ProfileCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,7 +295,6 @@
 			children = (
 				2BD9E4232CE6BFE4005666C1 /* Delivery */,
 				2BD9E4222CE6BFD5005666C1 /* Chat */,
-				2BD9E4212CE6BFCE005666C1 /* Profile */,
 				2BD9E4202CE6BFA6005666C1 /* Cargo */,
 			);
 			path = Employer;
@@ -409,6 +410,8 @@
 			isa = PBXGroup;
 			children = (
 				2B7E985D2CD284D4007255CE /* ProfileView.swift */,
+				2BD9E4252CE6C24C005666C1 /* ProfileCoordinator.swift */,
+				2BD9E4272CE6C36A005666C1 /* ProfileCoordinatorView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -564,14 +567,6 @@
 			path = Cargo;
 			sourceTree = "<group>";
 		};
-		2BD9E4212CE6BFCE005666C1 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				2B2442672CAEF40F009E43AE /* EmployerProfileViewModel.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		2BD9E4222CE6BFD5005666C1 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,8 +680,8 @@
 				2BD880AA2CCD8E3300629991 /* EmployerRequestButtons.swift in Sources */,
 				2B7C3AE02CACA4D700C62BC3 /* CargoListViewModel.swift in Sources */,
 				2BD880902CC7FE0400629991 /* LogoLabel.swift in Sources */,
+				2BD9E4282CE6C36A005666C1 /* ProfileCoordinatorView.swift in Sources */,
 				2B2442AD2CBFD97E009E43AE /* EmployerChatView.swift in Sources */,
-				2B2442682CAEF40F009E43AE /* EmployerProfileViewModel.swift in Sources */,
 				2B7C3AE62CAD5F8300C62BC3 /* ChatViewModel.swift in Sources */,
 				2B2442802CAF3C65009E43AE /* CarDetailsCell.swift in Sources */,
 				2B6AABC52C8B4423006B968A /* CargoDocumentsView.swift in Sources */,
@@ -744,6 +739,7 @@
 				2BAFED092C526E5E0041AF88 /* DriverCargoListView.swift in Sources */,
 				2B2442722CAF0506009E43AE /* EmployerCargoViewModel.swift in Sources */,
 				2BD880972CC8FD2B00629991 /* CustomRolePicker.swift in Sources */,
+				2BD9E4262CE6C24C005666C1 /* ProfileCoordinator.swift in Sources */,
 				2B03B97E2C971D1A00DF48C1 /* MessageField.swift in Sources */,
 				2B2442902CB0A701009E43AE /* DriverDetailsRow.swift in Sources */,
 				2B7E81BE2CDFA58800FB6AF9 /* CoordinatorView.swift in Sources */,
