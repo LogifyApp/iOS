@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-enum Tab {
+enum EmployerTab {
     case cargo, delivery, chat, profile
 }
 
 struct EmployerMainView: View {
-    @State private var selectedItem = Tab.cargo
+    @State private var selectedItem = EmployerTab.cargo
     @State private var isTabViewPresented = true
     
     var body: some View {
@@ -21,20 +21,20 @@ struct EmployerMainView: View {
                 cargoListViewModel: EmployerCargoListViewModel(),
                 isTabViewPresented: $isTabViewPresented
             )
-            .tag(Tab.cargo)
+            .tag(EmployerTab.cargo)
             DeliveryView(
                 isTabViewPresented: $isTabViewPresented
             )
-            .tag(Tab.delivery)
+            .tag(EmployerTab.delivery)
             EmployerChatsListView(
                 viewModel: EmployerChatsListViewModel(),
                 isTabViewPresented: $isTabViewPresented
             )
-            .tag(Tab.chat)
+            .tag(EmployerTab.chat)
             ProfileView(
                 viewModel: ProfileViewModel()
             )
-            .tag(Tab.profile)
+            .tag(EmployerTab.profile)
         }
         .overlay(alignment: .bottom) {
             if isTabViewPresented {

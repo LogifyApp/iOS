@@ -62,7 +62,6 @@ struct EmployerCargoListView: View {
             }
             .fullScreenCover(isPresented: $isNewCargoViewPresented) {
                 CargoCreationView()
-                    .environmentObject(CargoCreationViewModel())
             }
             .searchable(
                 text: $searchText,

@@ -7,10 +7,13 @@
 
 import SwiftUI
 
+enum DriverTab {
+    case cargo, employer, chat, profile
+}
+
 struct DriverMainView: View {
-    
     @StateObject private var driverManager = DriverManager()
-    @State private var selectedItem = 0
+    @State private var selectedItem = DriverTab.cargo
     @State private var isTabViewPresented = true
     
     var body: some View {
@@ -19,16 +22,16 @@ struct DriverMainView: View {
                 viewModel: CargoListViewModel(),
                 isTabViewPresented: $isTabViewPresented
             )
-            .tag(0)
+            .tag(DriverTab.cargo)
             DriverEmployerView(
                 viewModel: EmployersViewModel(),
                 isTabViewPresented: $isTabViewPresented
             )
-            .tag(1)
+            .tag(DriverTab.employer)
             ProfileView(
                 viewModel: ProfileViewModel()
             )
-            .tag(3)
+            .tag(DriverTab.profile)
         }
         .overlay(alignment: .bottom) {
             if isTabViewPresented {

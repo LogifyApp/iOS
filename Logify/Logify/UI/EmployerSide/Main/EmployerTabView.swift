@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EmployerTabView: View {
     @State private var items = ["shippingbox.fill", "box.truck", "message", "person"]
-    @Binding var selectedItem: Tab
+    @Binding var selectedItem: EmployerTab
     
     var body: some View {
         ZStack {

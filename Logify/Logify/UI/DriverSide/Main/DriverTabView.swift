@@ -9,28 +9,28 @@ import SwiftUI
 
 struct DriverTabView: View {
     @EnvironmentObject var driverManager: DriverManager
-    @State private var items = ["shippingbox.fill", "doc.text", "message", "person"]
+    @State private var items = ["shippingbox.fill", "box.truck", "message", "person"]
     @State private var isChatViewPresented = false
-    @Binding var selectedItem: Int
+    @Binding var selectedItem: DriverTab
     
     var body: some View {
         ZStack {
             TabViewPanel()
             HStack {
                 TabViewButton(imageSystemName: items[0]) {
-                    selectedItem = 0
-                    items = ["shippingbox.fill", "doc.text", "message", "person"]
+                    items = ["shippingbox.fill", "box.truck", "message", "person"]
+                    selectedItem = DriverTab.cargo
                 }
                 TabViewButton(imageSystemName: items[1]) {
-                    selectedItem = 1
-                    items = ["shippingbox", "doc.text.fill", "message", "person"]
+                    items = ["shippingbox", "box.truck.fill", "message", "person"]
+                    selectedItem = DriverTab.employer
                 }
                 TabViewButton(imageSystemName: items[2]) {
                     isChatViewPresented.toggle()
                 }
                 TabViewButton(imageSystemName: items[3]) {
-                    selectedItem = 3
-                    items = ["shippingbox", "doc.text", "message", "person.fill"]
+                    items = ["shippingbox", "box.truck", "message", "person.fill"]
+                    selectedItem = DriverTab.profile
                 }
             }
             .padding(.horizontal)
@@ -49,7 +49,7 @@ struct DriverTabView: View {
 }
 
 #Preview {
-    DriverTabView(selectedItem: .constant(1))
+    DriverTabView(selectedItem: .constant(DriverTab.cargo))
         .environmentObject(DriverManager())
 }
 

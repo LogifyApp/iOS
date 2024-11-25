@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CargoCreationView: View {
-    @EnvironmentObject var viewModel: CargoCreationViewModel
+    @ObservedObject var viewModel = CargoCreationViewModel()
     @Environment(\.dismiss) var dismiss
     @State private var pointWasTapped = false
     @State private var isReturnConfirmationPresented = false
@@ -155,6 +155,7 @@ struct CargoCreationView: View {
             } message: {
                 Text("Changes will not be saved")
             }
+            .environmentObject(viewModel)
         }
     }
 }
