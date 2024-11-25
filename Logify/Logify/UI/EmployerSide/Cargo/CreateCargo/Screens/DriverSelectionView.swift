@@ -10,7 +10,6 @@ import SwiftUI
 struct DriverSelectionView: View {
     @EnvironmentObject var newCargoViewModel: CargoCreationViewModel
     @State private var searchText = ""
-    @Environment(\.dismiss) var dismiss
     private var searchResults: [Driver] {
         if searchText.isEmpty {
             return newCargoViewModel.drivers
@@ -34,7 +33,7 @@ struct DriverSelectionView: View {
                         DriverDetailsCell(driver: driver)
                             .onTapGesture {
                                 newCargoViewModel.driver = driver
-                                dismiss()
+                                newCargoViewModel.pop()
                             }
                     }
                 }
@@ -54,6 +53,8 @@ struct DriverSelectionView: View {
 #Preview {
     NavigationView {
         DriverSelectionView()
-            .environmentObject(CargoCreationViewModel())
+            .environmentObject(
+                CargoCreationViewModel(CargoCreationCoordinator())
+            )
     }
 }

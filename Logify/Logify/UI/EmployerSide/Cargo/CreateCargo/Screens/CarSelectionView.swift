@@ -54,6 +54,8 @@ struct CarSelectionView: View {
 #Preview {
     NavigationView {
         CarSelectionView()
-            .environmentObject(CargoCreationViewModel())
+            .environmentObject(
+                CargoCreationViewModel(CargoCreationCoordinator())
+            )
     }
 }

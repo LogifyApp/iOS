@@ -7,14 +7,16 @@
 
 import Foundation
 class CargoCreationViewModel: ObservableObject {
-    var cargo: Cargo
     @Published var driver: Driver?
     @Published var car: Car?
     @Published var points: [Point] = []
     @Published var drivers: [Driver] = []
     @Published var cars: [Car] = []
+    var cargo: Cargo
+    var coordinator: CargoCreationCoordinator
     
-    init() {
+    init(_ coordinator: CargoCreationCoordinator) {
+        self.coordinator = coordinator
         self.cargo = Cargo(id: 0, description: "", status: "", creationDate: .now, employerId: 0, driverId: 0, carId: "")
         fetchDriversList()
         getCarsList()
@@ -85,5 +87,13 @@ class CargoCreationViewModel: ObservableObject {
     
     func removePoint(_ point: Point) {
         points.removeAll { $0.id == point.id }
+    }
+    
+    func push(_ page: CargoCreationPage) {
+        coordinator.push(page)
+    }
+    
+    func pop() {
+        coordinator.pop()
     }
 }

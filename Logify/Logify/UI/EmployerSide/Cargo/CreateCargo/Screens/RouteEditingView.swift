@@ -42,6 +42,8 @@ struct RouteEditingView: View {
 #Preview {
     NavigationStack {
         RouteEditingView()
-            .environmentObject(CargoCreationViewModel())
+            .environmentObject(
+                CargoCreationViewModel(CargoCreationCoordinator())
+            )
     }
 }

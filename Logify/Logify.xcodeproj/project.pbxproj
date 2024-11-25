@@ -104,6 +104,8 @@
 		2BD9E41F2CE6BADE005666C1 /* EmployerCargoDocumentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD9E41E2CE6BADE005666C1 /* EmployerCargoDocumentsViewModel.swift */; };
 		2BD9E4262CE6C24C005666C1 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD9E4252CE6C24C005666C1 /* ProfileCoordinator.swift */; };
 		2BD9E4282CE6C36A005666C1 /* ProfileCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD9E4272CE6C36A005666C1 /* ProfileCoordinatorView.swift */; };
+		2BD9E42A2CE7FED6005666C1 /* CargoCreationCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD9E4292CE7FED5005666C1 /* CargoCreationCoordinatorView.swift */; };
+		2BD9E42C2CE7FF17005666C1 /* CargoCreationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD9E42B2CE7FF17005666C1 /* CargoCreationCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -205,6 +207,8 @@
 		2BD9E41E2CE6BADE005666C1 /* EmployerCargoDocumentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerCargoDocumentsViewModel.swift; sourceTree = "<group>"; };
 		2BD9E4252CE6C24C005666C1 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		2BD9E4272CE6C36A005666C1 /* ProfileCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinatorView.swift; sourceTree = "<group>"; };
+		2BD9E4292CE7FED5005666C1 /* CargoCreationCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoCreationCoordinatorView.swift; sourceTree = "<group>"; };
+		2BD9E42B2CE7FF17005666C1 /* CargoCreationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoCreationCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,6 +363,8 @@
 				2B2442852CAFD7BF009E43AE /* PointCreationView.swift */,
 				2B2442872CAFE0A2009E43AE /* PointCreationMapView.swift */,
 				2B2442812CAF4643009E43AE /* RouteEditingView.swift */,
+				2BD9E4292CE7FED5005666C1 /* CargoCreationCoordinatorView.swift */,
+				2BD9E42B2CE7FF17005666C1 /* CargoCreationCoordinator.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -727,6 +733,7 @@
 				2BAFED0B2C526E760041AF88 /* DriverChatView.swift in Sources */,
 				2B24428A2CB007FA009E43AE /* CargoCreationView.swift in Sources */,
 				2BAFED1A2C555E880041AF88 /* Driver.swift in Sources */,
+				2BD9E42C2CE7FF17005666C1 /* CargoCreationCoordinator.swift in Sources */,
 				2B7E985E2CD284D4007255CE /* ProfileView.swift in Sources */,
 				2B2442762CAF18CE009E43AE /* DriverSelectionView.swift in Sources */,
 				2B24429A2CB951E8009E43AE /* EmployerDriversListViewModel.swift in Sources */,
@@ -753,6 +760,7 @@
 				2B2442922CB1EEF2009E43AE /* CarDetailsRow.swift in Sources */,
 				2B6AABB42C7FC12D006B968A /* SectionHeader.swift in Sources */,
 				2BD8808E2CC7FDF400629991 /* CustomTextField.swift in Sources */,
+				2BD9E42A2CE7FED6005666C1 /* CargoCreationCoordinatorView.swift in Sources */,
 				2B2442A22CBC392E009E43AE /* NewDriverCell.swift in Sources */,
 				2B74F3A02C73DD5100C8B0CD /* CargoCell.swift in Sources */,
 				2BAFED1C2C55619D0041AF88 /* DriverManager.swift in Sources */,

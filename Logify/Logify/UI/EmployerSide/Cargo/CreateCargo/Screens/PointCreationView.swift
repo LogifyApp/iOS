@@ -65,6 +65,8 @@ struct PointCreationView: View {
 #Preview {
     NavigationView {
         PointCreationView()
-            .environmentObject(CargoCreationViewModel())
+            .environmentObject(
+                CargoCreationViewModel(CargoCreationCoordinator())
+            )
     }
 }

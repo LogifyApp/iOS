@@ -55,10 +55,7 @@ class EmployerCargoCoordinator: ObservableObject {
     
     @ViewBuilder
     func build(_ fullScreenCover: CargoFullScreenCover) -> some View {
-        switch fullScreenCover {
-        case .create:
-            CargoCreationView()
-        }
+        
     }
     
     func push(_ page: CargoPage) {
