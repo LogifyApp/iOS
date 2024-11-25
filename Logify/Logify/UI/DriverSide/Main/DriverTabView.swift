@@ -49,6 +49,5 @@ struct DriverTabView: View {
 
 #Preview {
     DriverTabView(selectedItem: .constant(DriverTab.cargo))
-        .environmentObject(DriverManager())
 }
 
