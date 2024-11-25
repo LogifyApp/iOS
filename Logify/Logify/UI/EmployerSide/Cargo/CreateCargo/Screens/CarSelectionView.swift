@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct CarSelectionView: View {
-    @EnvironmentObject var newCargoViewModel: CargoCreationViewModel
+    @EnvironmentObject var viewModel: CargoCreationViewModel
     @Environment(\.dismiss) var dismiss
     @State private var searchText = ""
     private var searchResults: [Car] {
         if searchText.isEmpty {
-            return newCargoViewModel.cars
+            return viewModel.cars
         } else {
-            return newCargoViewModel.cars
+            return viewModel.cars
                 .filter {
                     $0.plate.contains(searchText)
                 }
@@ -33,7 +33,7 @@ struct CarSelectionView: View {
                     ForEach(searchResults, id: \.plate) { car in
                         CarDetailsCell(car: car)
                             .onTapGesture {
-                                newCargoViewModel.car = car
+                                viewModel.car = car
                                 dismiss()
                             }
                     }

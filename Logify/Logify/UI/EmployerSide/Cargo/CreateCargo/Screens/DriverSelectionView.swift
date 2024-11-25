@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct DriverSelectionView: View {
-    @EnvironmentObject var newCargoViewModel: CargoCreationViewModel
+    @EnvironmentObject var viewModel: CargoCreationViewModel
     @State private var searchText = ""
     private var searchResults: [Driver] {
         if searchText.isEmpty {
-            return newCargoViewModel.drivers
+            return viewModel.drivers
         } else {
-            return newCargoViewModel.drivers
+            return viewModel.drivers
                 .filter {
                     $0.getFullName().contains(searchText) || String($0.id).contains(searchText)
                 }
@@ -32,8 +32,8 @@ struct DriverSelectionView: View {
                     ForEach(searchResults, id: \.id) { driver in
                         DriverDetailsCell(driver: driver)
                             .onTapGesture {
-                                newCargoViewModel.driver = driver
-                                newCargoViewModel.pop()
+                                viewModel.driver = driver
+                                viewModel.pop()
                             }
                     }
                 }

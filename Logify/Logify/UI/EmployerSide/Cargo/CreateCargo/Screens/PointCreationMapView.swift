@@ -12,7 +12,7 @@ struct PointCreationMapView: View {
     @Environment(\.dismiss) var dismiss
     @State private var position = MapCameraPosition.automatic
     @State private var point = MKMapPoint()
-    @Binding var coordinates: String
+    var coordinates: String
     
     var body: some View {
         ZStack {

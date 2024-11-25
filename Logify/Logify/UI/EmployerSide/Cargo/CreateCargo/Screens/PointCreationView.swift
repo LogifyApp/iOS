@@ -9,23 +9,20 @@ import SwiftUI
 import MapKit
 
 struct PointCreationView: View {
-    @EnvironmentObject var newCargoViewModel: CargoCreationViewModel
-    @Environment(\.dismiss) var dismiss
-    @State private var name = ""
-    @State private var coordinates = ""
+    @ObservedObject var viewModel: PointCreationViewModel
     @State private var showInvalidCoordinatesAlert = false
     
     var body: some View {
         List {
             Section {
-                TextField("Point name", text: $name, axis: .vertical)
-                TextField("Coordinates", text: $coordinates, axis: .vertical)
+                TextField("Point name", text: $viewModel.name, axis: .vertical)
+                TextField("Coordinates", text: $viewModel.coordinates, axis: .vertical)
             } footer: {
                 Text("You can add coordinates manually or select point on the map")
             }
             Section {
-                NavigationLink {
-                    PointCreationMapView(coordinates: $coordinates)
+                Button {
+                    viewModel.showMap()
                 } label: {
                     EmptyView()
                 }
@@ -46,15 +43,16 @@ struct PointCreationView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Save") {
-                    if newCargoViewModel.validateCoordinates(coordinates) {
-                        newCargoViewModel.addNewPoint(
+                    /*
+                    if viewModel.validateCoordinates(coordinates) {
+                        viewModel.addNewPoint(
                             name: name,
                             coordinatesString: coordinates
                         )
                         dismiss()
                     } else {
                         showInvalidCoordinatesAlert.toggle()
-                    }
+                    }*/
                 }
             }
         }
@@ -64,9 +62,6 @@ struct PointCreationView: View {
 
 #Preview {
     NavigationView {
-        PointCreationView()
-            .environmentObject(
-                CargoCreationViewModel(CargoCreationCoordinator())
-            )
+        PointCreationView(viewModel: PointCreationViewModel())
     }
 }

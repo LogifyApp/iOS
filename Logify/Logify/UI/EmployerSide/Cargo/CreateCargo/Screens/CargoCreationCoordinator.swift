@@ -7,11 +7,13 @@
 
 import SwiftUI
 
-enum CargoCreationPage {
+enum CargoCreationPage: Hashable {
     case main
     case car
     case driver
     case point
+    case editPoints
+    case map(coordinates: String)
 }
 
 class CargoCreationCoordinator: ObservableObject {
@@ -31,7 +33,11 @@ class CargoCreationCoordinator: ObservableObject {
         case .driver:
             DriverSelectionView()
         case .point:
-            PointCreationView()
+            PointCreationView(viewModel: PointCreationViewModel(coordinator: self))
+        case .editPoints:
+            RouteEditingView()
+        case .map(let coordinates):
+            PointCreationMapView(coordinates: coordinates)
         }
     }
     

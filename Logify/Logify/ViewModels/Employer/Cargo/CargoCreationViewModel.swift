@@ -76,15 +76,6 @@ class CargoCreationViewModel: ObservableObject {
         )
     }
     
-    func validateCoordinates(_ coordinates: String) -> Bool {
-        let array = coordinates.components(separatedBy: " ")
-        if array.count == 2, let latitude = array.first,
-            let longtitude = array.last {
-            return true
-        }
-        return false
-    }
-    
     func removePoint(_ point: Point) {
         points.removeAll { $0.id == point.id }
     }

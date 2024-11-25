@@ -11,6 +11,7 @@
 		2B03B97A2C95FE7300DF48C1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B03B9792C95FE7300DF48C1 /* Message.swift */; };
 		2B03B97E2C971D1A00DF48C1 /* MessageField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B03B97D2C971D1A00DF48C1 /* MessageField.swift */; };
 		2B03B9822C99ABDF00DF48C1 /* TabViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B03B9812C99ABDF00DF48C1 /* TabViewButton.swift */; };
+		2B0532BC2CF4D640001A2683 /* PointCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0532BB2CF4D640001A2683 /* PointCreationViewModel.swift */; };
 		2B08DC802C77D263003F49D0 /* CargoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08DC7F2C77D263003F49D0 /* CargoDetailsView.swift */; };
 		2B0C50102CA43CDA003FEFE3 /* Employer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C500F2CA43CDA003FEFE3 /* Employer.swift */; };
 		2B0C50122CA4BAA0003FEFE3 /* UserDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C50112CA4BAA0003FEFE3 /* UserDataCell.swift */; };
@@ -113,6 +114,7 @@
 		2B03B9792C95FE7300DF48C1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2B03B97D2C971D1A00DF48C1 /* MessageField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageField.swift; sourceTree = "<group>"; };
 		2B03B9812C99ABDF00DF48C1 /* TabViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewButton.swift; sourceTree = "<group>"; };
+		2B0532BB2CF4D640001A2683 /* PointCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointCreationViewModel.swift; sourceTree = "<group>"; };
 		2B08DC7F2C77D263003F49D0 /* CargoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoDetailsView.swift; sourceTree = "<group>"; };
 		2B0C500F2CA43CDA003FEFE3 /* Employer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employer.swift; sourceTree = "<group>"; };
 		2B0C50112CA4BAA0003FEFE3 /* UserDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCell.swift; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 				2B24426B2CAF0004009E43AE /* EmployerCargoListViewModel.swift */,
 				2B2442772CAF199D009E43AE /* CargoCreationViewModel.swift */,
 				2BD9E41E2CE6BADE005666C1 /* EmployerCargoDocumentsViewModel.swift */,
+				2B0532BB2CF4D640001A2683 /* PointCreationViewModel.swift */,
 			);
 			path = Cargo;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				2B03B9822C99ABDF00DF48C1 /* TabViewButton.swift in Sources */,
 				2BAFED092C526E5E0041AF88 /* DriverCargoListView.swift in Sources */,
 				2B2442722CAF0506009E43AE /* EmployerCargoViewModel.swift in Sources */,
+				2B0532BC2CF4D640001A2683 /* PointCreationViewModel.swift in Sources */,
 				2BD880972CC8FD2B00629991 /* CustomRolePicker.swift in Sources */,
 				2BD9E4262CE6C24C005666C1 /* ProfileCoordinator.swift in Sources */,
 				2B03B97E2C971D1A00DF48C1 /* MessageField.swift in Sources */,
