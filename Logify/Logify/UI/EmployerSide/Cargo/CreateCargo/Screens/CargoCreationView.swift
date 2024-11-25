@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct CargoCreationView: View {
-    @EnvironmentObject var newCargoViewModel: CargoCreationViewModel
+    @EnvironmentObject var viewModel: CargoCreationViewModel
     @Environment(\.dismiss) var dismiss
-    @State private var description = ""
     @State private var pointWasTapped = false
     @State private var isReturnConfirmationPresented = false
     
@@ -19,7 +18,7 @@ struct CargoCreationView: View {
             List {
                 //MARK: Driver
                 Section {
-                    if let driver = newCargoViewModel.driver {
+                    if let driver = viewModel.driver {
                         DriverDetailsRow(driver: driver)
                             .padding(.top)
                         Text("Change")
@@ -46,7 +45,7 @@ struct CargoCreationView: View {
                 }
                 //MARK: Car
                 Section {
-                    if let car = newCargoViewModel.car {
+                    if let car = viewModel.car {
                         CarDetailsRow(car: car)
                             .padding(.top)
                         Text("Change")
@@ -74,13 +73,13 @@ struct CargoCreationView: View {
                 //MARK: Description
                 Section {
                     TextField("Description", 
-                              text: $description,
+                              text: $viewModel.description,
                               axis: .vertical
                     )
                 }
                 //MARK: Route
                 Section {
-                    if newCargoViewModel.points.isEmpty {
+                    if viewModel.points.isEmpty {
                         NewCargoEmptyElementView(text: "Doesn't created yet")
                         Text("Create")
                             .foregroundStyle(.blue)
@@ -92,10 +91,10 @@ struct CargoCreationView: View {
                             }
                     } else {
                         VStack {
-                            ForEach(newCargoViewModel.points, id: \.id) { point in
+                            ForEach(viewModel.points, id: \.id) { point in
                                 PointRow(
                                     point: point,
-                                    isLast: newCargoViewModel.points.last!.id == point.id
+                                    isLast: viewModel.points.last!.id == point.id
                                 )
                                 .onTapGesture {
                                     UIPasteboard.general.string = point.getCoordinates()

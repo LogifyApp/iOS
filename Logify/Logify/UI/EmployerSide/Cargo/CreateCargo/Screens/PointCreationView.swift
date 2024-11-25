@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct PointCreationView: View {
-    @EnvironmentObject var newCargoViewModel: CargoCreationViewModel
+    @EnvironmentObject var viewModel: CargoCreationViewModel
     @Environment(\.dismiss) var dismiss
     @State private var name = ""
     @State private var coordinates = ""
@@ -46,8 +46,8 @@ struct PointCreationView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Save") {
-                    if newCargoViewModel.validateCoordinates(coordinates) {
-                        newCargoViewModel.addNewPoint(
+                    if viewModel.validateCoordinates(coordinates) {
+                        viewModel.addNewPoint(
                             name: name,
                             coordinatesString: coordinates
                         )
