@@ -12,7 +12,6 @@ enum DriverTab {
 }
 
 struct DriverMainView: View {
-    @StateObject private var driverManager = DriverManager()
     @State private var selectedItem = DriverTab.cargo
     @State private var isTabViewPresented = true
     
@@ -40,7 +39,6 @@ struct DriverMainView: View {
             }
         }
         .ignoresSafeArea()
-        .environmentObject(driverManager)
         .navigationBarBackButtonHidden()
     }
 }

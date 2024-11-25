@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DriverTabView: View {
-    @EnvironmentObject var driverManager: DriverManager
     @State private var items = ["shippingbox.fill", "box.truck", "message", "person"]
     @State private var isChatViewPresented = false
     @Binding var selectedItem: DriverTab
@@ -39,10 +38,10 @@ struct DriverTabView: View {
         .fullScreenCover(isPresented: $isChatViewPresented) {
             DriverChatView(viewModel:
                     ChatViewModel(
-                        driver: driverManager.driver,
-                        employer: driverManager.getActiveEmployer()!
+                        driver: Driver(id: 1, name: "Name", surname: "Surname", phoneNumber: 12837498357, password: "", role: "Driver", status: "Available"),
+                        employer: Employer(id: 2, name: "Name", surname: "Surname", phoneNumber: 1234535345, password: "", role: "Employer")
                     ),
-                senderId: driverManager.driver.id
+                senderId: 1
             )
         }
     }

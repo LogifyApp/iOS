@@ -80,7 +80,6 @@
 		2BAFED0B2C526E760041AF88 /* DriverChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED0A2C526E760041AF88 /* DriverChatView.swift */; };
 		2BAFED142C52D69D0041AF88 /* DriverTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED132C52D69D0041AF88 /* DriverTabView.swift */; };
 		2BAFED1A2C555E880041AF88 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED192C555E880041AF88 /* Driver.swift */; };
-		2BAFED1C2C55619D0041AF88 /* DriverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFED1B2C55619D0041AF88 /* DriverManager.swift */; };
 		2BD880842CC7FC5700629991 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880832CC7FC5700629991 /* LoginView.swift */; };
 		2BD880862CC7FC6700629991 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880852CC7FC6700629991 /* RegistrationView.swift */; };
 		2BD880882CC7FC7B00629991 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD880872CC7FC7B00629991 /* RegistrationViewModel.swift */; };
@@ -174,7 +173,6 @@
 		2BAFED0A2C526E760041AF88 /* DriverChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverChatView.swift; sourceTree = "<group>"; };
 		2BAFED132C52D69D0041AF88 /* DriverTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTabView.swift; sourceTree = "<group>"; };
 		2BAFED192C555E880041AF88 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
-		2BAFED1B2C55619D0041AF88 /* DriverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverManager.swift; sourceTree = "<group>"; };
 		2BD880832CC7FC5700629991 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2BD880852CC7FC6700629991 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		2BD880872CC7FC7B00629991 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -365,7 +363,6 @@
 		2B6AABC32C8A1E61006B968A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				2BAFED1B2C55619D0041AF88 /* DriverManager.swift */,
 				2BD8809A2CCA9E1400629991 /* TextFieldValidator.swift */,
 			);
 			path = Services;
@@ -696,7 +693,6 @@
 				2BD8808E2CC7FDF400629991 /* CustomTextField.swift in Sources */,
 				2B2442A22CBC392E009E43AE /* NewDriverCell.swift in Sources */,
 				2B74F3A02C73DD5100C8B0CD /* CargoCell.swift in Sources */,
-				2BAFED1C2C55619D0041AF88 /* DriverManager.swift in Sources */,
 				2B2442A42CBC3C26009E43AE /* NewDriverDetailsView.swift in Sources */,
 				2BAFED052C526A900041AF88 /* User.swift in Sources */,
 			);
