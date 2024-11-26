@@ -209,7 +209,6 @@
 				2B08DC7F2C77D263003F49D0 /* CargoDetailsView.swift */,
 				2B6AABC42C8B4423006B968A /* CargoDocumentsView.swift */,
 				2B6AABBF2C875A84006B968A /* MapView.swift */,
-				2B74F39F2C73DD5100C8B0CD /* CargoCell.swift */,
 			);
 			path = Cargo;
 			sourceTree = "<group>";
@@ -491,6 +490,7 @@
 		2BAFED0D2C526EDE0041AF88 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2B74F39F2C73DD5100C8B0CD /* CargoCell.swift */,
 				2B0C50112CA4BAA0003FEFE3 /* UserDataCell.swift */,
 				2B6AABB32C7FC12D006B968A /* SectionHeader.swift */,
 				2B6AABBD2C864A18006B968A /* ButtonStyleModifier.swift */,

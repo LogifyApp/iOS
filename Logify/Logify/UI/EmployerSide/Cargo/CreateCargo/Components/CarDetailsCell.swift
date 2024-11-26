@@ -15,7 +15,7 @@ struct CarDetailsCell: View {
             .padding()
             .background {
                 RoundedRectangle(cornerRadius: 16)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color(UIColor.secondarySystemGroupedBackground))
                     .shadow(radius: 0.5)
             }
             .padding(.horizontal)

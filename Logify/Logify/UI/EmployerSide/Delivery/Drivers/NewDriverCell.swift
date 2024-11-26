@@ -13,7 +13,7 @@ struct NewDriverCell: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
-                .foregroundStyle(.white)
+                .foregroundStyle(Color(UIColor.secondarySystemGroupedBackground))
                 .shadow(radius: 0.5)
             HStack {
                 VStack {
