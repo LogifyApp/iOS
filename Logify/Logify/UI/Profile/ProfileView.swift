@@ -25,12 +25,14 @@ struct ProfileView: View {
                         Toggle("Notifications", isOn: .constant(true))
                         Toggle("Dark mode", isOn: .constant(false))
                     }
+                    .listRowBackground(Color.component)
                     Section {
                         Button("Log out", role: .destructive) {
                             isLogoutConfirmationPresented = true
                         }
                         .foregroundStyle(.red)
                     }
+                    .listRowBackground(Color.component)
                 }
                 .navigationTitle("Profile")
                 .navigationBarTitleDisplayMode(.inline)

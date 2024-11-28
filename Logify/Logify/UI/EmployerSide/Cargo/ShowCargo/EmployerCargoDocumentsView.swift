@@ -29,6 +29,7 @@ struct EmployerCargoDocumentsView: View {
                                 }
                             }
                     }
+                    .listRowBackground(Color.component)
                 }
                 .scrollContentBackground(.hidden)
                 Button(action: {

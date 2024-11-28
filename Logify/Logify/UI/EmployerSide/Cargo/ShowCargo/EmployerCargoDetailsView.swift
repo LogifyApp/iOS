@@ -46,6 +46,7 @@ struct EmployerCargoDetailsView: View {
                         .foregroundStyle(.secondary)
                 }
             }
+            .listRowBackground(Color.component)
             //MARK: Description
             Section {
                 TextField("", text: $description, axis: .vertical)
@@ -55,6 +56,7 @@ struct EmployerCargoDetailsView: View {
                     disableEditing.toggle()
                 }
             }
+            .listRowBackground(Color.component)
             //MARK: Route
             Section {
                 VStack {
@@ -94,6 +96,7 @@ struct EmployerCargoDetailsView: View {
                 Text("You can copy point coordinates by tapping on it")
             }
             .listRowSeparator(.hidden)
+            .listRowBackground(Color.component)
         }
         .navigationTitle("Details")
         .navigationBarTitleDisplayMode(.inline)

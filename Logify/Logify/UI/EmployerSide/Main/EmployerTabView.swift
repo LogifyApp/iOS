@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmployerTabView: View {
-    @State private var items = ["shippingbox.fill", "box.truck", "message", "person"]
+    @State private var items = ["shippingbox", "box.truck", "message", "person"]
     @Binding var selectedItem: EmployerTab
     
     var body: some View {
@@ -35,6 +35,18 @@ struct EmployerTabView: View {
             .padding(.horizontal)
         }
         .padding(.horizontal)
+        .onAppear {
+            switch selectedItem {
+            case .cargo:
+                items[0] += ".fill"
+            case .delivery:
+                items[1] += ".fill"
+            case .chat:
+                items[2] += ".fill"
+            case .profile:
+                items[3] += ".fill"
+            }
+        }
     }
 }
 

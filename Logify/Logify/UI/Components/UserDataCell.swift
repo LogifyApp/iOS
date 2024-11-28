@@ -17,7 +17,7 @@ struct UserDataCell: View {
                 .font(.system(size: 34, weight: .semibold))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(28)
-                .background(Color(UIColor.secondarySystemGroupedBackground))
+                .background(Color.component)
                 .clipShape(RoundedRectangle(cornerRadius: 14))
                 .padding(.bottom, 10)
             HStack {
@@ -25,7 +25,7 @@ struct UserDataCell: View {
                     .font(.system(size: 18, weight: .medium))
                     .frame(maxWidth: .infinity)
                     .padding(20)
-                    .background(Color(UIColor.secondarySystemGroupedBackground))
+                    .background(Color.component)
                     .clipShape(RoundedRectangle(cornerRadius: 14))
                     .padding(.trailing, 10)
                     .lineLimit(1)
@@ -33,7 +33,7 @@ struct UserDataCell: View {
                     .font(.system(size: 18, weight: .medium))
                     .padding(20)
                     .padding(.horizontal, 5)
-                    .background(Color(UIColor.secondarySystemGroupedBackground))
+                    .background(Color.component)
                     .clipShape(RoundedRectangle(cornerRadius: 14))
             }
         }

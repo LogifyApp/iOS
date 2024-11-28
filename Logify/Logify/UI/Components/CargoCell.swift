@@ -15,7 +15,7 @@ struct CargoCell: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
-                .foregroundStyle(Color(UIColor.secondarySystemGroupedBackground))
+                .foregroundStyle(Color.component)
                 .shadow(radius: 0.5)
             HStack {
                 Text("#\(cargoId)")
