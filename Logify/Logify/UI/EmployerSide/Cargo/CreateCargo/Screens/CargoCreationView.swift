@@ -43,6 +43,7 @@ struct CargoCreationView: View {
                 } header: {
                     SectionHeader(text: "Driver")
                 }
+                .listRowBackground(Color.component)
                 //MARK: Car
                 Section {
                     if let car = viewModel.car {
@@ -70,6 +71,7 @@ struct CargoCreationView: View {
                 } header: {
                     SectionHeader(text: "Car")
                 }
+                .listRowBackground(Color.component)
                 //MARK: Description
                 Section {
                     TextField("Description", 
@@ -77,6 +79,7 @@ struct CargoCreationView: View {
                               axis: .vertical
                     )
                 }
+                .listRowBackground(Color.component)
                 //MARK: Route
                 Section {
                     if viewModel.points.isEmpty {
@@ -128,6 +131,7 @@ struct CargoCreationView: View {
                 } footer: {
                     Text("You can copy point coordinates by tapping on it")
                 }
+                .listRowBackground(Color.component)
             }
             .navigationTitle("New cargo")
             .navigationBarTitleDisplayMode(.inline)
@@ -155,8 +159,8 @@ struct CargoCreationView: View {
             } message: {
                 Text("Changes will not be saved")
             }
-            .environmentObject(viewModel)
         }
+        .environmentObject(viewModel)
     }
 }
 

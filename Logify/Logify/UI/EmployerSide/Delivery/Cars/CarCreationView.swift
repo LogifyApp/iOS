@@ -20,6 +20,7 @@ struct CarCreationView: View {
                     TextField("", text: $viewModel.plate, prompt: Text("Number"))
                         .multilineTextAlignment(.trailing)
                 }
+                .listRowBackground(Color.component)
                 Section {
                     Picker("Brand", selection: $viewModel.brand) {
                         ForEach(readJson(), id: \.self) { brand in
@@ -33,6 +34,7 @@ struct CarCreationView: View {
                             .multilineTextAlignment(.trailing)
                     }
                 }
+                .listRowBackground(Color.component)
             }
             .navigationTitle("New car")
             .navigationBarTitleDisplayMode(.inline)

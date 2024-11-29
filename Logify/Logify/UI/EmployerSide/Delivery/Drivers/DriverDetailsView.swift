@@ -38,16 +38,19 @@ struct DriverDetailsView: View {
                     value: driver.status
                 )
             }
+            .listRowBackground(Color.component)
             Section {
                 Button("Chat") {
                     
                 }
             }
+            .listRowBackground(Color.component)
             Section {
                 Button("Remove", role: .destructive) {
                     isRemoveConfirmationPresented = true
                 }
             }
+            .listRowBackground(Color.component)
         }
         .navigationTitle("Details")
         .navigationBarTitleDisplayMode(.inline)

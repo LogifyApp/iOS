@@ -23,6 +23,7 @@ struct PointCreationView: View {
             } footer: {
                 Text("You can add coordinates manually or select point on the map")
             }
+            .listRowBackground(Color.component)
             Section {
                 NavigationLink {
                     PointCreationMapView(coordinates: $coordinates)

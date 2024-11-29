@@ -24,6 +24,7 @@ struct RouteEditingView: View {
                     toOffset: newOffset
                 )
             }
+            .listRowBackground(Color.component)
         }
         .navigationTitle("Route")
         .navigationBarTitleDisplayMode(.inline)

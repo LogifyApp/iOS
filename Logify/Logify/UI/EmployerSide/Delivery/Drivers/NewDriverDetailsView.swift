@@ -24,10 +24,10 @@ struct NewDriverDetailsView: View {
             } label: {
                 Text("Send Request")
                     .font(.system(size: 18, weight: .medium))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color.buttonText)
                     .frame(maxWidth: .infinity)
                     .padding(20)
-                    .background(.black)
+                    .background(Color.button)
                     .clipShape(RoundedRectangle(cornerRadius: 14))
                     .padding(.horizontal, 20)
             }

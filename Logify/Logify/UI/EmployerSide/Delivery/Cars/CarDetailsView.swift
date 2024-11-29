@@ -40,11 +40,13 @@ struct CarDetailsView: View {
                     isRemoveConfirmationPresented = true
                 }
             }
+            .listRowBackground(Color.component)
             Section {
                 Button("Remove", role: .destructive) {
                     isRemoveConfirmationPresented = true
                 }
             }
+            .listRowBackground(Color.component)
         }
         .navigationTitle("Details")
         .navigationBarTitleDisplayMode(.inline)
