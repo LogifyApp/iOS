@@ -13,9 +13,9 @@ struct HUD: View {
     var body: some View {
         Text(text)
             .fontWeight(.semibold)
-            .foregroundStyle(.white)
+            .foregroundStyle(Color.buttonText)
             .padding()
-            .background(.darkBlue)
+            .background(Color.hud)
             .clipShape(Capsule())
             .frame(maxHeight: .infinity, alignment: .top)
     }
@@ -33,7 +33,7 @@ extension View {
                 HUD(text: text)
                     .transition(.move(edge: .top))
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                             withAnimation(.snappy) {
                                 isPresented.wrappedValue = false
                             }
