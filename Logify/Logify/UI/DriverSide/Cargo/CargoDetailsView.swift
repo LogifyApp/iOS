@@ -40,10 +40,12 @@ struct CargoDetailsView: View {
                         .foregroundStyle(.secondary)
                 }
             }
+            .listRowBackground(Color.component)
             // MARK: Description
             Section {
                 Text(viewModel.cargo.description)
             }
+            .listRowBackground(Color.component)
             // MARK: Route
             Section {
                 VStack {
@@ -71,8 +73,8 @@ struct CargoDetailsView: View {
                     .frame(width: 320, height: 38)
                     .modifier(
                         ButtonStyleModifier(
-                            background: .black,
-                            foreground: .white
+                            background: .button,
+                            foreground: .buttonText
                         )
                     )
                 }
@@ -83,6 +85,7 @@ struct CargoDetailsView: View {
                 }
                 .padding(.bottom, 4)
             }
+            .listRowBackground(Color.component)
             .listRowSeparator(.hidden)
         }
         .navigationTitle("Details")

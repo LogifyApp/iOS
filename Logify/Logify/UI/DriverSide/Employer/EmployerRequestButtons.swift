@@ -19,8 +19,8 @@ struct EmployerRequestButtons: View {
             .font(.system(size: 18, weight: .medium))
             .frame(maxWidth: .infinity)
             .padding(20)
-            .background(.black)
-            .foregroundStyle(.white)
+            .background(.button)
+            .foregroundStyle(.buttonText)
             .clipShape(RoundedRectangle(cornerRadius: 14))
             .padding(.trailing, 10)
             Button("Decline") {

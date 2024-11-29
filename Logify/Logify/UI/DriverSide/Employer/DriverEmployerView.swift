@@ -20,10 +20,10 @@ struct DriverEmployerView: View {
                             .padding(20)
                     } else {
                         Text("You don't have active employer")
-                            .frame(maxWidth: .infinity, maxHeight: 100)
+                            .frame(maxWidth: .infinity, minHeight: 100)
                             .background {
                                 RoundedRectangle(cornerRadius: 10)
-                                    .foregroundStyle(.white)
+                                    .foregroundStyle(Color.component)
                             }
                             .padding(20)
                     }
@@ -48,6 +48,7 @@ struct DriverEmployerView: View {
                         } header: {
                             SectionHeader(text: "Requests")
                         }
+                        .listRowBackground(Color.component)
                     }
                     .frame(minHeight: 80*CGFloat(viewModel.employersRequests.count))
                     .scrollContentBackground(.hidden)

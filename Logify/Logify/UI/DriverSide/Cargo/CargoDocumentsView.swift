@@ -29,6 +29,7 @@ struct CargoDocumentsView: View {
                                 }
                             }
                     }
+                    .listRowBackground(Color.component)
                 }
                 .scrollContentBackground(.hidden)
             }

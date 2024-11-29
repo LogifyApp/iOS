@@ -12,7 +12,7 @@ struct SectionHeader: View {
     
     var body: some View {
         Text(text)
-            .foregroundStyle(.black)
+            .foregroundStyle(Color.text)
             .font(.system(.title3, weight: .medium))
             .textCase(.none)
     }
