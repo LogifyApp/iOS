@@ -42,8 +42,8 @@ struct EmployerCargoDocumentsView: View {
                         .frame(width: 320, height: 38)
                         .modifier(
                             ButtonStyleModifier(
-                                background: .black,
-                                foreground: .white
+                                background: .button,
+                                foreground: .buttonText
                             )
                         )
                 }
