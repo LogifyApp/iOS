@@ -18,6 +18,7 @@ struct HUD: View {
             .background(Color.hud)
             .clipShape(Capsule())
             .frame(maxHeight: .infinity, alignment: .top)
+            .padding(.top, 6)
     }
 }
 
